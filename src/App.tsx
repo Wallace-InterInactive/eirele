@@ -1,6 +1,6 @@
 import { Eirele } from "./ux/Eirele/Eirele.tsx";
 import { Game } from "./ux/Game/Game.tsx";
-import { Settings } from "./ux/Settings/Settings.tsx";//"../../src/components/Settings/Settings.tsx";
+import { Settings } from "./ux/Settings/Settings.tsx"; //"../../src/components/Settings/Settings.tsx";
 import { Help } from "./ux/Help/Help.tsx";
 
 function App() {

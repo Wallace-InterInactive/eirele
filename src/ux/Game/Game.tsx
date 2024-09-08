@@ -104,31 +104,31 @@ export function Game() {
             setCurrentRoundStatus={setCurrentRoundStatus}
             setRoundResult={setRoundResult}
           />
-        // ) : currentRound === 2 ? (
-        //   <GameRoundNeighbors
-        //     gameRoundId="neighbors"
-        //     gameState={gameState}
-        //     currentRoundStatus={currentRoundStatus}
-        //     setCurrentRoundStatus={setCurrentRoundStatus}
-        //     setRoundResult={setRoundResult}
-        //   />
-        // ) : currentRound === 3 ? (
-        //   <GameRoundCapital
-        //     gameRoundId="capital"
-        //     gameState={gameState}
-        //     currentRoundStatus={currentRoundStatus}
-        //     setCurrentRoundStatus={setCurrentRoundStatus}
-        //     setRoundResult={setRoundResult}
-        //   />
-        // ) : currentRound === 4 ? (
-        //   <GameRoundFlag
-        //     gameRoundId="flag"
-        //     gameState={gameState}
-        //     currentRoundStatus={currentRoundStatus}
-        //     setCurrentRoundStatus={setCurrentRoundStatus}
-        //     setRoundResult={setRoundResult}
-        //   />
         ) : (
+          // ) : currentRound === 2 ? (
+          //   <GameRoundNeighbors
+          //     gameRoundId="neighbors"
+          //     gameState={gameState}
+          //     currentRoundStatus={currentRoundStatus}
+          //     setCurrentRoundStatus={setCurrentRoundStatus}
+          //     setRoundResult={setRoundResult}
+          //   />
+          // ) : currentRound === 3 ? (
+          //   <GameRoundCapital
+          //     gameRoundId="capital"
+          //     gameState={gameState}
+          //     currentRoundStatus={currentRoundStatus}
+          //     setCurrentRoundStatus={setCurrentRoundStatus}
+          //     setRoundResult={setRoundResult}
+          //   />
+          // ) : currentRound === 4 ? (
+          //   <GameRoundFlag
+          //     gameRoundId="flag"
+          //     gameState={gameState}
+          //     currentRoundStatus={currentRoundStatus}
+          //     setCurrentRoundStatus={setCurrentRoundStatus}
+          //     setRoundResult={setRoundResult}
+          //   />
           <GameRoundFinale
             roundStats={gameState} //{roundResult}
           />

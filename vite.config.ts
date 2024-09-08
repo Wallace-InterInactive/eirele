@@ -7,5 +7,5 @@ export default defineConfig({
   base: "/eirele",
   server: {
     port: 5174,
-  }
+  },
 });

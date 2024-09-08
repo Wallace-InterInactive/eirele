@@ -1,12 +1,9 @@
-import { PotCode, PotData, MultiLangName } from "../../provincle/src/types/data.ts";
+import { PotCode, PotData } from "../../provincle/src/types/data.ts";
 import i18n from "./i18n.ts";
 
 // data sources
 
-
-export type CountyCode =
-  | "co"
-  | "ke";
+export type CountyCode = "co" | "ke";
 
 const dataBank: Record<CountyCode, PotData> = {
   co: {
@@ -55,7 +52,10 @@ export function getPotNamesByLang(langCode: string): string[] {
   );
 }
 
-export function getPotNameByLang(potCode: CountyCode, langCode: string): string {
+export function getPotNameByLang(
+  potCode: CountyCode,
+  langCode: string
+): string {
   if (!langCode.startsWith("en") && !langCode.startsWith("fr")) {
     throw new Error("invalid language");
   }
