@@ -41,7 +41,9 @@ i18next
           ca: "Canada",
           of_ca: "of Canada",
           // names of provinces and territories
-          on: "Ontario",
+          kerry: "Kerry",
+          limerick: "Limerick",
+          clare: "Clare",
           qc: "Quebec",
           ns: "Nova Scotia",
           nb: "New Brunswick",

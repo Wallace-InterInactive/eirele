@@ -1,15 +1,14 @@
 import { FormEvent, useState, useEffect } from "react";
-import { getPotNamesByLang, CountyCode } from "../../gamedata/dataBank.ts";
+import { dataBank, CountyCode } from "../../gamedata/dataBank.ts";
 import {
   sanitizeString,
-  isValidPot,
 } from "../../../provincle/src/utils/utils.ts";
 import { useTranslation } from "react-i18next";
 import { GameRoundProps } from "../../../provincle/src/types/GameRoundProps.ts";
 import { GameRoundResult, PotCode } from "../../../provincle/src/types/data.ts";
 import { AutoSuggestInput } from "../../../provincle/src/components/AutoSuggestInput/AutoSuggestInput.tsx";
 import { GuessButton } from "../../../provincle/src/components/GuessButton/GuessButton.tsx";
-import i18n from "../../gamedata/i18n.ts";
+//import i18n from "../../gamedata/i18n.ts";
 import {
   SQUARE_ANIMATION_LENGTH,
   squares,
@@ -47,12 +46,7 @@ function GameRoundCounty({
 
   const [currentGuess, setCurrentGuess] = useState("");
   function getPotMapSvgUrl(potCode: CountyCode): string {
-    console.log(`lovas: getMap: ${potCode}`);
     return `./eirele/assets/${potCode}/${potCode}-map.svg`;
-    // return new URL( LOVAS
-    //   `../....//assets/${potCode}/${potCode}-map.svg`,
-    //   import.meta.url
-    // ).href;
   }
 
   useEffect(() => {
@@ -78,7 +72,7 @@ function GameRoundCounty({
   const handleFormSubmission = (event: FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
 
-    if (!isValidPot(currentGuess, i18n.language)) {
+    if (!dataBank.isValidCode(currentGuess, tGeo)) {
       toastError(t("unknownPot"));
       return;
     }
@@ -137,12 +131,12 @@ function GameRoundCounty({
           <AutoSuggestInput
             currentGuess={currentGuess}
             setCurrentGuess={setCurrentGuess}
-            placeholder={`${t("province")}, ${t("territory")}`}
-            suggestionsArray={getPotNamesByLang(i18n.language)}
+            placeholder={`countieee`}
+            suggestionsArray={dataBank.getPotNamesByLang(tGeo)}
           />
           <GuessButton
             onClick={handleGuessButtonClicked}
-            text={`🍁 ${t("guessVerb")}`}
+            text={`\u2618\ufe0f ${t("guessVerb")}`}
           />
         </div>
       </form>
@@ -152,6 +146,9 @@ function GameRoundCounty({
         maxAttempts={maxAttempts}
         solutionCode={potCode as PotCode}
         guessNum={guessNum}
+        t={t}
+        tGeo={tGeo}
+        dataBank={dataBank}
       />
     </div>
   );

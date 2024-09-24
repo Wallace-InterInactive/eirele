@@ -1,5 +1,5 @@
 import { getTodaysPotCode } from "./dataBank.ts";
-import { GameState } from "../types/data.ts";
+import { GameState } from "../../provincle/src/types/data.ts";
 
 const defaultGameState: GameState = {
   potCode: getTodaysPotCode(),

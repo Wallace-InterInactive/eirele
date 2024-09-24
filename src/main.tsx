@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
+import "./ImageGrid.css";
 import "./index.css";
 import "./gamedata/i18n";
 import { ToastContainer } from "react-toastify";

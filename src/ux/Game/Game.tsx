@@ -25,6 +25,7 @@ import { NextRoundButton } from "../../../provincle/src/components/NextRoundButt
 function initGameState(): GameState {
   const ret = defaultGameState;
   ret.potCode = getTodaysPotCode(); // lovas: shall we raise here?
+  console.log(`init: potcode:${ret.potCode}`);
   ret.rounds.set("pot",       { i18nId: "gamePotRoundInstruction",      result: GameRoundResult.NotStarted });
   ret.rounds.set("neighbors", { i18nId: "gameNeighborRoundInstruction", result: GameRoundResult.NotStarted, });
   ret.rounds.set("capital",   { i18nId: "gameCapitalRoundInstruction",  result: GameRoundResult.NotStarted, });

@@ -1,4 +1,4 @@
-import { toggleLanguage } from "../../../provincle/src/utils/settings.ts";
+import { toggleLanguage } from "../../gamedata/settings";
 
 export function Settings() {
   return (
