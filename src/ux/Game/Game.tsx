@@ -6,8 +6,15 @@ import {
   GameState,
   GameRoundResult,
 } from "../../../provincle/src/types/data.ts";
-import { getTodaysPotCode } from "../../gamedata/dataBank.ts"; // lovas: see below use
-import GameRoundCounty from "../GameRoundCounty/GameRoundCounty.tsx";
+import {
+  dataBank,
+  getTodaysPotCode,
+  getPotMapSvgUrl,
+} from "../../gamedata/dataBank.ts"; // lovas: see below use
+import { useTranslation } from "react-i18next";
+
+import GameRoundPot from "../../../provincle/src/components/GameRoundPot/GameRoundPot.tsx";
+//import GameRoundCounty from "../GameRoundCounty/GameRoundCounty.tsx";
 // import GameRoundFlag from "../GameRoundFlag/GameRoundFlag.tsx";
 // import GameRoundCapital from "../GameRoundCapital/GameRoundCapital.tsx";
 // import GameRoundNeighbors from "../GameRoundNeighbors/GameRoundNeighbors.tsx";
@@ -25,7 +32,9 @@ import { NextRoundButton } from "../../../provincle/src/components/NextRoundButt
 function initGameState(): GameState {
   const ret = defaultGameState;
   ret.potCode = getTodaysPotCode(); // lovas: shall we raise here?
+  ret.potCode = "cork";
   console.log(`init: potcode:${ret.potCode}`);
+
   ret.rounds.set("pot",       { i18nId: "gamePotRoundInstruction",      result: GameRoundResult.NotStarted });
   ret.rounds.set("neighbors", { i18nId: "gameNeighborRoundInstruction", result: GameRoundResult.NotStarted, });
   ret.rounds.set("capital",   { i18nId: "gameCapitalRoundInstruction",  result: GameRoundResult.NotStarted, });
@@ -35,6 +44,10 @@ function initGameState(): GameState {
 
 export function Game() {
   const [gameState, setGameState] = useState(() => initGameState()); // warning: useState(initGameState()) sux!
+
+  dataBank.tLang = useTranslation().t;
+  dataBank.tGeo = useTranslation("geo").t;
+  dataBank.getPotMapSvgUrl = getPotMapSvgUrl; // ??? maybe because of VITE or React or URL
 
   /* eslint-disable @typescript-eslint/no-explicit-any */
   const updateGameState = (key: string, val: any): void => {
@@ -98,10 +111,11 @@ export function Game() {
     <>
       <div>
         {currentRound === 1 ? (
-          <GameRoundCounty
+          <GameRoundPot
             gameRoundId="pot"
             gameState={gameState}
             currentRoundStatus={currentRoundStatus}
+            dataBank={dataBank}
             setCurrentRoundStatus={setCurrentRoundStatus}
             setRoundResult={setRoundResult}
           />
