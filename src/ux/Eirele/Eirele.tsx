@@ -23,7 +23,7 @@ export function Eirele() {
     >
       <span style={{ color: "#169B62" }}>eire</span>
       <span style={{ color: "white" }}>le</span>
-      <span style={{ color: "#FF883E" }}>agh</span>
+      <span style={{ color: "#FF883E" }}>aigh</span>
     </span>
   );
 

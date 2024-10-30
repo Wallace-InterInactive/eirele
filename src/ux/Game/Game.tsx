@@ -16,7 +16,7 @@ import { useTranslation } from "react-i18next";
 import GameRoundPot from "../../../provincle/src/components/GameRoundPot/GameRoundPot.tsx";
 //import GameRoundCounty from "../GameRoundCounty/GameRoundCounty.tsx";
 // import GameRoundFlag from "../GameRoundFlag/GameRoundFlag.tsx";
-// import GameRoundCapital from "../GameRoundCapital/GameRoundCapital.tsx";
+import GameRoundCapital from "../../../provincle/src/components/GameRoundCapital/GameRoundCapital.tsx";
 // import GameRoundNeighbors from "../GameRoundNeighbors/GameRoundNeighbors.tsx";
 import GameRoundFinale from "../../../provincle/src/components/GameRoundFinale/GameRoundFinale.tsx"; // "../GameRoundFinale/GameRoundFinale.tsx";
 import { toast } from "react-toastify";
@@ -36,9 +36,9 @@ function initGameState(): GameState {
   console.log(`init: potcode:${ret.potCode}`);
 
   ret.rounds.set("pot",       { i18nId: "gamePotRoundInstruction",      result: GameRoundResult.NotStarted });
-  ret.rounds.set("neighbors", { i18nId: "gameNeighborRoundInstruction", result: GameRoundResult.NotStarted, });
+  //ret.rounds.set("neighbors", { i18nId: "gameNeighborRoundInstruction", result: GameRoundResult.NotStarted, });
   ret.rounds.set("capital",   { i18nId: "gameCapitalRoundInstruction",  result: GameRoundResult.NotStarted, });
-  ret.rounds.set("flag",      { i18nId: "gameFlagRoundInstruction",     result: GameRoundResult.NotStarted, });
+  //ret.rounds.set("flag",      { i18nId: "gameFlagRoundInstruction",     result: GameRoundResult.NotStarted, });
   return ret;
 }
 
@@ -119,7 +119,6 @@ export function Game() {
             setCurrentRoundStatus={setCurrentRoundStatus}
             setRoundResult={setRoundResult}
           />
-        ) : (
           // ) : currentRound === 2 ? (
           //   <GameRoundNeighbors
           //     gameRoundId="neighbors"
@@ -128,15 +127,17 @@ export function Game() {
           //     setCurrentRoundStatus={setCurrentRoundStatus}
           //     setRoundResult={setRoundResult}
           //   />
-          // ) : currentRound === 3 ? (
-          //   <GameRoundCapital
-          //     gameRoundId="capital"
-          //     gameState={gameState}
-          //     currentRoundStatus={currentRoundStatus}
-          //     setCurrentRoundStatus={setCurrentRoundStatus}
-          //     setRoundResult={setRoundResult}
-          //   />
-          // ) : currentRound === 4 ? (
+          ) : currentRound === 2 ? (
+            <GameRoundCapital
+              gameRoundId="capital"
+              gameState={gameState}
+              currentRoundStatus={currentRoundStatus}
+              dataBank={dataBank}
+              setCurrentRoundStatus={setCurrentRoundStatus}
+              setRoundResult={setRoundResult}
+            />
+          ) : (
+            // ) : currentRound === 4 ? (
           //   <GameRoundFlag
           //     gameRoundId="flag"
           //     gameState={gameState}

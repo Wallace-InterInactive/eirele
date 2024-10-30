@@ -56,7 +56,7 @@ const listOfCountyCodes: CountyCode[] = ["cork", "kerry", "limerick"];
 
 const dataBankData: Record<CountyCode, PotData> = {
   antrim: {
-    capital: "capital-cork",
+    capital: "capital_anrtim",
     neighbors: ["kerry", "waterford", "tipperary", "limerick"],
     coordinates: { latitude: 49.25, longitude: -84.5 },
     population: 15996989,
@@ -67,7 +67,7 @@ const dataBankData: Record<CountyCode, PotData> = {
     majorLeagueTeams: ["aa"],
   },
   armagh: {
-    capital: "capital-cork",
+    capital: "capital_armagh",
     neighbors: ["kerry", "waterford", "tipperary", "limerick"],
     coordinates: { latitude: 49.25, longitude: -84.5 },
     population: 15996989,
@@ -78,7 +78,7 @@ const dataBankData: Record<CountyCode, PotData> = {
     majorLeagueTeams: ["aa"],
   },
   carlow: {
-    capital: "capital-cork",
+    capital: "capital_carlow",
     neighbors: ["kerry", "waterford", "tipperary", "limerick"],
     coordinates: { latitude: 49.25, longitude: -84.5 },
     population: 15996989,
@@ -89,7 +89,7 @@ const dataBankData: Record<CountyCode, PotData> = {
     majorLeagueTeams: ["team carlow"],
   },
   cavan: {
-    capital: "capital-cork",
+    capital: "capital_cavan",
     neighbors: ["kerry", "waterford", "tipperary", "limerick"],
     coordinates: { latitude: 49.25, longitude: -84.5 },
     population: 15996989,
@@ -100,7 +100,7 @@ const dataBankData: Record<CountyCode, PotData> = {
     majorLeagueTeams: ["team cavan"],
   },
   clare: {
-    capital: "capital-clare",
+    capital: "capital_clare",
     neighbors: ["galway", "limerick", "tipperary"],
     coordinates: { latitude: 49.25, longitude: -84.5 },
     population: 15996989,
@@ -111,7 +111,7 @@ const dataBankData: Record<CountyCode, PotData> = {
     majorLeagueTeams: ["aa"],
   },
   cork: {
-    capital: "capital-cork",
+    capital: "capital_cork",
     neighbors: ["kerry", "waterford", "tipperary", "limerick"],
     coordinates: { latitude: 48.25, longitude: -84.5 },
     population: 15996989,
@@ -122,7 +122,7 @@ const dataBankData: Record<CountyCode, PotData> = {
     majorLeagueTeams: ["Cork City", "Cobh Ramblers"],
   },
   donegal: {
-    capital: "capital-cork",
+    capital: "capital_donegal",
     neighbors: ["kerry", "waterford", "tipperary", "limerick"],
     coordinates: { latitude: 49.25, longitude: -84.5 },
     population: 15996989,
@@ -133,7 +133,7 @@ const dataBankData: Record<CountyCode, PotData> = {
     majorLeagueTeams: ["aa"],
   },
   down: {
-    capital: "capital-cork",
+    capital: "capital_down",
     neighbors: ["kerry", "waterford", "tipperary", "limerick"],
     coordinates: { latitude: 49.25, longitude: -84.5 },
     population: 15996989,
@@ -144,7 +144,7 @@ const dataBankData: Record<CountyCode, PotData> = {
     majorLeagueTeams: ["aa"],
   },
   dublin: {
-    capital: "capital-cork",
+    capital: "capital_dublin",
     neighbors: ["kerry", "waterford", "tipperary", "limerick"],
     coordinates: { latitude: 49.25, longitude: -84.5 },
     population: 15996989,
@@ -155,7 +155,7 @@ const dataBankData: Record<CountyCode, PotData> = {
     majorLeagueTeams: ["aa"],
   },
   fermanagh: {
-    capital: "capital-cork",
+    capital: "capital_fermanagh",
     neighbors: ["kerry", "waterford", "tipperary", "limerick"],
     coordinates: { latitude: 49.25, longitude: -84.5 },
     population: 15996989,
@@ -166,7 +166,7 @@ const dataBankData: Record<CountyCode, PotData> = {
     majorLeagueTeams: ["aa"],
   },
   galway: {
-    capital: "capital-cork",
+    capital: "capital_galway",
     neighbors: ["kerry", "waterford", "tipperary", "limerick"],
     coordinates: { latitude: 49.25, longitude: -84.5 },
     population: 15996989,
@@ -177,7 +177,7 @@ const dataBankData: Record<CountyCode, PotData> = {
     majorLeagueTeams: ["aa"],
   },
   kerry: {
-    capital: "capital-kerry",
+    capital: "capital_kerry",
     neighbors: ["cork", "limerick"],
     coordinates: { latitude: 49.25, longitude: -84.5 },
     population: 15996989,
@@ -188,7 +188,7 @@ const dataBankData: Record<CountyCode, PotData> = {
     majorLeagueTeams: ["Kerry"],
   },
   kildare: {
-    capital: "capital-cork",
+    capital: "capital_kildare",
     neighbors: ["kerry", "waterford", "tipperary", "limerick"],
     coordinates: { latitude: 49.25, longitude: -84.5 },
     population: 15996989,
@@ -199,7 +199,7 @@ const dataBankData: Record<CountyCode, PotData> = {
     majorLeagueTeams: ["aa"],
   },
   kilkenny: {
-    capital: "capital-cork",
+    capital: "capital_kilkenny",
     neighbors: ["kerry", "waterford", "tipperary", "limerick"],
     coordinates: { latitude: 49.25, longitude: -84.5 },
     population: 15996989,
@@ -210,7 +210,7 @@ const dataBankData: Record<CountyCode, PotData> = {
     majorLeagueTeams: ["aa"],
   },
   laois: {
-    capital: "capital-cork",
+    capital: "capital_laois",
     neighbors: ["kerry", "waterford", "tipperary", "limerick"],
     coordinates: { latitude: 49.25, longitude: -84.5 },
     population: 15996989,
@@ -221,7 +221,7 @@ const dataBankData: Record<CountyCode, PotData> = {
     majorLeagueTeams: ["aa"],
   },
   leitrim: {
-    capital: "capital-cork",
+    capital: "capital_leitrim",
     neighbors: ["kerry", "waterford", "tipperary", "limerick"],
     coordinates: { latitude: 49.25, longitude: -84.5 },
     population: 15996989,
@@ -232,7 +232,7 @@ const dataBankData: Record<CountyCode, PotData> = {
     majorLeagueTeams: ["aa"],
   },
   londonderry: {
-    capital: "capital-cork",
+    capital: "capital_londonderry",
     neighbors: ["kerry", "waterford", "tipperary", "limerick"],
     coordinates: { latitude: 49.25, longitude: -84.5 },
     population: 15996989,
@@ -243,7 +243,7 @@ const dataBankData: Record<CountyCode, PotData> = {
     majorLeagueTeams: ["aa"],
   },
   longford: {
-    capital: "capital-cork",
+    capital: "capital_longford",
     neighbors: ["kerry", "waterford", "tipperary", "limerick"],
     coordinates: { latitude: 49.25, longitude: -84.5 },
     population: 15996989,
@@ -254,7 +254,7 @@ const dataBankData: Record<CountyCode, PotData> = {
     majorLeagueTeams: ["aa"],
   },
   louth: {
-    capital: "capital-cork",
+    capital: "capital_louth",
     neighbors: ["kerry", "waterford", "tipperary", "limerick"],
     coordinates: { latitude: 49.25, longitude: -84.5 },
     population: 15996989,
@@ -265,7 +265,7 @@ const dataBankData: Record<CountyCode, PotData> = {
     majorLeagueTeams: ["aa"],
   },
   mayo: {
-    capital: "capital-cork",
+    capital: "capital_mayo",
     neighbors: ["kerry", "waterford", "tipperary", "limerick"],
     coordinates: { latitude: 49.25, longitude: -84.5 },
     population: 15996989,
@@ -276,7 +276,7 @@ const dataBankData: Record<CountyCode, PotData> = {
     majorLeagueTeams: ["aa"],
   },
   meath: {
-    capital: "capital-cork",
+    capital: "capital_meath",
     neighbors: ["kerry", "waterford", "tipperary", "limerick"],
     coordinates: { latitude: 49.25, longitude: -84.5 },
     population: 15996989,
@@ -287,7 +287,7 @@ const dataBankData: Record<CountyCode, PotData> = {
     majorLeagueTeams: ["aa"],
   },
   monaghan: {
-    capital: "capital-cork",
+    capital: "capital_monaghan",
     neighbors: ["kerry", "waterford", "tipperary", "limerick"],
     coordinates: { latitude: 49.25, longitude: -84.5 },
     population: 15996989,
@@ -298,7 +298,7 @@ const dataBankData: Record<CountyCode, PotData> = {
     majorLeagueTeams: ["aa"],
   },
   offaly: {
-    capital: "capital-cork",
+    capital: "capital_offaly",
     neighbors: ["kerry", "waterford", "tipperary", "limerick"],
     coordinates: { latitude: 49.25, longitude: -84.5 },
     population: 15996989,
@@ -309,7 +309,7 @@ const dataBankData: Record<CountyCode, PotData> = {
     majorLeagueTeams: ["aa"],
   },
   roscommon: {
-    capital: "capital-cork",
+    capital: "capital_roscommon",
     neighbors: ["kerry", "waterford", "tipperary", "limerick"],
     coordinates: { latitude: 49.25, longitude: -84.5 },
     population: 15996989,
@@ -320,7 +320,7 @@ const dataBankData: Record<CountyCode, PotData> = {
     majorLeagueTeams: ["aa"],
   },
   limerick: {
-    capital: "capital-cork",
+    capital: "capital_limerick",
     neighbors: ["kerry", "waterford", "tipperary", "limerick"],
     coordinates: { latitude: 49.25, longitude: -84.5 },
     population: 15996989,
@@ -331,7 +331,7 @@ const dataBankData: Record<CountyCode, PotData> = {
     majorLeagueTeams: ["aa"],
   },
   sligo: {
-    capital: "capital-cork",
+    capital: "capital_sligo",
     neighbors: ["kerry", "waterford", "tipperary", "limerick"],
     coordinates: { latitude: 49.25, longitude: -84.5 },
     population: 15996989,
@@ -342,7 +342,7 @@ const dataBankData: Record<CountyCode, PotData> = {
     majorLeagueTeams: ["aa"],
   },
   tipperary: {
-    capital: "capital-cork",
+    capital: "capital_tipperary",
     neighbors: ["kerry", "waterford", "tipperary", "limerick"],
     coordinates: { latitude: 49.25, longitude: -84.5 },
     population: 15996989,
@@ -353,7 +353,7 @@ const dataBankData: Record<CountyCode, PotData> = {
     majorLeagueTeams: ["aa"],
   },
   tyrone: {
-    capital: "capital-cork",
+    capital: "capital_tyrone",
     neighbors: ["kerry", "waterford", "tipperary", "limerick"],
     coordinates: { latitude: 49.25, longitude: -84.5 },
     population: 15996989,
@@ -364,7 +364,7 @@ const dataBankData: Record<CountyCode, PotData> = {
     majorLeagueTeams: ["aa"],
   },
   waterford: {
-    capital: "capital-cork",
+    capital: "capital_waterford",
     neighbors: ["kerry", "waterford", "tipperary", "limerick"],
     coordinates: { latitude: 49.25, longitude: -84.5 },
     population: 15996989,
@@ -375,7 +375,7 @@ const dataBankData: Record<CountyCode, PotData> = {
     majorLeagueTeams: ["aa"],
   },
   westmeath: {
-    capital: "capital-cork",
+    capital: "capital_westmeath",
     neighbors: ["kerry", "waterford", "tipperary", "limerick"],
     coordinates: { latitude: 49.25, longitude: -84.5 },
     population: 15996989,
@@ -386,7 +386,7 @@ const dataBankData: Record<CountyCode, PotData> = {
     majorLeagueTeams: ["aa"],
   },
   wexford: {
-    capital: "capital-cork",
+    capital: "capital_wexford",
     neighbors: ["kerry", "waterford", "tipperary", "limerick"],
     coordinates: { latitude: 49.25, longitude: -84.5 },
     population: 15996989,
@@ -397,7 +397,7 @@ const dataBankData: Record<CountyCode, PotData> = {
     majorLeagueTeams: ["aa"],
   },
   wicklow: {
-    capital: "capital-cork",
+    capital: "capital_wicklow",
     neighbors: ["kerry", "waterford", "tipperary", "limerick"],
     coordinates: { latitude: 49.25, longitude: -84.5 },
     population: 15996989,
@@ -546,17 +546,22 @@ export function getPotFlagSvgUrl(potCode: PotCode): string {
 }
 
 export function getCapitals(tGeo: MyGeoMapping): string[] {
-  return Object.values(dataBank).map(
+  return Object.values(dataBank.data).map(
     (entry: PotData) => tGeo(entry.capital) // tGeo(`capital${code}`) ?
   );
 }
 export function getCities(tGeo: MyGeoMapping): string[] {
-  const retVal = ["Miskolc", "Tapolca"]; // getLargestCities(tGeo);
-  getCapitals(tGeo).forEach((cap: string) => {
-    if (!retVal.includes(cap)) {
-      retVal.push(cap);
-    }
-  });
+  let retVal: string[] = getCapitals(tGeo); // getLargestCities(tGeo);
+  console.log(`getCities: ${retVal}`);
+  // Object.values(dataBank.data.keys).forEach((cap: string) => {
+  //   console.log(`cap:${cap}`);
+  // });
+    //   retVal.push(cap);
+  //getCapitals(tGeo).forEach((cap: string) => {
+    // if (!retVal.includes(cap)) {
+    //   retVal.push(cap);
+    // }
+  //});
   retVal.sort();
 
   return retVal;
