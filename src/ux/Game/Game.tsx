@@ -12,6 +12,7 @@ import {
   getPotMapSvgUrl,
 } from "../../gamedata/dataBank.ts"; // lovas: see below use
 import { useTranslation } from "react-i18next";
+import i18n from "../../gamedata/i18n.ts";
 
 import GameRoundPot from "../../../provincle/src/components/GameRoundPot/GameRoundPot.tsx";
 //import GameRoundCounty from "../GameRoundCounty/GameRoundCounty.tsx";
@@ -32,7 +33,8 @@ import { NextRoundButton } from "../../../provincle/src/components/NextRoundButt
 function initGameState(): GameState {
   const ret = defaultGameState;
   ret.potCode = getTodaysPotCode(); // lovas: shall we raise here?
-  ret.potCode = "cork";
+  //ret.potCode = "cork";
+  i18n.changeLanguage("en");
   console.log(`init: potcode:${ret.potCode}`);
 
   ret.rounds.set("pot",       { i18nId: "gamePotRoundInstruction",      result: GameRoundResult.NotStarted });
@@ -119,25 +121,25 @@ export function Game() {
             setCurrentRoundStatus={setCurrentRoundStatus}
             setRoundResult={setRoundResult}
           />
-          // ) : currentRound === 2 ? (
-          //   <GameRoundNeighbors
-          //     gameRoundId="neighbors"
-          //     gameState={gameState}
-          //     currentRoundStatus={currentRoundStatus}
-          //     setCurrentRoundStatus={setCurrentRoundStatus}
-          //     setRoundResult={setRoundResult}
-          //   />
-          ) : currentRound === 2 ? (
-            <GameRoundCapital
-              gameRoundId="capital"
-              gameState={gameState}
-              currentRoundStatus={currentRoundStatus}
-              dataBank={dataBank}
-              setCurrentRoundStatus={setCurrentRoundStatus}
-              setRoundResult={setRoundResult}
-            />
-          ) : (
-            // ) : currentRound === 4 ? (
+        ) : // ) : currentRound === 2 ? (
+        //   <GameRoundNeighbors
+        //     gameRoundId="neighbors"
+        //     gameState={gameState}
+        //     currentRoundStatus={currentRoundStatus}
+        //     setCurrentRoundStatus={setCurrentRoundStatus}
+        //     setRoundResult={setRoundResult}
+        //   />
+        currentRound === 2 ? (
+          <GameRoundCapital
+            gameRoundId="capital"
+            gameState={gameState}
+            currentRoundStatus={currentRoundStatus}
+            dataBank={dataBank}
+            setCurrentRoundStatus={setCurrentRoundStatus}
+            setRoundResult={setRoundResult}
+          />
+        ) : (
+          // ) : currentRound === 4 ? (
           //   <GameRoundFlag
           //     gameRoundId="flag"
           //     gameState={gameState}
