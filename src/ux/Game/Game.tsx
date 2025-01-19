@@ -18,7 +18,7 @@ import GameRoundPot from "../../../provincle/src/components/GameRoundPot/GameRou
 //import GameRoundCounty from "../GameRoundCounty/GameRoundCounty.tsx";
 // import GameRoundFlag from "../GameRoundFlag/GameRoundFlag.tsx";
 import GameRoundCapital from "../../../provincle/src/components/GameRoundCapital/GameRoundCapital.tsx";
-// import GameRoundNeighbors from "../GameRoundNeighbors/GameRoundNeighbors.tsx";
+import GameRoundNeighbors from "../../../provincle/src/components/GameRoundNeighbors/GameRoundNeighbors.tsx";
 import GameRoundFinale from "../../../provincle/src/components/GameRoundFinale/GameRoundFinale.tsx"; // "../GameRoundFinale/GameRoundFinale.tsx";
 import { toast } from "react-toastify";
 import { NextRoundButton } from "../../../provincle/src/components/NextRoundButton/NextRoundButton.tsx";
@@ -121,17 +121,18 @@ export function Game() {
             setCurrentRoundStatus={setCurrentRoundStatus}
             setRoundResult={setRoundResult}
           />
-        ) : // ) : currentRound === 2 ? (
-        //   <GameRoundNeighbors
-        //     gameRoundId="neighbors"
-        //     gameState={gameState}
-        //     currentRoundStatus={currentRoundStatus}
-        //     setCurrentRoundStatus={setCurrentRoundStatus}
-        //     setRoundResult={setRoundResult}
-        //   />
-        currentRound === 2 ? (
+        ) : currentRound === 2 ? (
           <GameRoundCapital
             gameRoundId="capital"
+            gameState={gameState}
+            currentRoundStatus={currentRoundStatus}
+            dataBank={dataBank}
+            setCurrentRoundStatus={setCurrentRoundStatus}
+            setRoundResult={setRoundResult}
+          />
+        ) : currentRound === 3 ? (
+          <GameRoundNeighbors
+            gameRoundId="neighbors"
             gameState={gameState}
             currentRoundStatus={currentRoundStatus}
             dataBank={dataBank}
@@ -149,6 +150,7 @@ export function Game() {
           //   />
           <GameRoundFinale
             roundStats={gameState} //{roundResult}
+            dataBank={dataBank}
           />
         )}
       </div>

@@ -116,7 +116,10 @@ const dataBankData: Record<CountyCode, PotData> = {
     neighbors: ["galway", "limerick", "tipperary"],
     coordinates: { latitude: 52.865067, longitude: -9.007028 },
     population: 15996989,
-    largestCities: [{ key: "city_ennis", population: 0 }],
+    largestCities: [
+      { key: "city_ennis", population: 0 },
+      { key: "city_kilkee", population: 0 },
+    ],
     interestingFacts: [],
     highestPoint: "Ishpatina Ridge 693m",
     coastlineInKM: 3840,
@@ -131,6 +134,10 @@ const dataBankData: Record<CountyCode, PotData> = {
       { key: "city_cork", population: 0 },
       { key: "city_youghal", population: 0 },
       { key: "city_baltimore", population: 0 },
+      { key: "city_skibbereen", population: 0 },
+      { key: "city_kinsale", population: 0 },
+      { key: "city_cobh", population: 0 },
+      { key: "city_carrigaline", population: 0 },
     ],
     interestingFacts: [],
     highestPoint: "Ishpatina Ridge 693m",
@@ -178,6 +185,8 @@ const dataBankData: Record<CountyCode, PotData> = {
     largestCities: [
       { key: "city_tralee", population: 0 },
       { key: "city_killarney", population: 0 },
+      { key: "city_listowel", population: 0 },
+      { key: "city_dingle", population: 0 },
     ],
     interestingFacts: [],
     highestPoint: "Ishpatina Ridge 693m",
@@ -657,6 +666,15 @@ function getGuessEmoji(): string {
   return "\u2618\ufe0f";
 }
 
+//@ts-ignore
+function getLinkUrlWikipedia(potCode: string): string {
+  return "https://en.wikipedia.org/wiki/Counties_of_Ireland";
+}
+
+function getLinkUrlGoogleMaps(potCode: string): string {
+  return `https://www.google.com/maps?q=${potCode},county,Ireland`;
+}
+
 //export default dataBank;
 export const dataBank: DataBank = {
   data: dataBankData,
@@ -668,6 +686,8 @@ export const dataBank: DataBank = {
 
   getPotMapSvgUrl: getPotMapSvgUrl, // warning: does not work as I'd expect
   getPotFlagSvgUrl: getPotFlagSvgUrl,
+  getLinkUrlWikipedia: getLinkUrlWikipedia,
+  getLinkUrlGoogleMaps: getLinkUrlGoogleMaps,
   getCities: getCities,
 
   getDirectionEmoji: getDirectionEmoji,
