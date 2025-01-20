@@ -14715,7 +14715,10 @@ function GameRoundPot({
   console.log(`pot1b`);
   console.log("React:", React);
   console.log("useState:", reactExports.useState);
-  const [guessNum, setGuessNum] = reactExports.useState(1);
+  const [guessNum, setGuessNum] = reactExports.useState(() => {
+    console.log("Initializing state...");
+    return 1;
+  });
   const incGuessNum = () => {
     setGuessNum(guessNum + 1);
   };
@@ -15984,4 +15987,4 @@ client.createRoot(document.getElementById("root")).render(
     )
   ] })
 );
-//# sourceMappingURL=index-V_aTIlwk.js.map
+//# sourceMappingURL=index-C_s3isUK.js.map
