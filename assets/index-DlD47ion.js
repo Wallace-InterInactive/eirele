@@ -15858,7 +15858,7 @@ function Game() {
     }
   };
   return /* @__PURE__ */ jsxRuntimeExports$1.jsxs(jsxRuntimeExports$1.Fragment, { children: [
-    /* @__PURE__ */ jsxRuntimeExports$1.jsx("div", { children: currentRound === 1 ? /* @__PURE__ */ jsxRuntimeExports$1.jsx(
+    /* @__PURE__ */ jsxRuntimeExports$1.jsx("div", { children: currentRound === 2 ? /* @__PURE__ */ jsxRuntimeExports$1.jsx(
       GameRoundPot,
       {
         gameRoundId: "pot",
@@ -15868,7 +15868,7 @@ function Game() {
         setCurrentRoundStatus,
         setRoundResult
       }
-    ) : currentRound === 2 ? /* @__PURE__ */ jsxRuntimeExports$1.jsx(
+    ) : currentRound === 1 ? /* @__PURE__ */ jsxRuntimeExports$1.jsx(
       GameRoundCapital,
       {
         gameRoundId: "capital",
@@ -15987,4 +15987,4 @@ client.createRoot(document.getElementById("root")).render(
     )
   ] })
 );
-//# sourceMappingURL=index-C_s3isUK.js.map
+//# sourceMappingURL=index-DlD47ion.js.map
