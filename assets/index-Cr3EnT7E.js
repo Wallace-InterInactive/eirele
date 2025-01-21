@@ -14850,6 +14850,8 @@ function GameRoundTextInputWithImage({
   }
   const cityCodeList = getAllCityCodes(dataBank2);
   const possibleValues = cityCodeList.map((c2) => dataBank2.tGeo(c2)).sort();
+  const [gameState2] = reactExports.useState(0);
+  console.log(`kkk: ${gameState2}`);
   const [guesses, setGuesses] = reactExports.useState([]);
   const [currentGuess, setCurrentGuess] = reactExports.useState("");
   reactExports.useEffect(() => {
@@ -15987,4 +15989,4 @@ client.createRoot(document.getElementById("root")).render(
     )
   ] })
 );
-//# sourceMappingURL=index-DlD47ion.js.map
+//# sourceMappingURL=index-Cr3EnT7E.js.map
