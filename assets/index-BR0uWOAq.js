@@ -14848,6 +14848,7 @@ function GameRoundTextInputWithImage({
   if (potNameOf === `of_${gameState.potCode}`) {
     potNameOf = `of ${dataBank2.tGeo(gameState.potCode)}`;
   }
+  console.log("React:", React);
   const cityCodeList = getAllCityCodes(dataBank2);
   const possibleValues = cityCodeList.map((c2) => dataBank2.tGeo(c2)).sort();
   const [gameState2] = reactExports.useState(0);
@@ -15989,4 +15990,4 @@ client.createRoot(document.getElementById("root")).render(
     )
   ] })
 );
-//# sourceMappingURL=index-Cr3EnT7E.js.map
+//# sourceMappingURL=index-BR0uWOAq.js.map
