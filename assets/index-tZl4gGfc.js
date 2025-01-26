@@ -8234,7 +8234,7 @@ function GameRoundFinale({ roundStats, dataBank: dataBank2 }) {
   ] });
 }
 function Game() {
-  const [gameState, setGameState] = reactExports$1.useState(defaultGameState);
+  const gameState = defaultGameState;
   console.log(`lovas2`);
   return /* @__PURE__ */ jsxRuntimeExports$1.jsx(jsxRuntimeExports$1.Fragment, { children: /* @__PURE__ */ jsxRuntimeExports$1.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports$1.jsx(
     GameRoundFinale,
@@ -11303,7 +11303,7 @@ function Help() {
   );
 }
 function App() {
-  console.log(`lovas eirele 2025-01-26 21:57`);
+  console.log(`lovas eirele 2025-01-26 21:58`);
   return /* @__PURE__ */ jsxRuntimeExports$1.jsxs("div", { className: "flex flex-col justify-between items-center min-h-screen dark:bg-slate-900 dark:text-slate-50", children: [
     /* @__PURE__ */ jsxRuntimeExports$1.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports$1.jsxs("div", { className: "w-full max-w-lg flex flex-col", children: [
       /* @__PURE__ */ jsxRuntimeExports$1.jsxs("header", { className: "border-b-2 border-gray-200 flex mb-4", children: [
@@ -11664,4 +11664,4 @@ client.createRoot(document.getElementById("root")).render(
     )
   ] })
 );
-//# sourceMappingURL=index-CgclSLm9.js.map
+//# sourceMappingURL=index-tZl4gGfc.js.map
