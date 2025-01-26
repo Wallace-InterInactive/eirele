@@ -7258,9 +7258,6 @@ function Eirele() {
       ]
     }
   );
-  reactExports$1.useEffect(() => {
-    return;
-  }, [i18n.language]);
   return i18n.language != "ie" ? title : titleIe;
 }
 const __vite_glob_0_0 = "/eirele/assets/ireland-map-cork-Dql9xpN4.svg";
@@ -15940,7 +15937,7 @@ function Help() {
   );
 }
 function App() {
-  console.log(`lovas eirele 2025-01-26 12:10`);
+  console.log(`lovas eirele y2025-01-26 12:18`);
   return /* @__PURE__ */ jsxRuntimeExports$1.jsxs("div", { className: "flex flex-col justify-between items-center min-h-screen dark:bg-slate-900 dark:text-slate-50", children: [
     /* @__PURE__ */ jsxRuntimeExports$1.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports$1.jsxs("div", { className: "w-full max-w-lg flex flex-col", children: [
       /* @__PURE__ */ jsxRuntimeExports$1.jsxs("header", { className: "border-b-2 border-gray-200 flex mb-4", children: [
@@ -15981,4 +15978,4 @@ client.createRoot(document.getElementById("root")).render(
     )
   ] })
 );
-//# sourceMappingURL=index-BD25LRbD.js.map
+//# sourceMappingURL=index-DymIrOGF.js.map
