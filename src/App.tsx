@@ -4,6 +4,7 @@ import { Settings } from "./ux/Settings/Settings.tsx"; //"../../src/components/S
 import { Help } from "./ux/Help/Help.tsx";
 
 function App() {
+  console.log(`lovas eirele y2025-01-26 20:37`);
   return (
     <div className="flex flex-col justify-between items-center min-h-screen dark:bg-slate-900 dark:text-slate-50">
       <div>
