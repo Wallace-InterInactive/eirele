@@ -173,7 +173,7 @@ function T$2(a) {
   throw a._result;
 }
 var U$1 = { current: null }, V$1 = { transition: null }, W$1 = { ReactCurrentDispatcher: U$1, ReactCurrentBatchConfig: V$1, ReactCurrentOwner: K$1 };
-function X$1() {
+function X$2() {
   throw Error("act(...) is not supported in production builds of React.");
 }
 react_production_min.Children = { map: S$2, forEach: function(a, b2, e) {
@@ -201,7 +201,7 @@ react_production_min.PureComponent = G$1;
 react_production_min.StrictMode = q$2;
 react_production_min.Suspense = w$1;
 react_production_min.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED = W$1;
-react_production_min.act = X$1;
+react_production_min.act = X$2;
 react_production_min.cloneElement = function(a, b2, e) {
   if (null === a || void 0 === a) throw Error("React.cloneElement(...): The argument must be a React element, but you passed " + a + ".");
   var d2 = C$2({}, a.props), c2 = a.key, k2 = a.ref, h2 = a._owner;
@@ -253,7 +253,7 @@ react_production_min.startTransition = function(a) {
     V$1.transition = b2;
   }
 };
-react_production_min.unstable_act = X$1;
+react_production_min.unstable_act = X$2;
 react_production_min.useCallback = function(a, b2) {
   return U$1.current.useCallback(a, b2);
 };
@@ -5051,7 +5051,7 @@ function Wj(a, b2, c2) {
   if (5 === d2 || 6 === d2) a = a.stateNode, b2 ? c2.insertBefore(a, b2) : c2.appendChild(a);
   else if (4 !== d2 && (a = a.child, null !== a)) for (Wj(a, b2, c2), a = a.sibling; null !== a; ) Wj(a, b2, c2), a = a.sibling;
 }
-var X = null, Xj = false;
+var X$1 = null, Xj = false;
 function Yj(a, b2, c2) {
   for (c2 = c2.child; null !== c2; ) Zj(a, b2, c2), c2 = c2.sibling;
 }
@@ -5064,23 +5064,23 @@ function Zj(a, b2, c2) {
     case 5:
       U || Lj(c2, b2);
     case 6:
-      var d2 = X, e = Xj;
-      X = null;
+      var d2 = X$1, e = Xj;
+      X$1 = null;
       Yj(a, b2, c2);
-      X = d2;
+      X$1 = d2;
       Xj = e;
-      null !== X && (Xj ? (a = X, c2 = c2.stateNode, 8 === a.nodeType ? a.parentNode.removeChild(c2) : a.removeChild(c2)) : X.removeChild(c2.stateNode));
+      null !== X$1 && (Xj ? (a = X$1, c2 = c2.stateNode, 8 === a.nodeType ? a.parentNode.removeChild(c2) : a.removeChild(c2)) : X$1.removeChild(c2.stateNode));
       break;
     case 18:
-      null !== X && (Xj ? (a = X, c2 = c2.stateNode, 8 === a.nodeType ? Kf(a.parentNode, c2) : 1 === a.nodeType && Kf(a, c2), bd(a)) : Kf(X, c2.stateNode));
+      null !== X$1 && (Xj ? (a = X$1, c2 = c2.stateNode, 8 === a.nodeType ? Kf(a.parentNode, c2) : 1 === a.nodeType && Kf(a, c2), bd(a)) : Kf(X$1, c2.stateNode));
       break;
     case 4:
-      d2 = X;
+      d2 = X$1;
       e = Xj;
-      X = c2.stateNode.containerInfo;
+      X$1 = c2.stateNode.containerInfo;
       Xj = true;
       Yj(a, b2, c2);
-      X = d2;
+      X$1 = d2;
       Xj = e;
       break;
     case 0:
@@ -5137,23 +5137,23 @@ function ck(a, b2) {
       a: for (; null !== h2; ) {
         switch (h2.tag) {
           case 5:
-            X = h2.stateNode;
+            X$1 = h2.stateNode;
             Xj = false;
             break a;
           case 3:
-            X = h2.stateNode.containerInfo;
+            X$1 = h2.stateNode.containerInfo;
             Xj = true;
             break a;
           case 4:
-            X = h2.stateNode.containerInfo;
+            X$1 = h2.stateNode.containerInfo;
             Xj = true;
             break a;
         }
         h2 = h2.return;
       }
-      if (null === X) throw Error(p$1(160));
+      if (null === X$1) throw Error(p$1(160));
       Zj(f2, g2, e);
-      X = null;
+      X$1 = null;
       Xj = false;
       var k2 = e.alternate;
       null !== k2 && (k2.return = null);
@@ -7018,15 +7018,6 @@ function Eirele() {
     }
   );
 }
-var GameRoundResult = /* @__PURE__ */ ((GameRoundResult2) => {
-  GameRoundResult2[GameRoundResult2["NoRoundToday"] = 0] = "NoRoundToday";
-  GameRoundResult2[GameRoundResult2["NotStarted"] = 1] = "NotStarted";
-  GameRoundResult2[GameRoundResult2["Failed"] = 2] = "Failed";
-  GameRoundResult2[GameRoundResult2["Fair"] = 3] = "Fair";
-  GameRoundResult2[GameRoundResult2["Good"] = 4] = "Good";
-  GameRoundResult2[GameRoundResult2["Excellent"] = 5] = "Excellent";
-  return GameRoundResult2;
-})(GameRoundResult || {});
 const __vite_glob_0_0 = "/eirele/assets/ireland-map-cork-Dql9xpN4.svg";
 const __vite_glob_0_1 = "/eirele/assets/ireland-map-donegal-DwCOxFc9.svg";
 const __vite_glob_0_2 = "data:image/svg+xml,%3c?xml%20version='1.0'%20encoding='UTF-8'%20standalone='no'?%3e%3c!--%20Created%20for%20MapSVG%20plugin:%20http://mapsvg.com%20--%3e%3csvg%20mapsvg:geoViewBox='-10.617532%2055.384216%20-5.429631%2051.419751'%20width='63.55003'%20height='89.190002'%20version='1.1'%20id='svg1'%20xmlns='http://www.w3.org/2000/svg'%20xmlns:svg='http://www.w3.org/2000/svg'%20xmlns:mapsvg='http://mapsvg.com'%3e%3cdefs%20id='defs1'%20/%3e%3cpath%20d='m%2054.99003,47.85%20-3.97,-0.43%20-0.5,-0.58%20-0.4,0.43%20-1.8,-2.11%20-0.44,-2.67%20-0.5,-0.06%200.59,-0.31%200.69,0.35%200.35,2.05%200.67,1.23%20h%200.42001%20l%200.13999,-0.47%20-0.86,-3.67%20-0.16,-1.86%200.44,-0.98%20-0.4,-1.45%20-1.82,-1.25%20-2.19,-0.33%20-1.19,-0.68%20-0.56,0.12%20-3.6,-2.07%20v%20-0.25%20l%201.43,0.49%201.46,-0.35%200.8,-0.72%201.7,0.31%201.08,-0.61%20-0.33,-0.16%200.1,-0.59%200.76,0.21%201.33,1.15%20-1.13,1.27%20-0.57,1.19%200.53,0.04%20-0.51,0.41%202.25,-1.25%200.93,-3.21%201.88,-1.78%200.72,-1.41%20-1.29,-0.49%20-0.46,-2.09%20-0.49,-0.7%20-0.16,0.23%20-0.5,-0.33%20-0.95,0.02%200.36,1.21%200.7,0.94%20-2.72,-0.39%20-1.8,0.41%20-0.59,-0.16%20v%20-0.98%20l%201.67,-0.88%201.11,-0.04%201.81,-0.82%200.98,0.55%200.95,0.04%201.53,-1.33%202.41,-0.51%20-0.05,-0.63%20-0.92,-0.34%20-0.43,-1.1%200.36,-1.47%200.68,-0.37%200.02,-0.51%20-0.88,-0.16%200.22,-0.65%200.49,0.04%20-0.08,-1.45%20-0.42001,-1.35%20-1.55,-1.29%20-0.73,-2.59%200.57,-0.98%20-1.69,0.51%20-1.94,-0.73%20-2.04,-0.12%20-1.65,-2.49%20-0.42,-1.35%20-1.76,-0.9%20-0.27,-1.04%20-0.65,-0.41%20-0.09,-2.24%20-2.92001,-0.61%20v%200%20l%20-1.91,0.94%20-0.49,-0.2%20-0.65,-1.04%20-2.14999,0.61%20-1.05001,1.53%20-0.08,1.02%20-0.49,0.82%200.04,3.31%20-1.38,0.78%20-0.46,0.92%20-2.41,0.71%20-1.18,1.84%20-1.83,0.69%20-0.27,-0.33%20-1.19,-0.14%200.15,-1%20-1.6,-1.14%20-1.12,-0.65%20-1.2,0.08%20-1.17,-0.53%200.22,2%20-1.08,0.14%20-0.89,1.71%20-1.43,-0.06%20-0.74,0.98%20-0.29,1.51%20-0.43,0.27%20-0.69,2.08%200.19,0.65%201.32999,0.53%20-0.18,0.71%201.77,2.31%202.05,0.33%202.86,1.82%20-0.12999,1.6%202.6,1.47%200.86,4.09%20-1.34,1.33%20-0.47,1.31%20-0.27,1.11%200.26,2.46%20-1.48,0.61%20-1.4,0.14%20-1.21,0.94%20-2.75,-0.37%20-0.73,1.08%200.23,0.94%20-0.48,0.78%200.01,1.74%20-2.38,2.5%200.02,0.76%20-1.8,2.22%20v%200%20l%20-1.32,1.33%20-0.44,1.52%20v%200%20l%20-0.16,0.45%20v%200%20l%20-0.5,1.72%20L%206.82,53.54%206.6,53.91%205.82,56.76%206.5,58.24%205.94,59.51%206.31,59.65%205.51,61.44%204.38,60.84%203.80001,61.17%203.33,60.96%202.22,61.68%201.72,62.42%202.08,63.14%200.92,64.07%202.26,65.24%202.11,67.63%201.37,68.6%200,69.55%203.52,72.7%204.68,72.35%204.39,73.17%203.53,73.03%20l%20-2.1,1.52%20-0.09,0.56%200.35,0.56%200.55,0.21%201.24,-0.33%205.28,2.18%20-0.37,0.58%20v%200%20l%201.32,1.48%201.27,-0.88%203.76,0.12%200.96,2.57%200.71,-0.08%200.37,0.54%200.06,0.89%200.8,-0.54%202.66,-0.39%200.44,0.31%20-0.57,4.12%202.92,2.04%201.62,0.7%202.64,-3.17%200.44,-3.54%20-0.21,-1.59%200.96,-0.7%201.28,0.54%201.62,1.98%201.8,1.13%202.3,0.68%201.27,-0.41%201.32,-1.24%201.06,0.08%200.27,-1.24%201.61,-0.02%201.37,-0.56%200.33,0.04%200.72,1.77%201.26,1.36%200.51,0.33%201.35,-0.21%201.2,0.72%202.52,-1.98%201.47,-0.47%20v%200%20l%20-1.05,-5.7%200.08,-3.58%200.53,-1.3%201.8,-0.89%20-1.53,-2.92%20-0.6,0.02%20-0.62,-0.54%20-0.29,0.23%20-1.23,-0.72%200.47,-1.46%20-0.15,-0.66%20-0.01,0.8%20-0.55,0.9%20-1.42,-1.01%200.82001,-0.99%20-1.52,1.42%20-0.69,0.08%20L%2040.99,63.51%2040,62.44%20l%20-0.94,-3.6%200.51,-0.45%201.76,0.43%200.14,-0.64%201.59,0.02%200.14,-0.86%20-3.16,-0.06%20-4.04,-0.78%201.34,-0.14%200.13,-0.47%203.49,0.49%200.06,-0.51%20-0.47,-0.7%20-1.28,-0.12%20-0.21,-0.55%20-0.88,-0.08%20-0.34,0.47%20-1.21,-0.68%200.73,-0.72%204.25,0.92%201.32,-0.84%202.58,-3.36%203.16,-1.71%202.29,0.04%200.77,0.66%20-0.08,0.84%200.68,1.7%201.53,1.56%200.71,0.25%202.32,-0.74%200.65,0.6%200.25,-0.14%20-0.28,-0.88%200.95,-1.72%200.17,-1.11%20-1.87,-2.21%20-0.64,-0.33%20z%20m%208.52,-20.2%20-0.88,0.88%200.28,0.67%20-0.33,0.59%20-1.56,-0.31%20-0.16,-0.47%20-1.07,-0.53%200.57,-1.74%200.76,0.57%201.38,-0.57%201.05,0.45%20z%20m%20-15.05,21.98%201.44,-0.2%200.15,0.27%20-4.54,2.96%20-1.15,1.13%20-0.44,1.09%20-0.76,-0.62%201.32,-2.17%200.92,-0.88%200.42,0.1%200.3,-0.51%20z'%20title='Dublin'%20id='IE-D'%20/%3e%3c/svg%3e";
@@ -7111,6 +7102,11 @@ function sanitizeString(str) {
 function getColorOfStatus(currentRoundStatus) {
   return currentRoundStatus === "won" ? "custom-light-green" : currentRoundStatus === "lost" ? "custom-light-red" : "custom-light-blue-2";
 }
+function fetchSuggestions(elements, value) {
+  return elements.filter(
+    (element) => sanitizeString(element).includes(sanitizeString(value))
+  );
+}
 const R_MAJOR = 6378137;
 const R_MINOR = 63567523142e-4;
 const RATIO = R_MINOR / R_MAJOR;
@@ -7135,6 +7131,19 @@ function latLonToMercator(lat, lon) {
   const x2 = mercatorX(lon);
   const y2 = mercatorY(lat);
   return { x: x2, y: y2 };
+}
+const earthRadiusMeters = 6371e3;
+function calculateDistanceInMeters(from, to) {
+  const phi1 = from.latitude * Math.PI / 180;
+  const phi2 = to.latitude * Math.PI / 180;
+  const deltaPhi = (to.latitude - from.latitude) * Math.PI / 180;
+  const deltaLambda = (to.longitude - from.longitude) * Math.PI / 180;
+  const a = Math.sin(deltaPhi / 2) * Math.sin(deltaPhi / 2) + Math.cos(phi1) * Math.cos(phi2) * Math.sin(deltaLambda / 2) * Math.sin(deltaLambda / 2);
+  const c2 = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  return earthRadiusMeters * c2;
+}
+function calculateDistanceInKm(from, to) {
+  return Math.floor(calculateDistanceInMeters(from, to) / 1e3);
 }
 const dirCodes15 = [
   "NW",
@@ -7669,6 +7678,15 @@ const defaultGameState = {
   currentRound: 1,
   rounds: /* @__PURE__ */ new Map()
 };
+var GameRoundResult = /* @__PURE__ */ ((GameRoundResult2) => {
+  GameRoundResult2[GameRoundResult2["NoRoundToday"] = 0] = "NoRoundToday";
+  GameRoundResult2[GameRoundResult2["NotStarted"] = 1] = "NotStarted";
+  GameRoundResult2[GameRoundResult2["Failed"] = 2] = "Failed";
+  GameRoundResult2[GameRoundResult2["Fair"] = 3] = "Fair";
+  GameRoundResult2[GameRoundResult2["Good"] = 4] = "Good";
+  GameRoundResult2[GameRoundResult2["Excellent"] = 5] = "Excellent";
+  return GameRoundResult2;
+})(GameRoundResult || {});
 const warn = (...args) => {
   if (console == null ? void 0 : console.warn) {
     if (isString(args[0])) args[0] = `react-i18next:: ${args[0]}`;
@@ -7893,6 +7911,3791 @@ const useTranslation = (ns, props = {}) => {
     }
   });
 };
+var Autosuggest$1 = {};
+var propTypes = { exports: {} };
+var ReactPropTypesSecret$1 = "SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED";
+var ReactPropTypesSecret_1 = ReactPropTypesSecret$1;
+var ReactPropTypesSecret = ReactPropTypesSecret_1;
+function emptyFunction() {
+}
+function emptyFunctionWithReset() {
+}
+emptyFunctionWithReset.resetWarningCache = emptyFunction;
+var factoryWithThrowingShims = function() {
+  function shim(props, propName, componentName, location, propFullName, secret) {
+    if (secret === ReactPropTypesSecret) {
+      return;
+    }
+    var err = new Error(
+      "Calling PropTypes validators directly is not supported by the `prop-types` package. Use PropTypes.checkPropTypes() to call them. Read more at http://fb.me/use-check-prop-types"
+    );
+    err.name = "Invariant Violation";
+    throw err;
+  }
+  shim.isRequired = shim;
+  function getShim() {
+    return shim;
+  }
+  var ReactPropTypes = {
+    array: shim,
+    bigint: shim,
+    bool: shim,
+    func: shim,
+    number: shim,
+    object: shim,
+    string: shim,
+    symbol: shim,
+    any: shim,
+    arrayOf: getShim,
+    element: shim,
+    elementType: shim,
+    instanceOf: getShim,
+    node: shim,
+    objectOf: getShim,
+    oneOf: getShim,
+    oneOfType: getShim,
+    shape: getShim,
+    exact: getShim,
+    checkPropTypes: emptyFunctionWithReset,
+    resetWarningCache: emptyFunction
+  };
+  ReactPropTypes.PropTypes = ReactPropTypes;
+  return ReactPropTypes;
+};
+{
+  propTypes.exports = factoryWithThrowingShims();
+}
+var propTypesExports = propTypes.exports;
+function shallowEqualArrays(arrA, arrB) {
+  if (arrA === arrB) {
+    return true;
+  }
+  if (!arrA || !arrB) {
+    return false;
+  }
+  var len = arrA.length;
+  if (arrB.length !== len) {
+    return false;
+  }
+  for (var i = 0; i < len; i++) {
+    if (arrA[i] !== arrB[i]) {
+      return false;
+    }
+  }
+  return true;
+}
+var arrays = shallowEqualArrays;
+var Autowhatever = {};
+var _slicedToArray = /* @__PURE__ */ function() {
+  function sliceIterator(arr, i) {
+    var _arr = [];
+    var _n = true;
+    var _d = false;
+    var _e = void 0;
+    try {
+      for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+        _arr.push(_s.value);
+        if (i && _arr.length === i) break;
+      }
+    } catch (err) {
+      _d = true;
+      _e = err;
+    } finally {
+      try {
+        if (!_n && _i["return"]) _i["return"]();
+      } finally {
+        if (_d) throw _e;
+      }
+    }
+    return _arr;
+  }
+  return function(arr, i) {
+    if (Array.isArray(arr)) {
+      return arr;
+    } else if (Symbol.iterator in Object(arr)) {
+      return sliceIterator(arr, i);
+    } else {
+      throw new TypeError("Invalid attempt to destructure non-iterable instance");
+    }
+  };
+}();
+var dist$2 = function(_ref) {
+  var data = _ref.data;
+  var multiSection = _ref.multiSection;
+  function nextNonEmptySectionIndex(sectionIndex) {
+    if (sectionIndex === null) {
+      sectionIndex = 0;
+    } else {
+      sectionIndex++;
+    }
+    while (sectionIndex < data.length && data[sectionIndex] === 0) {
+      sectionIndex++;
+    }
+    return sectionIndex === data.length ? null : sectionIndex;
+  }
+  function prevNonEmptySectionIndex(sectionIndex) {
+    if (sectionIndex === null) {
+      sectionIndex = data.length - 1;
+    } else {
+      sectionIndex--;
+    }
+    while (sectionIndex >= 0 && data[sectionIndex] === 0) {
+      sectionIndex--;
+    }
+    return sectionIndex === -1 ? null : sectionIndex;
+  }
+  function next(position) {
+    var _position = _slicedToArray(position, 2);
+    var sectionIndex = _position[0];
+    var itemIndex = _position[1];
+    if (multiSection) {
+      if (itemIndex === null || itemIndex === data[sectionIndex] - 1) {
+        sectionIndex = nextNonEmptySectionIndex(sectionIndex);
+        if (sectionIndex === null) {
+          return [null, null];
+        }
+        return [sectionIndex, 0];
+      }
+      return [sectionIndex, itemIndex + 1];
+    }
+    if (data === 0 || itemIndex === data - 1) {
+      return [null, null];
+    }
+    if (itemIndex === null) {
+      return [null, 0];
+    }
+    return [null, itemIndex + 1];
+  }
+  function prev(position) {
+    var _position2 = _slicedToArray(position, 2);
+    var sectionIndex = _position2[0];
+    var itemIndex = _position2[1];
+    if (multiSection) {
+      if (itemIndex === null || itemIndex === 0) {
+        sectionIndex = prevNonEmptySectionIndex(sectionIndex);
+        if (sectionIndex === null) {
+          return [null, null];
+        }
+        return [sectionIndex, data[sectionIndex] - 1];
+      }
+      return [sectionIndex, itemIndex - 1];
+    }
+    if (data === 0 || itemIndex === 0) {
+      return [null, null];
+    }
+    if (itemIndex === null) {
+      return [null, data - 1];
+    }
+    return [null, itemIndex - 1];
+  }
+  function isLast(position) {
+    return next(position)[1] === null;
+  }
+  return {
+    next,
+    prev,
+    isLast
+  };
+};
+var dist$1 = { exports: {} };
+var propIsEnumerable = Object.prototype.propertyIsEnumerable;
+function ToObject(val) {
+  if (val == null) {
+    throw new TypeError("Object.assign cannot be called with null or undefined");
+  }
+  return Object(val);
+}
+function ownEnumerableKeys(obj) {
+  var keys = Object.getOwnPropertyNames(obj);
+  if (Object.getOwnPropertySymbols) {
+    keys = keys.concat(Object.getOwnPropertySymbols(obj));
+  }
+  return keys.filter(function(key) {
+    return propIsEnumerable.call(obj, key);
+  });
+}
+var objectAssign = Object.assign || function(target, source) {
+  var from;
+  var keys;
+  var to = ToObject(target);
+  for (var s = 1; s < arguments.length; s++) {
+    from = arguments[s];
+    keys = ownEnumerableKeys(Object(from));
+    for (var i = 0; i < keys.length; i++) {
+      to[keys[i]] = from[keys[i]];
+    }
+  }
+  return to;
+};
+(function(module2, exports) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  var _slicedToArray2 = /* @__PURE__ */ function() {
+    function sliceIterator(arr, i) {
+      var _arr = [];
+      var _n = true;
+      var _d = false;
+      var _e = void 0;
+      try {
+        for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+          _arr.push(_s.value);
+          if (i && _arr.length === i) break;
+        }
+      } catch (err) {
+        _d = true;
+        _e = err;
+      } finally {
+        try {
+          if (!_n && _i["return"]) _i["return"]();
+        } finally {
+          if (_d) throw _e;
+        }
+      }
+      return _arr;
+    }
+    return function(arr, i) {
+      if (Array.isArray(arr)) {
+        return arr;
+      } else if (Symbol.iterator in Object(arr)) {
+        return sliceIterator(arr, i);
+      } else {
+        throw new TypeError("Invalid attempt to destructure non-iterable instance");
+      }
+    };
+  }();
+  function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : { "default": obj };
+  }
+  function _toConsumableArray(arr) {
+    if (Array.isArray(arr)) {
+      for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) arr2[i] = arr[i];
+      return arr2;
+    } else {
+      return Array.from(arr);
+    }
+  }
+  var _objectAssign = objectAssign;
+  var _objectAssign2 = _interopRequireDefault(_objectAssign);
+  var truthy = function truthy2(x2) {
+    return x2;
+  };
+  exports["default"] = function(input) {
+    var _ref = Array.isArray(input) && input.length === 2 ? input : [input, null];
+    var _ref2 = _slicedToArray2(_ref, 2);
+    var theme2 = _ref2[0];
+    var classNameDecorator = _ref2[1];
+    return function(key) {
+      for (var _len = arguments.length, names = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+        names[_key - 1] = arguments[_key];
+      }
+      var styles = names.map(function(name) {
+        return theme2[name];
+      }).filter(truthy);
+      return typeof styles[0] === "string" || typeof classNameDecorator === "function" ? { key, className: classNameDecorator ? classNameDecorator.apply(void 0, _toConsumableArray(styles)) : styles.join(" ") } : { key, style: _objectAssign2["default"].apply(void 0, [{}].concat(_toConsumableArray(styles))) };
+    };
+  };
+  module2.exports = exports["default"];
+})(dist$1, dist$1.exports);
+var distExports = dist$1.exports;
+var SectionTitle = {};
+var compareObjects = {};
+(function(exports) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports["default"] = compareObjects2;
+  function _typeof(obj) {
+    "@babel/helpers - typeof";
+    if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+      _typeof = function _typeof2(obj2) {
+        return typeof obj2;
+      };
+    } else {
+      _typeof = function _typeof2(obj2) {
+        return obj2 && typeof Symbol === "function" && obj2.constructor === Symbol && obj2 !== Symbol.prototype ? "symbol" : typeof obj2;
+      };
+    }
+    return _typeof(obj);
+  }
+  function compareObjects2(objA, objB) {
+    var keys = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : [];
+    if (objA === objB) {
+      return false;
+    }
+    var aKeys = Object.keys(objA);
+    var bKeys = Object.keys(objB);
+    if (aKeys.length !== bKeys.length) {
+      return true;
+    }
+    var keysMap = {};
+    var i, len;
+    for (i = 0, len = keys.length; i < len; i++) {
+      keysMap[keys[i]] = true;
+    }
+    for (i = 0, len = aKeys.length; i < len; i++) {
+      var key = aKeys[i];
+      var aValue = objA[key];
+      var bValue = objB[key];
+      if (aValue === bValue) {
+        continue;
+      }
+      if (!keysMap[key] || aValue === null || bValue === null || _typeof(aValue) !== "object" || _typeof(bValue) !== "object") {
+        return true;
+      }
+      var aValueKeys = Object.keys(aValue);
+      var bValueKeys = Object.keys(bValue);
+      if (aValueKeys.length !== bValueKeys.length) {
+        return true;
+      }
+      for (var n2 = 0, length = aValueKeys.length; n2 < length; n2++) {
+        var aValueKey = aValueKeys[n2];
+        if (aValue[aValueKey] !== bValue[aValueKey]) {
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+})(compareObjects);
+(function(exports) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports["default"] = void 0;
+  var _react = _interopRequireWildcard(reactExports);
+  var _propTypes = _interopRequireDefault(propTypesExports);
+  var _compareObjects = _interopRequireDefault(compareObjects);
+  function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : { "default": obj };
+  }
+  function _getRequireWildcardCache() {
+    if (typeof WeakMap !== "function") return null;
+    var cache = /* @__PURE__ */ new WeakMap();
+    _getRequireWildcardCache = function _getRequireWildcardCache2() {
+      return cache;
+    };
+    return cache;
+  }
+  function _interopRequireWildcard(obj) {
+    if (obj && obj.__esModule) {
+      return obj;
+    }
+    if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") {
+      return { "default": obj };
+    }
+    var cache = _getRequireWildcardCache();
+    if (cache && cache.has(obj)) {
+      return cache.get(obj);
+    }
+    var newObj = {};
+    var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
+    for (var key in obj) {
+      if (Object.prototype.hasOwnProperty.call(obj, key)) {
+        var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
+        if (desc && (desc.get || desc.set)) {
+          Object.defineProperty(newObj, key, desc);
+        } else {
+          newObj[key] = obj[key];
+        }
+      }
+    }
+    newObj["default"] = obj;
+    if (cache) {
+      cache.set(obj, newObj);
+    }
+    return newObj;
+  }
+  function _typeof(obj) {
+    "@babel/helpers - typeof";
+    if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+      _typeof = function _typeof2(obj2) {
+        return typeof obj2;
+      };
+    } else {
+      _typeof = function _typeof2(obj2) {
+        return obj2 && typeof Symbol === "function" && obj2.constructor === Symbol && obj2 !== Symbol.prototype ? "symbol" : typeof obj2;
+      };
+    }
+    return _typeof(obj);
+  }
+  function _classCallCheck(instance2, Constructor) {
+    if (!(instance2 instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+  function _defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];
+      descriptor.enumerable = descriptor.enumerable || false;
+      descriptor.configurable = true;
+      if ("value" in descriptor) descriptor.writable = true;
+      Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }
+  function _createClass(Constructor, protoProps, staticProps) {
+    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+    return Constructor;
+  }
+  function _createSuper(Derived) {
+    return function() {
+      var Super = _getPrototypeOf(Derived), result;
+      if (_isNativeReflectConstruct()) {
+        var NewTarget = _getPrototypeOf(this).constructor;
+        result = Reflect.construct(Super, arguments, NewTarget);
+      } else {
+        result = Super.apply(this, arguments);
+      }
+      return _possibleConstructorReturn(this, result);
+    };
+  }
+  function _possibleConstructorReturn(self2, call) {
+    if (call && (_typeof(call) === "object" || typeof call === "function")) {
+      return call;
+    }
+    return _assertThisInitialized(self2);
+  }
+  function _assertThisInitialized(self2) {
+    if (self2 === void 0) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+    return self2;
+  }
+  function _isNativeReflectConstruct() {
+    if (typeof Reflect === "undefined" || !Reflect.construct) return false;
+    if (Reflect.construct.sham) return false;
+    if (typeof Proxy === "function") return true;
+    try {
+      Date.prototype.toString.call(Reflect.construct(Date, [], function() {
+      }));
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
+  function _getPrototypeOf(o) {
+    _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf2(o2) {
+      return o2.__proto__ || Object.getPrototypeOf(o2);
+    };
+    return _getPrototypeOf(o);
+  }
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function");
+    }
+    subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } });
+    if (superClass) _setPrototypeOf(subClass, superClass);
+  }
+  function _setPrototypeOf(o, p2) {
+    _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf2(o2, p3) {
+      o2.__proto__ = p3;
+      return o2;
+    };
+    return _setPrototypeOf(o, p2);
+  }
+  function _defineProperty(obj, key, value) {
+    if (key in obj) {
+      Object.defineProperty(obj, key, { value, enumerable: true, configurable: true, writable: true });
+    } else {
+      obj[key] = value;
+    }
+    return obj;
+  }
+  var SectionTitle2 = /* @__PURE__ */ function(_Component) {
+    _inherits(SectionTitle3, _Component);
+    var _super = _createSuper(SectionTitle3);
+    function SectionTitle3() {
+      _classCallCheck(this, SectionTitle3);
+      return _super.apply(this, arguments);
+    }
+    _createClass(SectionTitle3, [{
+      key: "shouldComponentUpdate",
+      value: function shouldComponentUpdate(nextProps) {
+        return (0, _compareObjects["default"])(nextProps, this.props);
+      }
+    }, {
+      key: "render",
+      value: function render() {
+        var _this$props = this.props, section = _this$props.section, renderSectionTitle = _this$props.renderSectionTitle, theme2 = _this$props.theme, sectionKeyPrefix = _this$props.sectionKeyPrefix;
+        var sectionTitle = renderSectionTitle(section);
+        if (!sectionTitle) {
+          return null;
+        }
+        return /* @__PURE__ */ _react["default"].createElement("div", theme2("".concat(sectionKeyPrefix, "title"), "sectionTitle"), sectionTitle);
+      }
+    }]);
+    return SectionTitle3;
+  }(_react.Component);
+  exports["default"] = SectionTitle2;
+  _defineProperty(SectionTitle2, "propTypes", {
+    section: _propTypes["default"].any.isRequired,
+    renderSectionTitle: _propTypes["default"].func.isRequired,
+    theme: _propTypes["default"].func.isRequired,
+    sectionKeyPrefix: _propTypes["default"].string.isRequired
+  });
+})(SectionTitle);
+var ItemList = {};
+var Item = {};
+(function(exports) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports["default"] = void 0;
+  var _react = _interopRequireWildcard(reactExports);
+  var _propTypes = _interopRequireDefault(propTypesExports);
+  var _compareObjects = _interopRequireDefault(compareObjects);
+  function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : { "default": obj };
+  }
+  function _getRequireWildcardCache() {
+    if (typeof WeakMap !== "function") return null;
+    var cache = /* @__PURE__ */ new WeakMap();
+    _getRequireWildcardCache = function _getRequireWildcardCache2() {
+      return cache;
+    };
+    return cache;
+  }
+  function _interopRequireWildcard(obj) {
+    if (obj && obj.__esModule) {
+      return obj;
+    }
+    if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") {
+      return { "default": obj };
+    }
+    var cache = _getRequireWildcardCache();
+    if (cache && cache.has(obj)) {
+      return cache.get(obj);
+    }
+    var newObj = {};
+    var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
+    for (var key in obj) {
+      if (Object.prototype.hasOwnProperty.call(obj, key)) {
+        var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
+        if (desc && (desc.get || desc.set)) {
+          Object.defineProperty(newObj, key, desc);
+        } else {
+          newObj[key] = obj[key];
+        }
+      }
+    }
+    newObj["default"] = obj;
+    if (cache) {
+      cache.set(obj, newObj);
+    }
+    return newObj;
+  }
+  function _typeof(obj) {
+    "@babel/helpers - typeof";
+    if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+      _typeof = function _typeof2(obj2) {
+        return typeof obj2;
+      };
+    } else {
+      _typeof = function _typeof2(obj2) {
+        return obj2 && typeof Symbol === "function" && obj2.constructor === Symbol && obj2 !== Symbol.prototype ? "symbol" : typeof obj2;
+      };
+    }
+    return _typeof(obj);
+  }
+  function _extends() {
+    _extends = Object.assign || function(target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+          }
+        }
+      }
+      return target;
+    };
+    return _extends.apply(this, arguments);
+  }
+  function ownKeys(object, enumerableOnly) {
+    var keys = Object.keys(object);
+    if (Object.getOwnPropertySymbols) {
+      var symbols = Object.getOwnPropertySymbols(object);
+      if (enumerableOnly) symbols = symbols.filter(function(sym) {
+        return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+      });
+      keys.push.apply(keys, symbols);
+    }
+    return keys;
+  }
+  function _objectSpread(target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i] != null ? arguments[i] : {};
+      if (i % 2) {
+        ownKeys(Object(source), true).forEach(function(key) {
+          _defineProperty(target, key, source[key]);
+        });
+      } else if (Object.getOwnPropertyDescriptors) {
+        Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+      } else {
+        ownKeys(Object(source)).forEach(function(key) {
+          Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+        });
+      }
+    }
+    return target;
+  }
+  function _objectWithoutProperties(source, excluded) {
+    if (source == null) return {};
+    var target = _objectWithoutPropertiesLoose(source, excluded);
+    var key, i;
+    if (Object.getOwnPropertySymbols) {
+      var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
+      for (i = 0; i < sourceSymbolKeys.length; i++) {
+        key = sourceSymbolKeys[i];
+        if (excluded.indexOf(key) >= 0) continue;
+        if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
+        target[key] = source[key];
+      }
+    }
+    return target;
+  }
+  function _objectWithoutPropertiesLoose(source, excluded) {
+    if (source == null) return {};
+    var target = {};
+    var sourceKeys = Object.keys(source);
+    var key, i;
+    for (i = 0; i < sourceKeys.length; i++) {
+      key = sourceKeys[i];
+      if (excluded.indexOf(key) >= 0) continue;
+      target[key] = source[key];
+    }
+    return target;
+  }
+  function _classCallCheck(instance2, Constructor) {
+    if (!(instance2 instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+  function _defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];
+      descriptor.enumerable = descriptor.enumerable || false;
+      descriptor.configurable = true;
+      if ("value" in descriptor) descriptor.writable = true;
+      Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }
+  function _createClass(Constructor, protoProps, staticProps) {
+    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+    return Constructor;
+  }
+  function _createSuper(Derived) {
+    return function() {
+      var Super = _getPrototypeOf(Derived), result;
+      if (_isNativeReflectConstruct()) {
+        var NewTarget = _getPrototypeOf(this).constructor;
+        result = Reflect.construct(Super, arguments, NewTarget);
+      } else {
+        result = Super.apply(this, arguments);
+      }
+      return _possibleConstructorReturn(this, result);
+    };
+  }
+  function _possibleConstructorReturn(self2, call) {
+    if (call && (_typeof(call) === "object" || typeof call === "function")) {
+      return call;
+    }
+    return _assertThisInitialized(self2);
+  }
+  function _assertThisInitialized(self2) {
+    if (self2 === void 0) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+    return self2;
+  }
+  function _isNativeReflectConstruct() {
+    if (typeof Reflect === "undefined" || !Reflect.construct) return false;
+    if (Reflect.construct.sham) return false;
+    if (typeof Proxy === "function") return true;
+    try {
+      Date.prototype.toString.call(Reflect.construct(Date, [], function() {
+      }));
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
+  function _getPrototypeOf(o) {
+    _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf2(o2) {
+      return o2.__proto__ || Object.getPrototypeOf(o2);
+    };
+    return _getPrototypeOf(o);
+  }
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function");
+    }
+    subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } });
+    if (superClass) _setPrototypeOf(subClass, superClass);
+  }
+  function _setPrototypeOf(o, p2) {
+    _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf2(o2, p3) {
+      o2.__proto__ = p3;
+      return o2;
+    };
+    return _setPrototypeOf(o, p2);
+  }
+  function _defineProperty(obj, key, value) {
+    if (key in obj) {
+      Object.defineProperty(obj, key, { value, enumerable: true, configurable: true, writable: true });
+    } else {
+      obj[key] = value;
+    }
+    return obj;
+  }
+  var Item2 = /* @__PURE__ */ function(_Component) {
+    _inherits(Item3, _Component);
+    var _super = _createSuper(Item3);
+    function Item3() {
+      var _this;
+      _classCallCheck(this, Item3);
+      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+        args[_key] = arguments[_key];
+      }
+      _this = _super.call.apply(_super, [this].concat(args));
+      _defineProperty(_assertThisInitialized(_this), "storeItemReference", function(item) {
+        if (item !== null) {
+          _this.item = item;
+        }
+      });
+      _defineProperty(_assertThisInitialized(_this), "onMouseEnter", function(event) {
+        var _this$props = _this.props, sectionIndex = _this$props.sectionIndex, itemIndex = _this$props.itemIndex;
+        _this.props.onMouseEnter(event, {
+          sectionIndex,
+          itemIndex
+        });
+      });
+      _defineProperty(_assertThisInitialized(_this), "onMouseLeave", function(event) {
+        var _this$props2 = _this.props, sectionIndex = _this$props2.sectionIndex, itemIndex = _this$props2.itemIndex;
+        _this.props.onMouseLeave(event, {
+          sectionIndex,
+          itemIndex
+        });
+      });
+      _defineProperty(_assertThisInitialized(_this), "onMouseDown", function(event) {
+        var _this$props3 = _this.props, sectionIndex = _this$props3.sectionIndex, itemIndex = _this$props3.itemIndex;
+        _this.props.onMouseDown(event, {
+          sectionIndex,
+          itemIndex
+        });
+      });
+      _defineProperty(_assertThisInitialized(_this), "onClick", function(event) {
+        var _this$props4 = _this.props, sectionIndex = _this$props4.sectionIndex, itemIndex = _this$props4.itemIndex;
+        _this.props.onClick(event, {
+          sectionIndex,
+          itemIndex
+        });
+      });
+      return _this;
+    }
+    _createClass(Item3, [{
+      key: "shouldComponentUpdate",
+      value: function shouldComponentUpdate(nextProps) {
+        return (0, _compareObjects["default"])(nextProps, this.props, ["renderItemData"]);
+      }
+    }, {
+      key: "render",
+      value: function render() {
+        var _this$props5 = this.props, isHighlighted = _this$props5.isHighlighted, item = _this$props5.item, renderItem = _this$props5.renderItem, renderItemData = _this$props5.renderItemData, restProps = _objectWithoutProperties(_this$props5, ["isHighlighted", "item", "renderItem", "renderItemData"]);
+        delete restProps.sectionIndex;
+        delete restProps.itemIndex;
+        if (typeof restProps.onMouseEnter === "function") {
+          restProps.onMouseEnter = this.onMouseEnter;
+        }
+        if (typeof restProps.onMouseLeave === "function") {
+          restProps.onMouseLeave = this.onMouseLeave;
+        }
+        if (typeof restProps.onMouseDown === "function") {
+          restProps.onMouseDown = this.onMouseDown;
+        }
+        if (typeof restProps.onClick === "function") {
+          restProps.onClick = this.onClick;
+        }
+        return /* @__PURE__ */ _react["default"].createElement("li", _extends({
+          role: "option"
+        }, restProps, {
+          ref: this.storeItemReference
+        }), renderItem(item, _objectSpread({
+          isHighlighted
+        }, renderItemData)));
+      }
+    }]);
+    return Item3;
+  }(_react.Component);
+  exports["default"] = Item2;
+  _defineProperty(Item2, "propTypes", {
+    sectionIndex: _propTypes["default"].number,
+    isHighlighted: _propTypes["default"].bool.isRequired,
+    itemIndex: _propTypes["default"].number.isRequired,
+    item: _propTypes["default"].any.isRequired,
+    renderItem: _propTypes["default"].func.isRequired,
+    renderItemData: _propTypes["default"].object.isRequired,
+    onMouseEnter: _propTypes["default"].func,
+    onMouseLeave: _propTypes["default"].func,
+    onMouseDown: _propTypes["default"].func,
+    onClick: _propTypes["default"].func
+  });
+})(Item);
+(function(exports) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports["default"] = void 0;
+  var _react = _interopRequireWildcard(reactExports);
+  var _propTypes = _interopRequireDefault(propTypesExports);
+  var _Item = _interopRequireDefault(Item);
+  var _compareObjects = _interopRequireDefault(compareObjects);
+  function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : { "default": obj };
+  }
+  function _getRequireWildcardCache() {
+    if (typeof WeakMap !== "function") return null;
+    var cache = /* @__PURE__ */ new WeakMap();
+    _getRequireWildcardCache = function _getRequireWildcardCache2() {
+      return cache;
+    };
+    return cache;
+  }
+  function _interopRequireWildcard(obj) {
+    if (obj && obj.__esModule) {
+      return obj;
+    }
+    if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") {
+      return { "default": obj };
+    }
+    var cache = _getRequireWildcardCache();
+    if (cache && cache.has(obj)) {
+      return cache.get(obj);
+    }
+    var newObj = {};
+    var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
+    for (var key in obj) {
+      if (Object.prototype.hasOwnProperty.call(obj, key)) {
+        var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
+        if (desc && (desc.get || desc.set)) {
+          Object.defineProperty(newObj, key, desc);
+        } else {
+          newObj[key] = obj[key];
+        }
+      }
+    }
+    newObj["default"] = obj;
+    if (cache) {
+      cache.set(obj, newObj);
+    }
+    return newObj;
+  }
+  function _typeof(obj) {
+    "@babel/helpers - typeof";
+    if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+      _typeof = function _typeof2(obj2) {
+        return typeof obj2;
+      };
+    } else {
+      _typeof = function _typeof2(obj2) {
+        return obj2 && typeof Symbol === "function" && obj2.constructor === Symbol && obj2 !== Symbol.prototype ? "symbol" : typeof obj2;
+      };
+    }
+    return _typeof(obj);
+  }
+  function _extends() {
+    _extends = Object.assign || function(target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+          }
+        }
+      }
+      return target;
+    };
+    return _extends.apply(this, arguments);
+  }
+  function ownKeys(object, enumerableOnly) {
+    var keys = Object.keys(object);
+    if (Object.getOwnPropertySymbols) {
+      var symbols = Object.getOwnPropertySymbols(object);
+      if (enumerableOnly) symbols = symbols.filter(function(sym) {
+        return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+      });
+      keys.push.apply(keys, symbols);
+    }
+    return keys;
+  }
+  function _objectSpread(target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i] != null ? arguments[i] : {};
+      if (i % 2) {
+        ownKeys(Object(source), true).forEach(function(key) {
+          _defineProperty(target, key, source[key]);
+        });
+      } else if (Object.getOwnPropertyDescriptors) {
+        Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+      } else {
+        ownKeys(Object(source)).forEach(function(key) {
+          Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+        });
+      }
+    }
+    return target;
+  }
+  function _classCallCheck(instance2, Constructor) {
+    if (!(instance2 instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+  function _defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];
+      descriptor.enumerable = descriptor.enumerable || false;
+      descriptor.configurable = true;
+      if ("value" in descriptor) descriptor.writable = true;
+      Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }
+  function _createClass(Constructor, protoProps, staticProps) {
+    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+    return Constructor;
+  }
+  function _createSuper(Derived) {
+    return function() {
+      var Super = _getPrototypeOf(Derived), result;
+      if (_isNativeReflectConstruct()) {
+        var NewTarget = _getPrototypeOf(this).constructor;
+        result = Reflect.construct(Super, arguments, NewTarget);
+      } else {
+        result = Super.apply(this, arguments);
+      }
+      return _possibleConstructorReturn(this, result);
+    };
+  }
+  function _possibleConstructorReturn(self2, call) {
+    if (call && (_typeof(call) === "object" || typeof call === "function")) {
+      return call;
+    }
+    return _assertThisInitialized(self2);
+  }
+  function _assertThisInitialized(self2) {
+    if (self2 === void 0) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+    return self2;
+  }
+  function _isNativeReflectConstruct() {
+    if (typeof Reflect === "undefined" || !Reflect.construct) return false;
+    if (Reflect.construct.sham) return false;
+    if (typeof Proxy === "function") return true;
+    try {
+      Date.prototype.toString.call(Reflect.construct(Date, [], function() {
+      }));
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
+  function _getPrototypeOf(o) {
+    _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf2(o2) {
+      return o2.__proto__ || Object.getPrototypeOf(o2);
+    };
+    return _getPrototypeOf(o);
+  }
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function");
+    }
+    subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } });
+    if (superClass) _setPrototypeOf(subClass, superClass);
+  }
+  function _setPrototypeOf(o, p2) {
+    _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf2(o2, p3) {
+      o2.__proto__ = p3;
+      return o2;
+    };
+    return _setPrototypeOf(o, p2);
+  }
+  function _defineProperty(obj, key, value) {
+    if (key in obj) {
+      Object.defineProperty(obj, key, { value, enumerable: true, configurable: true, writable: true });
+    } else {
+      obj[key] = value;
+    }
+    return obj;
+  }
+  var ItemsList = /* @__PURE__ */ function(_Component) {
+    _inherits(ItemsList2, _Component);
+    var _super = _createSuper(ItemsList2);
+    function ItemsList2() {
+      var _this;
+      _classCallCheck(this, ItemsList2);
+      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+        args[_key] = arguments[_key];
+      }
+      _this = _super.call.apply(_super, [this].concat(args));
+      _defineProperty(_assertThisInitialized(_this), "storeHighlightedItemReference", function(highlightedItem) {
+        _this.props.onHighlightedItemChange(highlightedItem === null ? null : highlightedItem.item);
+      });
+      return _this;
+    }
+    _createClass(ItemsList2, [{
+      key: "shouldComponentUpdate",
+      value: function shouldComponentUpdate(nextProps) {
+        return (0, _compareObjects["default"])(nextProps, this.props, ["itemProps"]);
+      }
+    }, {
+      key: "render",
+      value: function render() {
+        var _this2 = this;
+        var _this$props = this.props, items = _this$props.items, itemProps = _this$props.itemProps, renderItem = _this$props.renderItem, renderItemData = _this$props.renderItemData, sectionIndex = _this$props.sectionIndex, highlightedItemIndex = _this$props.highlightedItemIndex, getItemId = _this$props.getItemId, theme2 = _this$props.theme, keyPrefix = _this$props.keyPrefix;
+        var sectionPrefix = sectionIndex === null ? keyPrefix : "".concat(keyPrefix, "section-").concat(sectionIndex, "-");
+        var isItemPropsFunction = typeof itemProps === "function";
+        return /* @__PURE__ */ _react["default"].createElement("ul", _extends({
+          role: "listbox"
+        }, theme2("".concat(sectionPrefix, "items-list"), "itemsList")), items.map(function(item, itemIndex) {
+          var isFirst = itemIndex === 0;
+          var isHighlighted = itemIndex === highlightedItemIndex;
+          var itemKey = "".concat(sectionPrefix, "item-").concat(itemIndex);
+          var itemPropsObj = isItemPropsFunction ? itemProps({
+            sectionIndex,
+            itemIndex
+          }) : itemProps;
+          var allItemProps = _objectSpread({
+            id: getItemId(sectionIndex, itemIndex),
+            "aria-selected": isHighlighted
+          }, theme2(itemKey, "item", isFirst && "itemFirst", isHighlighted && "itemHighlighted"), {}, itemPropsObj);
+          if (isHighlighted) {
+            allItemProps.ref = _this2.storeHighlightedItemReference;
+          }
+          return /* @__PURE__ */ _react["default"].createElement(_Item["default"], _extends({}, allItemProps, {
+            sectionIndex,
+            isHighlighted,
+            itemIndex,
+            item,
+            renderItem,
+            renderItemData
+          }));
+        }));
+      }
+    }]);
+    return ItemsList2;
+  }(_react.Component);
+  exports["default"] = ItemsList;
+  _defineProperty(ItemsList, "propTypes", {
+    items: _propTypes["default"].array.isRequired,
+    itemProps: _propTypes["default"].oneOfType([_propTypes["default"].object, _propTypes["default"].func]),
+    renderItem: _propTypes["default"].func.isRequired,
+    renderItemData: _propTypes["default"].object.isRequired,
+    sectionIndex: _propTypes["default"].number,
+    highlightedItemIndex: _propTypes["default"].number,
+    onHighlightedItemChange: _propTypes["default"].func.isRequired,
+    getItemId: _propTypes["default"].func.isRequired,
+    theme: _propTypes["default"].func.isRequired,
+    keyPrefix: _propTypes["default"].string.isRequired
+  });
+  _defineProperty(ItemsList, "defaultProps", {
+    sectionIndex: null
+  });
+})(ItemList);
+(function(exports) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports["default"] = void 0;
+  var _react = _interopRequireWildcard(reactExports);
+  var _propTypes = _interopRequireDefault(propTypesExports);
+  var _sectionIterator = _interopRequireDefault(dist$2);
+  var _reactThemeable = _interopRequireDefault(distExports);
+  var _SectionTitle = _interopRequireDefault(SectionTitle);
+  var _ItemList = _interopRequireDefault(ItemList);
+  function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : { "default": obj };
+  }
+  function _getRequireWildcardCache() {
+    if (typeof WeakMap !== "function") return null;
+    var cache = /* @__PURE__ */ new WeakMap();
+    _getRequireWildcardCache = function _getRequireWildcardCache2() {
+      return cache;
+    };
+    return cache;
+  }
+  function _interopRequireWildcard(obj) {
+    if (obj && obj.__esModule) {
+      return obj;
+    }
+    if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") {
+      return { "default": obj };
+    }
+    var cache = _getRequireWildcardCache();
+    if (cache && cache.has(obj)) {
+      return cache.get(obj);
+    }
+    var newObj = {};
+    var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
+    for (var key in obj) {
+      if (Object.prototype.hasOwnProperty.call(obj, key)) {
+        var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
+        if (desc && (desc.get || desc.set)) {
+          Object.defineProperty(newObj, key, desc);
+        } else {
+          newObj[key] = obj[key];
+        }
+      }
+    }
+    newObj["default"] = obj;
+    if (cache) {
+      cache.set(obj, newObj);
+    }
+    return newObj;
+  }
+  function ownKeys(object, enumerableOnly) {
+    var keys = Object.keys(object);
+    if (Object.getOwnPropertySymbols) {
+      var symbols = Object.getOwnPropertySymbols(object);
+      if (enumerableOnly) symbols = symbols.filter(function(sym) {
+        return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+      });
+      keys.push.apply(keys, symbols);
+    }
+    return keys;
+  }
+  function _objectSpread(target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i] != null ? arguments[i] : {};
+      if (i % 2) {
+        ownKeys(Object(source), true).forEach(function(key) {
+          _defineProperty(target, key, source[key]);
+        });
+      } else if (Object.getOwnPropertyDescriptors) {
+        Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+      } else {
+        ownKeys(Object(source)).forEach(function(key) {
+          Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+        });
+      }
+    }
+    return target;
+  }
+  function _slicedToArray2(arr, i) {
+    return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();
+  }
+  function _nonIterableRest() {
+    throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+  }
+  function _unsupportedIterableToArray(o, minLen) {
+    if (!o) return;
+    if (typeof o === "string") return _arrayLikeToArray(o, minLen);
+    var n2 = Object.prototype.toString.call(o).slice(8, -1);
+    if (n2 === "Object" && o.constructor) n2 = o.constructor.name;
+    if (n2 === "Map" || n2 === "Set") return Array.from(n2);
+    if (n2 === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n2)) return _arrayLikeToArray(o, minLen);
+  }
+  function _arrayLikeToArray(arr, len) {
+    if (len == null || len > arr.length) len = arr.length;
+    for (var i = 0, arr2 = new Array(len); i < len; i++) {
+      arr2[i] = arr[i];
+    }
+    return arr2;
+  }
+  function _iterableToArrayLimit(arr, i) {
+    if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return;
+    var _arr = [];
+    var _n = true;
+    var _d = false;
+    var _e = void 0;
+    try {
+      for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+        _arr.push(_s.value);
+        if (i && _arr.length === i) break;
+      }
+    } catch (err) {
+      _d = true;
+      _e = err;
+    } finally {
+      try {
+        if (!_n && _i["return"] != null) _i["return"]();
+      } finally {
+        if (_d) throw _e;
+      }
+    }
+    return _arr;
+  }
+  function _arrayWithHoles(arr) {
+    if (Array.isArray(arr)) return arr;
+  }
+  function _typeof(obj) {
+    "@babel/helpers - typeof";
+    if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+      _typeof = function _typeof2(obj2) {
+        return typeof obj2;
+      };
+    } else {
+      _typeof = function _typeof2(obj2) {
+        return obj2 && typeof Symbol === "function" && obj2.constructor === Symbol && obj2 !== Symbol.prototype ? "symbol" : typeof obj2;
+      };
+    }
+    return _typeof(obj);
+  }
+  function _classCallCheck(instance2, Constructor) {
+    if (!(instance2 instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+  function _defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];
+      descriptor.enumerable = descriptor.enumerable || false;
+      descriptor.configurable = true;
+      if ("value" in descriptor) descriptor.writable = true;
+      Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }
+  function _createClass(Constructor, protoProps, staticProps) {
+    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+    return Constructor;
+  }
+  function _createSuper(Derived) {
+    return function() {
+      var Super = _getPrototypeOf(Derived), result;
+      if (_isNativeReflectConstruct()) {
+        var NewTarget = _getPrototypeOf(this).constructor;
+        result = Reflect.construct(Super, arguments, NewTarget);
+      } else {
+        result = Super.apply(this, arguments);
+      }
+      return _possibleConstructorReturn(this, result);
+    };
+  }
+  function _possibleConstructorReturn(self2, call) {
+    if (call && (_typeof(call) === "object" || typeof call === "function")) {
+      return call;
+    }
+    return _assertThisInitialized(self2);
+  }
+  function _assertThisInitialized(self2) {
+    if (self2 === void 0) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+    return self2;
+  }
+  function _isNativeReflectConstruct() {
+    if (typeof Reflect === "undefined" || !Reflect.construct) return false;
+    if (Reflect.construct.sham) return false;
+    if (typeof Proxy === "function") return true;
+    try {
+      Date.prototype.toString.call(Reflect.construct(Date, [], function() {
+      }));
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
+  function _getPrototypeOf(o) {
+    _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf2(o2) {
+      return o2.__proto__ || Object.getPrototypeOf(o2);
+    };
+    return _getPrototypeOf(o);
+  }
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function");
+    }
+    subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } });
+    if (superClass) _setPrototypeOf(subClass, superClass);
+  }
+  function _setPrototypeOf(o, p2) {
+    _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf2(o2, p3) {
+      o2.__proto__ = p3;
+      return o2;
+    };
+    return _setPrototypeOf(o, p2);
+  }
+  function _defineProperty(obj, key, value) {
+    if (key in obj) {
+      Object.defineProperty(obj, key, { value, enumerable: true, configurable: true, writable: true });
+    } else {
+      obj[key] = value;
+    }
+    return obj;
+  }
+  var emptyObject = {};
+  var defaultRenderInputComponent = function defaultRenderInputComponent2(props) {
+    return /* @__PURE__ */ _react["default"].createElement("input", props);
+  };
+  var defaultRenderItemsContainer = function defaultRenderItemsContainer2(_ref) {
+    var containerProps = _ref.containerProps, children = _ref.children;
+    return /* @__PURE__ */ _react["default"].createElement("div", containerProps, children);
+  };
+  var defaultTheme2 = {
+    container: "react-autowhatever__container",
+    containerOpen: "react-autowhatever__container--open",
+    input: "react-autowhatever__input",
+    inputOpen: "react-autowhatever__input--open",
+    inputFocused: "react-autowhatever__input--focused",
+    itemsContainer: "react-autowhatever__items-container",
+    itemsContainerOpen: "react-autowhatever__items-container--open",
+    itemsList: "react-autowhatever__items-list",
+    item: "react-autowhatever__item",
+    itemFirst: "react-autowhatever__item--first",
+    itemHighlighted: "react-autowhatever__item--highlighted",
+    sectionContainer: "react-autowhatever__section-container",
+    sectionContainerFirst: "react-autowhatever__section-container--first",
+    sectionTitle: "react-autowhatever__section-title"
+  };
+  var Autowhatever2 = /* @__PURE__ */ function(_Component) {
+    _inherits(Autowhatever3, _Component);
+    var _super = _createSuper(Autowhatever3);
+    function Autowhatever3(props) {
+      var _this;
+      _classCallCheck(this, Autowhatever3);
+      _this = _super.call(this, props);
+      _defineProperty(_assertThisInitialized(_this), "storeInputReference", function(input) {
+        if (input !== null) {
+          _this.input = input;
+        }
+        var userRef = _this.props.inputProps.ref;
+        if (userRef) {
+          if (typeof userRef === "function") {
+            userRef(input);
+          } else if (_typeof(userRef) === "object" && Object.prototype.hasOwnProperty.call(userRef, "current")) {
+            userRef.current = input;
+          }
+        }
+      });
+      _defineProperty(_assertThisInitialized(_this), "storeItemsContainerReference", function(itemsContainer) {
+        if (itemsContainer !== null) {
+          _this.itemsContainer = itemsContainer;
+        }
+      });
+      _defineProperty(_assertThisInitialized(_this), "onHighlightedItemChange", function(highlightedItem) {
+        _this.highlightedItem = highlightedItem;
+      });
+      _defineProperty(_assertThisInitialized(_this), "getItemId", function(sectionIndex, itemIndex) {
+        if (itemIndex === null) {
+          return null;
+        }
+        var id2 = _this.props.id;
+        var section = sectionIndex === null ? "" : "section-".concat(sectionIndex);
+        return "react-autowhatever-".concat(id2, "-").concat(section, "-item-").concat(itemIndex);
+      });
+      _defineProperty(_assertThisInitialized(_this), "onFocus", function(event) {
+        var inputProps = _this.props.inputProps;
+        _this.setState({
+          isInputFocused: true
+        });
+        inputProps.onFocus && inputProps.onFocus(event);
+      });
+      _defineProperty(_assertThisInitialized(_this), "onBlur", function(event) {
+        var inputProps = _this.props.inputProps;
+        _this.setState({
+          isInputFocused: false
+        });
+        inputProps.onBlur && inputProps.onBlur(event);
+      });
+      _defineProperty(_assertThisInitialized(_this), "onKeyDown", function(event) {
+        var _this$props = _this.props, inputProps = _this$props.inputProps, highlightedSectionIndex = _this$props.highlightedSectionIndex, highlightedItemIndex = _this$props.highlightedItemIndex;
+        var keyCode = event.keyCode;
+        switch (keyCode) {
+          case 40:
+          case 38: {
+            var nextPrev = keyCode === 40 ? "next" : "prev";
+            var _this$sectionIterator = _this.sectionIterator[nextPrev]([highlightedSectionIndex, highlightedItemIndex]), _this$sectionIterator2 = _slicedToArray2(_this$sectionIterator, 2), newHighlightedSectionIndex = _this$sectionIterator2[0], newHighlightedItemIndex = _this$sectionIterator2[1];
+            inputProps.onKeyDown(event, {
+              newHighlightedSectionIndex,
+              newHighlightedItemIndex
+            });
+            break;
+          }
+          default:
+            inputProps.onKeyDown(event, {
+              highlightedSectionIndex,
+              highlightedItemIndex
+            });
+        }
+      });
+      _this.highlightedItem = null;
+      _this.state = {
+        isInputFocused: false
+      };
+      _this.setSectionsItems(props);
+      _this.setSectionIterator(props);
+      _this.setTheme(props);
+      return _this;
+    }
+    _createClass(Autowhatever3, [{
+      key: "componentDidMount",
+      value: function componentDidMount() {
+        this.ensureHighlightedItemIsVisible();
+      }
+      // eslint-disable-next-line camelcase, react/sort-comp
+    }, {
+      key: "UNSAFE_componentWillReceiveProps",
+      value: function UNSAFE_componentWillReceiveProps(nextProps) {
+        if (nextProps.items !== this.props.items) {
+          this.setSectionsItems(nextProps);
+        }
+        if (nextProps.items !== this.props.items || nextProps.multiSection !== this.props.multiSection) {
+          this.setSectionIterator(nextProps);
+        }
+        if (nextProps.theme !== this.props.theme) {
+          this.setTheme(nextProps);
+        }
+      }
+    }, {
+      key: "componentDidUpdate",
+      value: function componentDidUpdate() {
+        this.ensureHighlightedItemIsVisible();
+      }
+    }, {
+      key: "setSectionsItems",
+      value: function setSectionsItems(props) {
+        if (props.multiSection) {
+          this.sectionsItems = props.items.map(function(section) {
+            return props.getSectionItems(section);
+          });
+          this.sectionsLengths = this.sectionsItems.map(function(items) {
+            return items.length;
+          });
+          this.allSectionsAreEmpty = this.sectionsLengths.every(function(itemsCount) {
+            return itemsCount === 0;
+          });
+        }
+      }
+    }, {
+      key: "setSectionIterator",
+      value: function setSectionIterator(props) {
+        this.sectionIterator = (0, _sectionIterator["default"])({
+          multiSection: props.multiSection,
+          data: props.multiSection ? this.sectionsLengths : props.items.length
+        });
+      }
+    }, {
+      key: "setTheme",
+      value: function setTheme(props) {
+        this.theme = (0, _reactThemeable["default"])(props.theme);
+      }
+    }, {
+      key: "renderSections",
+      value: function renderSections() {
+        var _this2 = this;
+        if (this.allSectionsAreEmpty) {
+          return null;
+        }
+        var theme2 = this.theme;
+        var _this$props2 = this.props, id2 = _this$props2.id, items = _this$props2.items, renderItem = _this$props2.renderItem, renderItemData = _this$props2.renderItemData, renderSectionTitle = _this$props2.renderSectionTitle, highlightedSectionIndex = _this$props2.highlightedSectionIndex, highlightedItemIndex = _this$props2.highlightedItemIndex, itemProps = _this$props2.itemProps;
+        return items.map(function(section, sectionIndex) {
+          var keyPrefix = "react-autowhatever-".concat(id2, "-");
+          var sectionKeyPrefix = "".concat(keyPrefix, "section-").concat(sectionIndex, "-");
+          var isFirstSection = sectionIndex === 0;
+          return /* @__PURE__ */ _react["default"].createElement("div", theme2("".concat(sectionKeyPrefix, "container"), "sectionContainer", isFirstSection && "sectionContainerFirst"), /* @__PURE__ */ _react["default"].createElement(_SectionTitle["default"], {
+            section,
+            renderSectionTitle,
+            theme: theme2,
+            sectionKeyPrefix
+          }), /* @__PURE__ */ _react["default"].createElement(_ItemList["default"], {
+            items: _this2.sectionsItems[sectionIndex],
+            itemProps,
+            renderItem,
+            renderItemData,
+            sectionIndex,
+            highlightedItemIndex: highlightedSectionIndex === sectionIndex ? highlightedItemIndex : null,
+            onHighlightedItemChange: _this2.onHighlightedItemChange,
+            getItemId: _this2.getItemId,
+            theme: theme2,
+            keyPrefix,
+            ref: _this2.storeItemsListReference
+          }));
+        });
+      }
+    }, {
+      key: "renderItems",
+      value: function renderItems() {
+        var items = this.props.items;
+        if (items.length === 0) {
+          return null;
+        }
+        var theme2 = this.theme;
+        var _this$props3 = this.props, id2 = _this$props3.id, renderItem = _this$props3.renderItem, renderItemData = _this$props3.renderItemData, highlightedSectionIndex = _this$props3.highlightedSectionIndex, highlightedItemIndex = _this$props3.highlightedItemIndex, itemProps = _this$props3.itemProps;
+        return /* @__PURE__ */ _react["default"].createElement(_ItemList["default"], {
+          items,
+          itemProps,
+          renderItem,
+          renderItemData,
+          highlightedItemIndex: highlightedSectionIndex === null ? highlightedItemIndex : null,
+          onHighlightedItemChange: this.onHighlightedItemChange,
+          getItemId: this.getItemId,
+          theme: theme2,
+          keyPrefix: "react-autowhatever-".concat(id2, "-")
+        });
+      }
+    }, {
+      key: "ensureHighlightedItemIsVisible",
+      value: function ensureHighlightedItemIsVisible() {
+        var highlightedItem = this.highlightedItem;
+        if (!highlightedItem) {
+          return;
+        }
+        var itemsContainer = this.itemsContainer;
+        var itemOffsetRelativeToContainer = highlightedItem.offsetParent === itemsContainer ? highlightedItem.offsetTop : highlightedItem.offsetTop - itemsContainer.offsetTop;
+        var scrollTop = itemsContainer.scrollTop;
+        if (itemOffsetRelativeToContainer < scrollTop) {
+          scrollTop = itemOffsetRelativeToContainer;
+        } else if (itemOffsetRelativeToContainer + highlightedItem.offsetHeight > scrollTop + itemsContainer.offsetHeight) {
+          scrollTop = itemOffsetRelativeToContainer + highlightedItem.offsetHeight - itemsContainer.offsetHeight;
+        }
+        if (scrollTop !== itemsContainer.scrollTop) {
+          itemsContainer.scrollTop = scrollTop;
+        }
+      }
+    }, {
+      key: "render",
+      value: function render() {
+        var theme2 = this.theme;
+        var _this$props4 = this.props, id2 = _this$props4.id, multiSection = _this$props4.multiSection, renderInputComponent = _this$props4.renderInputComponent, renderItemsContainer = _this$props4.renderItemsContainer, highlightedSectionIndex = _this$props4.highlightedSectionIndex, highlightedItemIndex = _this$props4.highlightedItemIndex;
+        var isInputFocused = this.state.isInputFocused;
+        var renderedItems = multiSection ? this.renderSections() : this.renderItems();
+        var isOpen = renderedItems !== null;
+        var ariaActivedescendant = this.getItemId(highlightedSectionIndex, highlightedItemIndex);
+        var itemsContainerId = "react-autowhatever-".concat(id2);
+        var containerProps = _objectSpread({
+          role: "combobox",
+          "aria-haspopup": "listbox",
+          "aria-owns": itemsContainerId,
+          "aria-expanded": isOpen
+        }, theme2("react-autowhatever-".concat(id2, "-container"), "container", isOpen && "containerOpen"), {}, this.props.containerProps);
+        var inputComponent = renderInputComponent(_objectSpread({
+          type: "text",
+          value: "",
+          autoComplete: "off",
+          "aria-autocomplete": "list",
+          "aria-controls": itemsContainerId,
+          "aria-activedescendant": ariaActivedescendant
+        }, theme2("react-autowhatever-".concat(id2, "-input"), "input", isOpen && "inputOpen", isInputFocused && "inputFocused"), {}, this.props.inputProps, {
+          onFocus: this.onFocus,
+          onBlur: this.onBlur,
+          onKeyDown: this.props.inputProps.onKeyDown && this.onKeyDown,
+          ref: this.storeInputReference
+        }));
+        var itemsContainer = renderItemsContainer({
+          containerProps: _objectSpread({
+            id: itemsContainerId,
+            role: "listbox"
+          }, theme2("react-autowhatever-".concat(id2, "-items-container"), "itemsContainer", isOpen && "itemsContainerOpen"), {
+            ref: this.storeItemsContainerReference
+          }),
+          children: renderedItems
+        });
+        return /* @__PURE__ */ _react["default"].createElement("div", containerProps, inputComponent, itemsContainer);
+      }
+    }]);
+    return Autowhatever3;
+  }(_react.Component);
+  exports["default"] = Autowhatever2;
+  _defineProperty(Autowhatever2, "propTypes", {
+    id: _propTypes["default"].string,
+    // Used in aria-* attributes. If multiple Autowhatever's are rendered on a page, they must have unique ids.
+    multiSection: _propTypes["default"].bool,
+    // Indicates whether a multi section layout should be rendered.
+    renderInputComponent: _propTypes["default"].func,
+    // When specified, it is used to render the input element.
+    renderItemsContainer: _propTypes["default"].func,
+    // Renders the items container.
+    items: _propTypes["default"].array.isRequired,
+    // Array of items or sections to render.
+    renderItem: _propTypes["default"].func,
+    // This function renders a single item.
+    renderItemData: _propTypes["default"].object,
+    // Arbitrary data that will be passed to renderItem()
+    renderSectionTitle: _propTypes["default"].func,
+    // This function gets a section and renders its title.
+    getSectionItems: _propTypes["default"].func,
+    // This function gets a section and returns its items, which will be passed into `renderItem` for rendering.
+    containerProps: _propTypes["default"].object,
+    // Arbitrary container props
+    inputProps: _propTypes["default"].object,
+    // Arbitrary input props
+    itemProps: _propTypes["default"].oneOfType([
+      // Arbitrary item props
+      _propTypes["default"].object,
+      _propTypes["default"].func
+    ]),
+    highlightedSectionIndex: _propTypes["default"].number,
+    // Section index of the highlighted item
+    highlightedItemIndex: _propTypes["default"].number,
+    // Highlighted item index (within a section)
+    theme: _propTypes["default"].oneOfType([
+      // Styles. See: https://github.com/markdalgleish/react-themeable
+      _propTypes["default"].object,
+      _propTypes["default"].array
+    ])
+  });
+  _defineProperty(Autowhatever2, "defaultProps", {
+    id: "1",
+    multiSection: false,
+    renderInputComponent: defaultRenderInputComponent,
+    renderItemsContainer: defaultRenderItemsContainer,
+    renderItem: function renderItem() {
+      throw new Error("`renderItem` must be provided");
+    },
+    renderItemData: emptyObject,
+    renderSectionTitle: function renderSectionTitle() {
+      throw new Error("`renderSectionTitle` must be provided");
+    },
+    getSectionItems: function getSectionItems() {
+      throw new Error("`getSectionItems` must be provided");
+    },
+    containerProps: emptyObject,
+    inputProps: emptyObject,
+    itemProps: emptyObject,
+    highlightedSectionIndex: null,
+    highlightedItemIndex: null,
+    theme: defaultTheme2
+  });
+})(Autowhatever);
+var theme = {};
+Object.defineProperty(theme, "__esModule", {
+  value: true
+});
+theme.mapToAutowhateverTheme = theme.defaultTheme = void 0;
+var defaultTheme = {
+  container: "react-autosuggest__container",
+  containerOpen: "react-autosuggest__container--open",
+  input: "react-autosuggest__input",
+  inputOpen: "react-autosuggest__input--open",
+  inputFocused: "react-autosuggest__input--focused",
+  suggestionsContainer: "react-autosuggest__suggestions-container",
+  suggestionsContainerOpen: "react-autosuggest__suggestions-container--open",
+  suggestionsList: "react-autosuggest__suggestions-list",
+  suggestion: "react-autosuggest__suggestion",
+  suggestionFirst: "react-autosuggest__suggestion--first",
+  suggestionHighlighted: "react-autosuggest__suggestion--highlighted",
+  sectionContainer: "react-autosuggest__section-container",
+  sectionContainerFirst: "react-autosuggest__section-container--first",
+  sectionTitle: "react-autosuggest__section-title"
+};
+theme.defaultTheme = defaultTheme;
+var mapToAutowhateverTheme = function mapToAutowhateverTheme2(theme2) {
+  var result = {};
+  for (var key in theme2) {
+    switch (key) {
+      case "suggestionsContainer":
+        result["itemsContainer"] = theme2[key];
+        break;
+      case "suggestionsContainerOpen":
+        result["itemsContainerOpen"] = theme2[key];
+        break;
+      case "suggestion":
+        result["item"] = theme2[key];
+        break;
+      case "suggestionFirst":
+        result["itemFirst"] = theme2[key];
+        break;
+      case "suggestionHighlighted":
+        result["itemHighlighted"] = theme2[key];
+        break;
+      case "suggestionsList":
+        result["itemsList"] = theme2[key];
+        break;
+      default:
+        result[key] = theme2[key];
+    }
+  }
+  return result;
+};
+theme.mapToAutowhateverTheme = mapToAutowhateverTheme;
+(function(exports) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports["default"] = void 0;
+  var _react = _interopRequireWildcard(reactExports);
+  var _propTypes = _interopRequireDefault(propTypesExports);
+  var _arrays = _interopRequireDefault(arrays);
+  var _Autowhatever = _interopRequireDefault(Autowhatever);
+  var _theme = theme;
+  function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : { "default": obj };
+  }
+  function _getRequireWildcardCache() {
+    if (typeof WeakMap !== "function") return null;
+    var cache = /* @__PURE__ */ new WeakMap();
+    _getRequireWildcardCache = function _getRequireWildcardCache2() {
+      return cache;
+    };
+    return cache;
+  }
+  function _interopRequireWildcard(obj) {
+    if (obj && obj.__esModule) {
+      return obj;
+    }
+    if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") {
+      return { "default": obj };
+    }
+    var cache = _getRequireWildcardCache();
+    if (cache && cache.has(obj)) {
+      return cache.get(obj);
+    }
+    var newObj = {};
+    var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
+    for (var key in obj) {
+      if (Object.prototype.hasOwnProperty.call(obj, key)) {
+        var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
+        if (desc && (desc.get || desc.set)) {
+          Object.defineProperty(newObj, key, desc);
+        } else {
+          newObj[key] = obj[key];
+        }
+      }
+    }
+    newObj["default"] = obj;
+    if (cache) {
+      cache.set(obj, newObj);
+    }
+    return newObj;
+  }
+  function _typeof(obj) {
+    "@babel/helpers - typeof";
+    if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+      _typeof = function _typeof2(obj2) {
+        return typeof obj2;
+      };
+    } else {
+      _typeof = function _typeof2(obj2) {
+        return obj2 && typeof Symbol === "function" && obj2.constructor === Symbol && obj2 !== Symbol.prototype ? "symbol" : typeof obj2;
+      };
+    }
+    return _typeof(obj);
+  }
+  function ownKeys(object, enumerableOnly) {
+    var keys = Object.keys(object);
+    if (Object.getOwnPropertySymbols) {
+      var symbols = Object.getOwnPropertySymbols(object);
+      if (enumerableOnly) symbols = symbols.filter(function(sym) {
+        return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+      });
+      keys.push.apply(keys, symbols);
+    }
+    return keys;
+  }
+  function _objectSpread(target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i] != null ? arguments[i] : {};
+      if (i % 2) {
+        ownKeys(Object(source), true).forEach(function(key) {
+          _defineProperty(target, key, source[key]);
+        });
+      } else if (Object.getOwnPropertyDescriptors) {
+        Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+      } else {
+        ownKeys(Object(source)).forEach(function(key) {
+          Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+        });
+      }
+    }
+    return target;
+  }
+  function _classCallCheck(instance2, Constructor) {
+    if (!(instance2 instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+  function _defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];
+      descriptor.enumerable = descriptor.enumerable || false;
+      descriptor.configurable = true;
+      if ("value" in descriptor) descriptor.writable = true;
+      Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }
+  function _createClass(Constructor, protoProps, staticProps) {
+    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+    return Constructor;
+  }
+  function _createSuper(Derived) {
+    return function() {
+      var Super = _getPrototypeOf(Derived), result;
+      if (_isNativeReflectConstruct()) {
+        var NewTarget = _getPrototypeOf(this).constructor;
+        result = Reflect.construct(Super, arguments, NewTarget);
+      } else {
+        result = Super.apply(this, arguments);
+      }
+      return _possibleConstructorReturn(this, result);
+    };
+  }
+  function _possibleConstructorReturn(self2, call) {
+    if (call && (_typeof(call) === "object" || typeof call === "function")) {
+      return call;
+    }
+    return _assertThisInitialized(self2);
+  }
+  function _assertThisInitialized(self2) {
+    if (self2 === void 0) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+    return self2;
+  }
+  function _isNativeReflectConstruct() {
+    if (typeof Reflect === "undefined" || !Reflect.construct) return false;
+    if (Reflect.construct.sham) return false;
+    if (typeof Proxy === "function") return true;
+    try {
+      Date.prototype.toString.call(Reflect.construct(Date, [], function() {
+      }));
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
+  function _getPrototypeOf(o) {
+    _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf2(o2) {
+      return o2.__proto__ || Object.getPrototypeOf(o2);
+    };
+    return _getPrototypeOf(o);
+  }
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function");
+    }
+    subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } });
+    if (superClass) _setPrototypeOf(subClass, superClass);
+  }
+  function _setPrototypeOf(o, p2) {
+    _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf2(o2, p3) {
+      o2.__proto__ = p3;
+      return o2;
+    };
+    return _setPrototypeOf(o, p2);
+  }
+  function _defineProperty(obj, key, value) {
+    if (key in obj) {
+      Object.defineProperty(obj, key, { value, enumerable: true, configurable: true, writable: true });
+    } else {
+      obj[key] = value;
+    }
+    return obj;
+  }
+  var alwaysTrue = function alwaysTrue2() {
+    return true;
+  };
+  var defaultShouldRenderSuggestions = function defaultShouldRenderSuggestions2(value) {
+    return value.trim().length > 0;
+  };
+  var defaultRenderSuggestionsContainer = function defaultRenderSuggestionsContainer2(_ref) {
+    var containerProps = _ref.containerProps, children = _ref.children;
+    return /* @__PURE__ */ _react["default"].createElement("div", containerProps, children);
+  };
+  var REASON_SUGGESTIONS_REVEALED = "suggestions-revealed";
+  var REASON_SUGGESTIONS_UPDATED = "suggestions-updated";
+  var REASON_SUGGESTION_SELECTED = "suggestion-selected";
+  var REASON_INPUT_FOCUSED = "input-focused";
+  var REASON_INPUT_CHANGED = "input-changed";
+  var REASON_INPUT_BLURRED = "input-blurred";
+  var REASON_ESCAPE_PRESSED = "escape-pressed";
+  var Autosuggest2 = /* @__PURE__ */ function(_Component) {
+    _inherits(Autosuggest3, _Component);
+    var _super = _createSuper(Autosuggest3);
+    function Autosuggest3(_ref2) {
+      var _this;
+      var _alwaysRenderSuggestions = _ref2.alwaysRenderSuggestions;
+      _classCallCheck(this, Autosuggest3);
+      _this = _super.call(this);
+      _defineProperty(_assertThisInitialized(_this), "onDocumentMouseDown", function(event) {
+        _this.justClickedOnSuggestionsContainer = false;
+        var node = event.detail && event.detail.target || // This is for testing only. Please show me a better way to emulate this.
+        event.target;
+        while (node !== null && node !== document) {
+          if (node.getAttribute && node.getAttribute("data-suggestion-index") !== null) {
+            return;
+          }
+          if (node === _this.suggestionsContainer) {
+            _this.justClickedOnSuggestionsContainer = true;
+            return;
+          }
+          node = node.parentNode;
+        }
+      });
+      _defineProperty(_assertThisInitialized(_this), "storeAutowhateverRef", function(autowhatever) {
+        if (autowhatever !== null) {
+          _this.autowhatever = autowhatever;
+        }
+      });
+      _defineProperty(_assertThisInitialized(_this), "onSuggestionMouseEnter", function(event, _ref3) {
+        var sectionIndex = _ref3.sectionIndex, itemIndex = _ref3.itemIndex;
+        _this.updateHighlightedSuggestion(sectionIndex, itemIndex);
+        if (event.target === _this.pressedSuggestion) {
+          _this.justSelectedSuggestion = true;
+        }
+        _this.justMouseEntered = true;
+        setTimeout(function() {
+          _this.justMouseEntered = false;
+        });
+      });
+      _defineProperty(_assertThisInitialized(_this), "highlightFirstSuggestion", function() {
+        _this.updateHighlightedSuggestion(_this.props.multiSection ? 0 : null, 0);
+      });
+      _defineProperty(_assertThisInitialized(_this), "onDocumentMouseUp", function() {
+        if (_this.pressedSuggestion && !_this.justSelectedSuggestion) {
+          _this.input.focus();
+        }
+        _this.pressedSuggestion = null;
+      });
+      _defineProperty(_assertThisInitialized(_this), "onSuggestionMouseDown", function(event) {
+        if (!_this.justSelectedSuggestion) {
+          _this.justSelectedSuggestion = true;
+          _this.pressedSuggestion = event.target;
+        }
+      });
+      _defineProperty(_assertThisInitialized(_this), "onSuggestionsClearRequested", function() {
+        var onSuggestionsClearRequested = _this.props.onSuggestionsClearRequested;
+        onSuggestionsClearRequested && onSuggestionsClearRequested();
+      });
+      _defineProperty(_assertThisInitialized(_this), "onSuggestionSelected", function(event, data) {
+        var _this$props = _this.props, alwaysRenderSuggestions = _this$props.alwaysRenderSuggestions, onSuggestionSelected = _this$props.onSuggestionSelected, onSuggestionsFetchRequested = _this$props.onSuggestionsFetchRequested;
+        onSuggestionSelected && onSuggestionSelected(event, data);
+        var keepSuggestionsOnSelect = _this.props.shouldKeepSuggestionsOnSelect(data.suggestion);
+        if (alwaysRenderSuggestions || keepSuggestionsOnSelect) {
+          onSuggestionsFetchRequested({
+            value: data.suggestionValue,
+            reason: REASON_SUGGESTION_SELECTED
+          });
+        } else {
+          _this.onSuggestionsClearRequested();
+        }
+        _this.resetHighlightedSuggestion();
+      });
+      _defineProperty(_assertThisInitialized(_this), "onSuggestionClick", function(event) {
+        var _this$props2 = _this.props, alwaysRenderSuggestions = _this$props2.alwaysRenderSuggestions, focusInputOnSuggestionClick = _this$props2.focusInputOnSuggestionClick;
+        var _this$getSuggestionIn = _this.getSuggestionIndices(_this.findSuggestionElement(event.target)), sectionIndex = _this$getSuggestionIn.sectionIndex, suggestionIndex = _this$getSuggestionIn.suggestionIndex;
+        var clickedSuggestion = _this.getSuggestion(sectionIndex, suggestionIndex);
+        var clickedSuggestionValue = _this.props.getSuggestionValue(clickedSuggestion);
+        _this.maybeCallOnChange(event, clickedSuggestionValue, "click");
+        _this.onSuggestionSelected(event, {
+          suggestion: clickedSuggestion,
+          suggestionValue: clickedSuggestionValue,
+          suggestionIndex,
+          sectionIndex,
+          method: "click"
+        });
+        var keepSuggestionsOnSelect = _this.props.shouldKeepSuggestionsOnSelect(clickedSuggestion);
+        if (!(alwaysRenderSuggestions || keepSuggestionsOnSelect)) {
+          _this.closeSuggestions();
+        }
+        if (focusInputOnSuggestionClick === true) {
+          _this.input.focus();
+        } else {
+          _this.onBlur();
+        }
+        setTimeout(function() {
+          _this.justSelectedSuggestion = false;
+        });
+      });
+      _defineProperty(_assertThisInitialized(_this), "onBlur", function() {
+        var _this$props3 = _this.props, inputProps = _this$props3.inputProps, shouldRenderSuggestions = _this$props3.shouldRenderSuggestions;
+        var value = inputProps.value, onBlur = inputProps.onBlur;
+        var highlightedSuggestion = _this.getHighlightedSuggestion();
+        var shouldRender = shouldRenderSuggestions(value, REASON_INPUT_BLURRED);
+        _this.setState({
+          isFocused: false,
+          highlightedSectionIndex: null,
+          highlightedSuggestionIndex: null,
+          highlightedSuggestion: null,
+          valueBeforeUpDown: null,
+          isCollapsed: !shouldRender
+        });
+        onBlur && onBlur(_this.blurEvent, {
+          highlightedSuggestion
+        });
+      });
+      _defineProperty(_assertThisInitialized(_this), "onSuggestionMouseLeave", function(event) {
+        _this.resetHighlightedSuggestion(false);
+        if (_this.justSelectedSuggestion && event.target === _this.pressedSuggestion) {
+          _this.justSelectedSuggestion = false;
+        }
+      });
+      _defineProperty(_assertThisInitialized(_this), "onSuggestionTouchStart", function() {
+        _this.justSelectedSuggestion = true;
+      });
+      _defineProperty(_assertThisInitialized(_this), "onSuggestionTouchMove", function() {
+        _this.justSelectedSuggestion = false;
+        _this.pressedSuggestion = null;
+        _this.input.focus();
+      });
+      _defineProperty(_assertThisInitialized(_this), "itemProps", function(_ref4) {
+        var sectionIndex = _ref4.sectionIndex, itemIndex = _ref4.itemIndex;
+        return {
+          "data-section-index": sectionIndex,
+          "data-suggestion-index": itemIndex,
+          onMouseEnter: _this.onSuggestionMouseEnter,
+          onMouseLeave: _this.onSuggestionMouseLeave,
+          onMouseDown: _this.onSuggestionMouseDown,
+          onTouchStart: _this.onSuggestionTouchStart,
+          onTouchMove: _this.onSuggestionTouchMove,
+          onClick: _this.onSuggestionClick
+        };
+      });
+      _defineProperty(_assertThisInitialized(_this), "renderSuggestionsContainer", function(_ref5) {
+        var containerProps = _ref5.containerProps, children = _ref5.children;
+        var renderSuggestionsContainer = _this.props.renderSuggestionsContainer;
+        return renderSuggestionsContainer({
+          containerProps,
+          children,
+          query: _this.getQuery()
+        });
+      });
+      _this.state = {
+        isFocused: false,
+        isCollapsed: !_alwaysRenderSuggestions,
+        highlightedSectionIndex: null,
+        highlightedSuggestionIndex: null,
+        highlightedSuggestion: null,
+        valueBeforeUpDown: null
+      };
+      _this.justPressedUpDown = false;
+      _this.justMouseEntered = false;
+      _this.pressedSuggestion = null;
+      return _this;
+    }
+    _createClass(Autosuggest3, [{
+      key: "componentDidMount",
+      value: function componentDidMount() {
+        document.addEventListener("mousedown", this.onDocumentMouseDown);
+        document.addEventListener("mouseup", this.onDocumentMouseUp);
+        this.input = this.autowhatever.input;
+        this.suggestionsContainer = this.autowhatever.itemsContainer;
+      }
+      // eslint-disable-next-line camelcase, react/sort-comp
+    }, {
+      key: "UNSAFE_componentWillReceiveProps",
+      value: function UNSAFE_componentWillReceiveProps(nextProps) {
+        var shouldResetHighlighting = this.state.highlightedSuggestionIndex === 0 && this.props.highlightFirstSuggestion && !nextProps.highlightFirstSuggestion;
+        if ((0, _arrays["default"])(nextProps.suggestions, this.props.suggestions)) {
+          if (nextProps.highlightFirstSuggestion && nextProps.suggestions.length > 0 && this.justPressedUpDown === false && this.justMouseEntered === false) {
+            this.highlightFirstSuggestion();
+          } else if (shouldResetHighlighting) {
+            this.resetHighlightedSuggestion();
+          }
+        } else {
+          if (this.willRenderSuggestions(nextProps, REASON_SUGGESTIONS_UPDATED)) {
+            if (this.state.isCollapsed && !this.justSelectedSuggestion) {
+              this.revealSuggestions();
+            }
+            if (shouldResetHighlighting) {
+              this.resetHighlightedSuggestion();
+            }
+          } else {
+            this.resetHighlightedSuggestion();
+          }
+        }
+      }
+    }, {
+      key: "componentDidUpdate",
+      value: function componentDidUpdate(prevProps, prevState) {
+        var _this$props4 = this.props, suggestions = _this$props4.suggestions, onSuggestionHighlighted = _this$props4.onSuggestionHighlighted, highlightFirstSuggestion = _this$props4.highlightFirstSuggestion;
+        if (!(0, _arrays["default"])(suggestions, prevProps.suggestions) && suggestions.length > 0 && highlightFirstSuggestion) {
+          this.highlightFirstSuggestion();
+          return;
+        }
+        if (onSuggestionHighlighted) {
+          var highlightedSuggestion = this.getHighlightedSuggestion();
+          var prevHighlightedSuggestion = prevState.highlightedSuggestion;
+          if (highlightedSuggestion != prevHighlightedSuggestion) {
+            onSuggestionHighlighted({
+              suggestion: highlightedSuggestion
+            });
+          }
+        }
+      }
+    }, {
+      key: "componentWillUnmount",
+      value: function componentWillUnmount() {
+        document.removeEventListener("mousedown", this.onDocumentMouseDown);
+        document.removeEventListener("mouseup", this.onDocumentMouseUp);
+      }
+    }, {
+      key: "updateHighlightedSuggestion",
+      value: function updateHighlightedSuggestion(sectionIndex, suggestionIndex, prevValue) {
+        var _this2 = this;
+        this.setState(function(state) {
+          var valueBeforeUpDown = state.valueBeforeUpDown;
+          if (suggestionIndex === null) {
+            valueBeforeUpDown = null;
+          } else if (valueBeforeUpDown === null && typeof prevValue !== "undefined") {
+            valueBeforeUpDown = prevValue;
+          }
+          return {
+            highlightedSectionIndex: sectionIndex,
+            highlightedSuggestionIndex: suggestionIndex,
+            highlightedSuggestion: suggestionIndex === null ? null : _this2.getSuggestion(sectionIndex, suggestionIndex),
+            valueBeforeUpDown
+          };
+        });
+      }
+    }, {
+      key: "resetHighlightedSuggestion",
+      value: function resetHighlightedSuggestion() {
+        var shouldResetValueBeforeUpDown = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : true;
+        this.setState(function(state) {
+          var valueBeforeUpDown = state.valueBeforeUpDown;
+          return {
+            highlightedSectionIndex: null,
+            highlightedSuggestionIndex: null,
+            highlightedSuggestion: null,
+            valueBeforeUpDown: shouldResetValueBeforeUpDown ? null : valueBeforeUpDown
+          };
+        });
+      }
+    }, {
+      key: "revealSuggestions",
+      value: function revealSuggestions() {
+        this.setState({
+          isCollapsed: false
+        });
+      }
+    }, {
+      key: "closeSuggestions",
+      value: function closeSuggestions() {
+        this.setState({
+          highlightedSectionIndex: null,
+          highlightedSuggestionIndex: null,
+          highlightedSuggestion: null,
+          valueBeforeUpDown: null,
+          isCollapsed: true
+        });
+      }
+    }, {
+      key: "getSuggestion",
+      value: function getSuggestion(sectionIndex, suggestionIndex) {
+        var _this$props5 = this.props, suggestions = _this$props5.suggestions, multiSection = _this$props5.multiSection, getSectionSuggestions = _this$props5.getSectionSuggestions;
+        if (multiSection) {
+          return getSectionSuggestions(suggestions[sectionIndex])[suggestionIndex];
+        }
+        return suggestions[suggestionIndex];
+      }
+    }, {
+      key: "getHighlightedSuggestion",
+      value: function getHighlightedSuggestion() {
+        var _this$state = this.state, highlightedSectionIndex = _this$state.highlightedSectionIndex, highlightedSuggestionIndex = _this$state.highlightedSuggestionIndex;
+        if (highlightedSuggestionIndex === null) {
+          return null;
+        }
+        return this.getSuggestion(highlightedSectionIndex, highlightedSuggestionIndex);
+      }
+    }, {
+      key: "getSuggestionValueByIndex",
+      value: function getSuggestionValueByIndex(sectionIndex, suggestionIndex) {
+        var getSuggestionValue = this.props.getSuggestionValue;
+        return getSuggestionValue(this.getSuggestion(sectionIndex, suggestionIndex));
+      }
+    }, {
+      key: "getSuggestionIndices",
+      value: function getSuggestionIndices(suggestionElement) {
+        var sectionIndex = suggestionElement.getAttribute("data-section-index");
+        var suggestionIndex = suggestionElement.getAttribute("data-suggestion-index");
+        return {
+          sectionIndex: typeof sectionIndex === "string" ? parseInt(sectionIndex, 10) : null,
+          suggestionIndex: parseInt(suggestionIndex, 10)
+        };
+      }
+    }, {
+      key: "findSuggestionElement",
+      value: function findSuggestionElement(startNode) {
+        var node = startNode;
+        do {
+          if (node.getAttribute && node.getAttribute("data-suggestion-index") !== null) {
+            return node;
+          }
+          node = node.parentNode;
+        } while (node !== null);
+        console.error("Clicked element:", startNode);
+        throw new Error("Couldn't find suggestion element");
+      }
+    }, {
+      key: "maybeCallOnChange",
+      value: function maybeCallOnChange(event, newValue, method) {
+        var _this$props$inputProp = this.props.inputProps, value = _this$props$inputProp.value, onChange = _this$props$inputProp.onChange;
+        if (newValue !== value) {
+          onChange(event, {
+            newValue,
+            method
+          });
+        }
+      }
+    }, {
+      key: "willRenderSuggestions",
+      value: function willRenderSuggestions(props, reason) {
+        var suggestions = props.suggestions, inputProps = props.inputProps, shouldRenderSuggestions = props.shouldRenderSuggestions;
+        var value = inputProps.value;
+        return suggestions.length > 0 && shouldRenderSuggestions(value, reason);
+      }
+    }, {
+      key: "getQuery",
+      value: function getQuery() {
+        var inputProps = this.props.inputProps;
+        var value = inputProps.value;
+        var valueBeforeUpDown = this.state.valueBeforeUpDown;
+        return (valueBeforeUpDown === null ? value : valueBeforeUpDown).trim();
+      }
+    }, {
+      key: "render",
+      value: function render() {
+        var _this3 = this;
+        var _this$props6 = this.props, suggestions = _this$props6.suggestions, renderInputComponent = _this$props6.renderInputComponent, onSuggestionsFetchRequested = _this$props6.onSuggestionsFetchRequested, renderSuggestion = _this$props6.renderSuggestion, inputProps = _this$props6.inputProps, multiSection = _this$props6.multiSection, renderSectionTitle = _this$props6.renderSectionTitle, id2 = _this$props6.id, getSectionSuggestions = _this$props6.getSectionSuggestions, theme2 = _this$props6.theme, getSuggestionValue = _this$props6.getSuggestionValue, alwaysRenderSuggestions = _this$props6.alwaysRenderSuggestions, highlightFirstSuggestion = _this$props6.highlightFirstSuggestion, containerProps = _this$props6.containerProps;
+        var _this$state2 = this.state, isFocused = _this$state2.isFocused, isCollapsed = _this$state2.isCollapsed, highlightedSectionIndex = _this$state2.highlightedSectionIndex, highlightedSuggestionIndex = _this$state2.highlightedSuggestionIndex, valueBeforeUpDown = _this$state2.valueBeforeUpDown;
+        var shouldRenderSuggestions = alwaysRenderSuggestions ? alwaysTrue : this.props.shouldRenderSuggestions;
+        var value = inputProps.value, _onFocus = inputProps.onFocus, _onKeyDown = inputProps.onKeyDown;
+        var willRenderSuggestions = this.willRenderSuggestions(this.props, "render");
+        var isOpen = alwaysRenderSuggestions || isFocused && !isCollapsed && willRenderSuggestions;
+        var items = isOpen ? suggestions : [];
+        var autowhateverInputProps = _objectSpread({}, inputProps, {
+          onFocus: function onFocus(event) {
+            if (!_this3.justSelectedSuggestion && !_this3.justClickedOnSuggestionsContainer) {
+              var shouldRender = shouldRenderSuggestions(value, REASON_INPUT_FOCUSED);
+              _this3.setState({
+                isFocused: true,
+                isCollapsed: !shouldRender
+              });
+              _onFocus && _onFocus(event);
+              if (shouldRender) {
+                onSuggestionsFetchRequested({
+                  value,
+                  reason: REASON_INPUT_FOCUSED
+                });
+              }
+            }
+          },
+          onBlur: function onBlur(event) {
+            if (_this3.justClickedOnSuggestionsContainer) {
+              _this3.input.focus();
+              return;
+            }
+            _this3.blurEvent = event;
+            if (!_this3.justSelectedSuggestion) {
+              _this3.onBlur();
+              _this3.onSuggestionsClearRequested();
+            }
+          },
+          onChange: function onChange(event) {
+            var value2 = event.target.value;
+            var shouldRender = shouldRenderSuggestions(value2, REASON_INPUT_CHANGED);
+            _this3.maybeCallOnChange(event, value2, "type");
+            if (_this3.suggestionsContainer) {
+              _this3.suggestionsContainer.scrollTop = 0;
+            }
+            _this3.setState(_objectSpread({}, highlightFirstSuggestion ? {} : {
+              highlightedSectionIndex: null,
+              highlightedSuggestionIndex: null,
+              highlightedSuggestion: null
+            }, {
+              valueBeforeUpDown: null,
+              isCollapsed: !shouldRender
+            }));
+            if (shouldRender) {
+              onSuggestionsFetchRequested({
+                value: value2,
+                reason: REASON_INPUT_CHANGED
+              });
+            } else {
+              _this3.onSuggestionsClearRequested();
+            }
+          },
+          onKeyDown: function onKeyDown(event, data) {
+            var keyCode = event.keyCode;
+            switch (keyCode) {
+              case 40:
+              case 38:
+                if (isCollapsed) {
+                  if (shouldRenderSuggestions(value, REASON_SUGGESTIONS_REVEALED)) {
+                    onSuggestionsFetchRequested({
+                      value,
+                      reason: REASON_SUGGESTIONS_REVEALED
+                    });
+                    _this3.revealSuggestions();
+                    event.preventDefault();
+                  }
+                } else if (suggestions.length > 0) {
+                  var newHighlightedSectionIndex = data.newHighlightedSectionIndex, newHighlightedItemIndex = data.newHighlightedItemIndex;
+                  var newValue;
+                  if (newHighlightedItemIndex === null) {
+                    newValue = valueBeforeUpDown === null ? value : valueBeforeUpDown;
+                  } else {
+                    newValue = _this3.getSuggestionValueByIndex(newHighlightedSectionIndex, newHighlightedItemIndex);
+                  }
+                  _this3.updateHighlightedSuggestion(newHighlightedSectionIndex, newHighlightedItemIndex, value);
+                  _this3.maybeCallOnChange(event, newValue, keyCode === 40 ? "down" : "up");
+                  event.preventDefault();
+                }
+                _this3.justPressedUpDown = true;
+                setTimeout(function() {
+                  _this3.justPressedUpDown = false;
+                });
+                break;
+              case 13: {
+                if (event.keyCode === 229) {
+                  break;
+                }
+                var highlightedSuggestion = _this3.getHighlightedSuggestion();
+                if (isOpen && !alwaysRenderSuggestions) {
+                  _this3.closeSuggestions();
+                }
+                if (highlightedSuggestion != null) {
+                  event.preventDefault();
+                  var _newValue = getSuggestionValue(highlightedSuggestion);
+                  _this3.maybeCallOnChange(event, _newValue, "enter");
+                  _this3.onSuggestionSelected(event, {
+                    suggestion: highlightedSuggestion,
+                    suggestionValue: _newValue,
+                    suggestionIndex: highlightedSuggestionIndex,
+                    sectionIndex: highlightedSectionIndex,
+                    method: "enter"
+                  });
+                  _this3.justSelectedSuggestion = true;
+                  setTimeout(function() {
+                    _this3.justSelectedSuggestion = false;
+                  });
+                }
+                break;
+              }
+              case 27: {
+                if (isOpen) {
+                  event.preventDefault();
+                }
+                var willCloseSuggestions = isOpen && !alwaysRenderSuggestions;
+                if (valueBeforeUpDown === null) {
+                  if (!willCloseSuggestions) {
+                    var _newValue2 = "";
+                    _this3.maybeCallOnChange(event, _newValue2, "escape");
+                    if (shouldRenderSuggestions(_newValue2, REASON_ESCAPE_PRESSED)) {
+                      onSuggestionsFetchRequested({
+                        value: _newValue2,
+                        reason: REASON_ESCAPE_PRESSED
+                      });
+                    } else {
+                      _this3.onSuggestionsClearRequested();
+                    }
+                  }
+                } else {
+                  _this3.maybeCallOnChange(event, valueBeforeUpDown, "escape");
+                }
+                if (willCloseSuggestions) {
+                  _this3.onSuggestionsClearRequested();
+                  _this3.closeSuggestions();
+                } else {
+                  _this3.resetHighlightedSuggestion();
+                }
+                break;
+              }
+            }
+            _onKeyDown && _onKeyDown(event);
+          }
+        });
+        var renderSuggestionData = {
+          query: this.getQuery()
+        };
+        return /* @__PURE__ */ _react["default"].createElement(_Autowhatever["default"], {
+          multiSection,
+          items,
+          renderInputComponent,
+          renderItemsContainer: this.renderSuggestionsContainer,
+          renderItem: renderSuggestion,
+          renderItemData: renderSuggestionData,
+          renderSectionTitle,
+          getSectionItems: getSectionSuggestions,
+          highlightedSectionIndex,
+          highlightedItemIndex: highlightedSuggestionIndex,
+          containerProps,
+          inputProps: autowhateverInputProps,
+          itemProps: this.itemProps,
+          theme: (0, _theme.mapToAutowhateverTheme)(theme2),
+          id: id2,
+          ref: this.storeAutowhateverRef
+        });
+      }
+    }]);
+    return Autosuggest3;
+  }(_react.Component);
+  exports["default"] = Autosuggest2;
+  _defineProperty(Autosuggest2, "propTypes", {
+    suggestions: _propTypes["default"].array.isRequired,
+    onSuggestionsFetchRequested: function onSuggestionsFetchRequested(props, propName) {
+      var onSuggestionsFetchRequested2 = props[propName];
+      if (typeof onSuggestionsFetchRequested2 !== "function") {
+        throw new Error("'onSuggestionsFetchRequested' must be implemented. See: https://github.com/moroshko/react-autosuggest#onSuggestionsFetchRequestedProp");
+      }
+    },
+    onSuggestionsClearRequested: function onSuggestionsClearRequested(props, propName) {
+      var onSuggestionsClearRequested2 = props[propName];
+      if (props.alwaysRenderSuggestions === false && typeof onSuggestionsClearRequested2 !== "function") {
+        throw new Error("'onSuggestionsClearRequested' must be implemented. See: https://github.com/moroshko/react-autosuggest#onSuggestionsClearRequestedProp");
+      }
+    },
+    shouldKeepSuggestionsOnSelect: _propTypes["default"].func,
+    onSuggestionSelected: _propTypes["default"].func,
+    onSuggestionHighlighted: _propTypes["default"].func,
+    renderInputComponent: _propTypes["default"].func,
+    renderSuggestionsContainer: _propTypes["default"].func,
+    getSuggestionValue: _propTypes["default"].func.isRequired,
+    renderSuggestion: _propTypes["default"].func.isRequired,
+    inputProps: function inputProps(props, propName) {
+      var inputProps2 = props[propName];
+      if (!inputProps2) {
+        throw new Error("'inputProps' must be passed.");
+      }
+      if (!Object.prototype.hasOwnProperty.call(inputProps2, "value")) {
+        throw new Error("'inputProps' must have 'value'.");
+      }
+      if (!Object.prototype.hasOwnProperty.call(inputProps2, "onChange")) {
+        throw new Error("'inputProps' must have 'onChange'.");
+      }
+    },
+    shouldRenderSuggestions: _propTypes["default"].func,
+    alwaysRenderSuggestions: _propTypes["default"].bool,
+    multiSection: _propTypes["default"].bool,
+    renderSectionTitle: function renderSectionTitle(props, propName) {
+      var renderSectionTitle2 = props[propName];
+      if (props.multiSection === true && typeof renderSectionTitle2 !== "function") {
+        throw new Error("'renderSectionTitle' must be implemented. See: https://github.com/moroshko/react-autosuggest#renderSectionTitleProp");
+      }
+    },
+    getSectionSuggestions: function getSectionSuggestions(props, propName) {
+      var getSectionSuggestions2 = props[propName];
+      if (props.multiSection === true && typeof getSectionSuggestions2 !== "function") {
+        throw new Error("'getSectionSuggestions' must be implemented. See: https://github.com/moroshko/react-autosuggest#getSectionSuggestionsProp");
+      }
+    },
+    focusInputOnSuggestionClick: _propTypes["default"].bool,
+    highlightFirstSuggestion: _propTypes["default"].bool,
+    theme: _propTypes["default"].object,
+    id: _propTypes["default"].string,
+    containerProps: _propTypes["default"].object
+    // Arbitrary container props
+  });
+  _defineProperty(Autosuggest2, "defaultProps", {
+    renderSuggestionsContainer: defaultRenderSuggestionsContainer,
+    shouldRenderSuggestions: defaultShouldRenderSuggestions,
+    alwaysRenderSuggestions: false,
+    multiSection: false,
+    shouldKeepSuggestionsOnSelect: function shouldKeepSuggestionsOnSelect() {
+      return false;
+    },
+    focusInputOnSuggestionClick: true,
+    highlightFirstSuggestion: false,
+    theme: _theme.defaultTheme,
+    id: "1",
+    containerProps: {}
+  });
+})(Autosuggest$1);
+var dist = Autosuggest$1["default"];
+const Autosuggest = /* @__PURE__ */ getDefaultExportFromCjs(dist);
+function AutoSuggestInput({
+  currentGuess,
+  setCurrentGuess,
+  placeholder,
+  suggestionsArray
+}) {
+  const [suggestions, setSuggestions] = reactExports.useState([]);
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    Autosuggest,
+    {
+      id: "map-autosuggest",
+      suggestions,
+      getSuggestionValue: (suggestion) => suggestion,
+      inputProps: {
+        value: currentGuess,
+        placeholder,
+        onChange: (_e, { newValue }) => setCurrentGuess(newValue),
+        className: "w-full dark:bg-slate-800 dark:text-slate-100"
+      },
+      onSuggestionsFetchRequested: ({ value }) => (
+        //setSuggestions(fetchSuggestions(CSSFontFeatureValuesRule, value))
+        setSuggestions(fetchSuggestions(suggestionsArray, value))
+      ),
+      onSuggestionsClearRequested: () => setSuggestions([]),
+      renderSuggestion: (suggestion) => /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "dark:bg-slate-800 border-2 rounded dark:text-slate-100", children: suggestion }),
+      renderSuggestionsContainer: ({ containerProps, children }) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+        "div",
+        {
+          ...containerProps,
+          className: `${containerProps.className} absolute bottom-full w-full bg-white mb-1 divide-x-2 max-h-52 overflow-auto`,
+          children
+        }
+      ),
+      containerProps: {
+        className: "dark:bg-slate-800 border-2 rounded flex-auto relative p-1 mr-1"
+      }
+    }
+  ) });
+}
+function GuessButton({ handler, text }) {
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+    "button",
+    {
+      type: "submit",
+      onClick: handler,
+      className: "dark:bg-slate-800 dark:hover:bg-slate-700 border-2 rounded uppercase flex-shrink-0 p-1 font-semibold",
+      "data-testid": "guess-btn",
+      children: text
+    }
+  );
+}
+function r(e) {
+  var t2, f2, n2 = "";
+  if ("string" == typeof e || "number" == typeof e) n2 += e;
+  else if ("object" == typeof e) if (Array.isArray(e)) {
+    var o = e.length;
+    for (t2 = 0; t2 < o; t2++) e[t2] && (f2 = r(e[t2])) && (n2 && (n2 += " "), n2 += f2);
+  } else for (f2 in e) e[f2] && (n2 && (n2 += " "), n2 += f2);
+  return n2;
+}
+function clsx() {
+  for (var e, t2, f2 = 0, n2 = "", o = arguments.length; f2 < o; f2++) (e = arguments[f2]) && (t2 = r(e)) && (n2 && (n2 += " "), n2 += t2);
+  return n2;
+}
+const c = (e) => "number" == typeof e && !isNaN(e), d = (e) => "string" == typeof e, u = (e) => "function" == typeof e, p = (e) => d(e) || u(e) ? e : null, m = (e) => reactExports.isValidElement(e) || d(e) || u(e) || c(e);
+function f(e, t2, n2) {
+  void 0 === n2 && (n2 = 300);
+  const { scrollHeight: o, style: s } = e;
+  requestAnimationFrame(() => {
+    s.minHeight = "initial", s.height = o + "px", s.transition = `all ${n2}ms`, requestAnimationFrame(() => {
+      s.height = "0", s.padding = "0", s.margin = "0", setTimeout(t2, n2);
+    });
+  });
+}
+function g(t2) {
+  let { enter: a, exit: r2, appendPosition: i = false, collapse: l2 = true, collapseDuration: c2 = 300 } = t2;
+  return function(t3) {
+    let { children: d2, position: u2, preventExitTransition: p2, done: m2, nodeRef: g2, isIn: y2, playToast: v2 } = t3;
+    const h2 = i ? `${a}--${u2}` : a, T2 = i ? `${r2}--${u2}` : r2, E2 = reactExports.useRef(0);
+    return reactExports.useLayoutEffect(() => {
+      const e = g2.current, t4 = h2.split(" "), n2 = (o) => {
+        o.target === g2.current && (v2(), e.removeEventListener("animationend", n2), e.removeEventListener("animationcancel", n2), 0 === E2.current && "animationcancel" !== o.type && e.classList.remove(...t4));
+      };
+      e.classList.add(...t4), e.addEventListener("animationend", n2), e.addEventListener("animationcancel", n2);
+    }, []), reactExports.useEffect(() => {
+      const e = g2.current, t4 = () => {
+        e.removeEventListener("animationend", t4), l2 ? f(e, m2, c2) : m2();
+      };
+      y2 || (p2 ? t4() : (E2.current = 1, e.className += ` ${T2}`, e.addEventListener("animationend", t4)));
+    }, [y2]), React.createElement(React.Fragment, null, d2);
+  };
+}
+function y(e, t2) {
+  return null != e ? { content: e.content, containerId: e.props.containerId, id: e.props.toastId, theme: e.props.theme, type: e.props.type, data: e.props.data || {}, isLoading: e.props.isLoading, icon: e.props.icon, status: t2 } : {};
+}
+const v = /* @__PURE__ */ new Map();
+let h = [];
+const T = /* @__PURE__ */ new Set(), E = (e) => T.forEach((t2) => t2(e)), b = () => v.size > 0;
+function I(e, t2) {
+  var n2;
+  if (t2) return !(null == (n2 = v.get(t2)) || !n2.isToastActive(e));
+  let o = false;
+  return v.forEach((t3) => {
+    t3.isToastActive(e) && (o = true);
+  }), o;
+}
+function _(e, t2) {
+  m(e) && (b() || h.push({ content: e, options: t2 }), v.forEach((n2) => {
+    n2.buildToast(e, t2);
+  }));
+}
+function C(e, t2) {
+  v.forEach((n2) => {
+    null != t2 && null != t2 && t2.containerId ? (null == t2 ? void 0 : t2.containerId) === n2.id && n2.toggle(e, null == t2 ? void 0 : t2.id) : n2.toggle(e, null == t2 ? void 0 : t2.id);
+  });
+}
+function L(e) {
+  const { subscribe: o, getSnapshot: s, setProps: i } = reactExports.useRef(function(e2) {
+    const n2 = e2.containerId || 1;
+    return { subscribe(o2) {
+      const s2 = /* @__PURE__ */ function(e3, n3, o3) {
+        let s3 = 1, r3 = 0, i2 = [], l3 = [], f2 = [], g2 = n3;
+        const v2 = /* @__PURE__ */ new Map(), h2 = /* @__PURE__ */ new Set(), T2 = () => {
+          f2 = Array.from(v2.values()), h2.forEach((e4) => e4());
+        }, E2 = (e4) => {
+          l3 = null == e4 ? [] : l3.filter((t2) => t2 !== e4), T2();
+        }, b2 = (e4) => {
+          const { toastId: n4, onOpen: s4, updateId: a, children: r4 } = e4.props, i3 = null == a;
+          e4.staleId && v2.delete(e4.staleId), v2.set(n4, e4), l3 = [...l3, e4.props.toastId].filter((t2) => t2 !== e4.staleId), T2(), o3(y(e4, i3 ? "added" : "updated")), i3 && u(s4) && s4(reactExports.isValidElement(r4) && r4.props);
+        };
+        return { id: e3, props: g2, observe: (e4) => (h2.add(e4), () => h2.delete(e4)), toggle: (e4, t2) => {
+          v2.forEach((n4) => {
+            null != t2 && t2 !== n4.props.toastId || u(n4.toggle) && n4.toggle(e4);
+          });
+        }, removeToast: E2, toasts: v2, clearQueue: () => {
+          r3 -= i2.length, i2 = [];
+        }, buildToast: (n4, l4) => {
+          if (((t2) => {
+            let { containerId: n5, toastId: o4, updateId: s4 } = t2;
+            const a = n5 ? n5 !== e3 : 1 !== e3, r4 = v2.has(o4) && null == s4;
+            return a || r4;
+          })(l4)) return;
+          const { toastId: f3, updateId: h3, data: I2, staleId: _2, delay: C2 } = l4, L2 = () => {
+            E2(f3);
+          }, N2 = null == h3;
+          N2 && r3++;
+          const $2 = { ...g2, style: g2.toastStyle, key: s3++, ...Object.fromEntries(Object.entries(l4).filter((e4) => {
+            let [t2, n5] = e4;
+            return null != n5;
+          })), toastId: f3, updateId: h3, data: I2, closeToast: L2, isIn: false, className: p(l4.className || g2.toastClassName), bodyClassName: p(l4.bodyClassName || g2.bodyClassName), progressClassName: p(l4.progressClassName || g2.progressClassName), autoClose: !l4.isLoading && (w2 = l4.autoClose, k2 = g2.autoClose, false === w2 || c(w2) && w2 > 0 ? w2 : k2), deleteToast() {
+            const e4 = v2.get(f3), { onClose: n5, children: s4 } = e4.props;
+            u(n5) && n5(reactExports.isValidElement(s4) && s4.props), o3(y(e4, "removed")), v2.delete(f3), r3--, r3 < 0 && (r3 = 0), i2.length > 0 ? b2(i2.shift()) : T2();
+          } };
+          var w2, k2;
+          $2.closeButton = g2.closeButton, false === l4.closeButton || m(l4.closeButton) ? $2.closeButton = l4.closeButton : true === l4.closeButton && ($2.closeButton = !m(g2.closeButton) || g2.closeButton);
+          let P2 = n4;
+          reactExports.isValidElement(n4) && !d(n4.type) ? P2 = reactExports.cloneElement(n4, { closeToast: L2, toastProps: $2, data: I2 }) : u(n4) && (P2 = n4({ closeToast: L2, toastProps: $2, data: I2 }));
+          const M2 = { content: P2, props: $2, staleId: _2 };
+          g2.limit && g2.limit > 0 && r3 > g2.limit && N2 ? i2.push(M2) : c(C2) ? setTimeout(() => {
+            b2(M2);
+          }, C2) : b2(M2);
+        }, setProps(e4) {
+          g2 = e4;
+        }, setToggle: (e4, t2) => {
+          v2.get(e4).toggle = t2;
+        }, isToastActive: (e4) => l3.some((t2) => t2 === e4), getSnapshot: () => g2.newestOnTop ? f2.reverse() : f2 };
+      }(n2, e2, E);
+      v.set(n2, s2);
+      const r2 = s2.observe(o2);
+      return h.forEach((e3) => _(e3.content, e3.options)), h = [], () => {
+        r2(), v.delete(n2);
+      };
+    }, setProps(e3) {
+      var t2;
+      null == (t2 = v.get(n2)) || t2.setProps(e3);
+    }, getSnapshot() {
+      var e3;
+      return null == (e3 = v.get(n2)) ? void 0 : e3.getSnapshot();
+    } };
+  }(e)).current;
+  i(e);
+  const l2 = reactExports.useSyncExternalStore(o, s, s);
+  return { getToastToRender: function(e2) {
+    if (!l2) return [];
+    const t2 = /* @__PURE__ */ new Map();
+    return l2.forEach((e3) => {
+      const { position: n2 } = e3.props;
+      t2.has(n2) || t2.set(n2, []), t2.get(n2).push(e3);
+    }), Array.from(t2, (t3) => e2(t3[0], t3[1]));
+  }, isToastActive: I, count: null == l2 ? void 0 : l2.length };
+}
+function N(e) {
+  const [t2, o] = reactExports.useState(false), [a, r2] = reactExports.useState(false), l2 = reactExports.useRef(null), c2 = reactExports.useRef({ start: 0, delta: 0, removalDistance: 0, canCloseOnClick: true, canDrag: false, didMove: false }).current, { autoClose: d2, pauseOnHover: u2, closeToast: p2, onClick: m2, closeOnClick: f2 } = e;
+  var g2, y2;
+  function h2() {
+    o(true);
+  }
+  function T2() {
+    o(false);
+  }
+  function E2(n2) {
+    const o2 = l2.current;
+    c2.canDrag && o2 && (c2.didMove = true, t2 && T2(), c2.delta = "x" === e.draggableDirection ? n2.clientX - c2.start : n2.clientY - c2.start, c2.start !== n2.clientX && (c2.canCloseOnClick = false), o2.style.transform = `translate3d(${"x" === e.draggableDirection ? `${c2.delta}px, var(--y)` : `0, calc(${c2.delta}px + var(--y))`},0)`, o2.style.opacity = "" + (1 - Math.abs(c2.delta / c2.removalDistance)));
+  }
+  function b2() {
+    document.removeEventListener("pointermove", E2), document.removeEventListener("pointerup", b2);
+    const t3 = l2.current;
+    if (c2.canDrag && c2.didMove && t3) {
+      if (c2.canDrag = false, Math.abs(c2.delta) > c2.removalDistance) return r2(true), e.closeToast(), void e.collapseAll();
+      t3.style.transition = "transform 0.2s, opacity 0.2s", t3.style.removeProperty("transform"), t3.style.removeProperty("opacity");
+    }
+  }
+  null == (y2 = v.get((g2 = { id: e.toastId, containerId: e.containerId, fn: o }).containerId || 1)) || y2.setToggle(g2.id, g2.fn), reactExports.useEffect(() => {
+    if (e.pauseOnFocusLoss) return document.hasFocus() || T2(), window.addEventListener("focus", h2), window.addEventListener("blur", T2), () => {
+      window.removeEventListener("focus", h2), window.removeEventListener("blur", T2);
+    };
+  }, [e.pauseOnFocusLoss]);
+  const I2 = { onPointerDown: function(t3) {
+    if (true === e.draggable || e.draggable === t3.pointerType) {
+      c2.didMove = false, document.addEventListener("pointermove", E2), document.addEventListener("pointerup", b2);
+      const n2 = l2.current;
+      c2.canCloseOnClick = true, c2.canDrag = true, n2.style.transition = "none", "x" === e.draggableDirection ? (c2.start = t3.clientX, c2.removalDistance = n2.offsetWidth * (e.draggablePercent / 100)) : (c2.start = t3.clientY, c2.removalDistance = n2.offsetHeight * (80 === e.draggablePercent ? 1.5 * e.draggablePercent : e.draggablePercent) / 100);
+    }
+  }, onPointerUp: function(t3) {
+    const { top: n2, bottom: o2, left: s, right: a2 } = l2.current.getBoundingClientRect();
+    "touchend" !== t3.nativeEvent.type && e.pauseOnHover && t3.clientX >= s && t3.clientX <= a2 && t3.clientY >= n2 && t3.clientY <= o2 ? T2() : h2();
+  } };
+  return d2 && u2 && (I2.onMouseEnter = T2, e.stacked || (I2.onMouseLeave = h2)), f2 && (I2.onClick = (e2) => {
+    m2 && m2(e2), c2.canCloseOnClick && p2();
+  }), { playToast: h2, pauseToast: T2, isRunning: t2, preventExitTransition: a, toastRef: l2, eventHandlers: I2 };
+}
+function $(t2) {
+  let { delay: n2, isRunning: o, closeToast: s, type: a = "default", hide: r2, className: i, style: c2, controlledProgress: d2, progress: p2, rtl: m2, isIn: f2, theme: g2 } = t2;
+  const y2 = r2 || d2 && 0 === p2, v2 = { ...c2, animationDuration: `${n2}ms`, animationPlayState: o ? "running" : "paused" };
+  d2 && (v2.transform = `scaleX(${p2})`);
+  const h2 = clsx("Toastify__progress-bar", d2 ? "Toastify__progress-bar--controlled" : "Toastify__progress-bar--animated", `Toastify__progress-bar-theme--${g2}`, `Toastify__progress-bar--${a}`, { "Toastify__progress-bar--rtl": m2 }), T2 = u(i) ? i({ rtl: m2, type: a, defaultClassName: h2 }) : clsx(h2, i), E2 = { [d2 && p2 >= 1 ? "onTransitionEnd" : "onAnimationEnd"]: d2 && p2 < 1 ? null : () => {
+    f2 && s();
+  } };
+  return React.createElement("div", { className: "Toastify__progress-bar--wrp", "data-hidden": y2 }, React.createElement("div", { className: `Toastify__progress-bar--bg Toastify__progress-bar-theme--${g2} Toastify__progress-bar--${a}` }), React.createElement("div", { role: "progressbar", "aria-hidden": y2 ? "true" : "false", "aria-label": "notification timer", className: T2, style: v2, ...E2 }));
+}
+let w = 1;
+const k = () => "" + w++;
+function P(e) {
+  return e && (d(e.toastId) || c(e.toastId)) ? e.toastId : k();
+}
+function M(e, t2) {
+  return _(e, t2), t2.toastId;
+}
+function x(e, t2) {
+  return { ...t2, type: t2 && t2.type || e, toastId: P(t2) };
+}
+function A(e) {
+  return (t2, n2) => M(t2, x(e, n2));
+}
+function B(e, t2) {
+  return M(e, x("default", t2));
+}
+B.loading = (e, t2) => M(e, x("default", { isLoading: true, autoClose: false, closeOnClick: false, closeButton: false, draggable: false, ...t2 })), B.promise = function(e, t2, n2) {
+  let o, { pending: s, error: a, success: r2 } = t2;
+  s && (o = d(s) ? B.loading(s, n2) : B.loading(s.render, { ...n2, ...s }));
+  const i = { isLoading: null, autoClose: null, closeOnClick: null, closeButton: null, draggable: null }, l2 = (e2, t3, s2) => {
+    if (null == t3) return void B.dismiss(o);
+    const a2 = { type: e2, ...i, ...n2, data: s2 }, r3 = d(t3) ? { render: t3 } : t3;
+    return o ? B.update(o, { ...a2, ...r3 }) : B(r3.render, { ...a2, ...r3 }), s2;
+  }, c2 = u(e) ? e() : e;
+  return c2.then((e2) => l2("success", r2, e2)).catch((e2) => l2("error", a, e2)), c2;
+}, B.success = A("success"), B.info = A("info"), B.error = A("error"), B.warning = A("warning"), B.warn = B.warning, B.dark = (e, t2) => M(e, x("default", { theme: "dark", ...t2 })), B.dismiss = function(e) {
+  !function(e2) {
+    var t2;
+    if (b()) {
+      if (null == e2 || d(t2 = e2) || c(t2)) v.forEach((t3) => {
+        t3.removeToast(e2);
+      });
+      else if (e2 && ("containerId" in e2 || "id" in e2)) {
+        const t3 = v.get(e2.containerId);
+        t3 ? t3.removeToast(e2.id) : v.forEach((t4) => {
+          t4.removeToast(e2.id);
+        });
+      }
+    } else h = h.filter((t3) => null != e2 && t3.options.toastId !== e2);
+  }(e);
+}, B.clearWaitingQueue = function(e) {
+  void 0 === e && (e = {}), v.forEach((t2) => {
+    !t2.props.limit || e.containerId && t2.id !== e.containerId || t2.clearQueue();
+  });
+}, B.isActive = I, B.update = function(e, t2) {
+  void 0 === t2 && (t2 = {});
+  const n2 = ((e2, t3) => {
+    var n3;
+    let { containerId: o } = t3;
+    return null == (n3 = v.get(o || 1)) ? void 0 : n3.toasts.get(e2);
+  })(e, t2);
+  if (n2) {
+    const { props: o, content: s } = n2, a = { delay: 100, ...o, ...t2, toastId: t2.toastId || e, updateId: k() };
+    a.toastId !== e && (a.staleId = e);
+    const r2 = a.render || s;
+    delete a.render, M(r2, a);
+  }
+}, B.done = (e) => {
+  B.update(e, { progress: 1 });
+}, B.onChange = function(e) {
+  return T.add(e), () => {
+    T.delete(e);
+  };
+}, B.play = (e) => C(true, e), B.pause = (e) => C(false, e);
+const O = "undefined" != typeof window ? reactExports.useLayoutEffect : reactExports.useEffect, D = (t2) => {
+  let { theme: n2, type: o, isLoading: s, ...a } = t2;
+  return React.createElement("svg", { viewBox: "0 0 24 24", width: "100%", height: "100%", fill: "colored" === n2 ? "currentColor" : `var(--toastify-icon-color-${o})`, ...a });
+}, z = { info: function(t2) {
+  return React.createElement(D, { ...t2 }, React.createElement("path", { d: "M12 0a12 12 0 1012 12A12.013 12.013 0 0012 0zm.25 5a1.5 1.5 0 11-1.5 1.5 1.5 1.5 0 011.5-1.5zm2.25 13.5h-4a1 1 0 010-2h.75a.25.25 0 00.25-.25v-4.5a.25.25 0 00-.25-.25h-.75a1 1 0 010-2h1a2 2 0 012 2v4.75a.25.25 0 00.25.25h.75a1 1 0 110 2z" }));
+}, warning: function(t2) {
+  return React.createElement(D, { ...t2 }, React.createElement("path", { d: "M23.32 17.191L15.438 2.184C14.728.833 13.416 0 11.996 0c-1.42 0-2.733.833-3.443 2.184L.533 17.448a4.744 4.744 0 000 4.368C1.243 23.167 2.555 24 3.975 24h16.05C22.22 24 24 22.044 24 19.632c0-.904-.251-1.746-.68-2.44zm-9.622 1.46c0 1.033-.724 1.823-1.698 1.823s-1.698-.79-1.698-1.822v-.043c0-1.028.724-1.822 1.698-1.822s1.698.79 1.698 1.822v.043zm.039-12.285l-.84 8.06c-.057.581-.408.943-.897.943-.49 0-.84-.367-.896-.942l-.84-8.065c-.057-.624.25-1.095.779-1.095h1.91c.528.005.84.476.784 1.1z" }));
+}, success: function(t2) {
+  return React.createElement(D, { ...t2 }, React.createElement("path", { d: "M12 0a12 12 0 1012 12A12.014 12.014 0 0012 0zm6.927 8.2l-6.845 9.289a1.011 1.011 0 01-1.43.188l-4.888-3.908a1 1 0 111.25-1.562l4.076 3.261 6.227-8.451a1 1 0 111.61 1.183z" }));
+}, error: function(t2) {
+  return React.createElement(D, { ...t2 }, React.createElement("path", { d: "M11.983 0a12.206 12.206 0 00-8.51 3.653A11.8 11.8 0 000 12.207 11.779 11.779 0 0011.8 24h.214A12.111 12.111 0 0024 11.791 11.766 11.766 0 0011.983 0zM10.5 16.542a1.476 1.476 0 011.449-1.53h.027a1.527 1.527 0 011.523 1.47 1.475 1.475 0 01-1.449 1.53h-.027a1.529 1.529 0 01-1.523-1.47zM11 12.5v-6a1 1 0 012 0v6a1 1 0 11-2 0z" }));
+}, spinner: function() {
+  return React.createElement("div", { className: "Toastify__spinner" });
+} }, R = (n2) => {
+  const { isRunning: o, preventExitTransition: s, toastRef: r2, eventHandlers: i, playToast: c2 } = N(n2), { closeButton: d2, children: p2, autoClose: m2, onClick: f2, type: g2, hideProgressBar: y2, closeToast: v2, transition: h2, position: T2, className: E2, style: b2, bodyClassName: I2, bodyStyle: _2, progressClassName: C2, progressStyle: L2, updateId: w2, role: k2, progress: P2, rtl: M2, toastId: x2, deleteToast: A2, isIn: B2, isLoading: O2, closeOnClick: D2, theme: R2 } = n2, S2 = clsx("Toastify__toast", `Toastify__toast-theme--${R2}`, `Toastify__toast--${g2}`, { "Toastify__toast--rtl": M2 }, { "Toastify__toast--close-on-click": D2 }), H2 = u(E2) ? E2({ rtl: M2, position: T2, type: g2, defaultClassName: S2 }) : clsx(S2, E2), F2 = function(e) {
+    let { theme: n3, type: o2, isLoading: s2, icon: r3 } = e, i2 = null;
+    const l2 = { theme: n3, type: o2 };
+    return false === r3 || (u(r3) ? i2 = r3({ ...l2, isLoading: s2 }) : reactExports.isValidElement(r3) ? i2 = reactExports.cloneElement(r3, l2) : s2 ? i2 = z.spinner() : ((e2) => e2 in z)(o2) && (i2 = z[o2](l2))), i2;
+  }(n2), X2 = !!P2 || !m2, Y2 = { closeToast: v2, type: g2, theme: R2 };
+  let q2 = null;
+  return false === d2 || (q2 = u(d2) ? d2(Y2) : reactExports.isValidElement(d2) ? reactExports.cloneElement(d2, Y2) : function(t2) {
+    let { closeToast: n3, theme: o2, ariaLabel: s2 = "close" } = t2;
+    return React.createElement("button", { className: `Toastify__close-button Toastify__close-button--${o2}`, type: "button", onClick: (e) => {
+      e.stopPropagation(), n3(e);
+    }, "aria-label": s2 }, React.createElement("svg", { "aria-hidden": "true", viewBox: "0 0 14 16" }, React.createElement("path", { fillRule: "evenodd", d: "M7.71 8.23l3.75 3.75-1.48 1.48-3.75-3.75-3.75 3.75L1 11.98l3.75-3.75L1 4.48 2.48 3l3.75 3.75L9.98 3l1.48 1.48-3.75 3.75z" })));
+  }(Y2)), React.createElement(h2, { isIn: B2, done: A2, position: T2, preventExitTransition: s, nodeRef: r2, playToast: c2 }, React.createElement("div", { id: x2, onClick: f2, "data-in": B2, className: H2, ...i, style: b2, ref: r2 }, React.createElement("div", { ...B2 && { role: k2 }, className: u(I2) ? I2({ type: g2 }) : clsx("Toastify__toast-body", I2), style: _2 }, null != F2 && React.createElement("div", { className: clsx("Toastify__toast-icon", { "Toastify--animate-icon Toastify__zoom-enter": !O2 }) }, F2), React.createElement("div", null, p2)), q2, React.createElement($, { ...w2 && !X2 ? { key: `pb-${w2}` } : {}, rtl: M2, theme: R2, delay: m2, isRunning: o, isIn: B2, closeToast: v2, hide: y2, type: g2, style: L2, className: C2, controlledProgress: X2, progress: P2 || 0 })));
+}, S = function(e, t2) {
+  return void 0 === t2 && (t2 = false), { enter: `Toastify--animate Toastify__${e}-enter`, exit: `Toastify--animate Toastify__${e}-exit`, appendPosition: t2 };
+}, H = g(S("bounce", true));
+g(S("slide", true));
+const X = g(S("zoom"));
+g(S("flip"));
+const q = { position: "top-right", transition: H, autoClose: 5e3, closeButton: true, pauseOnHover: true, pauseOnFocusLoss: true, draggable: "touch", draggablePercent: 80, draggableDirection: "x", role: "alert", theme: "light" };
+function Q(t2) {
+  let o = { ...q, ...t2 };
+  const s = t2.stacked, [a, r2] = reactExports.useState(true), c2 = reactExports.useRef(null), { getToastToRender: d2, isToastActive: m2, count: f2 } = L(o), { className: g2, style: y2, rtl: v2, containerId: h2 } = o;
+  function T2(e) {
+    const t3 = clsx("Toastify__toast-container", `Toastify__toast-container--${e}`, { "Toastify__toast-container--rtl": v2 });
+    return u(g2) ? g2({ position: e, rtl: v2, defaultClassName: t3 }) : clsx(t3, p(g2));
+  }
+  function E2() {
+    s && (r2(true), B.play());
+  }
+  return O(() => {
+    if (s) {
+      var e;
+      const t3 = c2.current.querySelectorAll('[data-in="true"]'), n2 = 12, s2 = null == (e = o.position) ? void 0 : e.includes("top");
+      let r3 = 0, i = 0;
+      Array.from(t3).reverse().forEach((e2, t4) => {
+        const o2 = e2;
+        o2.classList.add("Toastify__toast--stacked"), t4 > 0 && (o2.dataset.collapsed = `${a}`), o2.dataset.pos || (o2.dataset.pos = s2 ? "top" : "bot");
+        const l2 = r3 * (a ? 0.2 : 1) + (a ? 0 : n2 * t4);
+        o2.style.setProperty("--y", `${s2 ? l2 : -1 * l2}px`), o2.style.setProperty("--g", `${n2}`), o2.style.setProperty("--s", "" + (1 - (a ? i : 0))), r3 += o2.offsetHeight, i += 0.025;
+      });
+    }
+  }, [a, f2, s]), React.createElement("div", { ref: c2, className: "Toastify", id: h2, onMouseEnter: () => {
+    s && (r2(false), B.pause());
+  }, onMouseLeave: E2 }, d2((t3, n2) => {
+    const o2 = n2.length ? { ...y2 } : { ...y2, pointerEvents: "none" };
+    return React.createElement("div", { className: T2(t3), style: o2, key: `container-${t3}` }, n2.map((t4) => {
+      let { content: n3, props: o3 } = t4;
+      return React.createElement(R, { ...o3, stacked: s, collapseAll: E2, isIn: m2(o3.toastId, o3.containerId), style: o3.style, key: `toast-${o3.key}` }, n3);
+    }));
+  }));
+}
+const SQUARE_ANIMATION_LENGTH = 250;
+const squares = ["🟩", "🟩", "🟨", "🟧", "🟥", "⬛️"];
+function getSquaresByDistance(distanceInMeters) {
+  const distanceInKms = Math.floor(distanceInMeters / 1e3);
+  return distanceInKms === 0 ? ["🟩", "🟩", "🟩", "🟩", "🟩", "🟩"] : distanceInKms <= 300 ? ["🟩", "🟩", "🟩", "🟩", "🟩", "🟨"] : distanceInKms <= 1300 ? ["🟩", "🟩", "🟩", "🟩", "🟨", "🟨"] : distanceInKms <= 2300 ? ["🟩", "🟩", "🟩", "🟨", "🟨", "🟧"] : distanceInKms <= 3300 ? ["🟩", "🟩", "🟨", "🟨", "🟧", "🟧"] : distanceInKms <= 4300 ? ["🟩", "🟨", "🟨", "🟧", "🟧", "🟥"] : ["🟨", "🟨", "🟧", "🟧", "🟥", "🟥"];
+}
+function toastError(text) {
+  B.error(text, {
+    position: "top-center",
+    autoClose: 2e3,
+    hideProgressBar: true,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: void 0,
+    theme: "dark",
+    style: {
+      backgroundColor: "#F8B0B7",
+      // Replace with your desired background color
+      color: "#000000"
+      // Optional: to set text color
+    },
+    transition: X
+  });
+}
+function toastFailed(text) {
+  toastError(text);
+}
+function toastSuccess(text) {
+  B.success(text, {
+    position: "top-center",
+    autoClose: 3e3,
+    hideProgressBar: true,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: void 0,
+    theme: "dark",
+    style: {
+      backgroundColor: "#9EEAA7",
+      // Replace with your desired background color
+      color: "#000000"
+      // Optional: to set text color
+    },
+    transition: X
+  });
+}
+function GuessRow({
+  guessCode,
+  solutionCode,
+  //  tGeo,
+  dataBank: dataBank2
+}) {
+  const [animationIsActive, setAnimationIsActive] = reactExports.useState(false);
+  reactExports.useEffect(() => {
+    if (!guessCode || guessCode === "invalid") {
+      return;
+    }
+    setAnimationIsActive(true);
+    const totalAnimationTime = SQUARE_ANIMATION_LENGTH * squares.length;
+    const timeout = setTimeout(() => {
+      setAnimationIsActive(false);
+    }, totalAnimationTime);
+    return () => clearTimeout(timeout);
+  }, [guessCode]);
+  return guessCode ? !animationIsActive ? /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-7 gap-1 text-center py-0.5", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "my-guess-div col-span-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "my-guess-p", children: dataBank2.tGeo(guessCode) || "-" }) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "my-guess-div col-span-2", children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "my-guess-p", children: calculateDistanceInKm(
+      dataBank2.data[guessCode].coordinates,
+      dataBank2.data[solutionCode].coordinates
+    ) + " km" }) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "my-guess-div", children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "my-guess-p text-xl", children: dataBank2.getDirectionEmoji(guessCode, solutionCode) }) })
+  ] }) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-6 gap-1 text-center py-0.5 text-l w-full justify-evenly items-center border-2 h-8 overflow-hidden", children: getSquaresByDistance(
+    calculateDistanceInMeters(
+      dataBank2.data[guessCode].coordinates,
+      dataBank2.data[solutionCode].coordinates
+    )
+  ).map((character, index) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+    "div",
+    {
+      className: "opacity-0 animate-reveal",
+      style: {
+        animationDelay: `${SQUARE_ANIMATION_LENGTH * index}ms`
+      },
+      children: character
+    },
+    index
+  )) }) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-6 gap-1 text-center py-0.5", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "my-div-2" }) });
+}
+function Guesses({
+  currentRoundStatus,
+  guesses,
+  maxAttempts,
+  solutionCode,
+  guessNum,
+  dataBank: dataBank2
+}) {
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+    currentRoundStatus === "pending" ? /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-6 gap-1 text-center py-0.5", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "my-div-1", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "opacity-70", children: [
+      dataBank2.tLang("guessNoun"),
+      " ",
+      guessNum,
+      " / ",
+      maxAttempts
+    ] }) }) }) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "my-span-2", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "span",
+      {
+        className: `my-span-3 text-black bg-${getColorOfStatus(currentRoundStatus)}`,
+        children: dataBank2.tGeo(solutionCode)
+      }
+    ) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: Array.from({ length: maxAttempts }, (_2, i) => {
+      return /* @__PURE__ */ jsxRuntimeExports.jsx(
+        GuessRow,
+        {
+          guessCode: guesses[i],
+          solutionCode,
+          dataBank: dataBank2
+        }
+      );
+    }) })
+  ] });
+}
+var module = {};
+(function main(global, module2, isWorker, workerSize) {
+  var canUseWorker = !!(global.Worker && global.Blob && global.Promise && global.OffscreenCanvas && global.OffscreenCanvasRenderingContext2D && global.HTMLCanvasElement && global.HTMLCanvasElement.prototype.transferControlToOffscreen && global.URL && global.URL.createObjectURL);
+  var canUsePaths = typeof Path2D === "function" && typeof DOMMatrix === "function";
+  var canDrawBitmap = function() {
+    if (!global.OffscreenCanvas) {
+      return false;
+    }
+    var canvas = new OffscreenCanvas(1, 1);
+    var ctx = canvas.getContext("2d");
+    ctx.fillRect(0, 0, 1, 1);
+    var bitmap = canvas.transferToImageBitmap();
+    try {
+      ctx.createPattern(bitmap, "no-repeat");
+    } catch (e) {
+      return false;
+    }
+    return true;
+  }();
+  function noop2() {
+  }
+  function promise(func) {
+    var ModulePromise = module2.exports.Promise;
+    var Prom = ModulePromise !== void 0 ? ModulePromise : global.Promise;
+    if (typeof Prom === "function") {
+      return new Prom(func);
+    }
+    func(noop2, noop2);
+    return null;
+  }
+  var bitmapMapper = /* @__PURE__ */ function(skipTransform, map) {
+    return {
+      transform: function(bitmap) {
+        if (skipTransform) {
+          return bitmap;
+        }
+        if (map.has(bitmap)) {
+          return map.get(bitmap);
+        }
+        var canvas = new OffscreenCanvas(bitmap.width, bitmap.height);
+        var ctx = canvas.getContext("2d");
+        ctx.drawImage(bitmap, 0, 0);
+        map.set(bitmap, canvas);
+        return canvas;
+      },
+      clear: function() {
+        map.clear();
+      }
+    };
+  }(canDrawBitmap, /* @__PURE__ */ new Map());
+  var raf = function() {
+    var TIME = Math.floor(1e3 / 60);
+    var frame, cancel;
+    var frames = {};
+    var lastFrameTime = 0;
+    if (typeof requestAnimationFrame === "function" && typeof cancelAnimationFrame === "function") {
+      frame = function(cb2) {
+        var id2 = Math.random();
+        frames[id2] = requestAnimationFrame(function onFrame(time) {
+          if (lastFrameTime === time || lastFrameTime + TIME - 1 < time) {
+            lastFrameTime = time;
+            delete frames[id2];
+            cb2();
+          } else {
+            frames[id2] = requestAnimationFrame(onFrame);
+          }
+        });
+        return id2;
+      };
+      cancel = function(id2) {
+        if (frames[id2]) {
+          cancelAnimationFrame(frames[id2]);
+        }
+      };
+    } else {
+      frame = function(cb2) {
+        return setTimeout(cb2, TIME);
+      };
+      cancel = function(timer) {
+        return clearTimeout(timer);
+      };
+    }
+    return { frame, cancel };
+  }();
+  var getWorker = /* @__PURE__ */ function() {
+    var worker;
+    var prom;
+    var resolves = {};
+    function decorate(worker2) {
+      function execute(options, callback) {
+        worker2.postMessage({ options: options || {}, callback });
+      }
+      worker2.init = function initWorker(canvas) {
+        var offscreen = canvas.transferControlToOffscreen();
+        worker2.postMessage({ canvas: offscreen }, [offscreen]);
+      };
+      worker2.fire = function fireWorker(options, size, done) {
+        if (prom) {
+          execute(options, null);
+          return prom;
+        }
+        var id2 = Math.random().toString(36).slice(2);
+        prom = promise(function(resolve) {
+          function workerDone(msg) {
+            if (msg.data.callback !== id2) {
+              return;
+            }
+            delete resolves[id2];
+            worker2.removeEventListener("message", workerDone);
+            prom = null;
+            bitmapMapper.clear();
+            done();
+            resolve();
+          }
+          worker2.addEventListener("message", workerDone);
+          execute(options, id2);
+          resolves[id2] = workerDone.bind(null, { data: { callback: id2 } });
+        });
+        return prom;
+      };
+      worker2.reset = function resetWorker() {
+        worker2.postMessage({ reset: true });
+        for (var id2 in resolves) {
+          resolves[id2]();
+          delete resolves[id2];
+        }
+      };
+    }
+    return function() {
+      if (worker) {
+        return worker;
+      }
+      if (!isWorker && canUseWorker) {
+        var code = [
+          "var CONFETTI, SIZE = {}, module = {};",
+          "(" + main.toString() + ")(this, module, true, SIZE);",
+          "onmessage = function(msg) {",
+          "  if (msg.data.options) {",
+          "    CONFETTI(msg.data.options).then(function () {",
+          "      if (msg.data.callback) {",
+          "        postMessage({ callback: msg.data.callback });",
+          "      }",
+          "    });",
+          "  } else if (msg.data.reset) {",
+          "    CONFETTI && CONFETTI.reset();",
+          "  } else if (msg.data.resize) {",
+          "    SIZE.width = msg.data.resize.width;",
+          "    SIZE.height = msg.data.resize.height;",
+          "  } else if (msg.data.canvas) {",
+          "    SIZE.width = msg.data.canvas.width;",
+          "    SIZE.height = msg.data.canvas.height;",
+          "    CONFETTI = module.exports.create(msg.data.canvas);",
+          "  }",
+          "}"
+        ].join("\n");
+        try {
+          worker = new Worker(URL.createObjectURL(new Blob([code])));
+        } catch (e) {
+          typeof console !== void 0 && typeof console.warn === "function" ? console.warn("🎊 Could not load worker", e) : null;
+          return null;
+        }
+        decorate(worker);
+      }
+      return worker;
+    };
+  }();
+  var defaults2 = {
+    particleCount: 50,
+    angle: 90,
+    spread: 45,
+    startVelocity: 45,
+    decay: 0.9,
+    gravity: 1,
+    drift: 0,
+    ticks: 200,
+    x: 0.5,
+    y: 0.5,
+    shapes: ["square", "circle"],
+    zIndex: 100,
+    colors: [
+      "#26ccff",
+      "#a25afd",
+      "#ff5e7e",
+      "#88ff5a",
+      "#fcff42",
+      "#ffa62d",
+      "#ff36ff"
+    ],
+    // probably should be true, but back-compat
+    disableForReducedMotion: false,
+    scalar: 1
+  };
+  function convert(val, transform) {
+    return transform ? transform(val) : val;
+  }
+  function isOk(val) {
+    return !(val === null || val === void 0);
+  }
+  function prop(options, name, transform) {
+    return convert(
+      options && isOk(options[name]) ? options[name] : defaults2[name],
+      transform
+    );
+  }
+  function onlyPositiveInt(number) {
+    return number < 0 ? 0 : Math.floor(number);
+  }
+  function randomInt(min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
+  }
+  function toDecimal(str) {
+    return parseInt(str, 16);
+  }
+  function colorsToRgb(colors) {
+    return colors.map(hexToRgb);
+  }
+  function hexToRgb(str) {
+    var val = String(str).replace(/[^0-9a-f]/gi, "");
+    if (val.length < 6) {
+      val = val[0] + val[0] + val[1] + val[1] + val[2] + val[2];
+    }
+    return {
+      r: toDecimal(val.substring(0, 2)),
+      g: toDecimal(val.substring(2, 4)),
+      b: toDecimal(val.substring(4, 6))
+    };
+  }
+  function getOrigin(options) {
+    var origin = prop(options, "origin", Object);
+    origin.x = prop(origin, "x", Number);
+    origin.y = prop(origin, "y", Number);
+    return origin;
+  }
+  function setCanvasWindowSize(canvas) {
+    canvas.width = document.documentElement.clientWidth;
+    canvas.height = document.documentElement.clientHeight;
+  }
+  function setCanvasRectSize(canvas) {
+    var rect = canvas.getBoundingClientRect();
+    canvas.width = rect.width;
+    canvas.height = rect.height;
+  }
+  function getCanvas(zIndex) {
+    var canvas = document.createElement("canvas");
+    canvas.style.position = "fixed";
+    canvas.style.top = "0px";
+    canvas.style.left = "0px";
+    canvas.style.pointerEvents = "none";
+    canvas.style.zIndex = zIndex;
+    return canvas;
+  }
+  function ellipse(context, x2, y2, radiusX, radiusY, rotation, startAngle, endAngle, antiClockwise) {
+    context.save();
+    context.translate(x2, y2);
+    context.rotate(rotation);
+    context.scale(radiusX, radiusY);
+    context.arc(0, 0, 1, startAngle, endAngle, antiClockwise);
+    context.restore();
+  }
+  function randomPhysics(opts) {
+    var radAngle = opts.angle * (Math.PI / 180);
+    var radSpread = opts.spread * (Math.PI / 180);
+    return {
+      x: opts.x,
+      y: opts.y,
+      wobble: Math.random() * 10,
+      wobbleSpeed: Math.min(0.11, Math.random() * 0.1 + 0.05),
+      velocity: opts.startVelocity * 0.5 + Math.random() * opts.startVelocity,
+      angle2D: -radAngle + (0.5 * radSpread - Math.random() * radSpread),
+      tiltAngle: (Math.random() * (0.75 - 0.25) + 0.25) * Math.PI,
+      color: opts.color,
+      shape: opts.shape,
+      tick: 0,
+      totalTicks: opts.ticks,
+      decay: opts.decay,
+      drift: opts.drift,
+      random: Math.random() + 2,
+      tiltSin: 0,
+      tiltCos: 0,
+      wobbleX: 0,
+      wobbleY: 0,
+      gravity: opts.gravity * 3,
+      ovalScalar: 0.6,
+      scalar: opts.scalar,
+      flat: opts.flat
+    };
+  }
+  function updateFetti(context, fetti) {
+    fetti.x += Math.cos(fetti.angle2D) * fetti.velocity + fetti.drift;
+    fetti.y += Math.sin(fetti.angle2D) * fetti.velocity + fetti.gravity;
+    fetti.velocity *= fetti.decay;
+    if (fetti.flat) {
+      fetti.wobble = 0;
+      fetti.wobbleX = fetti.x + 10 * fetti.scalar;
+      fetti.wobbleY = fetti.y + 10 * fetti.scalar;
+      fetti.tiltSin = 0;
+      fetti.tiltCos = 0;
+      fetti.random = 1;
+    } else {
+      fetti.wobble += fetti.wobbleSpeed;
+      fetti.wobbleX = fetti.x + 10 * fetti.scalar * Math.cos(fetti.wobble);
+      fetti.wobbleY = fetti.y + 10 * fetti.scalar * Math.sin(fetti.wobble);
+      fetti.tiltAngle += 0.1;
+      fetti.tiltSin = Math.sin(fetti.tiltAngle);
+      fetti.tiltCos = Math.cos(fetti.tiltAngle);
+      fetti.random = Math.random() + 2;
+    }
+    var progress = fetti.tick++ / fetti.totalTicks;
+    var x1 = fetti.x + fetti.random * fetti.tiltCos;
+    var y1 = fetti.y + fetti.random * fetti.tiltSin;
+    var x2 = fetti.wobbleX + fetti.random * fetti.tiltCos;
+    var y2 = fetti.wobbleY + fetti.random * fetti.tiltSin;
+    context.fillStyle = "rgba(" + fetti.color.r + ", " + fetti.color.g + ", " + fetti.color.b + ", " + (1 - progress) + ")";
+    context.beginPath();
+    if (canUsePaths && fetti.shape.type === "path" && typeof fetti.shape.path === "string" && Array.isArray(fetti.shape.matrix)) {
+      context.fill(transformPath2D(
+        fetti.shape.path,
+        fetti.shape.matrix,
+        fetti.x,
+        fetti.y,
+        Math.abs(x2 - x1) * 0.1,
+        Math.abs(y2 - y1) * 0.1,
+        Math.PI / 10 * fetti.wobble
+      ));
+    } else if (fetti.shape.type === "bitmap") {
+      var rotation = Math.PI / 10 * fetti.wobble;
+      var scaleX = Math.abs(x2 - x1) * 0.1;
+      var scaleY = Math.abs(y2 - y1) * 0.1;
+      var width = fetti.shape.bitmap.width * fetti.scalar;
+      var height = fetti.shape.bitmap.height * fetti.scalar;
+      var matrix = new DOMMatrix([
+        Math.cos(rotation) * scaleX,
+        Math.sin(rotation) * scaleX,
+        -Math.sin(rotation) * scaleY,
+        Math.cos(rotation) * scaleY,
+        fetti.x,
+        fetti.y
+      ]);
+      matrix.multiplySelf(new DOMMatrix(fetti.shape.matrix));
+      var pattern = context.createPattern(bitmapMapper.transform(fetti.shape.bitmap), "no-repeat");
+      pattern.setTransform(matrix);
+      context.globalAlpha = 1 - progress;
+      context.fillStyle = pattern;
+      context.fillRect(
+        fetti.x - width / 2,
+        fetti.y - height / 2,
+        width,
+        height
+      );
+      context.globalAlpha = 1;
+    } else if (fetti.shape === "circle") {
+      context.ellipse ? context.ellipse(fetti.x, fetti.y, Math.abs(x2 - x1) * fetti.ovalScalar, Math.abs(y2 - y1) * fetti.ovalScalar, Math.PI / 10 * fetti.wobble, 0, 2 * Math.PI) : ellipse(context, fetti.x, fetti.y, Math.abs(x2 - x1) * fetti.ovalScalar, Math.abs(y2 - y1) * fetti.ovalScalar, Math.PI / 10 * fetti.wobble, 0, 2 * Math.PI);
+    } else if (fetti.shape === "star") {
+      var rot = Math.PI / 2 * 3;
+      var innerRadius = 4 * fetti.scalar;
+      var outerRadius = 8 * fetti.scalar;
+      var x3 = fetti.x;
+      var y3 = fetti.y;
+      var spikes = 5;
+      var step = Math.PI / spikes;
+      while (spikes--) {
+        x3 = fetti.x + Math.cos(rot) * outerRadius;
+        y3 = fetti.y + Math.sin(rot) * outerRadius;
+        context.lineTo(x3, y3);
+        rot += step;
+        x3 = fetti.x + Math.cos(rot) * innerRadius;
+        y3 = fetti.y + Math.sin(rot) * innerRadius;
+        context.lineTo(x3, y3);
+        rot += step;
+      }
+    } else {
+      context.moveTo(Math.floor(fetti.x), Math.floor(fetti.y));
+      context.lineTo(Math.floor(fetti.wobbleX), Math.floor(y1));
+      context.lineTo(Math.floor(x2), Math.floor(y2));
+      context.lineTo(Math.floor(x1), Math.floor(fetti.wobbleY));
+    }
+    context.closePath();
+    context.fill();
+    return fetti.tick < fetti.totalTicks;
+  }
+  function animate(canvas, fettis, resizer, size, done) {
+    var animatingFettis = fettis.slice();
+    var context = canvas.getContext("2d");
+    var animationFrame;
+    var destroy;
+    var prom = promise(function(resolve) {
+      function onDone() {
+        animationFrame = destroy = null;
+        context.clearRect(0, 0, size.width, size.height);
+        bitmapMapper.clear();
+        done();
+        resolve();
+      }
+      function update() {
+        if (isWorker && !(size.width === workerSize.width && size.height === workerSize.height)) {
+          size.width = canvas.width = workerSize.width;
+          size.height = canvas.height = workerSize.height;
+        }
+        if (!size.width && !size.height) {
+          resizer(canvas);
+          size.width = canvas.width;
+          size.height = canvas.height;
+        }
+        context.clearRect(0, 0, size.width, size.height);
+        animatingFettis = animatingFettis.filter(function(fetti) {
+          return updateFetti(context, fetti);
+        });
+        if (animatingFettis.length) {
+          animationFrame = raf.frame(update);
+        } else {
+          onDone();
+        }
+      }
+      animationFrame = raf.frame(update);
+      destroy = onDone;
+    });
+    return {
+      addFettis: function(fettis2) {
+        animatingFettis = animatingFettis.concat(fettis2);
+        return prom;
+      },
+      canvas,
+      promise: prom,
+      reset: function() {
+        if (animationFrame) {
+          raf.cancel(animationFrame);
+        }
+        if (destroy) {
+          destroy();
+        }
+      }
+    };
+  }
+  function confettiCannon(canvas, globalOpts) {
+    var isLibCanvas = !canvas;
+    var allowResize = !!prop(globalOpts || {}, "resize");
+    var hasResizeEventRegistered = false;
+    var globalDisableForReducedMotion = prop(globalOpts, "disableForReducedMotion", Boolean);
+    var shouldUseWorker = canUseWorker && !!prop(globalOpts || {}, "useWorker");
+    var worker = shouldUseWorker ? getWorker() : null;
+    var resizer = isLibCanvas ? setCanvasWindowSize : setCanvasRectSize;
+    var initialized = canvas && worker ? !!canvas.__confetti_initialized : false;
+    var preferLessMotion = typeof matchMedia === "function" && matchMedia("(prefers-reduced-motion)").matches;
+    var animationObj;
+    function fireLocal(options, size, done) {
+      var particleCount = prop(options, "particleCount", onlyPositiveInt);
+      var angle = prop(options, "angle", Number);
+      var spread = prop(options, "spread", Number);
+      var startVelocity = prop(options, "startVelocity", Number);
+      var decay = prop(options, "decay", Number);
+      var gravity = prop(options, "gravity", Number);
+      var drift = prop(options, "drift", Number);
+      var colors = prop(options, "colors", colorsToRgb);
+      var ticks = prop(options, "ticks", Number);
+      var shapes = prop(options, "shapes");
+      var scalar = prop(options, "scalar");
+      var flat = !!prop(options, "flat");
+      var origin = getOrigin(options);
+      var temp = particleCount;
+      var fettis = [];
+      var startX = canvas.width * origin.x;
+      var startY = canvas.height * origin.y;
+      while (temp--) {
+        fettis.push(
+          randomPhysics({
+            x: startX,
+            y: startY,
+            angle,
+            spread,
+            startVelocity,
+            color: colors[temp % colors.length],
+            shape: shapes[randomInt(0, shapes.length)],
+            ticks,
+            decay,
+            gravity,
+            drift,
+            scalar,
+            flat
+          })
+        );
+      }
+      if (animationObj) {
+        return animationObj.addFettis(fettis);
+      }
+      animationObj = animate(canvas, fettis, resizer, size, done);
+      return animationObj.promise;
+    }
+    function fire(options) {
+      var disableForReducedMotion = globalDisableForReducedMotion || prop(options, "disableForReducedMotion", Boolean);
+      var zIndex = prop(options, "zIndex", Number);
+      if (disableForReducedMotion && preferLessMotion) {
+        return promise(function(resolve) {
+          resolve();
+        });
+      }
+      if (isLibCanvas && animationObj) {
+        canvas = animationObj.canvas;
+      } else if (isLibCanvas && !canvas) {
+        canvas = getCanvas(zIndex);
+        document.body.appendChild(canvas);
+      }
+      if (allowResize && !initialized) {
+        resizer(canvas);
+      }
+      var size = {
+        width: canvas.width,
+        height: canvas.height
+      };
+      if (worker && !initialized) {
+        worker.init(canvas);
+      }
+      initialized = true;
+      if (worker) {
+        canvas.__confetti_initialized = true;
+      }
+      function onResize() {
+        if (worker) {
+          var obj = {
+            getBoundingClientRect: function() {
+              if (!isLibCanvas) {
+                return canvas.getBoundingClientRect();
+              }
+            }
+          };
+          resizer(obj);
+          worker.postMessage({
+            resize: {
+              width: obj.width,
+              height: obj.height
+            }
+          });
+          return;
+        }
+        size.width = size.height = null;
+      }
+      function done() {
+        animationObj = null;
+        if (allowResize) {
+          hasResizeEventRegistered = false;
+          global.removeEventListener("resize", onResize);
+        }
+        if (isLibCanvas && canvas) {
+          if (document.body.contains(canvas)) {
+            document.body.removeChild(canvas);
+          }
+          canvas = null;
+          initialized = false;
+        }
+      }
+      if (allowResize && !hasResizeEventRegistered) {
+        hasResizeEventRegistered = true;
+        global.addEventListener("resize", onResize, false);
+      }
+      if (worker) {
+        return worker.fire(options, size, done);
+      }
+      return fireLocal(options, size, done);
+    }
+    fire.reset = function() {
+      if (worker) {
+        worker.reset();
+      }
+      if (animationObj) {
+        animationObj.reset();
+      }
+    };
+    return fire;
+  }
+  var defaultFire;
+  function getDefaultFire() {
+    if (!defaultFire) {
+      defaultFire = confettiCannon(null, { useWorker: true, resize: true });
+    }
+    return defaultFire;
+  }
+  function transformPath2D(pathString, pathMatrix, x2, y2, scaleX, scaleY, rotation) {
+    var path2d = new Path2D(pathString);
+    var t1 = new Path2D();
+    t1.addPath(path2d, new DOMMatrix(pathMatrix));
+    var t2 = new Path2D();
+    t2.addPath(t1, new DOMMatrix([
+      Math.cos(rotation) * scaleX,
+      Math.sin(rotation) * scaleX,
+      -Math.sin(rotation) * scaleY,
+      Math.cos(rotation) * scaleY,
+      x2,
+      y2
+    ]));
+    return t2;
+  }
+  function shapeFromPath(pathData) {
+    if (!canUsePaths) {
+      throw new Error("path confetti are not supported in this browser");
+    }
+    var path2, matrix;
+    if (typeof pathData === "string") {
+      path2 = pathData;
+    } else {
+      path2 = pathData.path;
+      matrix = pathData.matrix;
+    }
+    var path2d = new Path2D(path2);
+    var tempCanvas = document.createElement("canvas");
+    var tempCtx = tempCanvas.getContext("2d");
+    if (!matrix) {
+      var maxSize = 1e3;
+      var minX = maxSize;
+      var minY = maxSize;
+      var maxX = 0;
+      var maxY = 0;
+      var width, height;
+      for (var x2 = 0; x2 < maxSize; x2 += 2) {
+        for (var y2 = 0; y2 < maxSize; y2 += 2) {
+          if (tempCtx.isPointInPath(path2d, x2, y2, "nonzero")) {
+            minX = Math.min(minX, x2);
+            minY = Math.min(minY, y2);
+            maxX = Math.max(maxX, x2);
+            maxY = Math.max(maxY, y2);
+          }
+        }
+      }
+      width = maxX - minX;
+      height = maxY - minY;
+      var maxDesiredSize = 10;
+      var scale = Math.min(maxDesiredSize / width, maxDesiredSize / height);
+      matrix = [
+        scale,
+        0,
+        0,
+        scale,
+        -Math.round(width / 2 + minX) * scale,
+        -Math.round(height / 2 + minY) * scale
+      ];
+    }
+    return {
+      type: "path",
+      path: path2,
+      matrix
+    };
+  }
+  function shapeFromText(textData) {
+    var text, scalar = 1, color = "#000000", fontFamily = '"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", "EmojiOne Color", "Android Emoji", "Twemoji Mozilla", "system emoji", sans-serif';
+    if (typeof textData === "string") {
+      text = textData;
+    } else {
+      text = textData.text;
+      scalar = "scalar" in textData ? textData.scalar : scalar;
+      fontFamily = "fontFamily" in textData ? textData.fontFamily : fontFamily;
+      color = "color" in textData ? textData.color : color;
+    }
+    var fontSize = 10 * scalar;
+    var font = "" + fontSize + "px " + fontFamily;
+    var canvas = new OffscreenCanvas(fontSize, fontSize);
+    var ctx = canvas.getContext("2d");
+    ctx.font = font;
+    var size = ctx.measureText(text);
+    var width = Math.ceil(size.actualBoundingBoxRight + size.actualBoundingBoxLeft);
+    var height = Math.ceil(size.actualBoundingBoxAscent + size.actualBoundingBoxDescent);
+    var padding = 2;
+    var x2 = size.actualBoundingBoxLeft + padding;
+    var y2 = size.actualBoundingBoxAscent + padding;
+    width += padding + padding;
+    height += padding + padding;
+    canvas = new OffscreenCanvas(width, height);
+    ctx = canvas.getContext("2d");
+    ctx.font = font;
+    ctx.fillStyle = color;
+    ctx.fillText(text, x2, y2);
+    var scale = 1 / scalar;
+    return {
+      type: "bitmap",
+      // TODO these probably need to be transfered for workers
+      bitmap: canvas.transferToImageBitmap(),
+      matrix: [scale, 0, 0, scale, -width * scale / 2, -height * scale / 2]
+    };
+  }
+  module2.exports = function() {
+    return getDefaultFire().apply(this, arguments);
+  };
+  module2.exports.reset = function() {
+    getDefaultFire().reset();
+  };
+  module2.exports.create = confettiCannon;
+  module2.exports.shapeFromPath = shapeFromPath;
+  module2.exports.shapeFromText = shapeFromText;
+})(function() {
+  if (typeof window !== "undefined") {
+    return window;
+  }
+  if (typeof self !== "undefined") {
+    return self;
+  }
+  return this || {};
+}(), module, false);
+const confetti = module.exports;
+module.exports.create;
+function GameRoundPot({
+  gameRoundId,
+  gameState,
+  currentRoundStatus,
+  dataBank: dataBank2,
+  setCurrentRoundStatus,
+  setRoundResult
+}) {
+  const t2 = dataBank2.tLang;
+  const tGeo = dataBank2.tGeo;
+  const maxAttempts = 3;
+  const [guessNum, setGuessNum] = reactExports.useState(1);
+  const incGuessNum = () => {
+    setGuessNum(guessNum + 1);
+  };
+  const [guesses, setGuesses] = reactExports.useState([]);
+  const addGuess = (guess) => {
+    setGuesses([...guesses, guess]);
+  };
+  const [currentGuess, setCurrentGuess] = reactExports.useState("");
+  reactExports.useEffect(() => {
+    setCurrentGuess("");
+  }, [guesses]);
+  function grade(guess) {
+    if (sanitizeString(tGeo(gameState.potCode)) === sanitizeString(guess)) {
+      return guesses.length === 0 ? GameRoundResult.Excellent : guesses.length === 1 ? GameRoundResult.Good : GameRoundResult.Fair;
+    } else {
+      return guesses.length === 0 ? GameRoundResult.NotStarted : GameRoundResult.Failed;
+    }
+  }
+  const handleFormSubmission = (event) => {
+    event.preventDefault();
+    const guessedPot = dataBank2.getPotCodeByName(currentGuess, tGeo);
+    if (guessedPot === "invalid") {
+      toastError(t2("unknownPot"));
+      return;
+    }
+    if (guesses.includes(guessedPot)) {
+      toastError(t2("alreadyGuessed"));
+      return;
+    }
+    if (guessedPot === gameState.potCode) {
+      setTimeout(() => {
+        setCurrentRoundStatus("won");
+        const guessedItText = t2("guessedItList", {
+          returnObjects: true
+        });
+        const randomText = guessedItText[Math.floor(Math.random() * guessedItText.length)];
+        toastSuccess(randomText);
+        confetti();
+      }, SQUARE_ANIMATION_LENGTH * squares.length);
+      setRoundResult(gameRoundId, grade(currentGuess));
+      console.log("grade " + grade(currentGuess));
+    } else if (guesses.length + 1 === maxAttempts) {
+      setTimeout(() => {
+        toastFailed(t2("failedIt"));
+        setCurrentRoundStatus("lost");
+      }, SQUARE_ANIMATION_LENGTH * squares.length);
+      setRoundResult(gameRoundId, grade(currentGuess));
+    }
+    addGuess(guessedPot);
+    setTimeout(() => {
+      incGuessNum();
+    }, SQUARE_ANIMATION_LENGTH * squares.length);
+  };
+  const handleGuessButtonClicked = () => {
+    console.log("Guess button clicked.");
+  };
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "img",
+      {
+        src: dataBank2.getPotMapSvgUrl(gameState.potCode),
+        alt: "silhouette of a province or territory",
+        className: "max-h-52 m-auto my-5 transition-transform duration-700 ease-in dark:invert h-full"
+      }
+    ) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "form",
+      {
+        onSubmit: handleFormSubmission,
+        className: `flex flex-col py-0.5 ${currentRoundStatus !== "pending" ? "hidden" : ""}`,
+        children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-grow", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            AutoSuggestInput,
+            {
+              currentGuess,
+              setCurrentGuess,
+              placeholder: `${t2("province")}, ${t2("territory")}`,
+              suggestionsArray: dataBank2.getPotNamesByLang(tGeo)
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            GuessButton,
+            {
+              handler: handleGuessButtonClicked,
+              text: `${dataBank2.getGuessEmoji()} ${t2("guessVerb")}`
+            }
+          )
+        ] })
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      Guesses,
+      {
+        currentRoundStatus,
+        guesses,
+        maxAttempts,
+        solutionCode: gameState.potCode,
+        guessNum,
+        dataBank: dataBank2
+      }
+    )
+  ] });
+}
 function GameRoundFinale({ roundStats, dataBank: dataBank2 }) {
   const { t: t2 } = useTranslation();
   const { t: tGeo } = useTranslation("geo");
@@ -7966,6 +11769,40 @@ function GameRoundFinale({ roundStats, dataBank: dataBank2 }) {
     ] })
   ] });
 }
+function NextRoundButton({
+  currentRound,
+  currentRoundStatus,
+  handleNextButtonClicked,
+  handleGiveUpButtonClicked,
+  giveUpCnt,
+  dataBank: dataBank2
+}) {
+  const { t: t2 } = useTranslation();
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+    "div",
+    {
+      className: "container flex flex-col items-center mt-4",
+      "data-testid": "next-round-btn-wrapper-div",
+      children: currentRoundStatus !== "pending" ? /* @__PURE__ */ jsxRuntimeExports.jsx(
+        "button",
+        {
+          onClick: handleNextButtonClicked,
+          className: "w-full rounded-xl flex-shrink-0 font-medium px-4 py-2 bg-custom-green-1 hover:bg-green-700",
+          "data-testid": "next-round-btn-finished",
+          children: dataBank2.getGuessEmoji() + " " + t2("nextRound")
+        }
+      ) : currentRound > 1 ? /* @__PURE__ */ jsxRuntimeExports.jsx(
+        "button",
+        {
+          onClick: handleGiveUpButtonClicked,
+          className: "rounded-xl flex-shrink-0 font-medium px-4 py-2 text-black bg-custom-light-blue-2",
+          "data-testid": "give-up-btn",
+          children: giveUpCnt === 0 ? `🤷‍♀️ ${t2("giveUp")}` : `️🙀 ${t2("areYouSure")}?`
+        }
+      ) : /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, {})
+    }
+  );
+}
 function initGameState() {
   const ret = defaultGameState;
   ret.potCode = getTodaysPotCode();
@@ -7981,16 +11818,96 @@ function initGameState() {
 function Game() {
   const [gameState, setGameState] = reactExports.useState(() => initGameState());
   console.log(`lovas2`);
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("button", { children: "lovas" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      GameRoundFinale,
+  dataBank.tLang = useTranslation().t;
+  dataBank.tGeo = useTranslation("geo").t;
+  dataBank.getPotMapSvgUrl = getPotMapSvgUrl;
+  console.log(`lovas3`);
+  const updateGameState = (key, val) => {
+    setGameState((prevState) => ({
+      ...prevState,
+      [key]: val
+    }));
+  };
+  console.log(`lovas4`);
+  const setCurrentRound = (newCurrentRound) => {
+    updateGameState("currentRound", newCurrentRound);
+  };
+  function getRoundStat(id2) {
+    console.log(`rounds ${typeof gameState.rounds} ==> ${gameState.rounds} ${Array.from(gameState.rounds.entries())}`);
+    return gameState.rounds.get(id2) ?? { i18nId: "na", result: GameRoundResult.NotStarted };
+  }
+  const setRoundResult = (roundId, result) => {
+    console.log(`set ${roundId} ==> ${result}`);
+    const newState = gameState;
+    newState.rounds.set(roundId, {
+      ...getRoundStat(roundId),
+      // ...newState.rounds.get(roundId),
+      result
+    });
+    setGameState(newState);
+  };
+  console.log(`lovas5`);
+  const { potCode, currentRound } = gameState;
+  const [giveupCnt, setGiveupCnt] = reactExports.useState(0);
+  console.log(`lovas6`);
+  const [currentRoundStatus, setCurrentRoundStatus] = reactExports.useState("pending");
+  console.log(`lovas7`);
+  const handleNextButtonClicked = () => {
+    console.log("Next button clicked.");
+    setCurrentRound(currentRound + 1);
+    setCurrentRoundStatus("pending");
+    B.dismiss();
+    console.log(`lovas: round: ${currentRound}, status: ${currentRoundStatus}`);
+  };
+  const handleGiveUpButtonClicked = () => {
+    console.log("GiveUp button clicked.");
+    if (giveupCnt >= 1) {
+      setGiveupCnt(0);
+      handleNextButtonClicked();
+    } else {
+      setGiveupCnt(giveupCnt + 1);
+    }
+  };
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: currentRound === 1 ? /* @__PURE__ */ jsxRuntimeExports.jsx(
+      GameRoundPot,
       {
-        roundStats: gameState,
+        gameRoundId: "pot",
+        gameState,
+        currentRoundStatus,
+        dataBank,
+        setCurrentRoundStatus,
+        setRoundResult
+      }
+    ) : (
+      // ) : currentRound === 4 ? (
+      //   <GameRoundFlag
+      //     gameRoundId="flag"
+      //     gameState={gameState}
+      //     currentRoundStatus={currentRoundStatus}
+      //     setCurrentRoundStatus={setCurrentRoundStatus}
+      //     setRoundResult={setRoundResult}
+      //   />
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        GameRoundFinale,
+        {
+          roundStats: gameState,
+          dataBank
+        }
+      )
+    ) }),
+    currentRound <= gameState.rounds.size ? /* @__PURE__ */ jsxRuntimeExports.jsx(
+      NextRoundButton,
+      {
+        currentRound,
+        currentRoundStatus,
+        giveUpCnt: giveupCnt,
+        handleGiveUpButtonClicked,
+        handleNextButtonClicked,
         dataBank
       }
-    )
-  ] }) });
+    ) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", {})
+  ] });
 }
 const consoleLogger = {
   type: "logger",
@@ -8437,8 +12354,8 @@ class ResourceStore extends EventEmitter {
 }
 var postProcessor = {
   processors: {},
-  addPostProcessor(module) {
-    this.processors[module.name] = module;
+  addPostProcessor(module2) {
+    this.processors[module2.name] = module2;
   },
   handle(processors, value, key, options, translator) {
     processors.forEach((processor) => {
@@ -10075,29 +13992,29 @@ class I18n extends EventEmitter {
     });
     return deferred;
   }
-  use(module) {
-    if (!module) throw new Error("You are passing an undefined module! Please check the object you are passing to i18next.use()");
-    if (!module.type) throw new Error("You are passing a wrong module! Please check the object you are passing to i18next.use()");
-    if (module.type === "backend") {
-      this.modules.backend = module;
+  use(module2) {
+    if (!module2) throw new Error("You are passing an undefined module! Please check the object you are passing to i18next.use()");
+    if (!module2.type) throw new Error("You are passing a wrong module! Please check the object you are passing to i18next.use()");
+    if (module2.type === "backend") {
+      this.modules.backend = module2;
     }
-    if (module.type === "logger" || module.log && module.warn && module.error) {
-      this.modules.logger = module;
+    if (module2.type === "logger" || module2.log && module2.warn && module2.error) {
+      this.modules.logger = module2;
     }
-    if (module.type === "languageDetector") {
-      this.modules.languageDetector = module;
+    if (module2.type === "languageDetector") {
+      this.modules.languageDetector = module2;
     }
-    if (module.type === "i18nFormat") {
-      this.modules.i18nFormat = module;
+    if (module2.type === "i18nFormat") {
+      this.modules.i18nFormat = module2;
     }
-    if (module.type === "postProcessor") {
-      postProcessor.addPostProcessor(module);
+    if (module2.type === "postProcessor") {
+      postProcessor.addPostProcessor(module2);
     }
-    if (module.type === "formatter") {
-      this.modules.formatter = module;
+    if (module2.type === "formatter") {
+      this.modules.formatter = module2;
     }
-    if (module.type === "3rdParty") {
-      this.modules.external.push(module);
+    if (module2.type === "3rdParty") {
+      this.modules.external.push(module2);
     }
     return this;
   }
@@ -11004,7 +14921,7 @@ function Help() {
   );
 }
 function App() {
-  console.log(`lovas eirele 2025-01-26 21:63`);
+  console.log(`lovas eirele 2025-01-26 21:64`);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col justify-between items-center min-h-screen dark:bg-slate-900 dark:text-slate-50", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full max-w-lg flex flex-col", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("header", { className: "border-b-2 border-gray-200 flex mb-4", children: [
@@ -11024,325 +14941,6 @@ function App() {
       " ❓"
     ] }) }) })
   ] });
-}
-function r(e) {
-  var t2, f2, n2 = "";
-  if ("string" == typeof e || "number" == typeof e) n2 += e;
-  else if ("object" == typeof e) if (Array.isArray(e)) {
-    var o = e.length;
-    for (t2 = 0; t2 < o; t2++) e[t2] && (f2 = r(e[t2])) && (n2 && (n2 += " "), n2 += f2);
-  } else for (f2 in e) e[f2] && (n2 && (n2 += " "), n2 += f2);
-  return n2;
-}
-function clsx() {
-  for (var e, t2, f2 = 0, n2 = "", o = arguments.length; f2 < o; f2++) (e = arguments[f2]) && (t2 = r(e)) && (n2 && (n2 += " "), n2 += t2);
-  return n2;
-}
-const c = (e) => "number" == typeof e && !isNaN(e), d = (e) => "string" == typeof e, u = (e) => "function" == typeof e, p = (e) => d(e) || u(e) ? e : null, m = (e) => reactExports.isValidElement(e) || d(e) || u(e) || c(e);
-function f(e, t2, n2) {
-  void 0 === n2 && (n2 = 300);
-  const { scrollHeight: o, style: s } = e;
-  requestAnimationFrame(() => {
-    s.minHeight = "initial", s.height = o + "px", s.transition = `all ${n2}ms`, requestAnimationFrame(() => {
-      s.height = "0", s.padding = "0", s.margin = "0", setTimeout(t2, n2);
-    });
-  });
-}
-function g(t2) {
-  let { enter: a, exit: r2, appendPosition: i = false, collapse: l2 = true, collapseDuration: c2 = 300 } = t2;
-  return function(t3) {
-    let { children: d2, position: u2, preventExitTransition: p2, done: m2, nodeRef: g2, isIn: y2, playToast: v2 } = t3;
-    const h2 = i ? `${a}--${u2}` : a, T2 = i ? `${r2}--${u2}` : r2, E2 = reactExports.useRef(0);
-    return reactExports.useLayoutEffect(() => {
-      const e = g2.current, t4 = h2.split(" "), n2 = (o) => {
-        o.target === g2.current && (v2(), e.removeEventListener("animationend", n2), e.removeEventListener("animationcancel", n2), 0 === E2.current && "animationcancel" !== o.type && e.classList.remove(...t4));
-      };
-      e.classList.add(...t4), e.addEventListener("animationend", n2), e.addEventListener("animationcancel", n2);
-    }, []), reactExports.useEffect(() => {
-      const e = g2.current, t4 = () => {
-        e.removeEventListener("animationend", t4), l2 ? f(e, m2, c2) : m2();
-      };
-      y2 || (p2 ? t4() : (E2.current = 1, e.className += ` ${T2}`, e.addEventListener("animationend", t4)));
-    }, [y2]), React.createElement(React.Fragment, null, d2);
-  };
-}
-function y(e, t2) {
-  return null != e ? { content: e.content, containerId: e.props.containerId, id: e.props.toastId, theme: e.props.theme, type: e.props.type, data: e.props.data || {}, isLoading: e.props.isLoading, icon: e.props.icon, status: t2 } : {};
-}
-const v = /* @__PURE__ */ new Map();
-let h = [];
-const T = /* @__PURE__ */ new Set(), E = (e) => T.forEach((t2) => t2(e)), b = () => v.size > 0;
-function I(e, t2) {
-  var n2;
-  if (t2) return !(null == (n2 = v.get(t2)) || !n2.isToastActive(e));
-  let o = false;
-  return v.forEach((t3) => {
-    t3.isToastActive(e) && (o = true);
-  }), o;
-}
-function _(e, t2) {
-  m(e) && (b() || h.push({ content: e, options: t2 }), v.forEach((n2) => {
-    n2.buildToast(e, t2);
-  }));
-}
-function C(e, t2) {
-  v.forEach((n2) => {
-    null != t2 && null != t2 && t2.containerId ? (null == t2 ? void 0 : t2.containerId) === n2.id && n2.toggle(e, null == t2 ? void 0 : t2.id) : n2.toggle(e, null == t2 ? void 0 : t2.id);
-  });
-}
-function L(e) {
-  const { subscribe: o, getSnapshot: s, setProps: i } = reactExports.useRef(function(e2) {
-    const n2 = e2.containerId || 1;
-    return { subscribe(o2) {
-      const s2 = /* @__PURE__ */ function(e3, n3, o3) {
-        let s3 = 1, r3 = 0, i2 = [], l3 = [], f2 = [], g2 = n3;
-        const v2 = /* @__PURE__ */ new Map(), h2 = /* @__PURE__ */ new Set(), T2 = () => {
-          f2 = Array.from(v2.values()), h2.forEach((e4) => e4());
-        }, E2 = (e4) => {
-          l3 = null == e4 ? [] : l3.filter((t2) => t2 !== e4), T2();
-        }, b2 = (e4) => {
-          const { toastId: n4, onOpen: s4, updateId: a, children: r4 } = e4.props, i3 = null == a;
-          e4.staleId && v2.delete(e4.staleId), v2.set(n4, e4), l3 = [...l3, e4.props.toastId].filter((t2) => t2 !== e4.staleId), T2(), o3(y(e4, i3 ? "added" : "updated")), i3 && u(s4) && s4(reactExports.isValidElement(r4) && r4.props);
-        };
-        return { id: e3, props: g2, observe: (e4) => (h2.add(e4), () => h2.delete(e4)), toggle: (e4, t2) => {
-          v2.forEach((n4) => {
-            null != t2 && t2 !== n4.props.toastId || u(n4.toggle) && n4.toggle(e4);
-          });
-        }, removeToast: E2, toasts: v2, clearQueue: () => {
-          r3 -= i2.length, i2 = [];
-        }, buildToast: (n4, l4) => {
-          if (((t2) => {
-            let { containerId: n5, toastId: o4, updateId: s4 } = t2;
-            const a = n5 ? n5 !== e3 : 1 !== e3, r4 = v2.has(o4) && null == s4;
-            return a || r4;
-          })(l4)) return;
-          const { toastId: f3, updateId: h3, data: I2, staleId: _2, delay: C2 } = l4, L2 = () => {
-            E2(f3);
-          }, N2 = null == h3;
-          N2 && r3++;
-          const $2 = { ...g2, style: g2.toastStyle, key: s3++, ...Object.fromEntries(Object.entries(l4).filter((e4) => {
-            let [t2, n5] = e4;
-            return null != n5;
-          })), toastId: f3, updateId: h3, data: I2, closeToast: L2, isIn: false, className: p(l4.className || g2.toastClassName), bodyClassName: p(l4.bodyClassName || g2.bodyClassName), progressClassName: p(l4.progressClassName || g2.progressClassName), autoClose: !l4.isLoading && (w2 = l4.autoClose, k2 = g2.autoClose, false === w2 || c(w2) && w2 > 0 ? w2 : k2), deleteToast() {
-            const e4 = v2.get(f3), { onClose: n5, children: s4 } = e4.props;
-            u(n5) && n5(reactExports.isValidElement(s4) && s4.props), o3(y(e4, "removed")), v2.delete(f3), r3--, r3 < 0 && (r3 = 0), i2.length > 0 ? b2(i2.shift()) : T2();
-          } };
-          var w2, k2;
-          $2.closeButton = g2.closeButton, false === l4.closeButton || m(l4.closeButton) ? $2.closeButton = l4.closeButton : true === l4.closeButton && ($2.closeButton = !m(g2.closeButton) || g2.closeButton);
-          let P2 = n4;
-          reactExports.isValidElement(n4) && !d(n4.type) ? P2 = reactExports.cloneElement(n4, { closeToast: L2, toastProps: $2, data: I2 }) : u(n4) && (P2 = n4({ closeToast: L2, toastProps: $2, data: I2 }));
-          const M2 = { content: P2, props: $2, staleId: _2 };
-          g2.limit && g2.limit > 0 && r3 > g2.limit && N2 ? i2.push(M2) : c(C2) ? setTimeout(() => {
-            b2(M2);
-          }, C2) : b2(M2);
-        }, setProps(e4) {
-          g2 = e4;
-        }, setToggle: (e4, t2) => {
-          v2.get(e4).toggle = t2;
-        }, isToastActive: (e4) => l3.some((t2) => t2 === e4), getSnapshot: () => g2.newestOnTop ? f2.reverse() : f2 };
-      }(n2, e2, E);
-      v.set(n2, s2);
-      const r2 = s2.observe(o2);
-      return h.forEach((e3) => _(e3.content, e3.options)), h = [], () => {
-        r2(), v.delete(n2);
-      };
-    }, setProps(e3) {
-      var t2;
-      null == (t2 = v.get(n2)) || t2.setProps(e3);
-    }, getSnapshot() {
-      var e3;
-      return null == (e3 = v.get(n2)) ? void 0 : e3.getSnapshot();
-    } };
-  }(e)).current;
-  i(e);
-  const l2 = reactExports.useSyncExternalStore(o, s, s);
-  return { getToastToRender: function(e2) {
-    if (!l2) return [];
-    const t2 = /* @__PURE__ */ new Map();
-    return l2.forEach((e3) => {
-      const { position: n2 } = e3.props;
-      t2.has(n2) || t2.set(n2, []), t2.get(n2).push(e3);
-    }), Array.from(t2, (t3) => e2(t3[0], t3[1]));
-  }, isToastActive: I, count: null == l2 ? void 0 : l2.length };
-}
-function N(e) {
-  const [t2, o] = reactExports.useState(false), [a, r2] = reactExports.useState(false), l2 = reactExports.useRef(null), c2 = reactExports.useRef({ start: 0, delta: 0, removalDistance: 0, canCloseOnClick: true, canDrag: false, didMove: false }).current, { autoClose: d2, pauseOnHover: u2, closeToast: p2, onClick: m2, closeOnClick: f2 } = e;
-  var g2, y2;
-  function h2() {
-    o(true);
-  }
-  function T2() {
-    o(false);
-  }
-  function E2(n2) {
-    const o2 = l2.current;
-    c2.canDrag && o2 && (c2.didMove = true, t2 && T2(), c2.delta = "x" === e.draggableDirection ? n2.clientX - c2.start : n2.clientY - c2.start, c2.start !== n2.clientX && (c2.canCloseOnClick = false), o2.style.transform = `translate3d(${"x" === e.draggableDirection ? `${c2.delta}px, var(--y)` : `0, calc(${c2.delta}px + var(--y))`},0)`, o2.style.opacity = "" + (1 - Math.abs(c2.delta / c2.removalDistance)));
-  }
-  function b2() {
-    document.removeEventListener("pointermove", E2), document.removeEventListener("pointerup", b2);
-    const t3 = l2.current;
-    if (c2.canDrag && c2.didMove && t3) {
-      if (c2.canDrag = false, Math.abs(c2.delta) > c2.removalDistance) return r2(true), e.closeToast(), void e.collapseAll();
-      t3.style.transition = "transform 0.2s, opacity 0.2s", t3.style.removeProperty("transform"), t3.style.removeProperty("opacity");
-    }
-  }
-  null == (y2 = v.get((g2 = { id: e.toastId, containerId: e.containerId, fn: o }).containerId || 1)) || y2.setToggle(g2.id, g2.fn), reactExports.useEffect(() => {
-    if (e.pauseOnFocusLoss) return document.hasFocus() || T2(), window.addEventListener("focus", h2), window.addEventListener("blur", T2), () => {
-      window.removeEventListener("focus", h2), window.removeEventListener("blur", T2);
-    };
-  }, [e.pauseOnFocusLoss]);
-  const I2 = { onPointerDown: function(t3) {
-    if (true === e.draggable || e.draggable === t3.pointerType) {
-      c2.didMove = false, document.addEventListener("pointermove", E2), document.addEventListener("pointerup", b2);
-      const n2 = l2.current;
-      c2.canCloseOnClick = true, c2.canDrag = true, n2.style.transition = "none", "x" === e.draggableDirection ? (c2.start = t3.clientX, c2.removalDistance = n2.offsetWidth * (e.draggablePercent / 100)) : (c2.start = t3.clientY, c2.removalDistance = n2.offsetHeight * (80 === e.draggablePercent ? 1.5 * e.draggablePercent : e.draggablePercent) / 100);
-    }
-  }, onPointerUp: function(t3) {
-    const { top: n2, bottom: o2, left: s, right: a2 } = l2.current.getBoundingClientRect();
-    "touchend" !== t3.nativeEvent.type && e.pauseOnHover && t3.clientX >= s && t3.clientX <= a2 && t3.clientY >= n2 && t3.clientY <= o2 ? T2() : h2();
-  } };
-  return d2 && u2 && (I2.onMouseEnter = T2, e.stacked || (I2.onMouseLeave = h2)), f2 && (I2.onClick = (e2) => {
-    m2 && m2(e2), c2.canCloseOnClick && p2();
-  }), { playToast: h2, pauseToast: T2, isRunning: t2, preventExitTransition: a, toastRef: l2, eventHandlers: I2 };
-}
-function $(t2) {
-  let { delay: n2, isRunning: o, closeToast: s, type: a = "default", hide: r2, className: i, style: c2, controlledProgress: d2, progress: p2, rtl: m2, isIn: f2, theme: g2 } = t2;
-  const y2 = r2 || d2 && 0 === p2, v2 = { ...c2, animationDuration: `${n2}ms`, animationPlayState: o ? "running" : "paused" };
-  d2 && (v2.transform = `scaleX(${p2})`);
-  const h2 = clsx("Toastify__progress-bar", d2 ? "Toastify__progress-bar--controlled" : "Toastify__progress-bar--animated", `Toastify__progress-bar-theme--${g2}`, `Toastify__progress-bar--${a}`, { "Toastify__progress-bar--rtl": m2 }), T2 = u(i) ? i({ rtl: m2, type: a, defaultClassName: h2 }) : clsx(h2, i), E2 = { [d2 && p2 >= 1 ? "onTransitionEnd" : "onAnimationEnd"]: d2 && p2 < 1 ? null : () => {
-    f2 && s();
-  } };
-  return React.createElement("div", { className: "Toastify__progress-bar--wrp", "data-hidden": y2 }, React.createElement("div", { className: `Toastify__progress-bar--bg Toastify__progress-bar-theme--${g2} Toastify__progress-bar--${a}` }), React.createElement("div", { role: "progressbar", "aria-hidden": y2 ? "true" : "false", "aria-label": "notification timer", className: T2, style: v2, ...E2 }));
-}
-let w = 1;
-const k = () => "" + w++;
-function P(e) {
-  return e && (d(e.toastId) || c(e.toastId)) ? e.toastId : k();
-}
-function M(e, t2) {
-  return _(e, t2), t2.toastId;
-}
-function x(e, t2) {
-  return { ...t2, type: t2 && t2.type || e, toastId: P(t2) };
-}
-function A(e) {
-  return (t2, n2) => M(t2, x(e, n2));
-}
-function B(e, t2) {
-  return M(e, x("default", t2));
-}
-B.loading = (e, t2) => M(e, x("default", { isLoading: true, autoClose: false, closeOnClick: false, closeButton: false, draggable: false, ...t2 })), B.promise = function(e, t2, n2) {
-  let o, { pending: s, error: a, success: r2 } = t2;
-  s && (o = d(s) ? B.loading(s, n2) : B.loading(s.render, { ...n2, ...s }));
-  const i = { isLoading: null, autoClose: null, closeOnClick: null, closeButton: null, draggable: null }, l2 = (e2, t3, s2) => {
-    if (null == t3) return void B.dismiss(o);
-    const a2 = { type: e2, ...i, ...n2, data: s2 }, r3 = d(t3) ? { render: t3 } : t3;
-    return o ? B.update(o, { ...a2, ...r3 }) : B(r3.render, { ...a2, ...r3 }), s2;
-  }, c2 = u(e) ? e() : e;
-  return c2.then((e2) => l2("success", r2, e2)).catch((e2) => l2("error", a, e2)), c2;
-}, B.success = A("success"), B.info = A("info"), B.error = A("error"), B.warning = A("warning"), B.warn = B.warning, B.dark = (e, t2) => M(e, x("default", { theme: "dark", ...t2 })), B.dismiss = function(e) {
-  !function(e2) {
-    var t2;
-    if (b()) {
-      if (null == e2 || d(t2 = e2) || c(t2)) v.forEach((t3) => {
-        t3.removeToast(e2);
-      });
-      else if (e2 && ("containerId" in e2 || "id" in e2)) {
-        const t3 = v.get(e2.containerId);
-        t3 ? t3.removeToast(e2.id) : v.forEach((t4) => {
-          t4.removeToast(e2.id);
-        });
-      }
-    } else h = h.filter((t3) => null != e2 && t3.options.toastId !== e2);
-  }(e);
-}, B.clearWaitingQueue = function(e) {
-  void 0 === e && (e = {}), v.forEach((t2) => {
-    !t2.props.limit || e.containerId && t2.id !== e.containerId || t2.clearQueue();
-  });
-}, B.isActive = I, B.update = function(e, t2) {
-  void 0 === t2 && (t2 = {});
-  const n2 = ((e2, t3) => {
-    var n3;
-    let { containerId: o } = t3;
-    return null == (n3 = v.get(o || 1)) ? void 0 : n3.toasts.get(e2);
-  })(e, t2);
-  if (n2) {
-    const { props: o, content: s } = n2, a = { delay: 100, ...o, ...t2, toastId: t2.toastId || e, updateId: k() };
-    a.toastId !== e && (a.staleId = e);
-    const r2 = a.render || s;
-    delete a.render, M(r2, a);
-  }
-}, B.done = (e) => {
-  B.update(e, { progress: 1 });
-}, B.onChange = function(e) {
-  return T.add(e), () => {
-    T.delete(e);
-  };
-}, B.play = (e) => C(true, e), B.pause = (e) => C(false, e);
-const O = "undefined" != typeof window ? reactExports.useLayoutEffect : reactExports.useEffect, D = (t2) => {
-  let { theme: n2, type: o, isLoading: s, ...a } = t2;
-  return React.createElement("svg", { viewBox: "0 0 24 24", width: "100%", height: "100%", fill: "colored" === n2 ? "currentColor" : `var(--toastify-icon-color-${o})`, ...a });
-}, z = { info: function(t2) {
-  return React.createElement(D, { ...t2 }, React.createElement("path", { d: "M12 0a12 12 0 1012 12A12.013 12.013 0 0012 0zm.25 5a1.5 1.5 0 11-1.5 1.5 1.5 1.5 0 011.5-1.5zm2.25 13.5h-4a1 1 0 010-2h.75a.25.25 0 00.25-.25v-4.5a.25.25 0 00-.25-.25h-.75a1 1 0 010-2h1a2 2 0 012 2v4.75a.25.25 0 00.25.25h.75a1 1 0 110 2z" }));
-}, warning: function(t2) {
-  return React.createElement(D, { ...t2 }, React.createElement("path", { d: "M23.32 17.191L15.438 2.184C14.728.833 13.416 0 11.996 0c-1.42 0-2.733.833-3.443 2.184L.533 17.448a4.744 4.744 0 000 4.368C1.243 23.167 2.555 24 3.975 24h16.05C22.22 24 24 22.044 24 19.632c0-.904-.251-1.746-.68-2.44zm-9.622 1.46c0 1.033-.724 1.823-1.698 1.823s-1.698-.79-1.698-1.822v-.043c0-1.028.724-1.822 1.698-1.822s1.698.79 1.698 1.822v.043zm.039-12.285l-.84 8.06c-.057.581-.408.943-.897.943-.49 0-.84-.367-.896-.942l-.84-8.065c-.057-.624.25-1.095.779-1.095h1.91c.528.005.84.476.784 1.1z" }));
-}, success: function(t2) {
-  return React.createElement(D, { ...t2 }, React.createElement("path", { d: "M12 0a12 12 0 1012 12A12.014 12.014 0 0012 0zm6.927 8.2l-6.845 9.289a1.011 1.011 0 01-1.43.188l-4.888-3.908a1 1 0 111.25-1.562l4.076 3.261 6.227-8.451a1 1 0 111.61 1.183z" }));
-}, error: function(t2) {
-  return React.createElement(D, { ...t2 }, React.createElement("path", { d: "M11.983 0a12.206 12.206 0 00-8.51 3.653A11.8 11.8 0 000 12.207 11.779 11.779 0 0011.8 24h.214A12.111 12.111 0 0024 11.791 11.766 11.766 0 0011.983 0zM10.5 16.542a1.476 1.476 0 011.449-1.53h.027a1.527 1.527 0 011.523 1.47 1.475 1.475 0 01-1.449 1.53h-.027a1.529 1.529 0 01-1.523-1.47zM11 12.5v-6a1 1 0 012 0v6a1 1 0 11-2 0z" }));
-}, spinner: function() {
-  return React.createElement("div", { className: "Toastify__spinner" });
-} }, R = (n2) => {
-  const { isRunning: o, preventExitTransition: s, toastRef: r2, eventHandlers: i, playToast: c2 } = N(n2), { closeButton: d2, children: p2, autoClose: m2, onClick: f2, type: g2, hideProgressBar: y2, closeToast: v2, transition: h2, position: T2, className: E2, style: b2, bodyClassName: I2, bodyStyle: _2, progressClassName: C2, progressStyle: L2, updateId: w2, role: k2, progress: P2, rtl: M2, toastId: x2, deleteToast: A2, isIn: B2, isLoading: O2, closeOnClick: D2, theme: R2 } = n2, S2 = clsx("Toastify__toast", `Toastify__toast-theme--${R2}`, `Toastify__toast--${g2}`, { "Toastify__toast--rtl": M2 }, { "Toastify__toast--close-on-click": D2 }), H2 = u(E2) ? E2({ rtl: M2, position: T2, type: g2, defaultClassName: S2 }) : clsx(S2, E2), F2 = function(e) {
-    let { theme: n3, type: o2, isLoading: s2, icon: r3 } = e, i2 = null;
-    const l2 = { theme: n3, type: o2 };
-    return false === r3 || (u(r3) ? i2 = r3({ ...l2, isLoading: s2 }) : reactExports.isValidElement(r3) ? i2 = reactExports.cloneElement(r3, l2) : s2 ? i2 = z.spinner() : ((e2) => e2 in z)(o2) && (i2 = z[o2](l2))), i2;
-  }(n2), X2 = !!P2 || !m2, Y2 = { closeToast: v2, type: g2, theme: R2 };
-  let q2 = null;
-  return false === d2 || (q2 = u(d2) ? d2(Y2) : reactExports.isValidElement(d2) ? reactExports.cloneElement(d2, Y2) : function(t2) {
-    let { closeToast: n3, theme: o2, ariaLabel: s2 = "close" } = t2;
-    return React.createElement("button", { className: `Toastify__close-button Toastify__close-button--${o2}`, type: "button", onClick: (e) => {
-      e.stopPropagation(), n3(e);
-    }, "aria-label": s2 }, React.createElement("svg", { "aria-hidden": "true", viewBox: "0 0 14 16" }, React.createElement("path", { fillRule: "evenodd", d: "M7.71 8.23l3.75 3.75-1.48 1.48-3.75-3.75-3.75 3.75L1 11.98l3.75-3.75L1 4.48 2.48 3l3.75 3.75L9.98 3l1.48 1.48-3.75 3.75z" })));
-  }(Y2)), React.createElement(h2, { isIn: B2, done: A2, position: T2, preventExitTransition: s, nodeRef: r2, playToast: c2 }, React.createElement("div", { id: x2, onClick: f2, "data-in": B2, className: H2, ...i, style: b2, ref: r2 }, React.createElement("div", { ...B2 && { role: k2 }, className: u(I2) ? I2({ type: g2 }) : clsx("Toastify__toast-body", I2), style: _2 }, null != F2 && React.createElement("div", { className: clsx("Toastify__toast-icon", { "Toastify--animate-icon Toastify__zoom-enter": !O2 }) }, F2), React.createElement("div", null, p2)), q2, React.createElement($, { ...w2 && !X2 ? { key: `pb-${w2}` } : {}, rtl: M2, theme: R2, delay: m2, isRunning: o, isIn: B2, closeToast: v2, hide: y2, type: g2, style: L2, className: C2, controlledProgress: X2, progress: P2 || 0 })));
-}, S = function(e, t2) {
-  return void 0 === t2 && (t2 = false), { enter: `Toastify--animate Toastify__${e}-enter`, exit: `Toastify--animate Toastify__${e}-exit`, appendPosition: t2 };
-}, H = g(S("bounce", true));
-g(S("slide", true));
-g(S("zoom"));
-g(S("flip"));
-const q = { position: "top-right", transition: H, autoClose: 5e3, closeButton: true, pauseOnHover: true, pauseOnFocusLoss: true, draggable: "touch", draggablePercent: 80, draggableDirection: "x", role: "alert", theme: "light" };
-function Q(t2) {
-  let o = { ...q, ...t2 };
-  const s = t2.stacked, [a, r2] = reactExports.useState(true), c2 = reactExports.useRef(null), { getToastToRender: d2, isToastActive: m2, count: f2 } = L(o), { className: g2, style: y2, rtl: v2, containerId: h2 } = o;
-  function T2(e) {
-    const t3 = clsx("Toastify__toast-container", `Toastify__toast-container--${e}`, { "Toastify__toast-container--rtl": v2 });
-    return u(g2) ? g2({ position: e, rtl: v2, defaultClassName: t3 }) : clsx(t3, p(g2));
-  }
-  function E2() {
-    s && (r2(true), B.play());
-  }
-  return O(() => {
-    if (s) {
-      var e;
-      const t3 = c2.current.querySelectorAll('[data-in="true"]'), n2 = 12, s2 = null == (e = o.position) ? void 0 : e.includes("top");
-      let r3 = 0, i = 0;
-      Array.from(t3).reverse().forEach((e2, t4) => {
-        const o2 = e2;
-        o2.classList.add("Toastify__toast--stacked"), t4 > 0 && (o2.dataset.collapsed = `${a}`), o2.dataset.pos || (o2.dataset.pos = s2 ? "top" : "bot");
-        const l2 = r3 * (a ? 0.2 : 1) + (a ? 0 : n2 * t4);
-        o2.style.setProperty("--y", `${s2 ? l2 : -1 * l2}px`), o2.style.setProperty("--g", `${n2}`), o2.style.setProperty("--s", "" + (1 - (a ? i : 0))), r3 += o2.offsetHeight, i += 0.025;
-      });
-    }
-  }, [a, f2, s]), React.createElement("div", { ref: c2, className: "Toastify", id: h2, onMouseEnter: () => {
-    s && (r2(false), B.pause());
-  }, onMouseLeave: E2 }, d2((t3, n2) => {
-    const o2 = n2.length ? { ...y2 } : { ...y2, pointerEvents: "none" };
-    return React.createElement("div", { className: T2(t3), style: o2, key: `container-${t3}` }, n2.map((t4) => {
-      let { content: n3, props: o3 } = t4;
-      return React.createElement(R, { ...o3, stacked: s, collapseAll: E2, isIn: m2(o3.toastId, o3.containerId), style: o3.style, key: `toast-${o3.key}` }, n3);
-    }));
-  }));
 }
 client.createRoot(document.getElementById("root")).render(
   /* @__PURE__ */ jsxRuntimeExports.jsxs(React.StrictMode, { children: [
@@ -11365,4 +14963,4 @@ client.createRoot(document.getElementById("root")).render(
     )
   ] })
 );
-//# sourceMappingURL=index-B0ds5ktV.js.map
+//# sourceMappingURL=index-B4rc8hxt.js.map
