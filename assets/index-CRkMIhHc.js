@@ -1,6 +1,3 @@
-var __defProp = Object.defineProperty;
-var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
-var __publicField = (obj, key, value) => __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
 (function polyfill() {
   const relList = document.createElement("link").relList;
   if (relList && relList.supports && relList.supports("modulepreload")) {
@@ -7086,14 +7083,6 @@ const directionEmojiMap = /* @__PURE__ */ new Map([
   //   &uarr; &rarr; &darr; &larr; &nwarr; &nearr; &swarr; &searr; &#x25CE;
   // https://emojigraph.org/right-arrow/ - for escape codes of emojis
 ]);
-const mapGradeToEmoji = /* @__PURE__ */ new Map([
-  [0, "N/A"],
-  [1, "🚫"],
-  [2, "★★★"],
-  [3, "⭐★★"],
-  [4, "⭐⭐★"],
-  [5, "⭐⭐⭐"]
-]);
 function sanitizeString(str) {
   let retVal = str.trim().toLowerCase();
   for (const accentedChar in accentsMap) {
@@ -7690,230 +7679,6 @@ var GameRoundResult = /* @__PURE__ */ ((GameRoundResult2) => {
   GameRoundResult2[GameRoundResult2["Excellent"] = 5] = "Excellent";
   return GameRoundResult2;
 })(GameRoundResult || {});
-const warn$1 = (...args) => {
-  if (console == null ? void 0 : console.warn) {
-    if (isString$1(args[0])) args[0] = `react-i18next:: ${args[0]}`;
-    console.warn(...args);
-  }
-};
-const alreadyWarned$1 = {};
-const warnOnce$1 = (...args) => {
-  if (isString$1(args[0]) && alreadyWarned$1[args[0]]) return;
-  if (isString$1(args[0])) alreadyWarned$1[args[0]] = /* @__PURE__ */ new Date();
-  warn$1(...args);
-};
-const loadedClb$1 = (i18n, cb2) => () => {
-  if (i18n.isInitialized) {
-    cb2();
-  } else {
-    const initialized = () => {
-      setTimeout(() => {
-        i18n.off("initialized", initialized);
-      }, 0);
-      cb2();
-    };
-    i18n.on("initialized", initialized);
-  }
-};
-const loadNamespaces$1 = (i18n, ns, cb2) => {
-  i18n.loadNamespaces(ns, loadedClb$1(i18n, cb2));
-};
-const loadLanguages$1 = (i18n, lng, ns, cb2) => {
-  if (isString$1(ns)) ns = [ns];
-  ns.forEach((n2) => {
-    if (i18n.options.ns.indexOf(n2) < 0) i18n.options.ns.push(n2);
-  });
-  i18n.loadLanguages(lng, loadedClb$1(i18n, cb2));
-};
-const hasLoadedNamespace$1 = (ns, i18n, options = {}) => {
-  if (!i18n.languages || !i18n.languages.length) {
-    warnOnce$1("i18n.languages were undefined or empty", i18n.languages);
-    return true;
-  }
-  return i18n.hasLoadedNamespace(ns, {
-    lng: options.lng,
-    precheck: (i18nInstance2, loadNotPending) => {
-      var _a;
-      if (((_a = options.bindI18n) == null ? void 0 : _a.indexOf("languageChanging")) > -1 && i18nInstance2.services.backendConnector.backend && i18nInstance2.isLanguageChangingTo && !loadNotPending(i18nInstance2.isLanguageChangingTo, ns)) return false;
-    }
-  });
-};
-const isString$1 = (obj) => typeof obj === "string";
-const isObject$1 = (obj) => typeof obj === "object" && obj !== null;
-const matchHtmlEntity$1 = /&(?:amp|#38|lt|#60|gt|#62|apos|#39|quot|#34|nbsp|#160|copy|#169|reg|#174|hellip|#8230|#x2F|#47);/g;
-const htmlEntities$1 = {
-  "&amp;": "&",
-  "&#38;": "&",
-  "&lt;": "<",
-  "&#60;": "<",
-  "&gt;": ">",
-  "&#62;": ">",
-  "&apos;": "'",
-  "&#39;": "'",
-  "&quot;": '"',
-  "&#34;": '"',
-  "&nbsp;": " ",
-  "&#160;": " ",
-  "&copy;": "©",
-  "&#169;": "©",
-  "&reg;": "®",
-  "&#174;": "®",
-  "&hellip;": "…",
-  "&#8230;": "…",
-  "&#x2F;": "/",
-  "&#47;": "/"
-};
-const unescapeHtmlEntity$1 = (m2) => htmlEntities$1[m2];
-const unescape$1 = (text) => text.replace(matchHtmlEntity$1, unescapeHtmlEntity$1);
-let defaultOptions$1 = {
-  bindI18n: "languageChanged",
-  bindI18nStore: "",
-  transEmptyNodeValue: "",
-  transSupportBasicHtmlNodes: true,
-  transWrapTextNodes: "",
-  transKeepBasicHtmlNodesFor: ["br", "strong", "i", "p"],
-  useSuspense: true,
-  unescape: unescape$1
-};
-const setDefaults = (options = {}) => {
-  defaultOptions$1 = {
-    ...defaultOptions$1,
-    ...options
-  };
-};
-const getDefaults$2 = () => defaultOptions$1;
-let i18nInstance$1;
-const setI18n = (instance2) => {
-  i18nInstance$1 = instance2;
-};
-const getI18n$1 = () => i18nInstance$1;
-const initReactI18next = {
-  type: "3rdParty",
-  init(instance2) {
-    setDefaults(instance2.options.react);
-    setI18n(instance2);
-  }
-};
-const I18nContext$1 = reactExports$1.createContext();
-let ReportNamespaces$1 = class ReportNamespaces {
-  constructor() {
-    this.usedNamespaces = {};
-  }
-  addUsedNamespaces(namespaces) {
-    namespaces.forEach((ns) => {
-      var _a;
-      (_a = this.usedNamespaces)[ns] ?? (_a[ns] = true);
-    });
-  }
-  getUsedNamespaces() {
-    return Object.keys(this.usedNamespaces);
-  }
-};
-const usePrevious$1 = (value, ignore) => {
-  const ref = reactExports$1.useRef();
-  reactExports$1.useEffect(() => {
-    ref.current = value;
-  }, [value, ignore]);
-  return ref.current;
-};
-const alwaysNewT$1 = (i18n, language, namespace, keyPrefix) => i18n.getFixedT(language, namespace, keyPrefix);
-const useMemoizedT$1 = (i18n, language, namespace, keyPrefix) => reactExports$1.useCallback(alwaysNewT$1(i18n, language, namespace, keyPrefix), [i18n, language, namespace, keyPrefix]);
-const useTranslation$1 = (ns, props = {}) => {
-  var _a, _b, _c, _d;
-  const {
-    i18n: i18nFromProps
-  } = props;
-  const {
-    i18n: i18nFromContext,
-    defaultNS: defaultNSFromContext
-  } = reactExports$1.useContext(I18nContext$1) || {};
-  const i18n = i18nFromProps || i18nFromContext || getI18n$1();
-  if (i18n && !i18n.reportNamespaces) i18n.reportNamespaces = new ReportNamespaces$1();
-  if (!i18n) {
-    warnOnce$1("You will need to pass in an i18next instance by using initReactI18next");
-    const notReadyT = (k2, optsOrDefaultValue) => {
-      if (isString$1(optsOrDefaultValue)) return optsOrDefaultValue;
-      if (isObject$1(optsOrDefaultValue) && isString$1(optsOrDefaultValue.defaultValue)) return optsOrDefaultValue.defaultValue;
-      return Array.isArray(k2) ? k2[k2.length - 1] : k2;
-    };
-    const retNotReady = [notReadyT, {}, false];
-    retNotReady.t = notReadyT;
-    retNotReady.i18n = {};
-    retNotReady.ready = false;
-    return retNotReady;
-  }
-  if ((_a = i18n.options.react) == null ? void 0 : _a.wait) warnOnce$1("It seems you are still using the old wait option, you may migrate to the new useSuspense behaviour.");
-  const i18nOptions = {
-    ...getDefaults$2(),
-    ...i18n.options.react,
-    ...props
-  };
-  const {
-    useSuspense,
-    keyPrefix
-  } = i18nOptions;
-  let namespaces = ns || defaultNSFromContext || ((_b = i18n.options) == null ? void 0 : _b.defaultNS);
-  namespaces = isString$1(namespaces) ? [namespaces] : namespaces || ["translation"];
-  (_d = (_c = i18n.reportNamespaces).addUsedNamespaces) == null ? void 0 : _d.call(_c, namespaces);
-  const ready = (i18n.isInitialized || i18n.initializedStoreOnce) && namespaces.every((n2) => hasLoadedNamespace$1(n2, i18n, i18nOptions));
-  const memoGetT = useMemoizedT$1(i18n, props.lng || null, i18nOptions.nsMode === "fallback" ? namespaces : namespaces[0], keyPrefix);
-  const getT = () => memoGetT;
-  const getNewT = () => alwaysNewT$1(i18n, props.lng || null, i18nOptions.nsMode === "fallback" ? namespaces : namespaces[0], keyPrefix);
-  const [t2, setT] = reactExports$1.useState(getT);
-  let joinedNS = namespaces.join();
-  if (props.lng) joinedNS = `${props.lng}${joinedNS}`;
-  const previousJoinedNS = usePrevious$1(joinedNS);
-  const isMounted = reactExports$1.useRef(true);
-  reactExports$1.useEffect(() => {
-    const {
-      bindI18n,
-      bindI18nStore
-    } = i18nOptions;
-    isMounted.current = true;
-    if (!ready && !useSuspense) {
-      if (props.lng) {
-        loadLanguages$1(i18n, props.lng, namespaces, () => {
-          if (isMounted.current) setT(getNewT);
-        });
-      } else {
-        loadNamespaces$1(i18n, namespaces, () => {
-          if (isMounted.current) setT(getNewT);
-        });
-      }
-    }
-    if (ready && previousJoinedNS && previousJoinedNS !== joinedNS && isMounted.current) {
-      setT(getNewT);
-    }
-    const boundReset = () => {
-      if (isMounted.current) setT(getNewT);
-    };
-    if (bindI18n) i18n == null ? void 0 : i18n.on(bindI18n, boundReset);
-    if (bindI18nStore) i18n == null ? void 0 : i18n.store.on(bindI18nStore, boundReset);
-    return () => {
-      isMounted.current = false;
-      if (i18n) bindI18n == null ? void 0 : bindI18n.split(" ").forEach((e2) => i18n.off(e2, boundReset));
-      if (bindI18nStore && i18n) bindI18nStore.split(" ").forEach((e2) => i18n.store.off(e2, boundReset));
-    };
-  }, [i18n, joinedNS]);
-  reactExports$1.useEffect(() => {
-    if (isMounted.current && ready) {
-      setT(getT);
-    }
-  }, [i18n, keyPrefix, ready]);
-  const ret = [t2, i18n, ready];
-  ret.t = t2;
-  ret.i18n = i18n;
-  ret.ready = ready;
-  if (ready) return ret;
-  if (!ready && !useSuspense) return ret;
-  throw new Promise((resolve) => {
-    if (props.lng) {
-      loadLanguages$1(i18n, props.lng, namespaces, () => resolve());
-    } else {
-      loadNamespaces$1(i18n, namespaces, () => resolve());
-    }
-  });
-};
 var jsxRuntime = { exports: {} };
 var reactJsxRuntime_production_min = {};
 var react = { exports: {} };
@@ -11793,638 +11558,6 @@ function GameRoundPot({
     )
   ] });
 }
-const warn = (...args) => {
-  if (console == null ? void 0 : console.warn) {
-    if (isString(args[0])) args[0] = `react-i18next:: ${args[0]}`;
-    console.warn(...args);
-  }
-};
-const alreadyWarned = {};
-const warnOnce = (...args) => {
-  if (isString(args[0]) && alreadyWarned[args[0]]) return;
-  if (isString(args[0])) alreadyWarned[args[0]] = /* @__PURE__ */ new Date();
-  warn(...args);
-};
-const loadedClb = (i18n, cb2) => () => {
-  if (i18n.isInitialized) {
-    cb2();
-  } else {
-    const initialized = () => {
-      setTimeout(() => {
-        i18n.off("initialized", initialized);
-      }, 0);
-      cb2();
-    };
-    i18n.on("initialized", initialized);
-  }
-};
-const loadNamespaces = (i18n, ns, cb2) => {
-  i18n.loadNamespaces(ns, loadedClb(i18n, cb2));
-};
-const loadLanguages = (i18n, lng, ns, cb2) => {
-  if (isString(ns)) ns = [ns];
-  ns.forEach((n2) => {
-    if (i18n.options.ns.indexOf(n2) < 0) i18n.options.ns.push(n2);
-  });
-  i18n.loadLanguages(lng, loadedClb(i18n, cb2));
-};
-const hasLoadedNamespace = (ns, i18n, options = {}) => {
-  if (!i18n.languages || !i18n.languages.length) {
-    warnOnce("i18n.languages were undefined or empty", i18n.languages);
-    return true;
-  }
-  return i18n.hasLoadedNamespace(ns, {
-    lng: options.lng,
-    precheck: (i18nInstance2, loadNotPending) => {
-      var _a;
-      if (((_a = options.bindI18n) == null ? void 0 : _a.indexOf("languageChanging")) > -1 && i18nInstance2.services.backendConnector.backend && i18nInstance2.isLanguageChangingTo && !loadNotPending(i18nInstance2.isLanguageChangingTo, ns)) return false;
-    }
-  });
-};
-const isString = (obj) => typeof obj === "string";
-const isObject = (obj) => typeof obj === "object" && obj !== null;
-const matchHtmlEntity = /&(?:amp|#38|lt|#60|gt|#62|apos|#39|quot|#34|nbsp|#160|copy|#169|reg|#174|hellip|#8230|#x2F|#47);/g;
-const htmlEntities = {
-  "&amp;": "&",
-  "&#38;": "&",
-  "&lt;": "<",
-  "&#60;": "<",
-  "&gt;": ">",
-  "&#62;": ">",
-  "&apos;": "'",
-  "&#39;": "'",
-  "&quot;": '"',
-  "&#34;": '"',
-  "&nbsp;": " ",
-  "&#160;": " ",
-  "&copy;": "©",
-  "&#169;": "©",
-  "&reg;": "®",
-  "&#174;": "®",
-  "&hellip;": "…",
-  "&#8230;": "…",
-  "&#x2F;": "/",
-  "&#47;": "/"
-};
-const unescapeHtmlEntity = (m2) => htmlEntities[m2];
-const unescape = (text) => text.replace(matchHtmlEntity, unescapeHtmlEntity);
-let defaultOptions = {
-  bindI18n: "languageChanged",
-  bindI18nStore: "",
-  transEmptyNodeValue: "",
-  transSupportBasicHtmlNodes: true,
-  transWrapTextNodes: "",
-  transKeepBasicHtmlNodesFor: ["br", "strong", "i", "p"],
-  useSuspense: true,
-  unescape
-};
-const getDefaults$1 = () => defaultOptions;
-let i18nInstance;
-const getI18n = () => i18nInstance;
-const I18nContext = reactExports.createContext();
-class ReportNamespaces2 {
-  constructor() {
-    __publicField(this, "getUsedNamespaces", () => Object.keys(this.usedNamespaces));
-    this.usedNamespaces = {};
-  }
-  addUsedNamespaces(namespaces) {
-    namespaces.forEach((ns) => {
-      var _a;
-      (_a = this.usedNamespaces)[ns] ?? (_a[ns] = true);
-    });
-  }
-}
-const usePrevious = (value, ignore) => {
-  const ref = reactExports.useRef();
-  reactExports.useEffect(() => {
-    ref.current = value;
-  }, [value, ignore]);
-  return ref.current;
-};
-const alwaysNewT = (i18n, language, namespace, keyPrefix) => i18n.getFixedT(language, namespace, keyPrefix);
-const useMemoizedT = (i18n, language, namespace, keyPrefix) => reactExports.useCallback(alwaysNewT(i18n, language, namespace, keyPrefix), [i18n, language, namespace, keyPrefix]);
-const useTranslation = (ns, props = {}) => {
-  var _a, _b, _c, _d;
-  const {
-    i18n: i18nFromProps
-  } = props;
-  const {
-    i18n: i18nFromContext,
-    defaultNS: defaultNSFromContext
-  } = reactExports.useContext(I18nContext) || {};
-  const i18n = i18nFromProps || i18nFromContext || getI18n();
-  if (i18n && !i18n.reportNamespaces) i18n.reportNamespaces = new ReportNamespaces2();
-  if (!i18n) {
-    warnOnce("You will need to pass in an i18next instance by using initReactI18next");
-    const notReadyT = (k2, optsOrDefaultValue) => {
-      if (isString(optsOrDefaultValue)) return optsOrDefaultValue;
-      if (isObject(optsOrDefaultValue) && isString(optsOrDefaultValue.defaultValue)) return optsOrDefaultValue.defaultValue;
-      return Array.isArray(k2) ? k2[k2.length - 1] : k2;
-    };
-    const retNotReady = [notReadyT, {}, false];
-    retNotReady.t = notReadyT;
-    retNotReady.i18n = {};
-    retNotReady.ready = false;
-    return retNotReady;
-  }
-  if ((_a = i18n.options.react) == null ? void 0 : _a.wait) warnOnce("It seems you are still using the old wait option, you may migrate to the new useSuspense behaviour.");
-  const i18nOptions = {
-    ...getDefaults$1(),
-    ...i18n.options.react,
-    ...props
-  };
-  const {
-    useSuspense,
-    keyPrefix
-  } = i18nOptions;
-  let namespaces = ns || defaultNSFromContext || ((_b = i18n.options) == null ? void 0 : _b.defaultNS);
-  namespaces = isString(namespaces) ? [namespaces] : namespaces || ["translation"];
-  (_d = (_c = i18n.reportNamespaces).addUsedNamespaces) == null ? void 0 : _d.call(_c, namespaces);
-  const ready = (i18n.isInitialized || i18n.initializedStoreOnce) && namespaces.every((n2) => hasLoadedNamespace(n2, i18n, i18nOptions));
-  const memoGetT = useMemoizedT(i18n, props.lng || null, i18nOptions.nsMode === "fallback" ? namespaces : namespaces[0], keyPrefix);
-  const getT = () => memoGetT;
-  const getNewT = () => alwaysNewT(i18n, props.lng || null, i18nOptions.nsMode === "fallback" ? namespaces : namespaces[0], keyPrefix);
-  const [t2, setT] = reactExports.useState(getT);
-  let joinedNS = namespaces.join();
-  if (props.lng) joinedNS = `${props.lng}${joinedNS}`;
-  const previousJoinedNS = usePrevious(joinedNS);
-  const isMounted = reactExports.useRef(true);
-  reactExports.useEffect(() => {
-    const {
-      bindI18n,
-      bindI18nStore
-    } = i18nOptions;
-    isMounted.current = true;
-    if (!ready && !useSuspense) {
-      if (props.lng) {
-        loadLanguages(i18n, props.lng, namespaces, () => {
-          if (isMounted.current) setT(getNewT);
-        });
-      } else {
-        loadNamespaces(i18n, namespaces, () => {
-          if (isMounted.current) setT(getNewT);
-        });
-      }
-    }
-    if (ready && previousJoinedNS && previousJoinedNS !== joinedNS && isMounted.current) {
-      setT(getNewT);
-    }
-    const boundReset = () => {
-      if (isMounted.current) setT(getNewT);
-    };
-    if (bindI18n) i18n == null ? void 0 : i18n.on(bindI18n, boundReset);
-    if (bindI18nStore) i18n == null ? void 0 : i18n.store.on(bindI18nStore, boundReset);
-    return () => {
-      isMounted.current = false;
-      if (i18n) bindI18n == null ? void 0 : bindI18n.split(" ").forEach((e2) => i18n.off(e2, boundReset));
-      if (bindI18nStore && i18n) bindI18nStore.split(" ").forEach((e2) => i18n.store.off(e2, boundReset));
-    };
-  }, [i18n, joinedNS]);
-  reactExports.useEffect(() => {
-    if (isMounted.current && ready) {
-      setT(getT);
-    }
-  }, [i18n, keyPrefix, ready]);
-  const ret = [t2, i18n, ready];
-  ret.t = t2;
-  ret.i18n = i18n;
-  ret.ready = ready;
-  if (ready) return ret;
-  if (!ready && !useSuspense) return ret;
-  throw new Promise((resolve) => {
-    if (props.lng) {
-      loadLanguages(i18n, props.lng, namespaces, () => resolve());
-    } else {
-      loadNamespaces(i18n, namespaces, () => resolve());
-    }
-  });
-};
-function GameRoundFinale({ roundStats, dataBank: dataBank2 }) {
-  const { t: t2 } = useTranslation();
-  const { t: tGeo } = useTranslation("geo");
-  const potCode = roundStats.potCode;
-  const urlRoot = "https://wallace-interinactive.github.io/";
-  const ourGames = ["provincle", "eirele", "varmegyle"];
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-      "img",
-      {
-        src: dataBank2.getPotMapSvgUrl(roundStats.potCode),
-        alt: "silhouette of a province or territory",
-        className: "max-h-32 m-auto my-5 transition-transform duration-700 ease-in dark:invert h-full"
-      }
-    ) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "my-span-2", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-        "span",
-        {
-          className: `my-span-3 text-black bg-${getColorOfStatus("won")}`,
-          children: tGeo(potCode)
-        }
-      ) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-6 gap-1 text-center py-0.5", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "my-guess-div col-start-2 col-span-2", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-          "a",
-          {
-            className: "my-guess-p",
-            href: dataBank2.getLinkUrlWikipedia(potCode),
-            target: "_blank",
-            children: "Wikipedia"
-          }
-        ) }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "my-guess-div col-span-2", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-          "a",
-          {
-            className: "my-guess-p",
-            href: dataBank2.getLinkUrlGoogleMaps(potCode),
-            target: "_blank",
-            children: "Google Maps"
-          }
-        ) })
-      ] }),
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      Array.from(roundStats.rounds.entries()).map(([_2, stat], _i) => {
-        return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-4 gap-1 text-center py-0.5", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "my-guess-open col-span-3", children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "my-guess-p", children: t2(stat.i18nId) }) }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "my-guess-open", children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "my-guess-p", children: mapGradeToEmoji.get(stat.result) ?? "-" }) })
-        ] });
-      }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "gap-1 text-center py-0.5", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: t2("gameTryOurOtherGames") }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 gap-1 text-center py-0.5", children: Array.from(ourGames).filter((game) => !window.location.href.includes(game)).map((game) => {
-          return /* @__PURE__ */ jsxRuntimeExports.jsx(
-            "div",
-            {
-              className: `text-black bg-${getColorOfStatus("won")} rounded-xl m-4`,
-              children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-                "a",
-                {
-                  href: `${urlRoot.replace(/\/$/, "")}/${game}`,
-                  target: "_blank",
-                  children: game
-                }
-              )
-            }
-          );
-        }) })
-      ] })
-    ] })
-  ] });
-}
-function r(e2) {
-  var t2, f2, n2 = "";
-  if ("string" == typeof e2 || "number" == typeof e2) n2 += e2;
-  else if ("object" == typeof e2) if (Array.isArray(e2)) {
-    var o = e2.length;
-    for (t2 = 0; t2 < o; t2++) e2[t2] && (f2 = r(e2[t2])) && (n2 && (n2 += " "), n2 += f2);
-  } else for (f2 in e2) e2[f2] && (n2 && (n2 += " "), n2 += f2);
-  return n2;
-}
-function clsx() {
-  for (var e2, t2, f2 = 0, n2 = "", o = arguments.length; f2 < o; f2++) (e2 = arguments[f2]) && (t2 = r(e2)) && (n2 && (n2 += " "), n2 += t2);
-  return n2;
-}
-const c = (e2) => "number" == typeof e2 && !isNaN(e2), d = (e2) => "string" == typeof e2, u = (e2) => "function" == typeof e2, p = (e2) => d(e2) || u(e2) ? e2 : null, m = (e2) => reactExports$1.isValidElement(e2) || d(e2) || u(e2) || c(e2);
-function f(e2, t2, n2) {
-  void 0 === n2 && (n2 = 300);
-  const { scrollHeight: o, style: s } = e2;
-  requestAnimationFrame(() => {
-    s.minHeight = "initial", s.height = o + "px", s.transition = `all ${n2}ms`, requestAnimationFrame(() => {
-      s.height = "0", s.padding = "0", s.margin = "0", setTimeout(t2, n2);
-    });
-  });
-}
-function g(t2) {
-  let { enter: a, exit: r2, appendPosition: i = false, collapse: l2 = true, collapseDuration: c2 = 300 } = t2;
-  return function(t3) {
-    let { children: d2, position: u2, preventExitTransition: p2, done: m2, nodeRef: g2, isIn: y2, playToast: v2 } = t3;
-    const h2 = i ? `${a}--${u2}` : a, T2 = i ? `${r2}--${u2}` : r2, E2 = reactExports$1.useRef(0);
-    return reactExports$1.useLayoutEffect(() => {
-      const e2 = g2.current, t4 = h2.split(" "), n2 = (o) => {
-        o.target === g2.current && (v2(), e2.removeEventListener("animationend", n2), e2.removeEventListener("animationcancel", n2), 0 === E2.current && "animationcancel" !== o.type && e2.classList.remove(...t4));
-      };
-      e2.classList.add(...t4), e2.addEventListener("animationend", n2), e2.addEventListener("animationcancel", n2);
-    }, []), reactExports$1.useEffect(() => {
-      const e2 = g2.current, t4 = () => {
-        e2.removeEventListener("animationend", t4), l2 ? f(e2, m2, c2) : m2();
-      };
-      y2 || (p2 ? t4() : (E2.current = 1, e2.className += ` ${T2}`, e2.addEventListener("animationend", t4)));
-    }, [y2]), React.createElement(React.Fragment, null, d2);
-  };
-}
-function y(e2, t2) {
-  return null != e2 ? { content: e2.content, containerId: e2.props.containerId, id: e2.props.toastId, theme: e2.props.theme, type: e2.props.type, data: e2.props.data || {}, isLoading: e2.props.isLoading, icon: e2.props.icon, status: t2 } : {};
-}
-const v = /* @__PURE__ */ new Map();
-let h = [];
-const T = /* @__PURE__ */ new Set(), E = (e2) => T.forEach((t2) => t2(e2)), b = () => v.size > 0;
-function I(e2, t2) {
-  var n2;
-  if (t2) return !(null == (n2 = v.get(t2)) || !n2.isToastActive(e2));
-  let o = false;
-  return v.forEach((t3) => {
-    t3.isToastActive(e2) && (o = true);
-  }), o;
-}
-function _(e2, t2) {
-  m(e2) && (b() || h.push({ content: e2, options: t2 }), v.forEach((n2) => {
-    n2.buildToast(e2, t2);
-  }));
-}
-function C(e2, t2) {
-  v.forEach((n2) => {
-    null != t2 && null != t2 && t2.containerId ? (null == t2 ? void 0 : t2.containerId) === n2.id && n2.toggle(e2, null == t2 ? void 0 : t2.id) : n2.toggle(e2, null == t2 ? void 0 : t2.id);
-  });
-}
-function L(e2) {
-  const { subscribe: o, getSnapshot: s, setProps: i } = reactExports$1.useRef(function(e3) {
-    const n2 = e3.containerId || 1;
-    return { subscribe(o2) {
-      const s2 = /* @__PURE__ */ function(e4, n3, o3) {
-        let s3 = 1, r3 = 0, i2 = [], l3 = [], f2 = [], g2 = n3;
-        const v2 = /* @__PURE__ */ new Map(), h2 = /* @__PURE__ */ new Set(), T2 = () => {
-          f2 = Array.from(v2.values()), h2.forEach((e5) => e5());
-        }, E2 = (e5) => {
-          l3 = null == e5 ? [] : l3.filter((t2) => t2 !== e5), T2();
-        }, b2 = (e5) => {
-          const { toastId: n4, onOpen: s4, updateId: a, children: r4 } = e5.props, i3 = null == a;
-          e5.staleId && v2.delete(e5.staleId), v2.set(n4, e5), l3 = [...l3, e5.props.toastId].filter((t2) => t2 !== e5.staleId), T2(), o3(y(e5, i3 ? "added" : "updated")), i3 && u(s4) && s4(reactExports$1.isValidElement(r4) && r4.props);
-        };
-        return { id: e4, props: g2, observe: (e5) => (h2.add(e5), () => h2.delete(e5)), toggle: (e5, t2) => {
-          v2.forEach((n4) => {
-            null != t2 && t2 !== n4.props.toastId || u(n4.toggle) && n4.toggle(e5);
-          });
-        }, removeToast: E2, toasts: v2, clearQueue: () => {
-          r3 -= i2.length, i2 = [];
-        }, buildToast: (n4, l4) => {
-          if (((t2) => {
-            let { containerId: n5, toastId: o4, updateId: s4 } = t2;
-            const a = n5 ? n5 !== e4 : 1 !== e4, r4 = v2.has(o4) && null == s4;
-            return a || r4;
-          })(l4)) return;
-          const { toastId: f3, updateId: h3, data: I2, staleId: _2, delay: C2 } = l4, L2 = () => {
-            E2(f3);
-          }, N2 = null == h3;
-          N2 && r3++;
-          const $2 = { ...g2, style: g2.toastStyle, key: s3++, ...Object.fromEntries(Object.entries(l4).filter((e5) => {
-            let [t2, n5] = e5;
-            return null != n5;
-          })), toastId: f3, updateId: h3, data: I2, closeToast: L2, isIn: false, className: p(l4.className || g2.toastClassName), bodyClassName: p(l4.bodyClassName || g2.bodyClassName), progressClassName: p(l4.progressClassName || g2.progressClassName), autoClose: !l4.isLoading && (w2 = l4.autoClose, k2 = g2.autoClose, false === w2 || c(w2) && w2 > 0 ? w2 : k2), deleteToast() {
-            const e5 = v2.get(f3), { onClose: n5, children: s4 } = e5.props;
-            u(n5) && n5(reactExports$1.isValidElement(s4) && s4.props), o3(y(e5, "removed")), v2.delete(f3), r3--, r3 < 0 && (r3 = 0), i2.length > 0 ? b2(i2.shift()) : T2();
-          } };
-          var w2, k2;
-          $2.closeButton = g2.closeButton, false === l4.closeButton || m(l4.closeButton) ? $2.closeButton = l4.closeButton : true === l4.closeButton && ($2.closeButton = !m(g2.closeButton) || g2.closeButton);
-          let P2 = n4;
-          reactExports$1.isValidElement(n4) && !d(n4.type) ? P2 = reactExports$1.cloneElement(n4, { closeToast: L2, toastProps: $2, data: I2 }) : u(n4) && (P2 = n4({ closeToast: L2, toastProps: $2, data: I2 }));
-          const M2 = { content: P2, props: $2, staleId: _2 };
-          g2.limit && g2.limit > 0 && r3 > g2.limit && N2 ? i2.push(M2) : c(C2) ? setTimeout(() => {
-            b2(M2);
-          }, C2) : b2(M2);
-        }, setProps(e5) {
-          g2 = e5;
-        }, setToggle: (e5, t2) => {
-          v2.get(e5).toggle = t2;
-        }, isToastActive: (e5) => l3.some((t2) => t2 === e5), getSnapshot: () => g2.newestOnTop ? f2.reverse() : f2 };
-      }(n2, e3, E);
-      v.set(n2, s2);
-      const r2 = s2.observe(o2);
-      return h.forEach((e4) => _(e4.content, e4.options)), h = [], () => {
-        r2(), v.delete(n2);
-      };
-    }, setProps(e4) {
-      var t2;
-      null == (t2 = v.get(n2)) || t2.setProps(e4);
-    }, getSnapshot() {
-      var e4;
-      return null == (e4 = v.get(n2)) ? void 0 : e4.getSnapshot();
-    } };
-  }(e2)).current;
-  i(e2);
-  const l2 = reactExports$1.useSyncExternalStore(o, s, s);
-  return { getToastToRender: function(e3) {
-    if (!l2) return [];
-    const t2 = /* @__PURE__ */ new Map();
-    return l2.forEach((e4) => {
-      const { position: n2 } = e4.props;
-      t2.has(n2) || t2.set(n2, []), t2.get(n2).push(e4);
-    }), Array.from(t2, (t3) => e3(t3[0], t3[1]));
-  }, isToastActive: I, count: null == l2 ? void 0 : l2.length };
-}
-function N(e2) {
-  const [t2, o] = reactExports$1.useState(false), [a, r2] = reactExports$1.useState(false), l2 = reactExports$1.useRef(null), c2 = reactExports$1.useRef({ start: 0, delta: 0, removalDistance: 0, canCloseOnClick: true, canDrag: false, didMove: false }).current, { autoClose: d2, pauseOnHover: u2, closeToast: p2, onClick: m2, closeOnClick: f2 } = e2;
-  var g2, y2;
-  function h2() {
-    o(true);
-  }
-  function T2() {
-    o(false);
-  }
-  function E2(n2) {
-    const o2 = l2.current;
-    c2.canDrag && o2 && (c2.didMove = true, t2 && T2(), c2.delta = "x" === e2.draggableDirection ? n2.clientX - c2.start : n2.clientY - c2.start, c2.start !== n2.clientX && (c2.canCloseOnClick = false), o2.style.transform = `translate3d(${"x" === e2.draggableDirection ? `${c2.delta}px, var(--y)` : `0, calc(${c2.delta}px + var(--y))`},0)`, o2.style.opacity = "" + (1 - Math.abs(c2.delta / c2.removalDistance)));
-  }
-  function b2() {
-    document.removeEventListener("pointermove", E2), document.removeEventListener("pointerup", b2);
-    const t3 = l2.current;
-    if (c2.canDrag && c2.didMove && t3) {
-      if (c2.canDrag = false, Math.abs(c2.delta) > c2.removalDistance) return r2(true), e2.closeToast(), void e2.collapseAll();
-      t3.style.transition = "transform 0.2s, opacity 0.2s", t3.style.removeProperty("transform"), t3.style.removeProperty("opacity");
-    }
-  }
-  null == (y2 = v.get((g2 = { id: e2.toastId, containerId: e2.containerId, fn: o }).containerId || 1)) || y2.setToggle(g2.id, g2.fn), reactExports$1.useEffect(() => {
-    if (e2.pauseOnFocusLoss) return document.hasFocus() || T2(), window.addEventListener("focus", h2), window.addEventListener("blur", T2), () => {
-      window.removeEventListener("focus", h2), window.removeEventListener("blur", T2);
-    };
-  }, [e2.pauseOnFocusLoss]);
-  const I2 = { onPointerDown: function(t3) {
-    if (true === e2.draggable || e2.draggable === t3.pointerType) {
-      c2.didMove = false, document.addEventListener("pointermove", E2), document.addEventListener("pointerup", b2);
-      const n2 = l2.current;
-      c2.canCloseOnClick = true, c2.canDrag = true, n2.style.transition = "none", "x" === e2.draggableDirection ? (c2.start = t3.clientX, c2.removalDistance = n2.offsetWidth * (e2.draggablePercent / 100)) : (c2.start = t3.clientY, c2.removalDistance = n2.offsetHeight * (80 === e2.draggablePercent ? 1.5 * e2.draggablePercent : e2.draggablePercent) / 100);
-    }
-  }, onPointerUp: function(t3) {
-    const { top: n2, bottom: o2, left: s, right: a2 } = l2.current.getBoundingClientRect();
-    "touchend" !== t3.nativeEvent.type && e2.pauseOnHover && t3.clientX >= s && t3.clientX <= a2 && t3.clientY >= n2 && t3.clientY <= o2 ? T2() : h2();
-  } };
-  return d2 && u2 && (I2.onMouseEnter = T2, e2.stacked || (I2.onMouseLeave = h2)), f2 && (I2.onClick = (e3) => {
-    m2 && m2(e3), c2.canCloseOnClick && p2();
-  }), { playToast: h2, pauseToast: T2, isRunning: t2, preventExitTransition: a, toastRef: l2, eventHandlers: I2 };
-}
-function $(t2) {
-  let { delay: n2, isRunning: o, closeToast: s, type: a = "default", hide: r2, className: i, style: c2, controlledProgress: d2, progress: p2, rtl: m2, isIn: f2, theme: g2 } = t2;
-  const y2 = r2 || d2 && 0 === p2, v2 = { ...c2, animationDuration: `${n2}ms`, animationPlayState: o ? "running" : "paused" };
-  d2 && (v2.transform = `scaleX(${p2})`);
-  const h2 = clsx("Toastify__progress-bar", d2 ? "Toastify__progress-bar--controlled" : "Toastify__progress-bar--animated", `Toastify__progress-bar-theme--${g2}`, `Toastify__progress-bar--${a}`, { "Toastify__progress-bar--rtl": m2 }), T2 = u(i) ? i({ rtl: m2, type: a, defaultClassName: h2 }) : clsx(h2, i), E2 = { [d2 && p2 >= 1 ? "onTransitionEnd" : "onAnimationEnd"]: d2 && p2 < 1 ? null : () => {
-    f2 && s();
-  } };
-  return React.createElement("div", { className: "Toastify__progress-bar--wrp", "data-hidden": y2 }, React.createElement("div", { className: `Toastify__progress-bar--bg Toastify__progress-bar-theme--${g2} Toastify__progress-bar--${a}` }), React.createElement("div", { role: "progressbar", "aria-hidden": y2 ? "true" : "false", "aria-label": "notification timer", className: T2, style: v2, ...E2 }));
-}
-let w = 1;
-const k = () => "" + w++;
-function P(e2) {
-  return e2 && (d(e2.toastId) || c(e2.toastId)) ? e2.toastId : k();
-}
-function M(e2, t2) {
-  return _(e2, t2), t2.toastId;
-}
-function x(e2, t2) {
-  return { ...t2, type: t2 && t2.type || e2, toastId: P(t2) };
-}
-function A(e2) {
-  return (t2, n2) => M(t2, x(e2, n2));
-}
-function B(e2, t2) {
-  return M(e2, x("default", t2));
-}
-B.loading = (e2, t2) => M(e2, x("default", { isLoading: true, autoClose: false, closeOnClick: false, closeButton: false, draggable: false, ...t2 })), B.promise = function(e2, t2, n2) {
-  let o, { pending: s, error: a, success: r2 } = t2;
-  s && (o = d(s) ? B.loading(s, n2) : B.loading(s.render, { ...n2, ...s }));
-  const i = { isLoading: null, autoClose: null, closeOnClick: null, closeButton: null, draggable: null }, l2 = (e3, t3, s2) => {
-    if (null == t3) return void B.dismiss(o);
-    const a2 = { type: e3, ...i, ...n2, data: s2 }, r3 = d(t3) ? { render: t3 } : t3;
-    return o ? B.update(o, { ...a2, ...r3 }) : B(r3.render, { ...a2, ...r3 }), s2;
-  }, c2 = u(e2) ? e2() : e2;
-  return c2.then((e3) => l2("success", r2, e3)).catch((e3) => l2("error", a, e3)), c2;
-}, B.success = A("success"), B.info = A("info"), B.error = A("error"), B.warning = A("warning"), B.warn = B.warning, B.dark = (e2, t2) => M(e2, x("default", { theme: "dark", ...t2 })), B.dismiss = function(e2) {
-  !function(e3) {
-    var t2;
-    if (b()) {
-      if (null == e3 || d(t2 = e3) || c(t2)) v.forEach((t3) => {
-        t3.removeToast(e3);
-      });
-      else if (e3 && ("containerId" in e3 || "id" in e3)) {
-        const t3 = v.get(e3.containerId);
-        t3 ? t3.removeToast(e3.id) : v.forEach((t4) => {
-          t4.removeToast(e3.id);
-        });
-      }
-    } else h = h.filter((t3) => null != e3 && t3.options.toastId !== e3);
-  }(e2);
-}, B.clearWaitingQueue = function(e2) {
-  void 0 === e2 && (e2 = {}), v.forEach((t2) => {
-    !t2.props.limit || e2.containerId && t2.id !== e2.containerId || t2.clearQueue();
-  });
-}, B.isActive = I, B.update = function(e2, t2) {
-  void 0 === t2 && (t2 = {});
-  const n2 = ((e3, t3) => {
-    var n3;
-    let { containerId: o } = t3;
-    return null == (n3 = v.get(o || 1)) ? void 0 : n3.toasts.get(e3);
-  })(e2, t2);
-  if (n2) {
-    const { props: o, content: s } = n2, a = { delay: 100, ...o, ...t2, toastId: t2.toastId || e2, updateId: k() };
-    a.toastId !== e2 && (a.staleId = e2);
-    const r2 = a.render || s;
-    delete a.render, M(r2, a);
-  }
-}, B.done = (e2) => {
-  B.update(e2, { progress: 1 });
-}, B.onChange = function(e2) {
-  return T.add(e2), () => {
-    T.delete(e2);
-  };
-}, B.play = (e2) => C(true, e2), B.pause = (e2) => C(false, e2);
-const O = "undefined" != typeof window ? reactExports$1.useLayoutEffect : reactExports$1.useEffect, D = (t2) => {
-  let { theme: n2, type: o, isLoading: s, ...a } = t2;
-  return React.createElement("svg", { viewBox: "0 0 24 24", width: "100%", height: "100%", fill: "colored" === n2 ? "currentColor" : `var(--toastify-icon-color-${o})`, ...a });
-}, z = { info: function(t2) {
-  return React.createElement(D, { ...t2 }, React.createElement("path", { d: "M12 0a12 12 0 1012 12A12.013 12.013 0 0012 0zm.25 5a1.5 1.5 0 11-1.5 1.5 1.5 1.5 0 011.5-1.5zm2.25 13.5h-4a1 1 0 010-2h.75a.25.25 0 00.25-.25v-4.5a.25.25 0 00-.25-.25h-.75a1 1 0 010-2h1a2 2 0 012 2v4.75a.25.25 0 00.25.25h.75a1 1 0 110 2z" }));
-}, warning: function(t2) {
-  return React.createElement(D, { ...t2 }, React.createElement("path", { d: "M23.32 17.191L15.438 2.184C14.728.833 13.416 0 11.996 0c-1.42 0-2.733.833-3.443 2.184L.533 17.448a4.744 4.744 0 000 4.368C1.243 23.167 2.555 24 3.975 24h16.05C22.22 24 24 22.044 24 19.632c0-.904-.251-1.746-.68-2.44zm-9.622 1.46c0 1.033-.724 1.823-1.698 1.823s-1.698-.79-1.698-1.822v-.043c0-1.028.724-1.822 1.698-1.822s1.698.79 1.698 1.822v.043zm.039-12.285l-.84 8.06c-.057.581-.408.943-.897.943-.49 0-.84-.367-.896-.942l-.84-8.065c-.057-.624.25-1.095.779-1.095h1.91c.528.005.84.476.784 1.1z" }));
-}, success: function(t2) {
-  return React.createElement(D, { ...t2 }, React.createElement("path", { d: "M12 0a12 12 0 1012 12A12.014 12.014 0 0012 0zm6.927 8.2l-6.845 9.289a1.011 1.011 0 01-1.43.188l-4.888-3.908a1 1 0 111.25-1.562l4.076 3.261 6.227-8.451a1 1 0 111.61 1.183z" }));
-}, error: function(t2) {
-  return React.createElement(D, { ...t2 }, React.createElement("path", { d: "M11.983 0a12.206 12.206 0 00-8.51 3.653A11.8 11.8 0 000 12.207 11.779 11.779 0 0011.8 24h.214A12.111 12.111 0 0024 11.791 11.766 11.766 0 0011.983 0zM10.5 16.542a1.476 1.476 0 011.449-1.53h.027a1.527 1.527 0 011.523 1.47 1.475 1.475 0 01-1.449 1.53h-.027a1.529 1.529 0 01-1.523-1.47zM11 12.5v-6a1 1 0 012 0v6a1 1 0 11-2 0z" }));
-}, spinner: function() {
-  return React.createElement("div", { className: "Toastify__spinner" });
-} }, R = (n2) => {
-  const { isRunning: o, preventExitTransition: s, toastRef: r2, eventHandlers: i, playToast: c2 } = N(n2), { closeButton: d2, children: p2, autoClose: m2, onClick: f2, type: g2, hideProgressBar: y2, closeToast: v2, transition: h2, position: T2, className: E2, style: b2, bodyClassName: I2, bodyStyle: _2, progressClassName: C2, progressStyle: L2, updateId: w2, role: k2, progress: P2, rtl: M2, toastId: x2, deleteToast: A2, isIn: B2, isLoading: O2, closeOnClick: D2, theme: R2 } = n2, S2 = clsx("Toastify__toast", `Toastify__toast-theme--${R2}`, `Toastify__toast--${g2}`, { "Toastify__toast--rtl": M2 }, { "Toastify__toast--close-on-click": D2 }), H2 = u(E2) ? E2({ rtl: M2, position: T2, type: g2, defaultClassName: S2 }) : clsx(S2, E2), F2 = function(e2) {
-    let { theme: n3, type: o2, isLoading: s2, icon: r3 } = e2, i2 = null;
-    const l2 = { theme: n3, type: o2 };
-    return false === r3 || (u(r3) ? i2 = r3({ ...l2, isLoading: s2 }) : reactExports$1.isValidElement(r3) ? i2 = reactExports$1.cloneElement(r3, l2) : s2 ? i2 = z.spinner() : ((e3) => e3 in z)(o2) && (i2 = z[o2](l2))), i2;
-  }(n2), X2 = !!P2 || !m2, Y2 = { closeToast: v2, type: g2, theme: R2 };
-  let q2 = null;
-  return false === d2 || (q2 = u(d2) ? d2(Y2) : reactExports$1.isValidElement(d2) ? reactExports$1.cloneElement(d2, Y2) : function(t2) {
-    let { closeToast: n3, theme: o2, ariaLabel: s2 = "close" } = t2;
-    return React.createElement("button", { className: `Toastify__close-button Toastify__close-button--${o2}`, type: "button", onClick: (e2) => {
-      e2.stopPropagation(), n3(e2);
-    }, "aria-label": s2 }, React.createElement("svg", { "aria-hidden": "true", viewBox: "0 0 14 16" }, React.createElement("path", { fillRule: "evenodd", d: "M7.71 8.23l3.75 3.75-1.48 1.48-3.75-3.75-3.75 3.75L1 11.98l3.75-3.75L1 4.48 2.48 3l3.75 3.75L9.98 3l1.48 1.48-3.75 3.75z" })));
-  }(Y2)), React.createElement(h2, { isIn: B2, done: A2, position: T2, preventExitTransition: s, nodeRef: r2, playToast: c2 }, React.createElement("div", { id: x2, onClick: f2, "data-in": B2, className: H2, ...i, style: b2, ref: r2 }, React.createElement("div", { ...B2 && { role: k2 }, className: u(I2) ? I2({ type: g2 }) : clsx("Toastify__toast-body", I2), style: _2 }, null != F2 && React.createElement("div", { className: clsx("Toastify__toast-icon", { "Toastify--animate-icon Toastify__zoom-enter": !O2 }) }, F2), React.createElement("div", null, p2)), q2, React.createElement($, { ...w2 && !X2 ? { key: `pb-${w2}` } : {}, rtl: M2, theme: R2, delay: m2, isRunning: o, isIn: B2, closeToast: v2, hide: y2, type: g2, style: L2, className: C2, controlledProgress: X2, progress: P2 || 0 })));
-}, S = function(e2, t2) {
-  return void 0 === t2 && (t2 = false), { enter: `Toastify--animate Toastify__${e2}-enter`, exit: `Toastify--animate Toastify__${e2}-exit`, appendPosition: t2 };
-}, H = g(S("bounce", true));
-g(S("slide", true));
-g(S("zoom"));
-g(S("flip"));
-const q = { position: "top-right", transition: H, autoClose: 5e3, closeButton: true, pauseOnHover: true, pauseOnFocusLoss: true, draggable: "touch", draggablePercent: 80, draggableDirection: "x", role: "alert", theme: "light" };
-function Q(t2) {
-  let o = { ...q, ...t2 };
-  const s = t2.stacked, [a, r2] = reactExports$1.useState(true), c2 = reactExports$1.useRef(null), { getToastToRender: d2, isToastActive: m2, count: f2 } = L(o), { className: g2, style: y2, rtl: v2, containerId: h2 } = o;
-  function T2(e2) {
-    const t3 = clsx("Toastify__toast-container", `Toastify__toast-container--${e2}`, { "Toastify__toast-container--rtl": v2 });
-    return u(g2) ? g2({ position: e2, rtl: v2, defaultClassName: t3 }) : clsx(t3, p(g2));
-  }
-  function E2() {
-    s && (r2(true), B.play());
-  }
-  return O(() => {
-    if (s) {
-      var e2;
-      const t3 = c2.current.querySelectorAll('[data-in="true"]'), n2 = 12, s2 = null == (e2 = o.position) ? void 0 : e2.includes("top");
-      let r3 = 0, i = 0;
-      Array.from(t3).reverse().forEach((e3, t4) => {
-        const o2 = e3;
-        o2.classList.add("Toastify__toast--stacked"), t4 > 0 && (o2.dataset.collapsed = `${a}`), o2.dataset.pos || (o2.dataset.pos = s2 ? "top" : "bot");
-        const l2 = r3 * (a ? 0.2 : 1) + (a ? 0 : n2 * t4);
-        o2.style.setProperty("--y", `${s2 ? l2 : -1 * l2}px`), o2.style.setProperty("--g", `${n2}`), o2.style.setProperty("--s", "" + (1 - (a ? i : 0))), r3 += o2.offsetHeight, i += 0.025;
-      });
-    }
-  }, [a, f2, s]), React.createElement("div", { ref: c2, className: "Toastify", id: h2, onMouseEnter: () => {
-    s && (r2(false), B.pause());
-  }, onMouseLeave: E2 }, d2((t3, n2) => {
-    const o2 = n2.length ? { ...y2 } : { ...y2, pointerEvents: "none" };
-    return React.createElement("div", { className: T2(t3), style: o2, key: `container-${t3}` }, n2.map((t4) => {
-      let { content: n3, props: o3 } = t4;
-      return React.createElement(R, { ...o3, stacked: s, collapseAll: E2, isIn: m2(o3.toastId, o3.containerId), style: o3.style, key: `toast-${o3.key}` }, n3);
-    }));
-  }));
-}
-function NextRoundButton({
-  currentRound,
-  currentRoundStatus,
-  handleNextButtonClicked,
-  handleGiveUpButtonClicked,
-  giveUpCnt,
-  dataBank: dataBank2
-}) {
-  const { t: t2 } = useTranslation();
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    "div",
-    {
-      className: "container flex flex-col items-center mt-4",
-      "data-testid": "next-round-btn-wrapper-div",
-      children: currentRoundStatus !== "pending" ? /* @__PURE__ */ jsxRuntimeExports.jsx(
-        "button",
-        {
-          onClick: handleNextButtonClicked,
-          className: "w-full rounded-xl flex-shrink-0 font-medium px-4 py-2 bg-custom-green-1 hover:bg-green-700",
-          "data-testid": "next-round-btn-finished",
-          children: dataBank2.getGuessEmoji() + " " + t2("nextRound")
-        }
-      ) : currentRound > 1 ? /* @__PURE__ */ jsxRuntimeExports.jsx(
-        "button",
-        {
-          onClick: handleGiveUpButtonClicked,
-          className: "rounded-xl flex-shrink-0 font-medium px-4 py-2 text-black bg-custom-light-blue-2",
-          "data-testid": "give-up-btn",
-          children: giveUpCnt === 0 ? `🤷‍♀️ ${t2("giveUp")}` : `️🙀 ${t2("areYouSure")}?`
-        }
-      ) : /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, {})
-    }
-  );
-}
 function initGameState() {
   const ret = defaultGameState;
   ret.potCode = getTodaysPotCode();
@@ -12440,96 +11573,21 @@ function initGameState() {
 function Game() {
   const [gameState, setGameState] = reactExports$1.useState(() => initGameState());
   console.log(`lovas2`);
-  dataBank.tLang = useTranslation$1().t;
-  dataBank.tGeo = useTranslation$1("geo").t;
-  dataBank.getPotMapSvgUrl = getPotMapSvgUrl;
-  console.log(`lovas3`);
-  const updateGameState = (key, val) => {
-    setGameState((prevState) => ({
-      ...prevState,
-      [key]: val
-    }));
-  };
-  console.log(`lovas4`);
-  const setCurrentRound = (newCurrentRound) => {
-    updateGameState("currentRound", newCurrentRound);
-  };
-  function getRoundStat(id2) {
-    console.log(`rounds ${typeof gameState.rounds} ==> ${gameState.rounds} ${Array.from(gameState.rounds.entries())}`);
-    return gameState.rounds.get(id2) ?? { i18nId: "na", result: GameRoundResult.NotStarted };
-  }
+  const [currentRoundStatus, setCurrentRoundStatus] = reactExports$1.useState("pending");
   const setRoundResult = (roundId, result) => {
     console.log(`set ${roundId} ==> ${result}`);
-    const newState = gameState;
-    newState.rounds.set(roundId, {
-      ...getRoundStat(roundId),
-      // ...newState.rounds.get(roundId),
-      result
-    });
-    setGameState(newState);
   };
-  console.log(`lovas5`);
-  const { potCode, currentRound } = gameState;
-  const [giveupCnt, setGiveupCnt] = reactExports$1.useState(0);
-  console.log(`lovas6`);
-  const [currentRoundStatus, setCurrentRoundStatus] = reactExports$1.useState("pending");
-  console.log(`lovas7`);
-  const handleNextButtonClicked = () => {
-    console.log("Next button clicked.");
-    setCurrentRound(currentRound + 1);
-    setCurrentRoundStatus("pending");
-    B.dismiss();
-    console.log(`lovas: round: ${currentRound}, status: ${currentRoundStatus}`);
-  };
-  const handleGiveUpButtonClicked = () => {
-    console.log("GiveUp button clicked.");
-    if (giveupCnt >= 1) {
-      setGiveupCnt(0);
-      handleNextButtonClicked();
-    } else {
-      setGiveupCnt(giveupCnt + 1);
+  return /* @__PURE__ */ jsxRuntimeExports$1.jsx(jsxRuntimeExports$1.Fragment, { children: /* @__PURE__ */ jsxRuntimeExports$1.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports$1.jsx(
+    GameRoundPot,
+    {
+      gameRoundId: "pot",
+      gameState,
+      currentRoundStatus,
+      dataBank,
+      setCurrentRoundStatus,
+      setRoundResult
     }
-  };
-  return /* @__PURE__ */ jsxRuntimeExports$1.jsxs(jsxRuntimeExports$1.Fragment, { children: [
-    /* @__PURE__ */ jsxRuntimeExports$1.jsx("div", { children: currentRound === 1 ? /* @__PURE__ */ jsxRuntimeExports$1.jsx(
-      GameRoundPot,
-      {
-        gameRoundId: "pot",
-        gameState,
-        currentRoundStatus,
-        dataBank,
-        setCurrentRoundStatus,
-        setRoundResult
-      }
-    ) : (
-      // ) : currentRound === 4 ? (
-      //   <GameRoundFlag
-      //     gameRoundId="flag"
-      //     gameState={gameState}
-      //     currentRoundStatus={currentRoundStatus}
-      //     setCurrentRoundStatus={setCurrentRoundStatus}
-      //     setRoundResult={setRoundResult}
-      //   />
-      /* @__PURE__ */ jsxRuntimeExports$1.jsx(
-        GameRoundFinale,
-        {
-          roundStats: gameState,
-          dataBank
-        }
-      )
-    ) }),
-    currentRound <= gameState.rounds.size ? /* @__PURE__ */ jsxRuntimeExports$1.jsx(
-      NextRoundButton,
-      {
-        currentRound,
-        currentRoundStatus,
-        giveUpCnt: giveupCnt,
-        handleGiveUpButtonClicked,
-        handleNextButtonClicked,
-        dataBank
-      }
-    ) : /* @__PURE__ */ jsxRuntimeExports$1.jsx("div", {})
-  ] });
+  ) }) });
 }
 const consoleLogger = {
   type: "logger",
@@ -14893,6 +13951,53 @@ instance.setDefaultNamespace;
 instance.hasLoadedNamespace;
 instance.loadNamespaces;
 instance.loadLanguages;
+const matchHtmlEntity = /&(?:amp|#38|lt|#60|gt|#62|apos|#39|quot|#34|nbsp|#160|copy|#169|reg|#174|hellip|#8230|#x2F|#47);/g;
+const htmlEntities = {
+  "&amp;": "&",
+  "&#38;": "&",
+  "&lt;": "<",
+  "&#60;": "<",
+  "&gt;": ">",
+  "&#62;": ">",
+  "&apos;": "'",
+  "&#39;": "'",
+  "&quot;": '"',
+  "&#34;": '"',
+  "&nbsp;": " ",
+  "&#160;": " ",
+  "&copy;": "©",
+  "&#169;": "©",
+  "&reg;": "®",
+  "&#174;": "®",
+  "&hellip;": "…",
+  "&#8230;": "…",
+  "&#x2F;": "/",
+  "&#47;": "/"
+};
+const unescapeHtmlEntity = (m2) => htmlEntities[m2];
+const unescape = (text) => text.replace(matchHtmlEntity, unescapeHtmlEntity);
+let defaultOptions = {
+  bindI18n: "languageChanged",
+  bindI18nStore: "",
+  transEmptyNodeValue: "",
+  transSupportBasicHtmlNodes: true,
+  transWrapTextNodes: "",
+  transKeepBasicHtmlNodesFor: ["br", "strong", "i", "p"],
+  useSuspense: true,
+  unescape
+};
+const setDefaults = (options = {}) => {
+  defaultOptions = {
+    ...defaultOptions,
+    ...options
+  };
+};
+const initReactI18next = {
+  type: "3rdParty",
+  init(instance2) {
+    setDefaults(instance2.options.react);
+  }
+};
 const {
   slice,
   forEach
@@ -15563,6 +14668,325 @@ function App() {
     ] }) }) })
   ] });
 }
+function r(e2) {
+  var t2, f2, n2 = "";
+  if ("string" == typeof e2 || "number" == typeof e2) n2 += e2;
+  else if ("object" == typeof e2) if (Array.isArray(e2)) {
+    var o = e2.length;
+    for (t2 = 0; t2 < o; t2++) e2[t2] && (f2 = r(e2[t2])) && (n2 && (n2 += " "), n2 += f2);
+  } else for (f2 in e2) e2[f2] && (n2 && (n2 += " "), n2 += f2);
+  return n2;
+}
+function clsx() {
+  for (var e2, t2, f2 = 0, n2 = "", o = arguments.length; f2 < o; f2++) (e2 = arguments[f2]) && (t2 = r(e2)) && (n2 && (n2 += " "), n2 += t2);
+  return n2;
+}
+const c = (e2) => "number" == typeof e2 && !isNaN(e2), d = (e2) => "string" == typeof e2, u = (e2) => "function" == typeof e2, p = (e2) => d(e2) || u(e2) ? e2 : null, m = (e2) => reactExports$1.isValidElement(e2) || d(e2) || u(e2) || c(e2);
+function f(e2, t2, n2) {
+  void 0 === n2 && (n2 = 300);
+  const { scrollHeight: o, style: s } = e2;
+  requestAnimationFrame(() => {
+    s.minHeight = "initial", s.height = o + "px", s.transition = `all ${n2}ms`, requestAnimationFrame(() => {
+      s.height = "0", s.padding = "0", s.margin = "0", setTimeout(t2, n2);
+    });
+  });
+}
+function g(t2) {
+  let { enter: a, exit: r2, appendPosition: i = false, collapse: l2 = true, collapseDuration: c2 = 300 } = t2;
+  return function(t3) {
+    let { children: d2, position: u2, preventExitTransition: p2, done: m2, nodeRef: g2, isIn: y2, playToast: v2 } = t3;
+    const h2 = i ? `${a}--${u2}` : a, T2 = i ? `${r2}--${u2}` : r2, E2 = reactExports$1.useRef(0);
+    return reactExports$1.useLayoutEffect(() => {
+      const e2 = g2.current, t4 = h2.split(" "), n2 = (o) => {
+        o.target === g2.current && (v2(), e2.removeEventListener("animationend", n2), e2.removeEventListener("animationcancel", n2), 0 === E2.current && "animationcancel" !== o.type && e2.classList.remove(...t4));
+      };
+      e2.classList.add(...t4), e2.addEventListener("animationend", n2), e2.addEventListener("animationcancel", n2);
+    }, []), reactExports$1.useEffect(() => {
+      const e2 = g2.current, t4 = () => {
+        e2.removeEventListener("animationend", t4), l2 ? f(e2, m2, c2) : m2();
+      };
+      y2 || (p2 ? t4() : (E2.current = 1, e2.className += ` ${T2}`, e2.addEventListener("animationend", t4)));
+    }, [y2]), React.createElement(React.Fragment, null, d2);
+  };
+}
+function y(e2, t2) {
+  return null != e2 ? { content: e2.content, containerId: e2.props.containerId, id: e2.props.toastId, theme: e2.props.theme, type: e2.props.type, data: e2.props.data || {}, isLoading: e2.props.isLoading, icon: e2.props.icon, status: t2 } : {};
+}
+const v = /* @__PURE__ */ new Map();
+let h = [];
+const T = /* @__PURE__ */ new Set(), E = (e2) => T.forEach((t2) => t2(e2)), b = () => v.size > 0;
+function I(e2, t2) {
+  var n2;
+  if (t2) return !(null == (n2 = v.get(t2)) || !n2.isToastActive(e2));
+  let o = false;
+  return v.forEach((t3) => {
+    t3.isToastActive(e2) && (o = true);
+  }), o;
+}
+function _(e2, t2) {
+  m(e2) && (b() || h.push({ content: e2, options: t2 }), v.forEach((n2) => {
+    n2.buildToast(e2, t2);
+  }));
+}
+function C(e2, t2) {
+  v.forEach((n2) => {
+    null != t2 && null != t2 && t2.containerId ? (null == t2 ? void 0 : t2.containerId) === n2.id && n2.toggle(e2, null == t2 ? void 0 : t2.id) : n2.toggle(e2, null == t2 ? void 0 : t2.id);
+  });
+}
+function L(e2) {
+  const { subscribe: o, getSnapshot: s, setProps: i } = reactExports$1.useRef(function(e3) {
+    const n2 = e3.containerId || 1;
+    return { subscribe(o2) {
+      const s2 = /* @__PURE__ */ function(e4, n3, o3) {
+        let s3 = 1, r3 = 0, i2 = [], l3 = [], f2 = [], g2 = n3;
+        const v2 = /* @__PURE__ */ new Map(), h2 = /* @__PURE__ */ new Set(), T2 = () => {
+          f2 = Array.from(v2.values()), h2.forEach((e5) => e5());
+        }, E2 = (e5) => {
+          l3 = null == e5 ? [] : l3.filter((t2) => t2 !== e5), T2();
+        }, b2 = (e5) => {
+          const { toastId: n4, onOpen: s4, updateId: a, children: r4 } = e5.props, i3 = null == a;
+          e5.staleId && v2.delete(e5.staleId), v2.set(n4, e5), l3 = [...l3, e5.props.toastId].filter((t2) => t2 !== e5.staleId), T2(), o3(y(e5, i3 ? "added" : "updated")), i3 && u(s4) && s4(reactExports$1.isValidElement(r4) && r4.props);
+        };
+        return { id: e4, props: g2, observe: (e5) => (h2.add(e5), () => h2.delete(e5)), toggle: (e5, t2) => {
+          v2.forEach((n4) => {
+            null != t2 && t2 !== n4.props.toastId || u(n4.toggle) && n4.toggle(e5);
+          });
+        }, removeToast: E2, toasts: v2, clearQueue: () => {
+          r3 -= i2.length, i2 = [];
+        }, buildToast: (n4, l4) => {
+          if (((t2) => {
+            let { containerId: n5, toastId: o4, updateId: s4 } = t2;
+            const a = n5 ? n5 !== e4 : 1 !== e4, r4 = v2.has(o4) && null == s4;
+            return a || r4;
+          })(l4)) return;
+          const { toastId: f3, updateId: h3, data: I2, staleId: _2, delay: C2 } = l4, L2 = () => {
+            E2(f3);
+          }, N2 = null == h3;
+          N2 && r3++;
+          const $2 = { ...g2, style: g2.toastStyle, key: s3++, ...Object.fromEntries(Object.entries(l4).filter((e5) => {
+            let [t2, n5] = e5;
+            return null != n5;
+          })), toastId: f3, updateId: h3, data: I2, closeToast: L2, isIn: false, className: p(l4.className || g2.toastClassName), bodyClassName: p(l4.bodyClassName || g2.bodyClassName), progressClassName: p(l4.progressClassName || g2.progressClassName), autoClose: !l4.isLoading && (w2 = l4.autoClose, k2 = g2.autoClose, false === w2 || c(w2) && w2 > 0 ? w2 : k2), deleteToast() {
+            const e5 = v2.get(f3), { onClose: n5, children: s4 } = e5.props;
+            u(n5) && n5(reactExports$1.isValidElement(s4) && s4.props), o3(y(e5, "removed")), v2.delete(f3), r3--, r3 < 0 && (r3 = 0), i2.length > 0 ? b2(i2.shift()) : T2();
+          } };
+          var w2, k2;
+          $2.closeButton = g2.closeButton, false === l4.closeButton || m(l4.closeButton) ? $2.closeButton = l4.closeButton : true === l4.closeButton && ($2.closeButton = !m(g2.closeButton) || g2.closeButton);
+          let P2 = n4;
+          reactExports$1.isValidElement(n4) && !d(n4.type) ? P2 = reactExports$1.cloneElement(n4, { closeToast: L2, toastProps: $2, data: I2 }) : u(n4) && (P2 = n4({ closeToast: L2, toastProps: $2, data: I2 }));
+          const M2 = { content: P2, props: $2, staleId: _2 };
+          g2.limit && g2.limit > 0 && r3 > g2.limit && N2 ? i2.push(M2) : c(C2) ? setTimeout(() => {
+            b2(M2);
+          }, C2) : b2(M2);
+        }, setProps(e5) {
+          g2 = e5;
+        }, setToggle: (e5, t2) => {
+          v2.get(e5).toggle = t2;
+        }, isToastActive: (e5) => l3.some((t2) => t2 === e5), getSnapshot: () => g2.newestOnTop ? f2.reverse() : f2 };
+      }(n2, e3, E);
+      v.set(n2, s2);
+      const r2 = s2.observe(o2);
+      return h.forEach((e4) => _(e4.content, e4.options)), h = [], () => {
+        r2(), v.delete(n2);
+      };
+    }, setProps(e4) {
+      var t2;
+      null == (t2 = v.get(n2)) || t2.setProps(e4);
+    }, getSnapshot() {
+      var e4;
+      return null == (e4 = v.get(n2)) ? void 0 : e4.getSnapshot();
+    } };
+  }(e2)).current;
+  i(e2);
+  const l2 = reactExports$1.useSyncExternalStore(o, s, s);
+  return { getToastToRender: function(e3) {
+    if (!l2) return [];
+    const t2 = /* @__PURE__ */ new Map();
+    return l2.forEach((e4) => {
+      const { position: n2 } = e4.props;
+      t2.has(n2) || t2.set(n2, []), t2.get(n2).push(e4);
+    }), Array.from(t2, (t3) => e3(t3[0], t3[1]));
+  }, isToastActive: I, count: null == l2 ? void 0 : l2.length };
+}
+function N(e2) {
+  const [t2, o] = reactExports$1.useState(false), [a, r2] = reactExports$1.useState(false), l2 = reactExports$1.useRef(null), c2 = reactExports$1.useRef({ start: 0, delta: 0, removalDistance: 0, canCloseOnClick: true, canDrag: false, didMove: false }).current, { autoClose: d2, pauseOnHover: u2, closeToast: p2, onClick: m2, closeOnClick: f2 } = e2;
+  var g2, y2;
+  function h2() {
+    o(true);
+  }
+  function T2() {
+    o(false);
+  }
+  function E2(n2) {
+    const o2 = l2.current;
+    c2.canDrag && o2 && (c2.didMove = true, t2 && T2(), c2.delta = "x" === e2.draggableDirection ? n2.clientX - c2.start : n2.clientY - c2.start, c2.start !== n2.clientX && (c2.canCloseOnClick = false), o2.style.transform = `translate3d(${"x" === e2.draggableDirection ? `${c2.delta}px, var(--y)` : `0, calc(${c2.delta}px + var(--y))`},0)`, o2.style.opacity = "" + (1 - Math.abs(c2.delta / c2.removalDistance)));
+  }
+  function b2() {
+    document.removeEventListener("pointermove", E2), document.removeEventListener("pointerup", b2);
+    const t3 = l2.current;
+    if (c2.canDrag && c2.didMove && t3) {
+      if (c2.canDrag = false, Math.abs(c2.delta) > c2.removalDistance) return r2(true), e2.closeToast(), void e2.collapseAll();
+      t3.style.transition = "transform 0.2s, opacity 0.2s", t3.style.removeProperty("transform"), t3.style.removeProperty("opacity");
+    }
+  }
+  null == (y2 = v.get((g2 = { id: e2.toastId, containerId: e2.containerId, fn: o }).containerId || 1)) || y2.setToggle(g2.id, g2.fn), reactExports$1.useEffect(() => {
+    if (e2.pauseOnFocusLoss) return document.hasFocus() || T2(), window.addEventListener("focus", h2), window.addEventListener("blur", T2), () => {
+      window.removeEventListener("focus", h2), window.removeEventListener("blur", T2);
+    };
+  }, [e2.pauseOnFocusLoss]);
+  const I2 = { onPointerDown: function(t3) {
+    if (true === e2.draggable || e2.draggable === t3.pointerType) {
+      c2.didMove = false, document.addEventListener("pointermove", E2), document.addEventListener("pointerup", b2);
+      const n2 = l2.current;
+      c2.canCloseOnClick = true, c2.canDrag = true, n2.style.transition = "none", "x" === e2.draggableDirection ? (c2.start = t3.clientX, c2.removalDistance = n2.offsetWidth * (e2.draggablePercent / 100)) : (c2.start = t3.clientY, c2.removalDistance = n2.offsetHeight * (80 === e2.draggablePercent ? 1.5 * e2.draggablePercent : e2.draggablePercent) / 100);
+    }
+  }, onPointerUp: function(t3) {
+    const { top: n2, bottom: o2, left: s, right: a2 } = l2.current.getBoundingClientRect();
+    "touchend" !== t3.nativeEvent.type && e2.pauseOnHover && t3.clientX >= s && t3.clientX <= a2 && t3.clientY >= n2 && t3.clientY <= o2 ? T2() : h2();
+  } };
+  return d2 && u2 && (I2.onMouseEnter = T2, e2.stacked || (I2.onMouseLeave = h2)), f2 && (I2.onClick = (e3) => {
+    m2 && m2(e3), c2.canCloseOnClick && p2();
+  }), { playToast: h2, pauseToast: T2, isRunning: t2, preventExitTransition: a, toastRef: l2, eventHandlers: I2 };
+}
+function $(t2) {
+  let { delay: n2, isRunning: o, closeToast: s, type: a = "default", hide: r2, className: i, style: c2, controlledProgress: d2, progress: p2, rtl: m2, isIn: f2, theme: g2 } = t2;
+  const y2 = r2 || d2 && 0 === p2, v2 = { ...c2, animationDuration: `${n2}ms`, animationPlayState: o ? "running" : "paused" };
+  d2 && (v2.transform = `scaleX(${p2})`);
+  const h2 = clsx("Toastify__progress-bar", d2 ? "Toastify__progress-bar--controlled" : "Toastify__progress-bar--animated", `Toastify__progress-bar-theme--${g2}`, `Toastify__progress-bar--${a}`, { "Toastify__progress-bar--rtl": m2 }), T2 = u(i) ? i({ rtl: m2, type: a, defaultClassName: h2 }) : clsx(h2, i), E2 = { [d2 && p2 >= 1 ? "onTransitionEnd" : "onAnimationEnd"]: d2 && p2 < 1 ? null : () => {
+    f2 && s();
+  } };
+  return React.createElement("div", { className: "Toastify__progress-bar--wrp", "data-hidden": y2 }, React.createElement("div", { className: `Toastify__progress-bar--bg Toastify__progress-bar-theme--${g2} Toastify__progress-bar--${a}` }), React.createElement("div", { role: "progressbar", "aria-hidden": y2 ? "true" : "false", "aria-label": "notification timer", className: T2, style: v2, ...E2 }));
+}
+let w = 1;
+const k = () => "" + w++;
+function P(e2) {
+  return e2 && (d(e2.toastId) || c(e2.toastId)) ? e2.toastId : k();
+}
+function M(e2, t2) {
+  return _(e2, t2), t2.toastId;
+}
+function x(e2, t2) {
+  return { ...t2, type: t2 && t2.type || e2, toastId: P(t2) };
+}
+function A(e2) {
+  return (t2, n2) => M(t2, x(e2, n2));
+}
+function B(e2, t2) {
+  return M(e2, x("default", t2));
+}
+B.loading = (e2, t2) => M(e2, x("default", { isLoading: true, autoClose: false, closeOnClick: false, closeButton: false, draggable: false, ...t2 })), B.promise = function(e2, t2, n2) {
+  let o, { pending: s, error: a, success: r2 } = t2;
+  s && (o = d(s) ? B.loading(s, n2) : B.loading(s.render, { ...n2, ...s }));
+  const i = { isLoading: null, autoClose: null, closeOnClick: null, closeButton: null, draggable: null }, l2 = (e3, t3, s2) => {
+    if (null == t3) return void B.dismiss(o);
+    const a2 = { type: e3, ...i, ...n2, data: s2 }, r3 = d(t3) ? { render: t3 } : t3;
+    return o ? B.update(o, { ...a2, ...r3 }) : B(r3.render, { ...a2, ...r3 }), s2;
+  }, c2 = u(e2) ? e2() : e2;
+  return c2.then((e3) => l2("success", r2, e3)).catch((e3) => l2("error", a, e3)), c2;
+}, B.success = A("success"), B.info = A("info"), B.error = A("error"), B.warning = A("warning"), B.warn = B.warning, B.dark = (e2, t2) => M(e2, x("default", { theme: "dark", ...t2 })), B.dismiss = function(e2) {
+  !function(e3) {
+    var t2;
+    if (b()) {
+      if (null == e3 || d(t2 = e3) || c(t2)) v.forEach((t3) => {
+        t3.removeToast(e3);
+      });
+      else if (e3 && ("containerId" in e3 || "id" in e3)) {
+        const t3 = v.get(e3.containerId);
+        t3 ? t3.removeToast(e3.id) : v.forEach((t4) => {
+          t4.removeToast(e3.id);
+        });
+      }
+    } else h = h.filter((t3) => null != e3 && t3.options.toastId !== e3);
+  }(e2);
+}, B.clearWaitingQueue = function(e2) {
+  void 0 === e2 && (e2 = {}), v.forEach((t2) => {
+    !t2.props.limit || e2.containerId && t2.id !== e2.containerId || t2.clearQueue();
+  });
+}, B.isActive = I, B.update = function(e2, t2) {
+  void 0 === t2 && (t2 = {});
+  const n2 = ((e3, t3) => {
+    var n3;
+    let { containerId: o } = t3;
+    return null == (n3 = v.get(o || 1)) ? void 0 : n3.toasts.get(e3);
+  })(e2, t2);
+  if (n2) {
+    const { props: o, content: s } = n2, a = { delay: 100, ...o, ...t2, toastId: t2.toastId || e2, updateId: k() };
+    a.toastId !== e2 && (a.staleId = e2);
+    const r2 = a.render || s;
+    delete a.render, M(r2, a);
+  }
+}, B.done = (e2) => {
+  B.update(e2, { progress: 1 });
+}, B.onChange = function(e2) {
+  return T.add(e2), () => {
+    T.delete(e2);
+  };
+}, B.play = (e2) => C(true, e2), B.pause = (e2) => C(false, e2);
+const O = "undefined" != typeof window ? reactExports$1.useLayoutEffect : reactExports$1.useEffect, D = (t2) => {
+  let { theme: n2, type: o, isLoading: s, ...a } = t2;
+  return React.createElement("svg", { viewBox: "0 0 24 24", width: "100%", height: "100%", fill: "colored" === n2 ? "currentColor" : `var(--toastify-icon-color-${o})`, ...a });
+}, z = { info: function(t2) {
+  return React.createElement(D, { ...t2 }, React.createElement("path", { d: "M12 0a12 12 0 1012 12A12.013 12.013 0 0012 0zm.25 5a1.5 1.5 0 11-1.5 1.5 1.5 1.5 0 011.5-1.5zm2.25 13.5h-4a1 1 0 010-2h.75a.25.25 0 00.25-.25v-4.5a.25.25 0 00-.25-.25h-.75a1 1 0 010-2h1a2 2 0 012 2v4.75a.25.25 0 00.25.25h.75a1 1 0 110 2z" }));
+}, warning: function(t2) {
+  return React.createElement(D, { ...t2 }, React.createElement("path", { d: "M23.32 17.191L15.438 2.184C14.728.833 13.416 0 11.996 0c-1.42 0-2.733.833-3.443 2.184L.533 17.448a4.744 4.744 0 000 4.368C1.243 23.167 2.555 24 3.975 24h16.05C22.22 24 24 22.044 24 19.632c0-.904-.251-1.746-.68-2.44zm-9.622 1.46c0 1.033-.724 1.823-1.698 1.823s-1.698-.79-1.698-1.822v-.043c0-1.028.724-1.822 1.698-1.822s1.698.79 1.698 1.822v.043zm.039-12.285l-.84 8.06c-.057.581-.408.943-.897.943-.49 0-.84-.367-.896-.942l-.84-8.065c-.057-.624.25-1.095.779-1.095h1.91c.528.005.84.476.784 1.1z" }));
+}, success: function(t2) {
+  return React.createElement(D, { ...t2 }, React.createElement("path", { d: "M12 0a12 12 0 1012 12A12.014 12.014 0 0012 0zm6.927 8.2l-6.845 9.289a1.011 1.011 0 01-1.43.188l-4.888-3.908a1 1 0 111.25-1.562l4.076 3.261 6.227-8.451a1 1 0 111.61 1.183z" }));
+}, error: function(t2) {
+  return React.createElement(D, { ...t2 }, React.createElement("path", { d: "M11.983 0a12.206 12.206 0 00-8.51 3.653A11.8 11.8 0 000 12.207 11.779 11.779 0 0011.8 24h.214A12.111 12.111 0 0024 11.791 11.766 11.766 0 0011.983 0zM10.5 16.542a1.476 1.476 0 011.449-1.53h.027a1.527 1.527 0 011.523 1.47 1.475 1.475 0 01-1.449 1.53h-.027a1.529 1.529 0 01-1.523-1.47zM11 12.5v-6a1 1 0 012 0v6a1 1 0 11-2 0z" }));
+}, spinner: function() {
+  return React.createElement("div", { className: "Toastify__spinner" });
+} }, R = (n2) => {
+  const { isRunning: o, preventExitTransition: s, toastRef: r2, eventHandlers: i, playToast: c2 } = N(n2), { closeButton: d2, children: p2, autoClose: m2, onClick: f2, type: g2, hideProgressBar: y2, closeToast: v2, transition: h2, position: T2, className: E2, style: b2, bodyClassName: I2, bodyStyle: _2, progressClassName: C2, progressStyle: L2, updateId: w2, role: k2, progress: P2, rtl: M2, toastId: x2, deleteToast: A2, isIn: B2, isLoading: O2, closeOnClick: D2, theme: R2 } = n2, S2 = clsx("Toastify__toast", `Toastify__toast-theme--${R2}`, `Toastify__toast--${g2}`, { "Toastify__toast--rtl": M2 }, { "Toastify__toast--close-on-click": D2 }), H2 = u(E2) ? E2({ rtl: M2, position: T2, type: g2, defaultClassName: S2 }) : clsx(S2, E2), F2 = function(e2) {
+    let { theme: n3, type: o2, isLoading: s2, icon: r3 } = e2, i2 = null;
+    const l2 = { theme: n3, type: o2 };
+    return false === r3 || (u(r3) ? i2 = r3({ ...l2, isLoading: s2 }) : reactExports$1.isValidElement(r3) ? i2 = reactExports$1.cloneElement(r3, l2) : s2 ? i2 = z.spinner() : ((e3) => e3 in z)(o2) && (i2 = z[o2](l2))), i2;
+  }(n2), X2 = !!P2 || !m2, Y2 = { closeToast: v2, type: g2, theme: R2 };
+  let q2 = null;
+  return false === d2 || (q2 = u(d2) ? d2(Y2) : reactExports$1.isValidElement(d2) ? reactExports$1.cloneElement(d2, Y2) : function(t2) {
+    let { closeToast: n3, theme: o2, ariaLabel: s2 = "close" } = t2;
+    return React.createElement("button", { className: `Toastify__close-button Toastify__close-button--${o2}`, type: "button", onClick: (e2) => {
+      e2.stopPropagation(), n3(e2);
+    }, "aria-label": s2 }, React.createElement("svg", { "aria-hidden": "true", viewBox: "0 0 14 16" }, React.createElement("path", { fillRule: "evenodd", d: "M7.71 8.23l3.75 3.75-1.48 1.48-3.75-3.75-3.75 3.75L1 11.98l3.75-3.75L1 4.48 2.48 3l3.75 3.75L9.98 3l1.48 1.48-3.75 3.75z" })));
+  }(Y2)), React.createElement(h2, { isIn: B2, done: A2, position: T2, preventExitTransition: s, nodeRef: r2, playToast: c2 }, React.createElement("div", { id: x2, onClick: f2, "data-in": B2, className: H2, ...i, style: b2, ref: r2 }, React.createElement("div", { ...B2 && { role: k2 }, className: u(I2) ? I2({ type: g2 }) : clsx("Toastify__toast-body", I2), style: _2 }, null != F2 && React.createElement("div", { className: clsx("Toastify__toast-icon", { "Toastify--animate-icon Toastify__zoom-enter": !O2 }) }, F2), React.createElement("div", null, p2)), q2, React.createElement($, { ...w2 && !X2 ? { key: `pb-${w2}` } : {}, rtl: M2, theme: R2, delay: m2, isRunning: o, isIn: B2, closeToast: v2, hide: y2, type: g2, style: L2, className: C2, controlledProgress: X2, progress: P2 || 0 })));
+}, S = function(e2, t2) {
+  return void 0 === t2 && (t2 = false), { enter: `Toastify--animate Toastify__${e2}-enter`, exit: `Toastify--animate Toastify__${e2}-exit`, appendPosition: t2 };
+}, H = g(S("bounce", true));
+g(S("slide", true));
+g(S("zoom"));
+g(S("flip"));
+const q = { position: "top-right", transition: H, autoClose: 5e3, closeButton: true, pauseOnHover: true, pauseOnFocusLoss: true, draggable: "touch", draggablePercent: 80, draggableDirection: "x", role: "alert", theme: "light" };
+function Q(t2) {
+  let o = { ...q, ...t2 };
+  const s = t2.stacked, [a, r2] = reactExports$1.useState(true), c2 = reactExports$1.useRef(null), { getToastToRender: d2, isToastActive: m2, count: f2 } = L(o), { className: g2, style: y2, rtl: v2, containerId: h2 } = o;
+  function T2(e2) {
+    const t3 = clsx("Toastify__toast-container", `Toastify__toast-container--${e2}`, { "Toastify__toast-container--rtl": v2 });
+    return u(g2) ? g2({ position: e2, rtl: v2, defaultClassName: t3 }) : clsx(t3, p(g2));
+  }
+  function E2() {
+    s && (r2(true), B.play());
+  }
+  return O(() => {
+    if (s) {
+      var e2;
+      const t3 = c2.current.querySelectorAll('[data-in="true"]'), n2 = 12, s2 = null == (e2 = o.position) ? void 0 : e2.includes("top");
+      let r3 = 0, i = 0;
+      Array.from(t3).reverse().forEach((e3, t4) => {
+        const o2 = e3;
+        o2.classList.add("Toastify__toast--stacked"), t4 > 0 && (o2.dataset.collapsed = `${a}`), o2.dataset.pos || (o2.dataset.pos = s2 ? "top" : "bot");
+        const l2 = r3 * (a ? 0.2 : 1) + (a ? 0 : n2 * t4);
+        o2.style.setProperty("--y", `${s2 ? l2 : -1 * l2}px`), o2.style.setProperty("--g", `${n2}`), o2.style.setProperty("--s", "" + (1 - (a ? i : 0))), r3 += o2.offsetHeight, i += 0.025;
+      });
+    }
+  }, [a, f2, s]), React.createElement("div", { ref: c2, className: "Toastify", id: h2, onMouseEnter: () => {
+    s && (r2(false), B.pause());
+  }, onMouseLeave: E2 }, d2((t3, n2) => {
+    const o2 = n2.length ? { ...y2 } : { ...y2, pointerEvents: "none" };
+    return React.createElement("div", { className: T2(t3), style: o2, key: `container-${t3}` }, n2.map((t4) => {
+      let { content: n3, props: o3 } = t4;
+      return React.createElement(R, { ...o3, stacked: s, collapseAll: E2, isIn: m2(o3.toastId, o3.containerId), style: o3.style, key: `toast-${o3.key}` }, n3);
+    }));
+  }));
+}
 client.createRoot(document.getElementById("root")).render(
   /* @__PURE__ */ jsxRuntimeExports$1.jsxs(React.StrictMode, { children: [
     /* @__PURE__ */ jsxRuntimeExports$1.jsx(App, {}),
@@ -15584,4 +15008,4 @@ client.createRoot(document.getElementById("root")).render(
     )
   ] })
 );
-//# sourceMappingURL=index-BBVrsbc3.js.map
+//# sourceMappingURL=index-CRkMIhHc.js.map
