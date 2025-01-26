@@ -32,14 +32,17 @@ import { NextRoundButton } from "../../../provincle/src/components/NextRoundButt
 // prettier-ignore
 function initGameState(): GameState {
   const ret = defaultGameState;
-  ret.potCode = getTodaysPotCode(); // lovas: shall we raise here?
-  //ret.potCode = "cork";
+  ret.potCode = getTodaysPotCode();
+  //ret.currentRound = 2;
   i18n.changeLanguage("en");
   console.log(`init: potcode:${ret.potCode}`);
 
   ret.rounds.set("pot",       { i18nId: "gamePotRoundInstruction",      result: GameRoundResult.NotStarted });
-  //ret.rounds.set("neighbors", { i18nId: "gameNeighborRoundInstruction", result: GameRoundResult.NotStarted, });
+  console.log(`init1: potcode:${ret.potCode}`);
   ret.rounds.set("capital",   { i18nId: "gameCapitalRoundInstruction",  result: GameRoundResult.NotStarted, });
+  console.log(`init2: potcode:${ret.potCode}`);
+  ret.rounds.set("neighbors", { i18nId: "gameNeighborRoundInstruction", result: GameRoundResult.NotStarted, });
+  console.log(`init3: potcode:${ret.potCode}`);
   //ret.rounds.set("flag",      { i18nId: "gameFlagRoundInstruction",     result: GameRoundResult.NotStarted, });
   return ret;
 }
@@ -47,9 +50,12 @@ function initGameState(): GameState {
 export function Game() {
   const [gameState, setGameState] = useState(() => initGameState()); // warning: useState(initGameState()) sux!
 
+  console.log(`lovas2`);
+
   dataBank.tLang = useTranslation().t;
   dataBank.tGeo = useTranslation("geo").t;
   dataBank.getPotMapSvgUrl = getPotMapSvgUrl; // ??? maybe because of VITE or React or URL
+  console.log(`lovas3`);
 
   /* eslint-disable @typescript-eslint/no-explicit-any */
   const updateGameState = (key: string, val: any): void => {
@@ -58,6 +64,7 @@ export function Game() {
       [key]: val,
     }));
   };
+  console.log(`lovas4`);
   const setCurrentRound = (newCurrentRound: number): void => {
     updateGameState("currentRound", newCurrentRound);
   };
@@ -80,15 +87,18 @@ export function Game() {
 
     setGameState(newState);
   };
+  console.log(`lovas5`);
 
   // TODO: remove ts-ignore
   // @ts-ignore
   const { potCode, currentRound } = gameState;
   const [giveupCnt, setGiveupCnt] = useState<number>(0);
+  console.log(`lovas6`);
 
   const [currentRoundStatus, setCurrentRoundStatus] =
     useState<GameRoundStatus>("pending");
   // note: currentRound == 1 comes from gameState.ts default
+  console.log(`lovas7`);
 
   const handleNextButtonClicked = (): void => {
     console.log("Next button clicked.");
@@ -112,7 +122,7 @@ export function Game() {
   return (
     <>
       <div>
-        {currentRound === 1 ? (
+        {currentRound === 2 ? (
           <GameRoundPot
             gameRoundId="pot"
             gameState={gameState}
@@ -121,7 +131,7 @@ export function Game() {
             setCurrentRoundStatus={setCurrentRoundStatus}
             setRoundResult={setRoundResult}
           />
-        ) : currentRound === 2 ? (
+        ) : currentRound === 1 ? (
           <GameRoundCapital
             gameRoundId="capital"
             gameState={gameState}
