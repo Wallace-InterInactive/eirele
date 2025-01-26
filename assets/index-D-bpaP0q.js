@@ -7958,7 +7958,7 @@ function GameRoundFinale({ roundStats, dataBank: dataBank2 }) {
   ] });
 }
 function Game() {
-  const gameState = defaultGameState;
+  const [gameState, setGameState] = useState(defaultGameState);
   console.log(`lovas2`);
   return /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("button", { children: "lovas" }),
@@ -11344,4 +11344,4 @@ client.createRoot(document.getElementById("root")).render(
     )
   ] })
 );
-//# sourceMappingURL=index-CpUQF2a0.js.map
+//# sourceMappingURL=index-D-bpaP0q.js.map
