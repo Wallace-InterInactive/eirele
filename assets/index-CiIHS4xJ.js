@@ -10077,7 +10077,7 @@ function Help() {
   );
 }
 function App() {
-  console.log(`lovas eirele 2025-01-26 20:37`);
+  console.log(`lovas eirele 2025-01-26 21:55`);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col justify-between items-center min-h-screen dark:bg-slate-900 dark:text-slate-50", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full max-w-lg flex flex-col", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("header", { className: "border-b-2 border-gray-200 flex mb-4", children: [
@@ -10088,7 +10088,7 @@ function App() {
         ] }) }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(Settings, {})
       ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("body", { children: "Eirele" })
+      "Eirele"
     ] }) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("footer", { className: "flex justify-center text-sm mt-8 mb-1", children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: "https://buymeacoffee.com/", children: [
       "❤️ ",
@@ -10437,4 +10437,4 @@ client.createRoot(document.getElementById("root")).render(
     )
   ] })
 );
-//# sourceMappingURL=index-C0iXPL4r.js.map
+//# sourceMappingURL=index-CiIHS4xJ.js.map
