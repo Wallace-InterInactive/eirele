@@ -7006,232 +7006,8 @@ var m$3 = reactDomExports;
   client.createRoot = m$3.createRoot;
   client.hydrateRoot = m$3.hydrateRoot;
 }
-const warn$1 = (...args) => {
-  if (console == null ? void 0 : console.warn) {
-    if (isString$1(args[0])) args[0] = `react-i18next:: ${args[0]}`;
-    console.warn(...args);
-  }
-};
-const alreadyWarned$1 = {};
-const warnOnce$1 = (...args) => {
-  if (isString$1(args[0]) && alreadyWarned$1[args[0]]) return;
-  if (isString$1(args[0])) alreadyWarned$1[args[0]] = /* @__PURE__ */ new Date();
-  warn$1(...args);
-};
-const loadedClb$1 = (i18n, cb2) => () => {
-  if (i18n.isInitialized) {
-    cb2();
-  } else {
-    const initialized = () => {
-      setTimeout(() => {
-        i18n.off("initialized", initialized);
-      }, 0);
-      cb2();
-    };
-    i18n.on("initialized", initialized);
-  }
-};
-const loadNamespaces$1 = (i18n, ns, cb2) => {
-  i18n.loadNamespaces(ns, loadedClb$1(i18n, cb2));
-};
-const loadLanguages$1 = (i18n, lng, ns, cb2) => {
-  if (isString$1(ns)) ns = [ns];
-  ns.forEach((n2) => {
-    if (i18n.options.ns.indexOf(n2) < 0) i18n.options.ns.push(n2);
-  });
-  i18n.loadLanguages(lng, loadedClb$1(i18n, cb2));
-};
-const hasLoadedNamespace$1 = (ns, i18n, options = {}) => {
-  if (!i18n.languages || !i18n.languages.length) {
-    warnOnce$1("i18n.languages were undefined or empty", i18n.languages);
-    return true;
-  }
-  return i18n.hasLoadedNamespace(ns, {
-    lng: options.lng,
-    precheck: (i18nInstance2, loadNotPending) => {
-      var _a;
-      if (((_a = options.bindI18n) == null ? void 0 : _a.indexOf("languageChanging")) > -1 && i18nInstance2.services.backendConnector.backend && i18nInstance2.isLanguageChangingTo && !loadNotPending(i18nInstance2.isLanguageChangingTo, ns)) return false;
-    }
-  });
-};
-const isString$1 = (obj) => typeof obj === "string";
-const isObject$1 = (obj) => typeof obj === "object" && obj !== null;
-const matchHtmlEntity$1 = /&(?:amp|#38|lt|#60|gt|#62|apos|#39|quot|#34|nbsp|#160|copy|#169|reg|#174|hellip|#8230|#x2F|#47);/g;
-const htmlEntities$1 = {
-  "&amp;": "&",
-  "&#38;": "&",
-  "&lt;": "<",
-  "&#60;": "<",
-  "&gt;": ">",
-  "&#62;": ">",
-  "&apos;": "'",
-  "&#39;": "'",
-  "&quot;": '"',
-  "&#34;": '"',
-  "&nbsp;": " ",
-  "&#160;": " ",
-  "&copy;": "©",
-  "&#169;": "©",
-  "&reg;": "®",
-  "&#174;": "®",
-  "&hellip;": "…",
-  "&#8230;": "…",
-  "&#x2F;": "/",
-  "&#47;": "/"
-};
-const unescapeHtmlEntity$1 = (m2) => htmlEntities$1[m2];
-const unescape$1 = (text) => text.replace(matchHtmlEntity$1, unescapeHtmlEntity$1);
-let defaultOptions$1 = {
-  bindI18n: "languageChanged",
-  bindI18nStore: "",
-  transEmptyNodeValue: "",
-  transSupportBasicHtmlNodes: true,
-  transWrapTextNodes: "",
-  transKeepBasicHtmlNodesFor: ["br", "strong", "i", "p"],
-  useSuspense: true,
-  unescape: unescape$1
-};
-const setDefaults = (options = {}) => {
-  defaultOptions$1 = {
-    ...defaultOptions$1,
-    ...options
-  };
-};
-const getDefaults$2 = () => defaultOptions$1;
-let i18nInstance$1;
-const setI18n = (instance2) => {
-  i18nInstance$1 = instance2;
-};
-const getI18n$1 = () => i18nInstance$1;
-const initReactI18next = {
-  type: "3rdParty",
-  init(instance2) {
-    setDefaults(instance2.options.react);
-    setI18n(instance2);
-  }
-};
-const I18nContext$1 = reactExports$1.createContext();
-let ReportNamespaces$1 = class ReportNamespaces {
-  constructor() {
-    this.usedNamespaces = {};
-  }
-  addUsedNamespaces(namespaces) {
-    namespaces.forEach((ns) => {
-      var _a;
-      (_a = this.usedNamespaces)[ns] ?? (_a[ns] = true);
-    });
-  }
-  getUsedNamespaces() {
-    return Object.keys(this.usedNamespaces);
-  }
-};
-const usePrevious$1 = (value, ignore) => {
-  const ref = reactExports$1.useRef();
-  reactExports$1.useEffect(() => {
-    ref.current = value;
-  }, [value, ignore]);
-  return ref.current;
-};
-const alwaysNewT$1 = (i18n, language, namespace, keyPrefix) => i18n.getFixedT(language, namespace, keyPrefix);
-const useMemoizedT$1 = (i18n, language, namespace, keyPrefix) => reactExports$1.useCallback(alwaysNewT$1(i18n, language, namespace, keyPrefix), [i18n, language, namespace, keyPrefix]);
-const useTranslation$1 = (ns, props = {}) => {
-  var _a, _b, _c, _d;
-  const {
-    i18n: i18nFromProps
-  } = props;
-  const {
-    i18n: i18nFromContext,
-    defaultNS: defaultNSFromContext
-  } = reactExports$1.useContext(I18nContext$1) || {};
-  const i18n = i18nFromProps || i18nFromContext || getI18n$1();
-  if (i18n && !i18n.reportNamespaces) i18n.reportNamespaces = new ReportNamespaces$1();
-  if (!i18n) {
-    warnOnce$1("You will need to pass in an i18next instance by using initReactI18next");
-    const notReadyT = (k2, optsOrDefaultValue) => {
-      if (isString$1(optsOrDefaultValue)) return optsOrDefaultValue;
-      if (isObject$1(optsOrDefaultValue) && isString$1(optsOrDefaultValue.defaultValue)) return optsOrDefaultValue.defaultValue;
-      return Array.isArray(k2) ? k2[k2.length - 1] : k2;
-    };
-    const retNotReady = [notReadyT, {}, false];
-    retNotReady.t = notReadyT;
-    retNotReady.i18n = {};
-    retNotReady.ready = false;
-    return retNotReady;
-  }
-  if ((_a = i18n.options.react) == null ? void 0 : _a.wait) warnOnce$1("It seems you are still using the old wait option, you may migrate to the new useSuspense behaviour.");
-  const i18nOptions = {
-    ...getDefaults$2(),
-    ...i18n.options.react,
-    ...props
-  };
-  const {
-    useSuspense,
-    keyPrefix
-  } = i18nOptions;
-  let namespaces = ns || defaultNSFromContext || ((_b = i18n.options) == null ? void 0 : _b.defaultNS);
-  namespaces = isString$1(namespaces) ? [namespaces] : namespaces || ["translation"];
-  (_d = (_c = i18n.reportNamespaces).addUsedNamespaces) == null ? void 0 : _d.call(_c, namespaces);
-  const ready = (i18n.isInitialized || i18n.initializedStoreOnce) && namespaces.every((n2) => hasLoadedNamespace$1(n2, i18n, i18nOptions));
-  const memoGetT = useMemoizedT$1(i18n, props.lng || null, i18nOptions.nsMode === "fallback" ? namespaces : namespaces[0], keyPrefix);
-  const getT = () => memoGetT;
-  const getNewT = () => alwaysNewT$1(i18n, props.lng || null, i18nOptions.nsMode === "fallback" ? namespaces : namespaces[0], keyPrefix);
-  const [t2, setT] = reactExports$1.useState(getT);
-  let joinedNS = namespaces.join();
-  if (props.lng) joinedNS = `${props.lng}${joinedNS}`;
-  const previousJoinedNS = usePrevious$1(joinedNS);
-  const isMounted = reactExports$1.useRef(true);
-  reactExports$1.useEffect(() => {
-    const {
-      bindI18n,
-      bindI18nStore
-    } = i18nOptions;
-    isMounted.current = true;
-    if (!ready && !useSuspense) {
-      if (props.lng) {
-        loadLanguages$1(i18n, props.lng, namespaces, () => {
-          if (isMounted.current) setT(getNewT);
-        });
-      } else {
-        loadNamespaces$1(i18n, namespaces, () => {
-          if (isMounted.current) setT(getNewT);
-        });
-      }
-    }
-    if (ready && previousJoinedNS && previousJoinedNS !== joinedNS && isMounted.current) {
-      setT(getNewT);
-    }
-    const boundReset = () => {
-      if (isMounted.current) setT(getNewT);
-    };
-    if (bindI18n) i18n == null ? void 0 : i18n.on(bindI18n, boundReset);
-    if (bindI18nStore) i18n == null ? void 0 : i18n.store.on(bindI18nStore, boundReset);
-    return () => {
-      isMounted.current = false;
-      if (i18n) bindI18n == null ? void 0 : bindI18n.split(" ").forEach((e2) => i18n.off(e2, boundReset));
-      if (bindI18nStore && i18n) bindI18nStore.split(" ").forEach((e2) => i18n.store.off(e2, boundReset));
-    };
-  }, [i18n, joinedNS]);
-  reactExports$1.useEffect(() => {
-    if (isMounted.current && ready) {
-      setT(getT);
-    }
-  }, [i18n, keyPrefix, ready]);
-  const ret = [t2, i18n, ready];
-  ret.t = t2;
-  ret.i18n = i18n;
-  ret.ready = ready;
-  if (ready) return ret;
-  if (!ready && !useSuspense) return ret;
-  throw new Promise((resolve) => {
-    if (props.lng) {
-      loadLanguages$1(i18n, props.lng, namespaces, () => resolve());
-    } else {
-      loadNamespaces$1(i18n, namespaces, () => resolve());
-    }
-  });
-};
 function Eirele() {
-  const title = /* @__PURE__ */ jsxRuntimeExports$1.jsxs(
+  return /* @__PURE__ */ jsxRuntimeExports$1.jsxs(
     "span",
     {
       className: "uppercase font-bold",
@@ -7244,7 +7020,6 @@ function Eirele() {
       ]
     }
   );
-  return title;
 }
 const __vite_glob_0_0 = "/eirele/assets/ireland-map-cork-Dql9xpN4.svg";
 const __vite_glob_0_1 = "/eirele/assets/ireland-map-donegal-DwCOxFc9.svg";
@@ -7915,6 +7690,230 @@ var GameRoundResult = /* @__PURE__ */ ((GameRoundResult2) => {
   GameRoundResult2[GameRoundResult2["Excellent"] = 5] = "Excellent";
   return GameRoundResult2;
 })(GameRoundResult || {});
+const warn$1 = (...args) => {
+  if (console == null ? void 0 : console.warn) {
+    if (isString$1(args[0])) args[0] = `react-i18next:: ${args[0]}`;
+    console.warn(...args);
+  }
+};
+const alreadyWarned$1 = {};
+const warnOnce$1 = (...args) => {
+  if (isString$1(args[0]) && alreadyWarned$1[args[0]]) return;
+  if (isString$1(args[0])) alreadyWarned$1[args[0]] = /* @__PURE__ */ new Date();
+  warn$1(...args);
+};
+const loadedClb$1 = (i18n, cb2) => () => {
+  if (i18n.isInitialized) {
+    cb2();
+  } else {
+    const initialized = () => {
+      setTimeout(() => {
+        i18n.off("initialized", initialized);
+      }, 0);
+      cb2();
+    };
+    i18n.on("initialized", initialized);
+  }
+};
+const loadNamespaces$1 = (i18n, ns, cb2) => {
+  i18n.loadNamespaces(ns, loadedClb$1(i18n, cb2));
+};
+const loadLanguages$1 = (i18n, lng, ns, cb2) => {
+  if (isString$1(ns)) ns = [ns];
+  ns.forEach((n2) => {
+    if (i18n.options.ns.indexOf(n2) < 0) i18n.options.ns.push(n2);
+  });
+  i18n.loadLanguages(lng, loadedClb$1(i18n, cb2));
+};
+const hasLoadedNamespace$1 = (ns, i18n, options = {}) => {
+  if (!i18n.languages || !i18n.languages.length) {
+    warnOnce$1("i18n.languages were undefined or empty", i18n.languages);
+    return true;
+  }
+  return i18n.hasLoadedNamespace(ns, {
+    lng: options.lng,
+    precheck: (i18nInstance2, loadNotPending) => {
+      var _a;
+      if (((_a = options.bindI18n) == null ? void 0 : _a.indexOf("languageChanging")) > -1 && i18nInstance2.services.backendConnector.backend && i18nInstance2.isLanguageChangingTo && !loadNotPending(i18nInstance2.isLanguageChangingTo, ns)) return false;
+    }
+  });
+};
+const isString$1 = (obj) => typeof obj === "string";
+const isObject$1 = (obj) => typeof obj === "object" && obj !== null;
+const matchHtmlEntity$1 = /&(?:amp|#38|lt|#60|gt|#62|apos|#39|quot|#34|nbsp|#160|copy|#169|reg|#174|hellip|#8230|#x2F|#47);/g;
+const htmlEntities$1 = {
+  "&amp;": "&",
+  "&#38;": "&",
+  "&lt;": "<",
+  "&#60;": "<",
+  "&gt;": ">",
+  "&#62;": ">",
+  "&apos;": "'",
+  "&#39;": "'",
+  "&quot;": '"',
+  "&#34;": '"',
+  "&nbsp;": " ",
+  "&#160;": " ",
+  "&copy;": "©",
+  "&#169;": "©",
+  "&reg;": "®",
+  "&#174;": "®",
+  "&hellip;": "…",
+  "&#8230;": "…",
+  "&#x2F;": "/",
+  "&#47;": "/"
+};
+const unescapeHtmlEntity$1 = (m2) => htmlEntities$1[m2];
+const unescape$1 = (text) => text.replace(matchHtmlEntity$1, unescapeHtmlEntity$1);
+let defaultOptions$1 = {
+  bindI18n: "languageChanged",
+  bindI18nStore: "",
+  transEmptyNodeValue: "",
+  transSupportBasicHtmlNodes: true,
+  transWrapTextNodes: "",
+  transKeepBasicHtmlNodesFor: ["br", "strong", "i", "p"],
+  useSuspense: true,
+  unescape: unescape$1
+};
+const setDefaults = (options = {}) => {
+  defaultOptions$1 = {
+    ...defaultOptions$1,
+    ...options
+  };
+};
+const getDefaults$2 = () => defaultOptions$1;
+let i18nInstance$1;
+const setI18n = (instance2) => {
+  i18nInstance$1 = instance2;
+};
+const getI18n$1 = () => i18nInstance$1;
+const initReactI18next = {
+  type: "3rdParty",
+  init(instance2) {
+    setDefaults(instance2.options.react);
+    setI18n(instance2);
+  }
+};
+const I18nContext$1 = reactExports$1.createContext();
+let ReportNamespaces$1 = class ReportNamespaces {
+  constructor() {
+    this.usedNamespaces = {};
+  }
+  addUsedNamespaces(namespaces) {
+    namespaces.forEach((ns) => {
+      var _a;
+      (_a = this.usedNamespaces)[ns] ?? (_a[ns] = true);
+    });
+  }
+  getUsedNamespaces() {
+    return Object.keys(this.usedNamespaces);
+  }
+};
+const usePrevious$1 = (value, ignore) => {
+  const ref = reactExports$1.useRef();
+  reactExports$1.useEffect(() => {
+    ref.current = value;
+  }, [value, ignore]);
+  return ref.current;
+};
+const alwaysNewT$1 = (i18n, language, namespace, keyPrefix) => i18n.getFixedT(language, namespace, keyPrefix);
+const useMemoizedT$1 = (i18n, language, namespace, keyPrefix) => reactExports$1.useCallback(alwaysNewT$1(i18n, language, namespace, keyPrefix), [i18n, language, namespace, keyPrefix]);
+const useTranslation$1 = (ns, props = {}) => {
+  var _a, _b, _c, _d;
+  const {
+    i18n: i18nFromProps
+  } = props;
+  const {
+    i18n: i18nFromContext,
+    defaultNS: defaultNSFromContext
+  } = reactExports$1.useContext(I18nContext$1) || {};
+  const i18n = i18nFromProps || i18nFromContext || getI18n$1();
+  if (i18n && !i18n.reportNamespaces) i18n.reportNamespaces = new ReportNamespaces$1();
+  if (!i18n) {
+    warnOnce$1("You will need to pass in an i18next instance by using initReactI18next");
+    const notReadyT = (k2, optsOrDefaultValue) => {
+      if (isString$1(optsOrDefaultValue)) return optsOrDefaultValue;
+      if (isObject$1(optsOrDefaultValue) && isString$1(optsOrDefaultValue.defaultValue)) return optsOrDefaultValue.defaultValue;
+      return Array.isArray(k2) ? k2[k2.length - 1] : k2;
+    };
+    const retNotReady = [notReadyT, {}, false];
+    retNotReady.t = notReadyT;
+    retNotReady.i18n = {};
+    retNotReady.ready = false;
+    return retNotReady;
+  }
+  if ((_a = i18n.options.react) == null ? void 0 : _a.wait) warnOnce$1("It seems you are still using the old wait option, you may migrate to the new useSuspense behaviour.");
+  const i18nOptions = {
+    ...getDefaults$2(),
+    ...i18n.options.react,
+    ...props
+  };
+  const {
+    useSuspense,
+    keyPrefix
+  } = i18nOptions;
+  let namespaces = ns || defaultNSFromContext || ((_b = i18n.options) == null ? void 0 : _b.defaultNS);
+  namespaces = isString$1(namespaces) ? [namespaces] : namespaces || ["translation"];
+  (_d = (_c = i18n.reportNamespaces).addUsedNamespaces) == null ? void 0 : _d.call(_c, namespaces);
+  const ready = (i18n.isInitialized || i18n.initializedStoreOnce) && namespaces.every((n2) => hasLoadedNamespace$1(n2, i18n, i18nOptions));
+  const memoGetT = useMemoizedT$1(i18n, props.lng || null, i18nOptions.nsMode === "fallback" ? namespaces : namespaces[0], keyPrefix);
+  const getT = () => memoGetT;
+  const getNewT = () => alwaysNewT$1(i18n, props.lng || null, i18nOptions.nsMode === "fallback" ? namespaces : namespaces[0], keyPrefix);
+  const [t2, setT] = reactExports$1.useState(getT);
+  let joinedNS = namespaces.join();
+  if (props.lng) joinedNS = `${props.lng}${joinedNS}`;
+  const previousJoinedNS = usePrevious$1(joinedNS);
+  const isMounted = reactExports$1.useRef(true);
+  reactExports$1.useEffect(() => {
+    const {
+      bindI18n,
+      bindI18nStore
+    } = i18nOptions;
+    isMounted.current = true;
+    if (!ready && !useSuspense) {
+      if (props.lng) {
+        loadLanguages$1(i18n, props.lng, namespaces, () => {
+          if (isMounted.current) setT(getNewT);
+        });
+      } else {
+        loadNamespaces$1(i18n, namespaces, () => {
+          if (isMounted.current) setT(getNewT);
+        });
+      }
+    }
+    if (ready && previousJoinedNS && previousJoinedNS !== joinedNS && isMounted.current) {
+      setT(getNewT);
+    }
+    const boundReset = () => {
+      if (isMounted.current) setT(getNewT);
+    };
+    if (bindI18n) i18n == null ? void 0 : i18n.on(bindI18n, boundReset);
+    if (bindI18nStore) i18n == null ? void 0 : i18n.store.on(bindI18nStore, boundReset);
+    return () => {
+      isMounted.current = false;
+      if (i18n) bindI18n == null ? void 0 : bindI18n.split(" ").forEach((e2) => i18n.off(e2, boundReset));
+      if (bindI18nStore && i18n) bindI18nStore.split(" ").forEach((e2) => i18n.store.off(e2, boundReset));
+    };
+  }, [i18n, joinedNS]);
+  reactExports$1.useEffect(() => {
+    if (isMounted.current && ready) {
+      setT(getT);
+    }
+  }, [i18n, keyPrefix, ready]);
+  const ret = [t2, i18n, ready];
+  ret.t = t2;
+  ret.i18n = i18n;
+  ret.ready = ready;
+  if (ready) return ret;
+  if (!ready && !useSuspense) return ret;
+  throw new Promise((resolve) => {
+    if (props.lng) {
+      loadLanguages$1(i18n, props.lng, namespaces, () => resolve());
+    } else {
+      loadNamespaces$1(i18n, namespaces, () => resolve());
+    }
+  });
+};
 var jsxRuntime = { exports: {} };
 var reactJsxRuntime_production_min = {};
 var react = { exports: {} };
@@ -15544,7 +15543,7 @@ function Help() {
   );
 }
 function App() {
-  console.log(`lovas eirele y2025-01-26 13:23`);
+  console.log(`lovas eirele y2025-01-26 20:37`);
   return /* @__PURE__ */ jsxRuntimeExports$1.jsxs("div", { className: "flex flex-col justify-between items-center min-h-screen dark:bg-slate-900 dark:text-slate-50", children: [
     /* @__PURE__ */ jsxRuntimeExports$1.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports$1.jsxs("div", { className: "w-full max-w-lg flex flex-col", children: [
       /* @__PURE__ */ jsxRuntimeExports$1.jsxs("header", { className: "border-b-2 border-gray-200 flex mb-4", children: [
@@ -15585,4 +15584,4 @@ client.createRoot(document.getElementById("root")).render(
     )
   ] })
 );
-//# sourceMappingURL=index-8vv3Y0uF.js.map
+//# sourceMappingURL=index-BBVrsbc3.js.map
