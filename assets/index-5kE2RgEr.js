@@ -7231,7 +7231,6 @@ const useTranslation$1 = (ns, props = {}) => {
   });
 };
 function Eirele() {
-  const { i18n } = useTranslation$1();
   const title = /* @__PURE__ */ jsxRuntimeExports$1.jsxs(
     "span",
     {
@@ -7245,20 +7244,7 @@ function Eirele() {
       ]
     }
   );
-  const titleIe = /* @__PURE__ */ jsxRuntimeExports$1.jsxs(
-    "span",
-    {
-      className: "uppercase font-bold",
-      style: { color: "lightgrey" },
-      "data-testid": "eirele",
-      children: [
-        /* @__PURE__ */ jsxRuntimeExports$1.jsx("span", { style: { color: "#169B62" }, children: "eire" }),
-        /* @__PURE__ */ jsxRuntimeExports$1.jsx("span", { style: { color: "white" }, children: "le" }),
-        /* @__PURE__ */ jsxRuntimeExports$1.jsx("span", { style: { color: "#FF883E" }, children: "aigh" })
-      ]
-    }
-  );
-  return i18n.language != "ie" ? title : titleIe;
+  return title;
 }
 const __vite_glob_0_0 = "/eirele/assets/ireland-map-cork-Dql9xpN4.svg";
 const __vite_glob_0_1 = "/eirele/assets/ireland-map-donegal-DwCOxFc9.svg";
@@ -15937,7 +15923,7 @@ function Help() {
   );
 }
 function App() {
-  console.log(`lovas eirele y2025-01-26 12:18`);
+  console.log(`lovas eirele y2025-01-26 12:33`);
   return /* @__PURE__ */ jsxRuntimeExports$1.jsxs("div", { className: "flex flex-col justify-between items-center min-h-screen dark:bg-slate-900 dark:text-slate-50", children: [
     /* @__PURE__ */ jsxRuntimeExports$1.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports$1.jsxs("div", { className: "w-full max-w-lg flex flex-col", children: [
       /* @__PURE__ */ jsxRuntimeExports$1.jsxs("header", { className: "border-b-2 border-gray-200 flex mb-4", children: [
@@ -15978,4 +15964,4 @@ client.createRoot(document.getElementById("root")).render(
     )
   ] })
 );
-//# sourceMappingURL=index-DymIrOGF.js.map
+//# sourceMappingURL=index-5kE2RgEr.js.map
