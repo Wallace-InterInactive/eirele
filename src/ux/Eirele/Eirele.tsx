@@ -3,7 +3,7 @@
 //import { useTranslation } from "react-i18next";
 
 export function Eirele() {
-  // @ts-ignore
+  /*
   const title: JSX.Element = (
     <span
       className="uppercase font-bold"
@@ -15,7 +15,6 @@ export function Eirele() {
       <span style={{ color: "#FF883E" }}>le</span>
     </span>
   );
-  // @ts-ignore
   const titleIe: JSX.Element = (
     <span
       className="uppercase font-bold"
@@ -27,7 +26,7 @@ export function Eirele() {
       <span style={{ color: "#FF883E" }}>aigh</span>
     </span>
   );
-  
+  */
   // useEffect(() => {
     //   return; // Trigger any re-renders or state updates as needed on language change
     // }, [i18n.language]);
@@ -38,10 +37,11 @@ export function Eirele() {
   //}
   
   //return (title)
-  return (    <span
-    className="uppercase font-bold"
-    style={{ color: "lightgrey" }}
-    data-testid="eirele"
+  return (
+    <span
+      className="uppercase font-bold"
+      style={{ color: "lightgrey" }}
+      data-testid="eirele"
     >
     <span style={{ color: "#169B62" }}>ei</span>
     <span style={{ color: "white" }}>re</span>

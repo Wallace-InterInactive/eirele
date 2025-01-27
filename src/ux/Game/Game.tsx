@@ -13,6 +13,7 @@ import {
 } from "../../gamedata/dataBank.ts"; // lovas: see below use
 import { useTranslation } from "react-i18next";
 //import i18n from "../../gamedata/i18n.ts";
+// getDerivedStateFromProps WTF WFT WTF
 
 import GameRoundPot from "../../../provincle/src/components/GameRoundPot/GameRoundPot.tsx";
 //import GameRoundCounty from "../GameRoundCounty/GameRoundCounty.tsx";
