@@ -15,6 +15,7 @@ i18next
       en: {
         base: {
           title: "Eirele",
+          title_part1:"Ei", title_part2: "re", title_part3:"le",
           guessVerb: "Guess",
           guessNoun: "Guess",
           giveUp: "Give up",
@@ -148,6 +149,7 @@ i18next
       ie: {
         base: {
           title: "Eireleagh",
+          title_part1:"Eire", title_part2: "le", title_part3:"agh",
           guessVerb: "Meas",
           guessNoun: "Tuairim",
           giveUp: "Give up",

@@ -56,7 +56,7 @@ export function Game() {
   dataBank.tLang = useTranslation().t;
   dataBank.tGeo = useTranslation("geo").t;
   dataBank.getPotMapSvgUrl = getPotMapSvgUrl; // ??? maybe because of VITE or React or URL
-  console.log(`lovas3`);
+  //console.log(`lovas3`);
 
   /* eslint-disable @typescript-eslint/no-explicit-any */
   const updateGameState = (key: string, val: any): void => {
@@ -65,7 +65,7 @@ export function Game() {
       [key]: val,
     }));
   };
-  console.log(`lovas4`);
+  //console.log(`lovas4`);
   const setCurrentRound = (newCurrentRound: number): void => {
     updateGameState("currentRound", newCurrentRound);
   };
@@ -88,18 +88,18 @@ export function Game() {
 
     setGameState(newState);
   };
-  console.log(`lovas5`);
+  //console.log(`lovas5`);
 
   // TODO: remove ts-ignore
   // @ts-ignore
   const { potCode, currentRound } = gameState;
   const [giveupCnt, setGiveupCnt] = useState<number>(0);
-  console.log(`lovas6`);
+  //console.log(`lovas6`);
 
   const [currentRoundStatus, setCurrentRoundStatus] =
     useState<GameRoundStatus>("pending");
   // note: currentRound == 1 comes from gameState.ts default
-  console.log(`lovas7`);
+  //console.log(`lovas7`);
 
   const handleNextButtonClicked = (): void => {
     console.log("Next button clicked.");
