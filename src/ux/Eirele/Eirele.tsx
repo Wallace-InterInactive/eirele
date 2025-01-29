@@ -9,9 +9,9 @@ export function Eirele() {
       style={{ color: "lightgrey" }}
       data-testid="eirele"
     >
-    <span style={{ color: "#169B62" }}>{t("title_part1")}</span>
-    <span style={{ color: "white" }}>{t("title_part2")}</span>
-    <span style={{ color: "#FF883E" }}>{t("title_part3")}</span>
-  </span>
-   );
+      <span style={{ color: "#169B62" }}>{t("title_part1")}</span>
+      <span style={{ color: "white" }}>{t("title_part2")}</span>
+      <span style={{ color: "#FF883E" }}>{t("title_part3")}</span>
+    </span>
+  );
 }

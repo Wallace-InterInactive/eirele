@@ -15,7 +15,9 @@ i18next
       en: {
         base: {
           title: "Eirele",
-          title_part1:"Ei", title_part2: "re", title_part3:"le",
+          title_part1: "Ei",
+          title_part2: "re",
+          title_part3: "le",
           guessVerb: "Guess",
           guessNoun: "Guess",
           giveUp: "Give up",
@@ -32,6 +34,8 @@ i18next
           gameCapitalRoundInstruction: "What is the capital",
           gameNeighborRoundInstruction: "What are the neighbours",
           gamePotRoundFinaleStats: "Stats",
+          gameTryOurOtherGames:
+            "Please test your knowledge in the following games",
           // alerts
           unknownPot: "Unknown province ot territory!",
           unknownCity: "Unknown city!",
@@ -68,7 +72,7 @@ i18next
           offaly: "Offaly",
           roscommon: "Roscommon",
           sligo: "Sligo",
-          tipperary: "tipperary",
+          tipperary: "Tipperary",
           tyrone: "Tyrone",
           waterford: "Waterford",
           westmeath: "Westmeath",
@@ -149,12 +153,16 @@ i18next
       ie: {
         base: {
           title: "Eireleagh",
-          title_part1:"Eire", title_part2: "le", title_part3:"agh",
+          title_part1: "Eire",
+          title_part2: "le",
+          title_part3: "agh",
           guessVerb: "Meas",
           guessNoun: "Tuairim",
-          giveUp: "Give up",
-          areYouSure: "Are you sure",
+          giveUp: "Éirigh as",
+          areYouSure: "An bhfuil tú cinnte?",
           nextRound: "Babhta Ar Aghaidh",
+          gameTryOurOtherGames:
+            "Le do thoil, tástáil do chuid eolais sna cluichí seo a leanas",
           province: "Contae",
           territory: "",
           provinceOrTerritory: "Contae",
