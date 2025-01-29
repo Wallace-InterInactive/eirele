@@ -15315,7 +15315,7 @@ function Help() {
   );
 }
 function App() {
-  console.log(`lovas eirele 2025-01-27 21:64`);
+  console.log(`lovas eirele 2025-01-29 10:14`);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col justify-between items-center min-h-screen dark:bg-slate-900 dark:text-slate-50", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full max-w-lg flex flex-col", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("header", { className: "border-b-2 border-gray-200 flex mb-4", children: [
@@ -15356,4 +15356,4 @@ client.createRoot(document.getElementById("root")).render(
     )
   ] })
 );
-//# sourceMappingURL=index-C0UNrrOe.js.map
+//# sourceMappingURL=index-BH9bYUy3.js.map
