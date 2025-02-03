@@ -10678,7 +10678,7 @@ instance.use(initReactI18next).use(Browser).init({
         province: "Province",
         territory: "Territory",
         provinceOrTerritory: "Province or Territory",
-        capitalCity: "Capital City",
+        capitalCity: "County town",
         attempts: "Attempts",
         // game round instructions
         gamePotRoundInstruction: "Select the province",
@@ -10693,7 +10693,7 @@ instance.use(initReactI18next).use(Browser).init({
         unknownCity: "Unknown city!",
         alreadyGuessed: "Already Guessed!",
         guessedIt: "Spot on!",
-        guessedItList: ["Spot on!", "Well done!", "Awesome!"],
+        guessedItList: ["Spot on!", "Well done!", "Craic", "Class", "Massive", "Grand"],
         failedIt: "Sorry, you missed it!"
       },
       geo: {
@@ -15356,4 +15356,4 @@ client.createRoot(document.getElementById("root")).render(
     )
   ] })
 );
-//# sourceMappingURL=index-BecqktdM.js.map
+//# sourceMappingURL=index-CigaxZ8b.js.map
