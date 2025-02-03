@@ -26,7 +26,7 @@ i18next
           province: "Province",
           territory: "Territory",
           provinceOrTerritory: "Province or Territory",
-          capitalCity: "Capital City",
+          capitalCity: "County town",
           attempts: "Attempts",
           // game round instructions
           gamePotRoundInstruction: "Select the province", // TODO: we probably don't need this
@@ -41,7 +41,7 @@ i18next
           unknownCity: "Unknown city!",
           alreadyGuessed: "Already Guessed!",
           guessedIt: "Spot on!",
-          guessedItList: ["Spot on!", "Well done!", "Awesome!"],
+          guessedItList: ["Spot on!", "Well done!", "Craic", "Class", "Massive", "Grand"],
           failedIt: "Sorry, you missed it!",
         },
         geo: {
