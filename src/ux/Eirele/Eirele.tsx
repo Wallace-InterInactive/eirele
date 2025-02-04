@@ -5,7 +5,7 @@ export function Eirele() {
   //console.log(`title l:${i18n.language}`);
   return (
     <span
-      className="uppercase font-bold text-gray-500 bg-gray-700 rounded-lg px-2 py"
+      className="uppercase font-bold text-gray-500 bg-green-800 rounded-lg px-2 py"
       data-testid="eirele"
     >
       <span style={{ color: "#169B62" }}>{t("title_part1")}</span>
