@@ -10677,7 +10677,7 @@ instance.use(initReactI18next).use(Browser).init({
         nextRound: "Next Round",
         province: "Province",
         territory: "Territory",
-        provinceOrTerritory: "Province or Territory",
+        provinceOrTerritory: "County",
         capitalCity: "County town",
         attempts: "Attempts",
         // game round instructions
@@ -15356,4 +15356,4 @@ client.createRoot(document.getElementById("root")).render(
     )
   ] })
 );
-//# sourceMappingURL=index-CigaxZ8b.js.map
+//# sourceMappingURL=index-Dwrw6Z4O.js.map
