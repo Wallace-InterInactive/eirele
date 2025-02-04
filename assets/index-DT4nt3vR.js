@@ -7232,8 +7232,7 @@ function Eirele() {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(
     "span",
     {
-      className: "uppercase font-bold",
-      style: { color: "lightgrey" },
+      className: "uppercase font-bold text-gray-500 bg-gray-700 rounded-lg px-2 py",
       "data-testid": "eirele",
       children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { color: "#169B62" }, children: t2("title_part1") }),
@@ -10693,7 +10692,14 @@ instance.use(initReactI18next).use(Browser).init({
         unknownCity: "Unknown city!",
         alreadyGuessed: "Already Guessed!",
         guessedIt: "Spot on!",
-        guessedItList: ["Spot on!", "Well done!", "Craic", "Class", "Massive", "Grand"],
+        guessedItList: [
+          "Spot on!",
+          "Well done!",
+          "Craic",
+          "Class",
+          "Massive",
+          "Grand"
+        ],
         failedIt: "Sorry, you missed it!"
       },
       geo: {
@@ -10811,7 +10817,7 @@ instance.use(initReactI18next).use(Browser).init({
         title: "Eireleagh",
         title_part1: "Eire",
         title_part2: "le",
-        title_part3: "agh",
+        title_part3: "aigh",
         guessVerb: "Meas",
         guessNoun: "Tuairim",
         giveUp: "Éirigh as",
@@ -15356,4 +15362,4 @@ client.createRoot(document.getElementById("root")).render(
     )
   ] })
 );
-//# sourceMappingURL=index-Dwrw6Z4O.js.map
+//# sourceMappingURL=index-DT4nt3vR.js.map
