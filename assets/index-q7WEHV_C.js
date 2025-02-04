@@ -7232,7 +7232,7 @@ function Eirele() {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(
     "span",
     {
-      className: "uppercase font-bold text-gray-500 bg-gray-700 rounded-lg px-2 py",
+      className: "uppercase font-bold text-gray-500 bg-green-800 rounded-lg px-2 py",
       "data-testid": "eirele",
       children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { color: "#169B62" }, children: t2("title_part1") }),
@@ -10674,8 +10674,8 @@ instance.use(initReactI18next).use(Browser).init({
         giveUp: "Give up",
         areYouSure: "Are you sure",
         nextRound: "Next Round",
-        province: "Province",
-        territory: "Territory",
+        province: "County",
+        territory: "",
         provinceOrTerritory: "County",
         capitalCity: "County town",
         attempts: "Attempts",
@@ -15362,4 +15362,4 @@ client.createRoot(document.getElementById("root")).render(
     )
   ] })
 );
-//# sourceMappingURL=index-DT4nt3vR.js.map
+//# sourceMappingURL=index-q7WEHV_C.js.map
