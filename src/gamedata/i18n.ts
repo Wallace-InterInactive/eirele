@@ -25,7 +25,7 @@ i18next
           nextRound: "Next Round",
           province: "Province",
           territory: "Territory",
-          provinceOrTerritory: "Province or Territory",
+          provinceOrTerritory: "County",
           capitalCity: "County town",
           attempts: "Attempts",
           // game round instructions
@@ -41,7 +41,14 @@ i18next
           unknownCity: "Unknown city!",
           alreadyGuessed: "Already Guessed!",
           guessedIt: "Spot on!",
-          guessedItList: ["Spot on!", "Well done!", "Craic", "Class", "Massive", "Grand"],
+          guessedItList: [
+            "Spot on!",
+            "Well done!",
+            "Craic",
+            "Class",
+            "Massive",
+            "Grand",
+          ],
           failedIt: "Sorry, you missed it!",
         },
         geo: {
@@ -159,7 +166,7 @@ i18next
           title: "Eireleagh",
           title_part1: "Eire",
           title_part2: "le",
-          title_part3: "agh",
+          title_part3: "aigh",
           guessVerb: "Meas",
           guessNoun: "Tuairim",
           giveUp: "Éirigh as",
