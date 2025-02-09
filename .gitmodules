@@ -1,4 +1,4 @@
 [submodule "provincle"]
 	path = provincle
 	url = https://github.com/Wallace-InterInactive/provincle.git
-	branch = issue52b
+	branch = master
