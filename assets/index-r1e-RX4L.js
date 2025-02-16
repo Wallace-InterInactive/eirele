@@ -7434,7 +7434,7 @@ function toDegrees(radians) {
   return radians * (180 / Math.PI);
 }
 function calculateAngle(pos1, pos2) {
-  if (pos1 == pos2) {
+  if (pos1 === pos2) {
     return -1;
   }
   const c1 = latLonToMercator(pos1.latitude, pos1.longitude);
@@ -7674,7 +7674,7 @@ const dataBankData = {
     capital: "city_navan",
     neighbors: [
       "cavan",
-      "mondaghan",
+      "monaghan",
       "louth",
       "dublin",
       "kildare",
@@ -13792,129 +13792,6 @@ function Q(t2) {
     }));
   }));
 }
-const SQUARE_ANIMATION_LENGTH = 250;
-const squares = ["🟩", "🟩", "🟨", "🟧", "🟥", "⬛️"];
-function getSquaresByDistance(distanceInMeters) {
-  const distanceInKms = Math.floor(distanceInMeters / 1e3);
-  return distanceInKms === 0 ? ["🟩", "🟩", "🟩", "🟩", "🟩", "🟩"] : distanceInKms <= 300 ? ["🟩", "🟩", "🟩", "🟩", "🟩", "🟨"] : distanceInKms <= 1300 ? ["🟩", "🟩", "🟩", "🟩", "🟨", "🟨"] : distanceInKms <= 2300 ? ["🟩", "🟩", "🟩", "🟨", "🟨", "🟧"] : distanceInKms <= 3300 ? ["🟩", "🟩", "🟨", "🟨", "🟧", "🟧"] : distanceInKms <= 4300 ? ["🟩", "🟨", "🟨", "🟧", "🟧", "🟥"] : ["🟨", "🟨", "🟧", "🟧", "🟥", "🟥"];
-}
-function toastError(text) {
-  B.error(text, {
-    position: "top-center",
-    autoClose: 2e3,
-    hideProgressBar: true,
-    closeOnClick: true,
-    pauseOnHover: true,
-    draggable: true,
-    progress: void 0,
-    theme: "dark",
-    style: {
-      backgroundColor: "#F8B0B7",
-      // Replace with your desired background color
-      color: "#000000"
-      // Optional: to set text color
-    },
-    transition: X
-  });
-}
-function toastFailed(text) {
-  toastError(text);
-}
-function toastSuccess(text) {
-  B.success(text, {
-    position: "top-center",
-    autoClose: 3e3,
-    hideProgressBar: true,
-    closeOnClick: true,
-    pauseOnHover: true,
-    draggable: true,
-    progress: void 0,
-    theme: "dark",
-    style: {
-      backgroundColor: "#9EEAA7",
-      // Replace with your desired background color
-      color: "#000000"
-      // Optional: to set text color
-    },
-    transition: X
-  });
-}
-function GuessRow({
-  guessCode,
-  solutionCode,
-  //  tGeo,
-  dataBank: dataBank2
-}) {
-  const [animationIsActive, setAnimationIsActive] = reactExports.useState(false);
-  reactExports.useEffect(() => {
-    if (!guessCode || guessCode === "invalid") {
-      return;
-    }
-    setAnimationIsActive(true);
-    const totalAnimationTime = SQUARE_ANIMATION_LENGTH * squares.length;
-    const timeout = setTimeout(() => {
-      setAnimationIsActive(false);
-    }, totalAnimationTime);
-    return () => clearTimeout(timeout);
-  }, [guessCode]);
-  return guessCode ? !animationIsActive ? /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-7 gap-1 text-center py-0.5", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "my-guess-div col-span-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "my-guess-p", children: dataBank2.tGeo(guessCode) || "-" }) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "my-guess-div col-span-2", children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "my-guess-p", children: calculateDistanceInKm(
-      dataBank2.data[guessCode].coordinates,
-      dataBank2.data[solutionCode].coordinates
-    ) + " km" }) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "my-guess-div", children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "my-guess-p text-xl", children: dataBank2.getDirectionEmoji(guessCode, solutionCode) }) })
-  ] }) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-6 gap-1 text-center py-0.5 text-l w-full justify-evenly items-center border-2 h-8 overflow-hidden", children: getSquaresByDistance(
-    calculateDistanceInMeters(
-      dataBank2.data[guessCode].coordinates,
-      dataBank2.data[solutionCode].coordinates
-    )
-  ).map((character, index) => /* @__PURE__ */ jsxRuntimeExports.jsx(
-    "div",
-    {
-      className: "opacity-0 animate-reveal",
-      style: {
-        animationDelay: `${SQUARE_ANIMATION_LENGTH * index}ms`
-      },
-      children: character
-    },
-    index
-  )) }) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-6 gap-1 text-center py-0.5", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "my-div-2" }) });
-}
-function Guesses({
-  currentRoundStatus,
-  guesses,
-  maxAttempts,
-  solutionCode,
-  guessNum,
-  dataBank: dataBank2
-}) {
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-    currentRoundStatus === "pending" ? /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-6 gap-1 text-center py-0.5", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "my-div-1", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "opacity-70", children: [
-      dataBank2.tLang("guessNoun"),
-      " ",
-      guessNum,
-      " / ",
-      maxAttempts
-    ] }) }) }) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "my-span-2", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-      "span",
-      {
-        className: `my-span-3 text-black bg-${getColorOfStatus(currentRoundStatus)}`,
-        children: dataBank2.tGeo(solutionCode)
-      }
-    ) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: Array.from({ length: maxAttempts }, (_2, i) => {
-      return /* @__PURE__ */ jsxRuntimeExports.jsx(
-        GuessRow,
-        {
-          guessCode: guesses[i],
-          solutionCode,
-          dataBank: dataBank2
-        }
-      );
-    }) })
-  ] });
-}
 var module = {};
 (function main(global, module2, isWorker, workerSize) {
   var canUseWorker = !!(global.Worker && global.Blob && global.Promise && global.OffscreenCanvas && global.OffscreenCanvasRenderingContext2D && global.HTMLCanvasElement && global.HTMLCanvasElement.prototype.transferControlToOffscreen && global.URL && global.URL.createObjectURL);
@@ -14611,6 +14488,143 @@ var module = {};
 }(), module, false);
 const confetti = module.exports;
 module.exports.create;
+const SQUARE_ANIMATION_LENGTH = 250;
+const squares = ["🟩", "🟩", "🟨", "🟧", "🟥", "⬛️"];
+function getSquaresByDistance(distanceInMeters) {
+  const distanceInKms = Math.floor(distanceInMeters / 1e3);
+  return distanceInKms === 0 ? ["🟩", "🟩", "🟩", "🟩", "🟩", "🟩"] : distanceInKms <= 300 ? ["🟩", "🟩", "🟩", "🟩", "🟩", "🟨"] : distanceInKms <= 1300 ? ["🟩", "🟩", "🟩", "🟩", "🟨", "🟨"] : distanceInKms <= 2300 ? ["🟩", "🟩", "🟩", "🟨", "🟨", "🟧"] : distanceInKms <= 3300 ? ["🟩", "🟩", "🟨", "🟨", "🟧", "🟧"] : distanceInKms <= 4300 ? ["🟩", "🟨", "🟨", "🟧", "🟧", "🟥"] : ["🟨", "🟨", "🟧", "🟧", "🟥", "🟥"];
+}
+function toastError(text) {
+  B.error(text, {
+    position: "top-center",
+    autoClose: 2e3,
+    hideProgressBar: true,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: void 0,
+    theme: "dark",
+    style: {
+      backgroundColor: "#F8B0B7",
+      // Replace with your desired background color
+      color: "#000000"
+      // Optional: to set text color
+    },
+    transition: X
+  });
+}
+function toastFailed(text) {
+  toastError(text);
+}
+function toastSuccess(text) {
+  B.success(text, {
+    position: "top-center",
+    autoClose: 3e3,
+    hideProgressBar: true,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: void 0,
+    theme: "dark",
+    style: {
+      backgroundColor: "#9EEAA7",
+      // Replace with your desired background color
+      color: "#000000"
+      // Optional: to set text color
+    },
+    transition: X
+  });
+}
+function handleConfetti(ticks) {
+  try {
+    if (ticks) {
+      confetti({ ticks: 50 });
+    } else {
+      confetti();
+    }
+  } catch (e) {
+    console.error(
+      "An error occurred when calling the floating promise function 'confetti'."
+    );
+    throw e;
+  }
+}
+function GuessRow({
+  guessCode,
+  solutionCode,
+  //  tGeo,
+  dataBank: dataBank2
+}) {
+  const [animationIsActive, setAnimationIsActive] = reactExports.useState(false);
+  reactExports.useEffect(() => {
+    if (!guessCode || guessCode === "invalid") {
+      return;
+    }
+    setAnimationIsActive(true);
+    const totalAnimationTime = SQUARE_ANIMATION_LENGTH * squares.length;
+    const timeout = setTimeout(() => {
+      setAnimationIsActive(false);
+    }, totalAnimationTime);
+    return () => clearTimeout(timeout);
+  }, [guessCode]);
+  return guessCode ? !animationIsActive ? /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-7 gap-1 text-center py-0.5", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "my-guess-div col-span-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "my-guess-p", children: dataBank2.tGeo(guessCode) || "-" }) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "my-guess-div col-span-2", children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "my-guess-p", children: calculateDistanceInKm(
+      dataBank2.data[guessCode].coordinates,
+      dataBank2.data[solutionCode].coordinates
+    ) + " km" }) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "my-guess-div", children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "my-guess-p text-xl", children: dataBank2.getDirectionEmoji(guessCode, solutionCode) }) })
+  ] }) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-6 gap-1 text-center py-0.5 text-l w-full justify-evenly items-center border-2 h-8 overflow-hidden", children: getSquaresByDistance(
+    calculateDistanceInMeters(
+      dataBank2.data[guessCode].coordinates,
+      dataBank2.data[solutionCode].coordinates
+    )
+  ).map((character, index) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+    "div",
+    {
+      className: "opacity-0 animate-reveal",
+      style: {
+        animationDelay: `${SQUARE_ANIMATION_LENGTH * index}ms`
+      },
+      children: character
+    },
+    index
+  )) }) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-6 gap-1 text-center py-0.5", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "my-div-2" }) });
+}
+function Guesses({
+  currentRoundStatus,
+  guesses,
+  maxAttempts,
+  solutionCode,
+  guessNum,
+  dataBank: dataBank2
+}) {
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+    currentRoundStatus === "pending" ? /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-6 gap-1 text-center py-0.5", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "my-div-1", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "opacity-70", children: [
+      dataBank2.tLang("guessNoun"),
+      " ",
+      guessNum,
+      " / ",
+      maxAttempts
+    ] }) }) }) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "my-span-2", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "span",
+      {
+        className: `my-span-3 text-black bg-${getColorOfStatus(currentRoundStatus)}`,
+        children: dataBank2.tGeo(solutionCode)
+      }
+    ) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: Array.from({ length: maxAttempts }, (_2, i) => {
+      return /* @__PURE__ */ jsxRuntimeExports.jsx(
+        GuessRow,
+        {
+          guessCode: guesses[i],
+          solutionCode,
+          dataBank: dataBank2
+        }
+      );
+    }) })
+  ] });
+}
 function GameRoundPot({
   gameRoundId,
   gameState,
@@ -14660,7 +14674,7 @@ function GameRoundPot({
         });
         const randomText = guessedItText[Math.floor(Math.random() * guessedItText.length)];
         toastSuccess(randomText);
-        confetti();
+        handleConfetti();
       }, SQUARE_ANIMATION_LENGTH * squares.length);
       setRoundResult(gameRoundId, grade(currentGuess));
       console.log("grade " + grade(currentGuess));
@@ -14787,7 +14801,7 @@ function GameRoundTextInputWithImage({
     setGuesses([...guesses, cityCode]);
     if (cityCode === target) {
       toastSuccess(dataBank2.tLang("guessedIt"));
-      confetti();
+      handleConfetti();
       setCurrentRoundStatus("won");
       setRoundResult(gameRoundId, grade(cityCode));
     } else if (guesses.length + 1 === maxAttempts) {
@@ -14918,14 +14932,13 @@ function GameRoundNeighbors({
     );
     const guessedPot = dataBank2.getPotCodeByName(currentGuess, dataBank2.tGeo);
     if (isGuessCorrect) {
-      console.log(`You guessed it! : ${guessedPot} neighbors:${neighbors}`);
       changeHtmlItemClass(`guess-${idPrefix}-${guessedPot}`, "bg-green-500");
-      if (correctGuessNum == neighbors.length - 1) {
-        confetti();
+      if (correctGuessNum === neighbors.length - 1) {
+        handleConfetti();
         setCurrentRoundStatus("won");
         setRoundResult(gameRoundId, grade(isGuessCorrect));
       } else {
-        confetti({ ticks: 50 });
+        handleConfetti(50);
       }
       setCorrectGuessNum(correctGuessNum + 1);
     } else if (guesses.length + 1 === maxAttempts) {
@@ -14936,9 +14949,6 @@ function GameRoundNeighbors({
     }
     setGuesses([...guesses, currentGuess]);
     setGuessedCodes([...guessedCodes, guessedPot]);
-    console.log(
-      `guess:${guessedPot} status: ${currentRoundStatus} guesses:[${guesses}] neighbors:[${neighbors}]`
-    );
   };
   const handleGuessButtonClicked = () => {
     console.log("Guess button clicked.");
@@ -14954,16 +14964,15 @@ function GameRoundNeighbors({
   function grade(lastGuessOk) {
     if (lastGuessOk) {
       return guesses.length === correctGuessNum ? GameRoundResult.Excellent : guesses.length === correctGuessNum + 1 ? GameRoundResult.Good : GameRoundResult.Fair;
-    } else {
-      return guesses.length === 0 ? GameRoundResult.NotStarted : GameRoundResult.Failed;
     }
+    return guesses.length === 0 ? GameRoundResult.NotStarted : GameRoundResult.Failed;
   }
   const guessNoun = dataBank2.tLang("guessNoun");
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "gap-1 text-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: `${dataBank2.tLang("gameNeighborRoundInstruction")} ${potNameOf}?` }) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `grid grid-cols-4 gap-1 text-center py-0.5 my-5`, children: Array.from({ length: neighbors.length }, (_2, i) => {
       const aPot = dataBank2.data[gameState.potCode].neighbors[i];
-      const lastRowOdd = i == neighbors.length - 1 && i % 2 == 0;
+      const lastRowOdd = i === neighbors.length - 1 && i % 2 === 0;
       const bgColor = guessedCodes.includes(neighbors[i]) ? getColorOfStatus("won") : getColorOfStatus(currentRoundStatus);
       return /* @__PURE__ */ jsxRuntimeExports.jsxs(
         "div",
@@ -15362,4 +15371,4 @@ client.createRoot(document.getElementById("root")).render(
     )
   ] })
 );
-//# sourceMappingURL=index-q7WEHV_C.js.map
+//# sourceMappingURL=index-r1e-RX4L.js.map
