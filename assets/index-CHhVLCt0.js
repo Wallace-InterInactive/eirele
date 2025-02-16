@@ -7268,6 +7268,37 @@ const __vite_glob_0_22 = "data:image/svg+xml,%3c?xml%20version='1.0'%20encoding=
 const __vite_glob_0_23 = "data:image/svg+xml,%3c?xml%20version='1.0'%20encoding='UTF-8'%20standalone='no'?%3e%3c!--%20Created%20for%20MapSVG%20plugin:%20http://mapsvg.com%20--%3e%3csvg%20mapsvg:geoViewBox='-10.617532%2055.384216%20-5.429631%2051.419751'%20width='118.24999'%20height='94.099998'%20version='1.1'%20id='svg1'%20xmlns='http://www.w3.org/2000/svg'%20xmlns:svg='http://www.w3.org/2000/svg'%20xmlns:mapsvg='http://mapsvg.com'%3e%3cdefs%20id='defs1'%20/%3e%3cpath%20d='m%2073.15,0%200.41,1.73%200.69,0.39%202.02,-0.09%200.19,0.78%203.00999,1.58%202.89,5.65%201.82,0.92%200.99,1.54%200.96,0.33%20-0.83,3.19%200.16001,0.77%200.88,0.73%200.52999,1.43%201.04,-0.08%200.45,1.34%201.06,-0.39%201.16001,1.61%201.06,-0.04%204.3,1.39%201.58999,2.13%201.81001,-2.01%201.43999,2.95%200.9,0.19%201.26,2.42%202.35,1.94%200.82,-0.76%200.98001,-1.71%201.73,-0.18%200.91,-0.66%200.63,-1.79%201.77,0.74%200.89,-2.23%201.50999,0.31%201.44,2.2%20-0.27999,0.41%200.52,1.06%200.94,0.51%200.57999,-0.27%200.52,0.37%20-0.27,0.41%200.22001,0.59%20-0.95,1.91%200.25,1.12%20-0.55,0.82%20-1.22001,0.43%20-1.25,1.83%20-0.07,0.78%200.85001,2.12%20-0.51,2.39%20-1.12,0.69%20-0.18,0.49%200.92,1.69%20-0.67,0.21%20-2.52,-0.29%20-0.77,0.49%20-0.91,1.53%20-0.48,1.68%200.22,0.92%201.79,1.92%20-0.51,2.31%20-0.01,1.98%20-1.34,1.64%20-0.97,2.66%20-1,0.12%20-1.8,0.94%200.74,1.9%20-0.76,1.27%200.48,1.88%20-2.11,1.09%20-1.16,1.62%20-3.34,1.78%20-3.61,-0.74%20-1.12,2.23%20-3.86,1.01%200.22,1.94%20v%200%20l%20-1.2,-0.26%20-1.16,0.84%20-0.4,0.61%200.05,1.36%20-0.7,0.73%20-1.23,0.06%20-2.64,1.3%20-2.79,-0.06%200.14,0.75%20-5.97,5.65%20-0.54,0.43%20-1.24,0.16%20-0.87,1.66%20-1.82,1.23%20-0.42,1.63%20-3.58,1.93%20-3.07,-0.95%20-2.09,1.48%20-0.14,1.42%20-0.53,-0.08%20-0.72,0.45%20-0.82,-1.73%20-1.09,-0.78%20-2.78,0.43%20-0.18,-0.94%200.33,-1.48%20-1.39,-0.31%20-0.71,0.17%20-1.8,-0.6%20-0.42,0.58%20-0.2,2.34%201.01,1.23%20-0.42,0.33%20-0.68,-0.6%20-1.09,-2.4%20-1.98,-1.79%20-0.56,-0.92%20-0.4,-3.18%200.24,-1.17%20-0.41,-1.05%20-1.24,-1.47%200.54,-1.65%20-0.23,-0.24%20-0.9,0.18%20-0.58,-0.57%20-1.64,-0.29%20-0.28,-2.19%20-2.04,-1.09%20-2.46,1.19%20-0.13,0.78%20-0.92,0.35%20-0.82,-0.76%20-0.39,1.29%20-0.69,-0.1%20-1.47,1.72%20-1.15,0.25%20-0.5,2.03%20-0.62,-0.1%20-0.78,0.41%20-0.65,2.35%201.01,0.4%20-1.72,1.37%20-5.85,2.34%20-2.61,-1.19%20-0.99,0.66%20-1.37,-0.23%20-0.64,-1.07%20-1.39,0.5%20-1.84,2.36%20-0.81,-0.99%20-2.19,0.08%20-0.99,-0.37%20-2.6,-2.46%20-2.17,-0.41%20v%200%20L%206.98,83.96%206.38,81.94%205.47,80.63%205.3,79.5%204.5,78.27%203.48,77.56%203.13,75.81%200.04,73.99%201.51,71.9%200.97,69.52%200.34,68.5%201.59,61.83%200,54.26%20v%200%20l%202.99,-0.78%202.34,-2.94%200.74,-0.51%20h%203.34%20l%203.43,-1.09%202.7,1.82%200.53,-0.65%201.33,-0.12%202.46,1.34%201.52,-0.2%201.12,0.57%201.09,-0.22%201.35,0.47%201.6,1.37%202.34,0.14%200.28,-1.29%201.43,-0.79%202.8,0.61%200.77,0.94%201.51,-0.82%200.64,-1.69%20-0.06,-2.01%20-0.43,-1.22%201.6,-1.15%201.5,-2.36%200.74,-2.64%200.65,-0.35%200.94,0.21%201.51,-1.02%200.15,-1.06%20-0.71,-0.94%200.33,-0.82%202.06,-0.91%201.6,0.71%201.31,-0.31%20-0.91,-1.59%200.43,-1.57%20-0.98,-1.67%20-3.16,-1.67%20-1.64,-0.45%200.43,-1.49%200.33,-0.38%201.42,0.3%203.48,2.06%20-0.02,-1.24%20-0.77,-0.55%20-0.15,-0.57%200.72,-2.47%202.08,0.33%200.86,-1.12%201.73,-0.13%20-0.58,-1.97%200.77,-0.84%20-0.05,-1.73%200.84,0.55%201.13,-0.5%20-0.68,-1.39%200.15,-0.36%200.22,-0.15%202.23,1.69%200.94,-0.41%20-0.18,-0.71%200.3,-0.71%200.9,0.16%200.51,-1.34%200.75,0.51%200.57,-0.63%200.41,-2.69%201.07,0.04%200.31,-0.53%201.25,0.02%200.54,-0.54%200.67,0.32%200.78,1.42%200.5,0.21%201.12,-0.9%200.26,-1.07%201.13,-0.19%200.3,0.31%200.65,-0.27%200.3,-3.19%20L%2069.52,8.43%2069.04,7.58%2069.15,6.93%2068.54,6.58%2068.32,5.31%2067.29,5.04%2066.48,5.43%2065.46,4.55%20v%200%20L%2068.9,2.52%2069.67,2.44%20Z'%20title='Westmeath'%20id='IE-WH'%20/%3e%3c/svg%3e";
 const __vite_glob_0_24 = "/eirele/assets/ireland-map-wexford-CYz8m3go.svg";
 const __vite_glob_0_25 = "data:image/svg+xml,%3c?xml%20version='1.0'%20encoding='UTF-8'%20standalone='no'?%3e%3c!--%20Created%20for%20MapSVG%20plugin:%20http://mapsvg.com%20--%3e%3csvg%20mapsvg:geoViewBox='-10.617532%2055.384216%20-5.429631%2051.419751'%20width='92.830002'%20height='106.85'%20version='1.1'%20id='svg1'%20xmlns='http://www.w3.org/2000/svg'%20xmlns:svg='http://www.w3.org/2000/svg'%20xmlns:mapsvg='http://mapsvg.com'%3e%3cdefs%20id='defs1'%20/%3e%3cpath%20d='m%2037.38,0%201.32,1.47%201.27,-0.87%203.75,0.12%200.96,2.56%200.71,-0.08%200.37,0.55%200.06,0.89%200.81,-0.54%202.66,-0.39%200.44,0.31%20-0.57,4.12%202.92,2.04%201.62,0.7%202.63,-3.17%200.45,-3.53%20-0.21,-1.6%200.95,-0.7%20v%200%200%200%20h%200.07%20v%200%200%200%20l%201.22,0.55%201.62,1.98%201.79001,1.13%202.3,0.68%201.27,-0.41%201.31999,-1.25%201.06,0.08%200.27,-1.24%201.61,-0.02%201.37,-0.56%200.32,0.03%200.73001,1.77%201.25999,1.36%200.51,0.33%201.35001,-0.21%201.2,0.72%20L%2079.31,4.84%2080.78001,4.37%20v%200%20l%200.13,0.43%200.43,-0.04%20-0.21,0.39%200.9,1.96%201.23,0.66%200.51,0.7%200.64,2.76%20-0.49001,1.59%200.46,2.02%201.43,1.9%20v%200.68%20l%201.49,2.77%200.9,2.78%200.74,8.95%20-1.62,7.26%20-0.24,3.33%200.37,4.08%200.95,1.95%200.7,0.02%201.55,1.97%201.26,-0.02%200.92,1.76%20-1.69,2.38%20-0.08,2.51%20-0.93,1.68%200.23,0.73%20-1.00999,0.68%20-0.89,1.21%20-0.2,3.3%20-1.23,1.22%20-0.83,1.66%20-0.73,3.54%200.69999,1.58%20-4.91,3.13%20-1.9,3.08%20-0.54,2.06%20-2.04,2.75%20-0.03,1.81%20-0.85,1.94%200.51,1.23%20L%2076,91%20l%200.92,0.9%20-1.08,2.88%200.7,1.48%20v%200%20l%20-2,-0.25%20-0.84,-0.48%200.1,-0.63%20-0.94999,-0.79%20-1.42001,-0.04%200.08,-0.32%201.66,-0.04%20-0.94,-1.02%200.82,-2.27%20-3.19999,-0.46%20-1,-1.2%20-0.9,-0.42%20-0.91,0.89%20L%2066.31,88.07%2064.7,88.3%2063.39,86.67%2063.2,85.22%20l%20-0.84,-0.23%20-2.29,1.14%20-1.6,1.31%20-1.03,-0.29%20-1.76,-2.48%20-1.72,0.13%20-0.88,1.23%20-0.95,-0.19%20-0.46,-0.83%20H%2050.36%20L%2049.3,85.22%2047.41001,86.82%2046.8,86.3%20l%20-0.41,0.17%20-1.8,1.91%20-0.31,0.6%200.27,1.21%20-0.33,2.29%20-0.99,0.32%20-0.8,-0.13%20-0.17,3.88%20-0.46,-0.08%20-0.78,1.25%20-1.22,1.06%20-0.59,0.12%20-0.41,0.84%20-1.2,0.73%20-0.25,1.08%20-2.33,3.24%20-0.44,-0.67%20-0.54,0.19%20-0.3,0.83%20-1.73,0.94%20-1.31,-0.15%20-0.57,0.51%20-2.3,-0.38%20-0.95,0.79%20-0.57,-0.66%20-0.11,-3.09%20-0.58,-0.71%20-1.42,0.73%20-0.54,-0.07%20-0.49,-0.33%20-0.27,-1.29%20-0.56,-0.04%20-0.8,-0.69%20-0.38,0.21%20v%200%20l%20-0.43,-0.02%20-0.65,-0.94%20-0.83,-2.48%20-2.67,-3.11%20-0.03,-0.36%201.03,-1.1%20-0.93,-1.15%20-0.26,-1.58%20-1.07,-0.46%20-0.63,-1.16%20-1.06,-0.9%20-2.07,1.29%20-0.48,-0.69%20-0.99,-0.08%200.06,-0.6%200.92,-1.06%20-0.21,-1.52%200.55,-0.13%20-0.21,-1.85%200.76,-1.15%201.35,-0.77%200.82,-0.1%200.86,-0.77%200.19,-0.96%20-0.62,-0.56%200.01,-0.56%200.22001,-0.39%200.83999,0.16%20-0.03,-0.68%202.01999,1.53%200.94,-0.12%201.27,1.19%200.06,0.68%201.11,1.94%201.38,-0.36%201.7,1.11%200.75,-0.38%201.33,0.61%201.21,-1.63%20-0.45,-0.73%202.01,-1.02%201.37,-0.24%201.42,0.47%200.17,-0.29%20-0.57,-0.43%20-0.2,-0.71%200.59,-3.27%20-0.38,-0.89%200.34,-2.04%20-0.46,-1.27%202.24,-0.49%200.08,-2.25%20-1.37,-0.93%20-0.73,-0.96%20-0.96,-0.1%20-0.58,0.79%20-0.36,1.39%20-0.82,0.54%20-2.09,-1.12%20-2.19,0.41%20-0.36,-0.89%200.05,-2.2%20-0.38,-0.33%20-1.88,-0.61%20-0.57999,0.42%20-2.82,-1.04%20-0.8,0.6%20-0.28,0.71%20-1.11,-1.76%20-0.63,-0.4%20-1.19,-0.17%20-1.7,1.04%20L%2011.7,63.55%2011.49,62.83%209.71,61.37%208.29,62.1%206.7,61.85%20v%200%20L%207.27,59.43%206.51,57.81%206.81,57.08%206.64,56.48%202.87,51.9%201.8,49.78%200.98,50.11%200.28,48.46%200.47,47.71%200,47.05%200.67,45.45%203.17,43.65%202.05,42.6%202.38,42.31%202,41.58%203.37,40.53%204.39,40.65%205.17,39.18%206.65,37.67%207.5,35.64%207.63,33.68%207.29,32.73%20l%200.87,-0.25%200.68,-0.83%201.39,-0.62%200.31,-0.08%200.19,0.37%202.29,-0.89%200.21,-0.89%201.96,-0.25%200.43,-1.09%203.62,-0.76%200.52,-2.28%201.78,0.5%200.05,-0.58%201.7,-1.86%202.43,-3.63%20-0.24,-2.46%200.39,-0.78%201.12,-0.91%200.73,-0.02%200.21,-0.81%201.81,-1.44%20-2.16,-1.4%200.2,-1.67%200.74,-0.93%201.38,-0.45%202.06,0.51%202.55,-3.56%20-0.95,-0.54%20-0.13,-1.26%201.39,-1.25%200.41,0.1%20z'%20title='Wicklow'%20id='IE-WW'%20/%3e%3c/svg%3e";
+const __vite_glob_2_0 = "/eirele/assets/gaa-antrim-CsdtiGdB.svg";
+const __vite_glob_2_1 = "/eirele/assets/gaa-carlow-DRvj8M0o.svg";
+const __vite_glob_2_2 = "/eirele/assets/gaa-cavan-BEI3Qpjx.svg";
+const __vite_glob_2_3 = "/eirele/assets/gaa-clare-TboZz8By.svg";
+const __vite_glob_2_4 = "/eirele/assets/gaa-cork-C62wYST7.svg";
+const __vite_glob_2_5 = "/eirele/assets/gaa-dermanagh-7iT7GdQL.svg";
+const __vite_glob_2_6 = "/eirele/assets/gaa-derry-BUChD8Hz.svg";
+const __vite_glob_2_7 = "/eirele/assets/gaa-donegal-CegUSJrI.svg";
+const __vite_glob_2_8 = "/eirele/assets/gaa-down-IqHP76P9.svg";
+const __vite_glob_2_9 = "/eirele/assets/gaa-dublin-DGGRssmJ.svg";
+const __vite_glob_2_10 = "/eirele/assets/gaa-galway-DPBq5lXP.svg";
+const __vite_glob_2_11 = "/eirele/assets/gaa-kerry-zoM1lEkU.svg";
+const __vite_glob_2_12 = "data:image/svg+xml,%3csvg%20id='Layer_2'%20data-name='Layer%202'%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20167%20167'%3e%3cdefs%3e%3cstyle%3e.cls-1{fill:%23fff;}.cls-2{fill:%23343162;}.cls-3{fill:%23006963;}%3c/style%3e%3c/defs%3e%3ctitle%3elogo%3c/title%3e%3crect%20class='cls-1'%20width='167'%20height='167'/%3e%3cpath%20class='cls-2'%20d='M54.25,70.83l16.5-3.17s-13.27,38.74,4,88.5C66.42,138.33,56.25,124.17,54.25,70.83Z'/%3e%3cpath%20class='cls-2'%20d='M78.42,64s-26.67-.17-48.83,16.83c0-4.5,3.33-16.5,13.83-19.83s35-3.33,35-3.33Z'/%3e%3cpath%20class='cls-2'%20d='M92.25,97.83S79.75,72.5,80.75,52.17s11.17-40,15.83-44.67C93.42,30.67,88.47,55.33,92.25,97.83Z'/%3e%3cpath%20class='cls-2'%20d='M69.75,94.83s17-22,58.33-23.67c-1.5,3-1.17,8.67,0,11C91.09,79.56,79.58,91.17,69.75,94.83Z'/%3e%3ccircle%20class='cls-3'%20cx='134.33'%20cy='76.58'%20r='5.08'/%3e%3cpath%20class='cls-3'%20d='M94.08,42.83V38.17A38.36,38.36,0,0,1,118.42,64.5C115.08,57.67,108.06,46.85,94.08,42.83Z'/%3e%3cpath%20class='cls-3'%20d='M48.75,56.75S41.67,58.17,40,59A42.81,42.81,0,0,1,80.69,34.67a22.26,22.26,0,0,0-1.28,6.17A37.57,37.57,0,0,0,48.75,56.75Z'/%3e%3cpath%20class='cls-3'%20d='M37.25,78.58l5.08-2.67s1.25,16.58,11.92,25.67a62.86,62.86,0,0,0,.94,8.51A43.52,43.52,0,0,1,37.25,78.58Z'/%3e%3cpath%20class='cls-3'%20d='M68.92,109.75s-.83,5.44,0,7.69c3.08,0,38.33,4.9,49.08-29.85C116.51,89.64,107,117.44,68.92,109.75Z'/%3e%3c/svg%3e";
+const __vite_glob_2_13 = "/eirele/assets/gaa-kilkenny-BXpE2HoM.svg";
+const __vite_glob_2_14 = "/eirele/assets/gaa-laois-04ikp9yZ.svg";
+const __vite_glob_2_15 = "/eirele/assets/gaa-leitrim-cUAQhbb6.svg";
+const __vite_glob_2_16 = "/eirele/assets/gaa-limerick-DA1_rHV0.svg";
+const __vite_glob_2_17 = "/eirele/assets/gaa-longford-Dxyjr9MB.svg";
+const __vite_glob_2_18 = "/eirele/assets/gaa-louth-CjPQlmtl.svg";
+const __vite_glob_2_19 = "/eirele/assets/gaa-mayo-Dd_jWg0W.svg";
+const __vite_glob_2_20 = "/eirele/assets/gaa-meath-7zljcgwW.svg";
+const __vite_glob_2_21 = "/eirele/assets/gaa-monaghan-Do3eEM1e.svg";
+const __vite_glob_2_22 = "/eirele/assets/gaa-offaly-D4WHF8Ik.svg";
+const __vite_glob_2_23 = "/eirele/assets/gaa-roscommon-BocoNSz5.svg";
+const __vite_glob_2_24 = "/eirele/assets/gaa-sligo-Dml_VUag.svg";
+const __vite_glob_2_25 = "/eirele/assets/gaa-tipperary-Cl_jFcSx.svg";
+const __vite_glob_2_26 = "/eirele/assets/gaa-tyrone-BDeEzeXW.svg";
+const __vite_glob_2_27 = "/eirele/assets/gaa-waterford-BTiX-ZYt.svg";
+const __vite_glob_2_28 = "/eirele/assets/gaa-westmeath-BIRK3voO.svg";
+const __vite_glob_2_29 = "/eirele/assets/gaa-wexford-s2CYDQqz.svg";
+const __vite_glob_2_30 = "/eirele/assets/gaa-wicklow-D_-psEHZ.svg";
 const accentsMap = {
   á: "a",
   é: "e",
@@ -7329,6 +7360,27 @@ function sanitizeString(str) {
   }
   return retVal;
 }
+function getCurrentDateString$1() {
+  const today = /* @__PURE__ */ new Date();
+  const year = today.getFullYear();
+  const month = today.getMonth() + 1;
+  const day = today.getDate();
+  return `${year}-0${month}-0${day}`;
+}
+function getPseudoRandomNumber() {
+  const dateString = getCurrentDateString$1();
+  const hash = hashString$1(dateString);
+  return Math.abs(hash);
+}
+function hashString$1(str) {
+  let hash = 0;
+  for (let i = 0; i < str.length; i++) {
+    const char = str.charCodeAt(i);
+    hash = (hash << 5) - hash + char;
+    hash |= 0;
+  }
+  return hash;
+}
 function getOkNokEmoji(isOk) {
   return isOk ? "✅" : "❌";
 }
@@ -7339,6 +7391,14 @@ function fetchSuggestions(elements, value) {
   return elements.filter(
     (element) => sanitizeString(element).includes(sanitizeString(value))
   );
+}
+function shuffle(alist) {
+  let hash = getPseudoRandomNumber();
+  for (let i1 = 0; i1 < alist.length; i1++) {
+    const i2 = Math.floor(hash % alist.length);
+    [alist[i1], alist[i2]] = [alist[i2], alist[i1]];
+    hash = Math.floor(hash / 7);
+  }
 }
 function changeHtmlItemClass(name, value) {
   const element = document.getElementById(name);
@@ -7487,7 +7547,7 @@ const dataBankData = {
     interestingFacts: [],
     highestPoint: "Ishpatina Ridge 693m",
     coastlineInKM: 3840,
-    majorLeagueTeams: ["team carlow"]
+    majorLeagueTeams: ["gaa-carlow"]
   },
   cavan: {
     capital: "city_cavan",
@@ -7498,7 +7558,7 @@ const dataBankData = {
     interestingFacts: [],
     highestPoint: "Ishpatina Ridge 693m",
     coastlineInKM: 3840,
-    majorLeagueTeams: ["team cavan"]
+    majorLeagueTeams: ["gaa-cavan"]
   },
   clare: {
     capital: "city_ennis",
@@ -7512,7 +7572,7 @@ const dataBankData = {
     interestingFacts: [],
     highestPoint: "Ishpatina Ridge 693m",
     coastlineInKM: 3840,
-    majorLeagueTeams: ["aa"]
+    majorLeagueTeams: ["gaa-clare"]
   },
   cork: {
     capital: "city_cork",
@@ -7531,7 +7591,8 @@ const dataBankData = {
     interestingFacts: [],
     highestPoint: "Ishpatina Ridge 693m",
     coastlineInKM: 3840,
-    majorLeagueTeams: ["Cork City", "Cobh Ramblers"]
+    majorLeagueTeams: ["gaa-cork"]
+    //, "Cork City", "Cobh Ramblers"],
   },
   donegal: {
     capital: "city_lifford",
@@ -7542,7 +7603,7 @@ const dataBankData = {
     interestingFacts: [],
     highestPoint: "Ishpatina Ridge 693m",
     coastlineInKM: 3840,
-    majorLeagueTeams: ["aa"]
+    majorLeagueTeams: ["gaa-donegal"]
   },
   dublin: {
     capital: "city_dublin",
@@ -7553,7 +7614,7 @@ const dataBankData = {
     interestingFacts: [],
     highestPoint: "Ishpatina Ridge 693m",
     coastlineInKM: 3840,
-    majorLeagueTeams: ["aa"]
+    majorLeagueTeams: ["gaa-dublin"]
   },
   galway: {
     capital: "city_galway",
@@ -7564,7 +7625,7 @@ const dataBankData = {
     interestingFacts: [],
     highestPoint: "Ishpatina Ridge 693m",
     coastlineInKM: 3840,
-    majorLeagueTeams: ["aa"]
+    majorLeagueTeams: ["gaa-galway"]
   },
   kerry: {
     capital: "city_tralee",
@@ -7580,7 +7641,7 @@ const dataBankData = {
     interestingFacts: [],
     highestPoint: "Ishpatina Ridge 693m",
     coastlineInKM: 3840,
-    majorLeagueTeams: ["Kerry"]
+    majorLeagueTeams: ["gaa-kerry"]
   },
   kildare: {
     capital: "city_naas",
@@ -7591,7 +7652,7 @@ const dataBankData = {
     interestingFacts: [],
     highestPoint: "Ishpatina Ridge 693m",
     coastlineInKM: 3840,
-    majorLeagueTeams: ["aa"]
+    majorLeagueTeams: ["gaa-kildare"]
   },
   kilkenny: {
     capital: "city_kilkenny",
@@ -7602,7 +7663,7 @@ const dataBankData = {
     interestingFacts: [],
     highestPoint: "Ishpatina Ridge 693m",
     coastlineInKM: 3840,
-    majorLeagueTeams: ["aa"]
+    majorLeagueTeams: ["gaa-kilkenny"]
   },
   laois: {
     capital: "city_portlaoise",
@@ -7613,7 +7674,7 @@ const dataBankData = {
     interestingFacts: [],
     highestPoint: "Ishpatina Ridge 693m",
     coastlineInKM: 3840,
-    majorLeagueTeams: ["aa"]
+    majorLeagueTeams: ["gaa-laois"]
   },
   leitrim: {
     capital: "city_cos",
@@ -7624,7 +7685,7 @@ const dataBankData = {
     interestingFacts: [],
     highestPoint: "Ishpatina Ridge 693m",
     coastlineInKM: 3840,
-    majorLeagueTeams: ["aa"]
+    majorLeagueTeams: ["gaa-leitrim"]
   },
   limerick: {
     capital: "city_limerick",
@@ -7635,7 +7696,7 @@ const dataBankData = {
     interestingFacts: [],
     highestPoint: "Ishpatina Ridge 693m",
     coastlineInKM: 3840,
-    majorLeagueTeams: ["aa"]
+    majorLeagueTeams: ["gaa-limerick"]
   },
   longford: {
     capital: "city_longford",
@@ -7646,7 +7707,7 @@ const dataBankData = {
     interestingFacts: [],
     highestPoint: "Ishpatina Ridge 693m",
     coastlineInKM: 3840,
-    majorLeagueTeams: ["aa"]
+    majorLeagueTeams: ["gaa-longford"]
   },
   louth: {
     capital: "city_dundalk",
@@ -7657,7 +7718,7 @@ const dataBankData = {
     interestingFacts: [],
     highestPoint: "Ishpatina Ridge 693m",
     coastlineInKM: 3840,
-    majorLeagueTeams: ["aa"]
+    majorLeagueTeams: ["gaa-louth"]
   },
   mayo: {
     capital: "city_castlebar",
@@ -7668,7 +7729,7 @@ const dataBankData = {
     interestingFacts: [],
     highestPoint: "Ishpatina Ridge 693m",
     coastlineInKM: 3840,
-    majorLeagueTeams: ["aa"]
+    majorLeagueTeams: ["gaa-mayo"]
   },
   meath: {
     capital: "city_navan",
@@ -7687,7 +7748,7 @@ const dataBankData = {
     interestingFacts: [],
     highestPoint: "Ishpatina Ridge 693m",
     coastlineInKM: 3840,
-    majorLeagueTeams: ["aa"]
+    majorLeagueTeams: ["gaa-meath"]
   },
   monaghan: {
     capital: "city_monaghan",
@@ -7698,7 +7759,7 @@ const dataBankData = {
     interestingFacts: [],
     highestPoint: "Ishpatina Ridge 693m",
     coastlineInKM: 3840,
-    majorLeagueTeams: ["aa"]
+    majorLeagueTeams: ["gaa-monaghan"]
   },
   offaly: {
     capital: "city_tullamore",
@@ -7717,7 +7778,7 @@ const dataBankData = {
     interestingFacts: [],
     highestPoint: "Ishpatina Ridge 693m",
     coastlineInKM: 3840,
-    majorLeagueTeams: ["aa"]
+    majorLeagueTeams: ["gaa-offlay"]
   },
   roscommon: {
     capital: "city_roscommon",
@@ -7736,7 +7797,7 @@ const dataBankData = {
     interestingFacts: [],
     highestPoint: "Ishpatina Ridge 693m",
     coastlineInKM: 3840,
-    majorLeagueTeams: ["aa"]
+    majorLeagueTeams: ["gaa-roscommon"]
   },
   sligo: {
     capital: "city_sligo",
@@ -7747,7 +7808,7 @@ const dataBankData = {
     interestingFacts: [],
     highestPoint: "Ishpatina Ridge 693m",
     coastlineInKM: 3840,
-    majorLeagueTeams: ["aa"]
+    majorLeagueTeams: ["gaa-sligo"]
   },
   tipperary: {
     capital: "city_nenagh",
@@ -7770,7 +7831,7 @@ const dataBankData = {
     interestingFacts: [],
     highestPoint: "Ishpatina Ridge 693m",
     coastlineInKM: 3840,
-    majorLeagueTeams: ["aa"]
+    majorLeagueTeams: ["gaa-tipperary"]
   },
   waterford: {
     capital: "city_waterford",
@@ -7781,7 +7842,7 @@ const dataBankData = {
     interestingFacts: [],
     highestPoint: "Ishpatina Ridge 693m",
     coastlineInKM: 3840,
-    majorLeagueTeams: ["aa"]
+    majorLeagueTeams: ["gaa-waterford"]
   },
   westmeath: {
     capital: "city_mullingar",
@@ -7795,7 +7856,7 @@ const dataBankData = {
     interestingFacts: [],
     highestPoint: "Ishpatina Ridge 693m",
     coastlineInKM: 3840,
-    majorLeagueTeams: ["aa"]
+    majorLeagueTeams: ["gaa-westmeath"]
   },
   wexford: {
     capital: "city_wexford",
@@ -7806,7 +7867,7 @@ const dataBankData = {
     interestingFacts: [],
     highestPoint: "Ishpatina Ridge 693m",
     coastlineInKM: 3840,
-    majorLeagueTeams: ["aa"]
+    majorLeagueTeams: ["gaa-wexford"]
   },
   wicklow: {
     capital: "city_wicklow",
@@ -7820,7 +7881,7 @@ const dataBankData = {
     interestingFacts: [],
     highestPoint: "Ishpatina Ridge 693m",
     coastlineInKM: 3840,
-    majorLeagueTeams: ["aa"]
+    majorLeagueTeams: ["gaa-wicklow"]
   }
 };
 function getPotNamesByLang(tGeo) {
@@ -7884,6 +7945,10 @@ function getPotMapSvgUrl(potCode) {
 function getPotFlagSvgUrl(potCode) {
   return new URL((/* @__PURE__ */ Object.assign({}))[`../../assets/ireland-flag-${potCode.toLowerCase()}.svg`], import.meta.url).href;
 }
+function getGaaTeamCrestSvgUrl(teamName) {
+  console.log(`crest: ../../assets/gaa/gaa-${teamName}.svg`);
+  return new URL((/* @__PURE__ */ Object.assign({ "../../assets/gaa/gaa-antrim.svg": __vite_glob_2_0, "../../assets/gaa/gaa-carlow.svg": __vite_glob_2_1, "../../assets/gaa/gaa-cavan.svg": __vite_glob_2_2, "../../assets/gaa/gaa-clare.svg": __vite_glob_2_3, "../../assets/gaa/gaa-cork.svg": __vite_glob_2_4, "../../assets/gaa/gaa-dermanagh.svg": __vite_glob_2_5, "../../assets/gaa/gaa-derry.svg": __vite_glob_2_6, "../../assets/gaa/gaa-donegal.svg": __vite_glob_2_7, "../../assets/gaa/gaa-down.svg": __vite_glob_2_8, "../../assets/gaa/gaa-dublin.svg": __vite_glob_2_9, "../../assets/gaa/gaa-galway.svg": __vite_glob_2_10, "../../assets/gaa/gaa-kerry.svg": __vite_glob_2_11, "../../assets/gaa/gaa-kildare.svg": __vite_glob_2_12, "../../assets/gaa/gaa-kilkenny.svg": __vite_glob_2_13, "../../assets/gaa/gaa-laois.svg": __vite_glob_2_14, "../../assets/gaa/gaa-leitrim.svg": __vite_glob_2_15, "../../assets/gaa/gaa-limerick.svg": __vite_glob_2_16, "../../assets/gaa/gaa-longford.svg": __vite_glob_2_17, "../../assets/gaa/gaa-louth.svg": __vite_glob_2_18, "../../assets/gaa/gaa-mayo.svg": __vite_glob_2_19, "../../assets/gaa/gaa-meath.svg": __vite_glob_2_20, "../../assets/gaa/gaa-monaghan.svg": __vite_glob_2_21, "../../assets/gaa/gaa-offaly.svg": __vite_glob_2_22, "../../assets/gaa/gaa-roscommon.svg": __vite_glob_2_23, "../../assets/gaa/gaa-sligo.svg": __vite_glob_2_24, "../../assets/gaa/gaa-tipperary.svg": __vite_glob_2_25, "../../assets/gaa/gaa-tyrone.svg": __vite_glob_2_26, "../../assets/gaa/gaa-waterford.svg": __vite_glob_2_27, "../../assets/gaa/gaa-westmeath.svg": __vite_glob_2_28, "../../assets/gaa/gaa-wexford.svg": __vite_glob_2_29, "../../assets/gaa/gaa-wicklow.svg": __vite_glob_2_30 }))[`../../assets/gaa/gaa-${teamName}.svg`], import.meta.url).href;
+}
 function getCapitals(tGeo) {
   return Object.values(dataBank.data).map(
     (entry) => tGeo(entry.capital)
@@ -7917,6 +7982,7 @@ const dataBank = {
   getPotFlagSvgUrl,
   getLinkUrlWikipedia,
   getLinkUrlGoogleMaps,
+  // getGaaTeamCrestSvgUrl: getGaaTeamCrestSvgUrl,  -- TODO
   getCities,
   getDirectionEmoji,
   getGuessEmoji,
@@ -14594,7 +14660,7 @@ function GuessRow({
 function Guesses({
   currentRoundStatus,
   guesses,
-  maxAttempts,
+  maxAttempts: maxAttempts2,
   solutionCode,
   guessNum,
   dataBank: dataBank2
@@ -14605,7 +14671,7 @@ function Guesses({
       " ",
       guessNum,
       " / ",
-      maxAttempts
+      maxAttempts2
     ] }) }) }) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "my-span-2", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
       "span",
       {
@@ -14613,7 +14679,7 @@ function Guesses({
         children: dataBank2.tGeo(solutionCode)
       }
     ) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: Array.from({ length: maxAttempts }, (_2, i) => {
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: Array.from({ length: maxAttempts2 }, (_2, i) => {
       return /* @__PURE__ */ jsxRuntimeExports.jsx(
         GuessRow,
         {
@@ -14635,7 +14701,7 @@ function GameRoundPot({
 }) {
   const t2 = dataBank2.tLang;
   const tGeo = dataBank2.tGeo;
-  const maxAttempts = 3;
+  const maxAttempts2 = 3;
   const [guessNum, setGuessNum] = reactExports.useState(1);
   const incGuessNum = () => {
     setGuessNum(guessNum + 1);
@@ -14678,7 +14744,7 @@ function GameRoundPot({
       }, SQUARE_ANIMATION_LENGTH * squares.length);
       setRoundResult(gameRoundId, grade(currentGuess));
       console.log("grade " + grade(currentGuess));
-    } else if (guesses.length + 1 === maxAttempts) {
+    } else if (guesses.length + 1 === maxAttempts2) {
       setTimeout(() => {
         toastFailed(t2("failedIt"));
         setCurrentRoundStatus("lost");
@@ -14732,7 +14798,7 @@ function GameRoundPot({
       {
         currentRoundStatus,
         guesses,
-        maxAttempts,
+        maxAttempts: maxAttempts2,
         solutionCode: gameState.potCode,
         guessNum,
         dataBank: dataBank2
@@ -14760,7 +14826,7 @@ function GameRoundTextInputWithImage({
   setRoundResult,
   roundInstructionId,
   target,
-  maxAttempts
+  maxAttempts: maxAttempts2
 }) {
   let potNameOf = dataBank2.tGeo(`of_${gameState.potCode}`);
   if (potNameOf === `of_${gameState.potCode}`) {
@@ -14771,7 +14837,7 @@ function GameRoundTextInputWithImage({
   const [guesses, setGuesses] = reactExports.useState([]);
   const [currentGuess, setCurrentGuess] = reactExports.useState("");
   reactExports.useEffect(() => {
-    if (guesses.length === maxAttempts) {
+    if (guesses.length === maxAttempts2) {
       console.log(`Game over! (${currentRoundStatus})`);
     }
     setCurrentGuess("");
@@ -14804,7 +14870,7 @@ function GameRoundTextInputWithImage({
       handleConfetti();
       setCurrentRoundStatus("won");
       setRoundResult(gameRoundId, grade(cityCode));
-    } else if (guesses.length + 1 === maxAttempts) {
+    } else if (guesses.length + 1 === maxAttempts2) {
       setTimeout(() => {
         setCurrentRoundStatus("lost");
       }, SQUARE_ANIMATION_LENGTH * squares.length);
@@ -14859,7 +14925,7 @@ function GameRoundTextInputWithImage({
         " ",
         guesses.length + 1,
         " / ",
-        maxAttempts
+        maxAttempts2
       ] }) }) }) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "my-span-2", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
         "span",
         {
@@ -14867,7 +14933,7 @@ function GameRoundTextInputWithImage({
           children: dataBank2.tGeo(target)
         }
       ) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: Array.from({ length: maxAttempts }, (_2, i) => {
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: Array.from({ length: maxAttempts2 }, (_2, i) => {
         const guess = guesses[i];
         return guesses[i] ? /* @__PURE__ */ jsxRuntimeExports.jsxs(
           "div",
@@ -14905,14 +14971,14 @@ function GameRoundNeighbors({
   }
   const idPrefix = "roundNbor-";
   const neighbors = dataBank2.data[gameState.potCode].neighbors;
-  const maxAttempts = neighbors.length + 2;
+  const maxAttempts2 = neighbors.length + 2;
   const [guesses, setGuesses] = reactExports.useState([]);
   const [guessedCodes, setGuessedCodes] = reactExports.useState([]);
   const [correctGuessNum, setCorrectGuessNum] = reactExports.useState(0);
   const [currentGuess, setCurrentGuess] = reactExports.useState("");
   const [zoomedPot, setZoomedPot] = reactExports.useState("");
   reactExports.useEffect(() => {
-    if (guesses.length === maxAttempts) {
+    if (guesses.length === maxAttempts2) {
       console.log(`Game over! (${currentRoundStatus})`);
     }
     setCurrentGuess("");
@@ -14941,7 +15007,7 @@ function GameRoundNeighbors({
         handleConfetti(50);
       }
       setCorrectGuessNum(correctGuessNum + 1);
-    } else if (guesses.length + 1 === maxAttempts) {
+    } else if (guesses.length + 1 === maxAttempts2) {
       setCurrentRoundStatus("lost");
       setRoundResult(gameRoundId, grade(isGuessCorrect));
     } else {
@@ -15046,9 +15112,9 @@ function GameRoundNeighbors({
         " ",
         guesses.length + 1,
         " / ",
-        maxAttempts
+        maxAttempts2
       ] }) }) }) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: Array.from({ length: maxAttempts }, (_2, i) => {
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: Array.from({ length: maxAttempts2 }, (_2, i) => {
         const guessCode = guessedCodes[i];
         return guessedCodes[i] ? /* @__PURE__ */ jsxRuntimeExports.jsxs(
           "div",
@@ -15143,6 +15209,110 @@ function GameRoundFinale({ roundStats, dataBank: dataBank2 }) {
         }) })
       ] })
     ] })
+  ] });
+}
+const maxAttempts = 3;
+const numFlagsToShow = 6;
+function GameRoundFlag({
+  gameRoundId,
+  gameState,
+  currentRoundStatus,
+  setCurrentRoundStatus,
+  dataBank: dataBank2,
+  setRoundResult
+}) {
+  const potNameOf = dataBank2.tGeo(`of_${gameState.potCode}`);
+  const potCodes2 = Object.keys(dataBank2.data);
+  const myPotList = Array.from(
+    { length: potCodes2.length },
+    (_2, i) => potCodes2[i]
+  );
+  shuffle(myPotList);
+  const [guesses, setGuesses] = reactExports.useState([]);
+  const addGuess = (guess) => {
+    setGuesses([...guesses, guess]);
+  };
+  reactExports.useEffect(() => {
+    if (guesses.length === maxAttempts) {
+      console.log(`Game over! (${currentRoundStatus})`);
+    }
+  }, [guesses]);
+  const handleFlagGuessClicked = (e) => {
+    var _a;
+    const guessedItem = `${(_a = e.currentTarget) == null ? void 0 : _a.id}`;
+    const guess = guessedItem.split("-")[1];
+    if (currentRoundStatus !== "pending" || guesses.includes(guess)) {
+      return;
+    }
+    console.log(`current guess ${guessedItem}`);
+    if (`guess-${gameState.potCode}` === guessedItem) {
+      setCurrentRoundStatus("won");
+      toastSuccess(dataBank2.tLang("guessedIt"));
+      handleConfetti();
+      setRoundResult(gameRoundId, grade(guess));
+    } else if (guesses.length + 1 === maxAttempts) {
+      setCurrentRoundStatus("lost");
+      setRoundResult(gameRoundId, grade(guess));
+    }
+    addGuess(guess);
+  };
+  function grade(guess) {
+    if (guess === gameState.potCode) {
+      return guesses.length === 0 ? GameRoundResult.Excellent : guesses.length === 1 ? GameRoundResult.Good : GameRoundResult.Fair;
+    } else {
+      return guesses.length === 0 ? GameRoundResult.NotStarted : GameRoundResult.Failed;
+    }
+  }
+  const guessNoun = dataBank2.tLang("guessNoun");
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "gap-1 text-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: `${dataBank2.tLang("gameFlagRoundInstruction")} ${potNameOf}?` }) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "div",
+      {
+        id: "main",
+        className: "grid image-grid justify-items-stretch grid-cols-2",
+        children: Array.from({ length: numFlagsToShow }, (_2, i) => {
+          const i0 = myPotList.indexOf(gameState.potCode) < numFlagsToShow ? 0 : myPotList.indexOf(gameState.potCode) - 4;
+          const i1 = (i0 + i) % myPotList.length;
+          const aPot = myPotList[i1];
+          const myBorder = !guesses.includes(aPot) ? "border-4 border-black" : aPot === gameState.potCode ? "border-4 border-green-700" : "border-4 border-red-600";
+          const bgColor = !guesses.includes(aPot) ? getColorOfStatus("pending") : aPot === gameState.potCode ? getColorOfStatus("won") : getColorOfStatus("lost");
+          return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "image-item justify-self-auto m-4", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "img",
+              {
+                src: getGaaTeamCrestSvgUrl(aPot),
+                alt: `flag of a pot:${i}:${aPot}`,
+                className: `cursor-pointer max-h-24 m-auto h-20 ${myBorder} rounded-lg`,
+                onClick: handleFlagGuessClicked,
+                id: `guess-${aPot}`
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "p",
+              {
+                className: `visible h-6 rounded-xl -mx-2 px-2 text-black bg-${bgColor}`,
+                children: currentRoundStatus === "pending" && !guesses.includes(aPot) ? dataBank2.tLang("guessVerb") : dataBank2.tGeo(myPotList[i1])
+              }
+            )
+          ] });
+        })
+      }
+    ) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: currentRoundStatus === "pending" ? /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "div",
+      {
+        className: `grid grid-cols-${numFlagsToShow} gap-1 text-center py-0.5`,
+        children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "my-div-1", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "opacity-70", children: [
+          guessNoun,
+          " ",
+          guesses.length + 1,
+          " / ",
+          maxAttempts
+        ] }) })
+      }
+    ) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", {}) })
   ] });
 }
 function NextRoundButton({
@@ -15271,6 +15441,16 @@ function Game() {
         setCurrentRoundStatus,
         setRoundResult
       }
+    ) : currentRound === 4 ? /* @__PURE__ */ jsxRuntimeExports.jsx(
+      GameRoundFlag,
+      {
+        gameRoundId: "flag",
+        gameState,
+        currentRoundStatus,
+        dataBank,
+        setCurrentRoundStatus,
+        setRoundResult
+      }
     ) : (
       // ) : currentRound === 4 ? (
       //   <GameRoundFlag
@@ -15371,4 +15551,4 @@ client.createRoot(document.getElementById("root")).render(
     )
   ] })
 );
-//# sourceMappingURL=index-r1e-RX4L.js.map
+//# sourceMappingURL=index-CHhVLCt0.js.map
